@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bottle Feeding Guide for Artin - Newborn Bottle Recommendations</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.8;
+            color: #c9d1d9;
+            background: #0d1117;
+            margin: 0;
+            padding: 10px;
+            min-height: 100vh;
+        }
+
+        article {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #161b22;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+            padding: 30px;
+            margin: -20px -20px 30px -20px;
+            border-bottom: 3px solid #58a6ff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            background: linear-gradient(135deg, #58a6ff 0%, #79c0ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+        }
+
+        .header-subtitle {
+            color: #8b949e;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            margin: 0;
+        }
+
+        .baby-context {
+            background: rgba(88, 166, 255, 0.1);
+            border-left: 4px solid #58a6ff;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .baby-context h3 {
+            margin-top: 0;
+            color: #58a6ff;
+            font-size: 1.3rem;
+        }
+
+        .baby-context ul {
+            margin: 10px 0;
+            padding-left: 24px;
+        }
+
+        .baby-context li {
+            margin: 8px 0;
+        }
+
+        h2 {
+            color: #58a6ff;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            font-size: clamp(1.4rem, 4vw, 2rem);
+        }
+
+        h3 {
+            color: #79c0ff;
+            margin-top: 30px;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin: 30px 0;
+        }
+
+        .bottle-card {
+            background: #1c2128;
+            border: 2px solid #30363d;
+            border-radius: 8px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .bottle-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            border-color: #58a6ff;
+        }
+
+        .bottle-card.best-choice {
+            border-color: #3fb950;
+            background: rgba(63, 185, 80, 0.05);
+        }
+
+        .bottle-card.best-choice .card-badge {
+            background: #3fb950;
+            color: #ffffff;
+        }
+
+        .bottle-card.good-alternative {
+            border-color: #58a6ff;
+            background: rgba(88, 166, 255, 0.05);
+        }
+
+        .bottle-card.good-alternative .card-badge {
+            background: #58a6ff;
+            color: #ffffff;
+        }
+
+        .bottle-card.quick-fix {
+            border-color: #d29922;
+            background: rgba(210, 153, 34, 0.05);
+        }
+
+        .bottle-card.quick-fix .card-badge {
+            background: #d29922;
+            color: #ffffff;
+        }
+
+        .card-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .bottle-name {
+            color: #58a6ff;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        .rating {
+            color: #d29922;
+            font-size: 1.2rem;
+            margin: 8px 0;
+        }
+
+        .bottle-card h4 {
+            color: #79c0ff;
+            margin: 16px 0 8px 0;
+            font-size: 1rem;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 4px;
+        }
+
+        .bottle-card p {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        .price {
+            color: #3fb950;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .info-section {
+            background: rgba(88, 166, 255, 0.1);
+            border-left: 4px solid #58a6ff;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 24px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .warning-section {
+            background: rgba(210, 153, 34, 0.1);
+            border-left: 4px solid #d29922;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 24px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .success-section {
+            background: rgba(63, 185, 80, 0.1);
+            border-left: 4px solid #3fb950;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 24px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .error-section {
+            background: rgba(248, 81, 73, 0.1);
+            border-left: 4px solid #f85149;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 24px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-section h3,
+        .warning-section h3,
+        .success-section h3,
+        .error-section h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 24px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+            background: #161b22;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #1c2128 0%, #161b22 100%);
+        }
+
+        thead th {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            color: #8b949e;
+            padding: 16px;
+            text-align: left;
+            border-bottom: 2px solid #58a6ff;
+        }
+
+        tbody tr {
+            transition: background-color 0.2s ease;
+        }
+
+        tbody tr:hover {
+            background: rgba(88, 166, 255, 0.05);
+        }
+
+        tbody td {
+            padding: 16px;
+            border-bottom: 1px solid #30363d;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .technique-steps {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+
+        .technique-steps li {
+            counter-increment: step-counter;
+            background: #1c2128;
+            border: 1px solid #30363d;
+            border-left: 4px solid #58a6ff;
+            border-radius: 6px;
+            padding: 20px 20px 20px 60px;
+            margin: 16px 0;
+            position: relative;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .technique-steps li:hover {
+            transform: translateX(4px);
+            border-left-color: #79c0ff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .technique-steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #58a6ff 0%, #79c0ff 100%);
+            color: #ffffff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 4px rgba(88, 166, 255, 0.4);
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0;
+        }
+
+        .checklist li {
+            padding: 12px 12px 12px 40px;
+            margin: 8px 0;
+            position: relative;
+            background: #1c2128;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+            transition: all 0.2s ease;
+        }
+
+        .checklist li:hover {
+            background: #21262d;
+            border-color: #58a6ff;
+        }
+
+        .checklist.success li::before {
+            content: "✅";
+            position: absolute;
+            left: 12px;
+            top: 12px;
+        }
+
+        .checklist.warning li::before {
+            content: "⚠️";
+            position: absolute;
+            left: 12px;
+            top: 12px;
+        }
+
+        .checklist.error li::before {
+            content: "❌";
+            position: absolute;
+            left: 12px;
+            top: 12px;
+        }
+
+        details {
+            margin: 20px 0;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        summary {
+            padding: 20px;
+            cursor: pointer;
+            user-select: none;
+            background: #1c2128;
+            font-weight: 600;
+            font-size: 1.2rem;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            transition: background 0.2s ease;
+            color: #58a6ff;
+        }
+
+        summary:hover {
+            background: #21262d;
+        }
+
+        summary::marker {
+            color: #58a6ff;
+            font-size: 1.5rem;
+        }
+
+        details[open] summary {
+            border-bottom: 2px solid #58a6ff;
+        }
+
+        details > *:not(summary) {
+            padding: 20px;
+            line-height: 1.8;
+        }
+
+        .decision-flowchart {
+            background: #1c2128;
+            border: 2px solid #58a6ff;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .flowchart-step {
+            background: #161b22;
+            border: 2px solid #30363d;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 16px 0;
+            position: relative;
+        }
+
+        .flowchart-step::after {
+            content: "↓";
+            display: block;
+            text-align: center;
+            color: #58a6ff;
+            font-size: 2rem;
+            margin-top: 10px;
+        }
+
+        .flowchart-step:last-child::after {
+            content: "";
+        }
+
+        .flowchart-question {
+            color: #79c0ff;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .flowchart-answer {
+            color: #3fb950;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #30363d;
+            color: #8b949e;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        ::selection {
+            background: rgba(88, 166, 255, 0.3);
+            color: #ffffff;
+        }
+
+        ::-moz-selection {
+            background: rgba(88, 166, 255, 0.3);
+            color: #ffffff;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0d1117;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 6px;
+            border: 2px solid #0d1117;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #484f58;
+        }
+
+        @media (max-width: 767px) {
+            body {
+                padding: 5px;
+            }
+
+            article {
+                padding: 15px;
+            }
+
+            header {
+                padding: 20px;
+                margin: -15px -15px 20px -15px;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .bottle-card {
+                padding: 16px;
+            }
+
+            .technique-steps li {
+                padding: 16px 16px 16px 50px;
+            }
+
+            .technique-steps li::before {
+                width: 28px;
+                height: 28px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            body {
+                padding: 30px;
+            }
+
+            article {
+                padding: 40px;
+            }
+
+            header {
+                padding: 40px;
+                margin: -40px -40px 30px -40px;
+            }
+
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+        }
+
+        @media (min-width: 1024px) and (max-width: 1365px) {
+            body {
+                padding: 40px;
+            }
+
+            article {
+                padding: 50px;
+            }
+
+            header {
+                padding: 50px;
+                margin: -50px -50px 40px -50px;
+            }
+
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+
+        @media (min-width: 1366px) {
+            article {
+                padding: 60px;
+            }
+
+            header {
+                padding: 60px;
+                margin: -60px -60px 50px -60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <header>
+            <h1>🍼 Bottle Feeding Guide for Artin</h1>
+            <p class="header-subtitle">Expert-Recommended Bottles for Breastfed Newborns (4 Days Old)</p>
+        </header>
+
+        <main>
+            <div class="baby-context">
+                <h3>👶 Critical Context for Artin</h3>
+                <ul>
+                    <li><strong>Age:</strong> 4 days old (newborn)</li>
+                    <li><strong>Current situation:</strong> Primarily breastfeeding with supplemental bottle feeding</li>
+                    <li><strong>Current bottle:</strong> Dr. Brown's narrow nipple (flow feels too fast)</li>
+                    <li><strong>Goal:</strong> Find bottles that mimic breast nipple to prevent nipple confusion</li>
+                    <li><strong>Priority:</strong> Support continued breastfeeding success while providing supplemental feeding options</li>
+                </ul>
+            </div>
+
+            <section class="info-section">
+                <h3>💡 Quick Answer: Your Best Options</h3>
+                <p><strong>Easiest solution:</strong> Keep your Dr. Brown's bottles and just buy <strong>Preemie Flow Nipples</strong> (Level P or 0) for $4-5 CAD. Your bottles are excellent - you just need a slower flow!</p>
+                <p><strong>Best new bottle system:</strong> <strong>Lansinoh Natural Wave</strong> - designed by lactation consultants specifically to prevent nipple confusion ($15-20 CAD).</p>
+                <p><strong>Most breast-like feel:</strong> <strong>Comotomo</strong> - ultra-soft, wide nipple that requires baby to use a wide latch like breastfeeding ($20-28 CAD).</p>
+            </section>
+
+            <h2>🏆 Top 5 Bottle Recommendations (Canadian Available)</h2>
+
+            <div class="grid-container">
+                <div class="bottle-card best-choice">
+                    <div class="card-badge">Best for Breastfed Babies</div>
+                    <div class="bottle-name">1. Lansinoh Natural Wave Nipple</div>
+                    <div class="rating">⭐⭐⭐⭐⭐ 5/5</div>
+
+                    <h4>Why It's Best</h4>
+                    <p>Designed by lactation consultants with a wave-shaped nipple that encourages the same tongue and jaw movements as breastfeeding. This is THE bottle for preventing nipple confusion.</p>
+
+                    <h4>Flow Rate</h4>
+                    <p>Slow-flow nipple (Level 1) included, plus newborn/preemie flow available separately</p>
+
+                    <h4>Anti-Colic Features</h4>
+                    <p>AVS (Air Ventilation System) reduces gas and colic symptoms</p>
+
+                    <h4>Price</h4>
+                    <p class="price">~$15-20 CAD per bottle</p>
+
+                    <h4>Where to Buy</h4>
+                    <p>Shoppers Drug Mart, Amazon.ca, Buy Buy Baby Canada, Well.ca</p>
+
+                    <h4>Best For</h4>
+                    <p><strong>Maintaining breastfeeding latch and preventing nipple confusion</strong></p>
+                </div>
+
+                <div class="bottle-card good-alternative">
+                    <div class="card-badge">Best for Active Sucking</div>
+                    <div class="bottle-name">2. Philips Avent Natural Response</div>
+                    <div class="rating">⭐⭐⭐⭐⭐ 5/5</div>
+
+                    <h4>Why It's Best</h4>
+                    <p>Revolutionary design - only releases milk when baby actively sucks (like the breast), NOT continuous flow. Baby must work for the milk just like breastfeeding.</p>
+
+                    <h4>Flow Rate</h4>
+                    <p>Newborn flow (0+) is the slowest available - perfect for 4-day-old</p>
+
+                    <h4>Anti-Colic Features</h4>
+                    <p>Anti-colic valve built into the nipple</p>
+
+                    <h4>Price</h4>
+                    <p class="price">~$18-25 CAD per bottle</p>
+
+                    <h4>Where to Buy</h4>
+                    <p>Walmart, Amazon.ca, Well.ca, Shoppers Drug Mart</p>
+
+                    <h4>Best For</h4>
+                    <p><strong>Babies who need to work for milk like at the breast</strong></p>
+                </div>
+
+                <div class="bottle-card good-alternative">
+                    <div class="card-badge">Most Breast-Like Feel</div>
+                    <div class="bottle-name">3. Comotomo Natural Feel</div>
+                    <div class="rating">⭐⭐⭐⭐⭐ 5/5</div>
+
+                    <h4>Why It's Best</h4>
+                    <p>Wide, breast-shaped nipple made of ultra-soft silicone. Baby must use a wide latch (just like breastfeeding). The tactile similarity to breast is exceptional.</p>
+
+                    <h4>Flow Rate</h4>
+                    <p>Slow flow (0-3 months) - very slow drip perfect for newborns</p>
+
+                    <h4>Anti-Colic Features</h4>
+                    <p>Dual anti-colic vents prevent air intake</p>
+
+                    <h4>Price</h4>
+                    <p class="price">~$20-28 CAD per bottle</p>
+
+                    <h4>Where to Buy</h4>
+                    <p>Amazon.ca, Well.ca, Indigo, Buy Buy Baby Canada</p>
+
+                    <h4>Best For</h4>
+                    <p><strong>Babies who need tactile similarity to breast (wide latch)</strong></p>
+                </div>
+
+                <div class="bottle-card good-alternative">
+                    <div class="card-badge">Best for Pumped Milk</div>
+                    <div class="bottle-name">4. Nanobébé Breastmilk Bottle</div>
+                    <div class="rating">⭐⭐⭐⭐ 4/5</div>
+
+                    <h4>Why It's Best</h4>
+                    <p>Breast-like nipple shape plus excellent for pumped milk storage. The concentric circle design preserves nutrients and speeds warming.</p>
+
+                    <h4>Flow Rate</h4>
+                    <p>Slow flow (0+ months) - appropriate for newborns</p>
+
+                    <h4>Anti-Colic Features</h4>
+                    <p>Concentric circle design reduces air intake</p>
+
+                    <h4>Price</h4>
+                    <p class="price">~$15-22 CAD per bottle</p>
+
+                    <h4>Where to Buy</h4>
+                    <p>Amazon.ca, Buy Buy Baby Canada, Well.ca</p>
+
+                    <h4>Best For</h4>
+                    <p><strong>Combination breast/bottle feeding with pumped milk</strong></p>
+                </div>
+
+                <div class="bottle-card quick-fix">
+                    <div class="card-badge">Quick Fix - Keep Your Bottles!</div>
+                    <div class="bottle-name">5. Dr. Brown's Preemie Flow Nipples</div>
+                    <div class="rating">⭐⭐⭐⭐⭐ 5/5</div>
+
+                    <h4>Why Continue with Dr. Brown's</h4>
+                    <p><strong>You already have the bottles - just change the nipple!</strong> Dr. Brown's has the best anti-colic system. The issue is likely the flow rate, not the bottle itself.</p>
+
+                    <h4>Flow Rate</h4>
+                    <p><strong>Preemie (Level P) or Level 1 (0+ months)</strong> - This is likely your issue! If your current nipple says "Level 2" or "3+ months", it's too fast for a 4-day-old.</p>
+
+                    <h4>Anti-Colic Features</h4>
+                    <p>Internal vent system (best-in-class for reducing gas and colic)</p>
+
+                    <h4>Price</h4>
+                    <p class="price">~$3-5 CAD for nipple replacement pack</p>
+
+                    <h4>Where to Buy</h4>
+                    <p>Shoppers Drug Mart, Amazon.ca, Walmart, Buy Buy Baby Canada</p>
+
+                    <h4>Best For</h4>
+                    <p><strong>If you want to keep current bottles - just get slower nipples!</strong></p>
+                </div>
+            </div>
+
+            <section class="warning-section">
+                <h3>⚠️ Critical Flow Rate Guide for 4-Day-Old Artin</h3>
+                <p><strong>Your baby needs the SLOWEST flow available:</strong></p>
+                <ul>
+                    <li><strong>Preemie/Newborn (0+):</strong> 0-3 months ✅ PERFECT</li>
+                    <li><strong>Level 1:</strong> 0-3 months ✅ GOOD</li>
+                    <li><strong>Level 2:</strong> 3-6 months ❌ TOO FAST for newborn</li>
+                    <li><strong>Level 3+:</strong> 6+ months ❌ WAY TOO FAST</li>
+                </ul>
+                <p><strong>Action item:</strong> Check your Dr. Brown's nipple packaging right now. If it says "Level 2" or "3+ months", that's why the flow is too fast. Order Preemie or Level 1 nipples immediately.</p>
+            </section>
+
+            <h2>🥛 Paced Bottle Feeding Technique (Essential!)</h2>
+
+            <p style="font-size: 1.1rem; color: #79c0ff; margin-bottom: 20px;">Even with the right bottle, <strong>technique matters tremendously</strong>. Paced feeding mimics breastfeeding rhythm and prevents overfeeding.</p>
+
+            <ol class="technique-steps">
+                <li><strong>Hold baby upright</strong> at a 45-degree angle (not lying down). This prevents gulping and ear infections.</li>
+                <li><strong>Tease the lips</strong> with the nipple until baby opens wide (like latching to breast). Don't push the nipple into baby's mouth.</li>
+                <li><strong>Let baby draw nipple in</strong> by opening mouth wide. Baby should control when feeding starts.</li>
+                <li><strong>Keep bottle horizontal</strong> (parallel to floor) so milk just fills the nipple. This way baby controls the flow, not gravity.</li>
+                <li><strong>Pause every 0.5-1 oz</strong> - remove bottle, burp baby, let them rest. This mimics natural breastfeeding pauses.</li>
+                <li><strong>Watch baby's cues</strong> - if gulping, sputtering, or milk dribbling from corners of mouth, slow down or stop.</li>
+                <li><strong>Total feeding time: 15-20 minutes</strong> (similar to breastfeeding duration). If bottle is done in under 10 minutes, flow is too fast.</li>
+            </ol>
+
+            <section class="error-section">
+                <h3>🚨 Red Flags: Flow Too Fast - Stop Immediately!</h3>
+                <p>If you see any of these signs, the flow is too fast. Remove the bottle, burp baby, and slow down:</p>
+                <ul class="checklist error">
+                    <li><strong>Gulping or choking sounds</strong> - baby can't keep up with flow</li>
+                    <li><strong>Milk dribbling from corners of mouth</strong> - baby overwhelmed</li>
+                    <li><strong>Wide eyes or stressed expression</strong> - baby in distress</li>
+                    <li><strong>Splayed fingers or stiff body</strong> - stress response</li>
+                    <li><strong>Finishing bottle in under 10 minutes</strong> - way too fast for newborn</li>
+                    <li><strong>Coughing or sputtering</strong> - flow overwhelming baby's swallow</li>
+                </ul>
+            </section>
+
+            <h2>🤱 Preventing Nipple Confusion (Critical at 4 Days!)</h2>
+
+            <section class="info-section">
+                <h3>📋 Evidence-Based Strategies</h3>
+                <ul class="checklist success">
+                    <li><strong>Wait until breastfeeding is established</strong> (ideally 3-4 weeks) before introducing bottles regularly</li>
+                    <li><strong>One bottle per day maximum</strong> for now while building milk supply</li>
+                    <li><strong>Always breastfeed first</strong> when possible, use bottle as supplement only</li>
+                    <li><strong>Have partner/family give bottles</strong> so baby associates mom with breast</li>
+                    <li><strong>Use slowest flow nipple</strong> to make baby work like at the breast</li>
+                    <li><strong>Paced feeding technique</strong> mimics breastfeeding rhythm and duration</li>
+                    <li><strong>Same wide latch</strong> - choose bottles with wide-base nipples that require proper latch</li>
+                </ul>
+            </section>
+
+            <h2>⏰ When to Use Bottles (Week 1 Guidelines)</h2>
+
+            <div class="success-section">
+                <h3>✅ Good Reasons to Bottle Feed at 4 Days Old</h3>
+                <ul>
+                    <li>Dad/partner bonding (one feeding per day)</li>
+                    <li>When mom needs rest (especially night feeding)</li>
+                    <li>If baby isn't gaining weight and needs supplementation (per pediatrician)</li>
+                    <li>If mom is returning to work soon and wants baby bottle-trained early</li>
+                    <li>If mom has medical need for rest or recovery</li>
+                </ul>
+            </div>
+
+            <div class="error-section">
+                <h3>❌ NOT Good Reasons to Bottle Feed</h3>
+                <ul>
+                    <li>To "measure" how much baby eats (breastfed babies eat to satiety naturally)</li>
+                    <li>To "stretch" feedings or get baby on schedule (follow hunger cues instead)</li>
+                    <li>Because someone else wants to feed baby (can wait until breastfeeding established)</li>
+                    <li>To give baby formula without medical indication (breast milk is optimal)</li>
+                </ul>
+            </div>
+
+            <h2>🧭 Quick Decision Guide</h2>
+
+            <div class="decision-flowchart">
+                <h3 style="color: #58a6ff; text-align: center; margin-top: 0;">Choose Your Path</h3>
+
+                <div class="flowchart-step">
+                    <div class="flowchart-question">Do you want to stick with Dr. Brown's bottles?</div>
+                    <p style="margin: 8px 0;"><strong>YES →</strong> Buy Dr. Brown's <strong>Preemie Flow Nipples</strong> (Level P or 0) for $3-5 CAD</p>
+                    <p style="margin: 8px 0;">✅ Use paced feeding technique</p>
+                    <p style="margin: 8px 0;">✅ Problem solved immediately!</p>
+                    <div class="flowchart-answer">Best choice if you already have the bottles and just need slower flow</div>
+                </div>
+
+                <div class="flowchart-step">
+                    <div class="flowchart-question">Want the absolute best for preventing nipple confusion?</div>
+                    <p style="margin: 8px 0;"><strong>YES →</strong> Buy <strong>Lansinoh Natural Wave</strong> ($15-20 CAD)</p>
+                    <p style="margin: 8px 0;">✅ Designed by lactation consultants</p>
+                    <p style="margin: 8px 0;">✅ Wave nipple mimics breast movement</p>
+                    <div class="flowchart-answer">Best overall for breastfed babies</div>
+                </div>
+
+                <div class="flowchart-step">
+                    <div class="flowchart-question">Want baby to work for milk like at breast?</div>
+                    <p style="margin: 8px 0;"><strong>YES →</strong> Buy <strong>Philips Avent Natural Response</strong> ($18-25 CAD)</p>
+                    <p style="margin: 8px 0;">✅ Milk only flows with active sucking</p>
+                    <p style="margin: 8px 0;">✅ Most similar to breastfeeding effort</p>
+                    <div class="flowchart-answer">Best for maintaining breast preference</div>
+                </div>
+
+                <div class="flowchart-step">
+                    <div class="flowchart-question">Want the most breast-like tactile feel?</div>
+                    <p style="margin: 8px 0;"><strong>YES →</strong> Buy <strong>Comotomo</strong> ($20-28 CAD)</p>
+                    <p style="margin: 8px 0;">✅ Ultra-soft, wide breast-shaped nipple</p>
+                    <p style="margin: 8px 0;">✅ Requires wide latch like breastfeeding</p>
+                    <div class="flowchart-answer">Best for tactile similarity to breast</div>
+                </div>
+
+                <div class="flowchart-step">
+                    <div class="flowchart-question">Plan to pump and store breast milk?</div>
+                    <p style="margin: 8px 0;"><strong>YES →</strong> Buy <strong>Nanobébé</strong> ($15-22 CAD)</p>
+                    <p style="margin: 8px 0;">✅ Excellent for storage and warming</p>
+                    <p style="margin: 8px 0;">✅ Preserves breast milk nutrients</p>
+                    <div class="flowchart-answer">Best for combination feeding with pumping</div>
+                </div>
+            </div>
+
+            <h2>💰 Canadian Retailer Price Comparison</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bottle System</th>
+                            <th>Shoppers</th>
+                            <th>Walmart</th>
+                            <th>Amazon.ca</th>
+                            <th>Well.ca</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Lansinoh Natural Wave</strong></td>
+                            <td>$16.99</td>
+                            <td>$14.97</td>
+                            <td>$15.49</td>
+                            <td>$17.99</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Philips Avent Natural Response</strong></td>
+                            <td>$21.99</td>
+                            <td>$18.97</td>
+                            <td>$19.99</td>
+                            <td>$22.99</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Comotomo</strong></td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>$24.99</td>
+                            <td>$26.99</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nanobébé</strong></td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>$18.99</td>
+                            <td>$19.99</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dr. Brown's Preemie Nipples</strong></td>
+                            <td>$4.99</td>
+                            <td>$4.47</td>
+                            <td>$4.99</td>
+                            <td>$5.49</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <details>
+                <summary>📚 Resources for Canadian Parents</summary>
+                <div>
+                    <h4>Free Canadian Breastfeeding Support</h4>
+                    <ul>
+                        <li><strong>Telehealth Ontario (811):</strong> Free 24/7 nurse consultation for feeding concerns</li>
+                        <li><strong>York Region Public Health:</strong> Free lactation consultant support - Call 1-800-361-5653</li>
+                        <li><strong>La Leche League Canada:</strong> Breastfeeding support groups and peer counseling</li>
+                        <li><strong>Jack Newman Breastfeeding Clinic (Toronto):</strong> World-renowned lactation consultant - Offers virtual consultations</li>
+                        <li><strong>Best Start Resource Centre:</strong> Ontario-based breastfeeding resources and helpline</li>
+                    </ul>
+
+                    <h4>Online Resources</h4>
+                    <ul>
+                        <li><strong>KellyMom.com:</strong> Evidence-based breastfeeding and parenting information</li>
+                        <li><strong>Canadian Paediatric Society:</strong> Caring for Kids - Infant feeding guidelines</li>
+                        <li><strong>Health Canada:</strong> Nutrition for Healthy Term Infants</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>🔬 Evidence Base & Medical Disclaimer</summary>
+                <div>
+                    <h4>This Guidance Is Based On:</h4>
+                    <ul>
+                        <li><strong>Canadian Paediatric Society (CPS):</strong> Infant feeding guidelines and recommendations</li>
+                        <li><strong>Health Canada:</strong> Nutrition for Healthy Term Infants (birth to 6 months)</li>
+                        <li><strong>American Academy of Pediatrics (AAP):</strong> Breastfeeding support protocols and nipple confusion research</li>
+                        <li><strong>International Lactation Consultant Association (ILCA):</strong> Best practices for combination feeding</li>
+                        <li><strong>World Health Organization (WHO):</strong> Breastfeeding protection and support guidelines</li>
+                        <li><strong>Peer-reviewed research:</strong> Studies on paced bottle feeding, flow rates, and nipple confusion prevention</li>
+                    </ul>
+
+                    <h4>Medical Disclaimer</h4>
+                    <p style="color: #d29922;"><strong>⚠️ IMPORTANT:</strong> This information is for educational purposes only and does not constitute medical advice. Every baby is different, and what works for one may not work for another.</p>
+                    <p>Consult your pediatrician, family doctor, or International Board Certified Lactation Consultant (IBCLC) for personalized guidance, especially in the critical first weeks of life. If you have concerns about:</p>
+                    <ul>
+                        <li>Baby's weight gain or feeding adequacy</li>
+                        <li>Breastfeeding difficulty or pain</li>
+                        <li>Possible milk supply issues</li>
+                        <li>Baby's latch or sucking pattern</li>
+                        <li>Need for formula supplementation</li>
+                    </ul>
+                    <p><strong>Seek professional help immediately.</strong> Early intervention makes a huge difference in breastfeeding success.</p>
+                </div>
+            </details>
+
+        </main>
+
+        <footer>
+            <p>Created with care for Artin and family • Based on current Canadian and international pediatric guidelines</p>
+            <p>Last updated: January 12, 2025</p>
+        </footer>
+    </article>
+</body>
+</html>
