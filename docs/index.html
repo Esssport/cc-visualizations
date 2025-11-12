@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizations Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            color: #c9d1d9;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #58a6ff 0%, #79c0ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #8b949e;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            animation: fadeIn 0.8s ease-in 0.2s both;
+        }
+
+        .card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(88, 166, 255, 0.2);
+            border-color: #58a6ff;
+        }
+
+        .card-preview {
+            width: 100%;
+            height: 200px;
+            background: #0d1117;
+            border-bottom: 2px solid #30363d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-preview iframe {
+            width: 200%;
+            height: 400%;
+            border: none;
+            transform: scale(0.5);
+            transform-origin: top left;
+            pointer-events: none;
+        }
+
+        .card-preview-placeholder {
+            font-size: 3rem;
+            color: #30363d;
+        }
+
+        .card-content {
+            padding: 24px;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #58a6ff;
+            margin-bottom: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 0.9rem;
+            color: #8b949e;
+            margin-bottom: 12px;
+        }
+
+        .card-description {
+            color: #c9d1d9;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #238636;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s ease;
+        }
+
+        .card-link:hover {
+            background: #2ea043;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Visualizations Gallery</h1>
+            <p class="subtitle">Published visualizations from Claude Code</p>
+        </header>
+
+        <div class="gallery" id="gallery">
+            <!-- Cards will be inserted here -->
+        </div>
+    </div>
+
+    <script>
+        // Visualization data
+        const visualizations = [
+            {
+                title: "Artin's First Year: A Developmental Journey",
+                path: "2025/11/artins-first-year.html",
+                date: "2025-11-12",
+                description: "Interactive timeline showing Artin's developmental milestones from 0-12 months with evidence-based guidance from CPS, Health Canada, and AAP"
+            }
+        ];
+
+        const gallery = document.getElementById('gallery');
+
+        visualizations.sort((a, b) => new Date(b.date) - new Date(a.date)).forEach(viz => {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            const preview = `
+                <div class="card-preview">
+                    <iframe src="${viz.path}" sandbox="allow-same-origin"></iframe>
+                </div>
+            `;
+
+            card.innerHTML = `
+                ${preview}
+                <div class="card-content">
+                    <h3 class="card-title">${viz.title}</h3>
+                    <div class="card-meta">
+                        <span>${new Date(viz.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+                    </div>
+                    <p class="card-description">${viz.description || 'No description available.'}</p>
+                    <a href="${viz.path}" class="card-link">View Visualization</a>
+                </div>
+            `;
+
+            gallery.appendChild(card);
+        });
+
+        // Show message if no visualizations
+        if (visualizations.length === 0) {
+            gallery.innerHTML = '<p style="text-align: center; color: #8b949e; grid-column: 1/-1;">No visualizations published yet.</p>';
+        }
+    </script>
+</body>
+</html>

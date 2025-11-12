@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artin's First Year: A Developmental Journey</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #c9d1d9;
+            background: #0d1117;
+            margin: 0;
+            padding: 10px;
+            min-height: 100vh;
+        }
+
+        article {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+            padding: 40px 20px;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #58a6ff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            background: linear-gradient(135deg, #58a6ff 0%, #79c0ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            font-size: clamp(1.8rem, 6vw, 3rem);
+        }
+
+        .subtitle {
+            color: #8b949e;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .current-stage-banner {
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.2) 0%, rgba(121, 192, 255, 0.1) 100%);
+            border: 2px solid #58a6ff;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(88, 166, 255, 0.2);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 12px rgba(88, 166, 255, 0.2);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(88, 166, 255, 0.4);
+            }
+        }
+
+        .current-stage-banner h2 {
+            margin: 0 0 10px 0;
+            color: #58a6ff;
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+        }
+
+        .current-stage-banner p {
+            margin: 0;
+            color: #c9d1d9;
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+        }
+
+        .timeline-container {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #58a6ff 0%, #3fb950 100%);
+            border-radius: 2px;
+            z-index: 0;
+        }
+
+        .timeline-stage {
+            position: relative;
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: slideIn 0.6s ease-out forwards;
+        }
+
+        .timeline-stage:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-stage:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-stage:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-stage:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .stage-marker {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #58a6ff 0%, #79c0ff 100%);
+            border: 4px solid #0d1117;
+            box-shadow: 0 0 0 4px #30363d, 0 4px 12px rgba(88, 166, 255, 0.4);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .stage-marker.current {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3fb950 0%, #2ea043 100%);
+            animation: currentPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes currentPulse {
+            0%, 100% {
+                box-shadow: 0 0 0 4px #30363d, 0 4px 12px rgba(63, 185, 80, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 8px rgba(63, 185, 80, 0.2), 0 4px 20px rgba(63, 185, 80, 0.6);
+            }
+        }
+
+        .stage-content {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 30px;
+            margin-left: calc(50% + 40px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .stage-content:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .stage-content.current {
+            border: 2px solid #3fb950;
+            background: linear-gradient(135deg, rgba(63, 185, 80, 0.05) 0%, #161b22 100%);
+        }
+
+        .stage-header {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #30363d;
+        }
+
+        .stage-title {
+            margin: 0 0 8px 0;
+            color: #58a6ff;
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            font-weight: 600;
+        }
+
+        .stage-age {
+            display: inline-block;
+            background: rgba(88, 166, 255, 0.1);
+            color: #58a6ff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid #58a6ff;
+        }
+
+        .stage-subtitle {
+            color: #8b949e;
+            font-size: 1rem;
+            margin: 10px 0 0 0;
+            font-style: italic;
+        }
+
+        .milestones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .milestone-card {
+            background: #1c2128;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .milestone-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--accent-color);
+            border-radius: 8px 0 0 8px;
+        }
+
+        .milestone-card.physical::before {
+            background: linear-gradient(180deg, #58a6ff 0%, #4184e4 100%);
+        }
+
+        .milestone-card.cognitive::before {
+            background: linear-gradient(180deg, #bc8cff 0%, #a371f7 100%);
+        }
+
+        .milestone-card.social::before {
+            background: linear-gradient(180deg, #3fb950 0%, #2ea043 100%);
+        }
+
+        .milestone-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            border-color: var(--accent-color);
+        }
+
+        .milestone-card.physical:hover {
+            border-color: #58a6ff;
+        }
+
+        .milestone-card.cognitive:hover {
+            border-color: #bc8cff;
+        }
+
+        .milestone-card.social:hover {
+            border-color: #3fb950;
+        }
+
+        .milestone-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .milestone-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .milestone-title {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #c9d1d9;
+        }
+
+        .milestone-card.physical .milestone-title {
+            color: #58a6ff;
+        }
+
+        .milestone-card.cognitive .milestone-title {
+            color: #bc8cff;
+        }
+
+        .milestone-card.social .milestone-title {
+            color: #3fb950;
+        }
+
+        .milestone-content {
+            color: #8b949e;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .milestone-content ul {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+
+        .milestone-content li {
+            margin: 6px 0;
+        }
+
+        .expandable-section {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .expandable-header {
+            padding: 18px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #1c2128 0%, #161b22 100%);
+            transition: all 0.3s ease;
+        }
+
+        .expandable-header:hover {
+            background: linear-gradient(135deg, #21262d 0%, #1c2128 100%);
+        }
+
+        .expandable-header h3 {
+            margin: 0;
+            color: #58a6ff;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .expand-icon {
+            font-size: 24px;
+            color: #58a6ff;
+            transition: transform 0.3s ease;
+        }
+
+        .expandable-section.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 24px;
+        }
+
+        .expandable-section.expanded .expandable-content {
+            max-height: 2000px;
+            padding: 20px 24px;
+        }
+
+        .info-section {
+            background: rgba(88, 166, 255, 0.1);
+            border-left: 4px solid #58a6ff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .info-section h3 {
+            margin: 0 0 12px 0;
+            color: #58a6ff;
+            font-size: 1.1rem;
+        }
+
+        .warning-section {
+            background: rgba(248, 81, 73, 0.1);
+            border-left: 4px solid #f85149;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .warning-section h3 {
+            margin: 0 0 12px 0;
+            color: #f85149;
+            font-size: 1.1rem;
+        }
+
+        .success-section {
+            background: rgba(63, 185, 80, 0.1);
+            border-left: 4px solid #3fb950;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .success-section h3 {
+            margin: 0 0 12px 0;
+            color: #3fb950;
+            font-size: 1.1rem;
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: #161b22;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        .legend-color.physical {
+            background: linear-gradient(135deg, #58a6ff 0%, #4184e4 100%);
+        }
+
+        .legend-color.cognitive {
+            background: linear-gradient(135deg, #bc8cff 0%, #a371f7 100%);
+        }
+
+        .legend-color.social {
+            background: linear-gradient(135deg, #3fb950 0%, #2ea043 100%);
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #30363d;
+            color: #8b949e;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        ::selection {
+            background: rgba(88, 166, 255, 0.3);
+            color: #ffffff;
+        }
+
+        ::-moz-selection {
+            background: rgba(88, 166, 255, 0.3);
+            color: #ffffff;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0d1117;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 6px;
+            border: 2px solid #0d1117;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #484f58;
+        }
+
+        @media (max-width: 1024px) {
+            .timeline-line {
+                left: 20px;
+            }
+
+            .stage-marker {
+                left: 20px;
+                transform: translate(-50%, 0);
+            }
+
+            .stage-content {
+                margin-left: 60px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            body {
+                padding: 5px;
+            }
+
+            article {
+                padding: 10px;
+            }
+
+            header {
+                padding: 30px 15px;
+            }
+
+            .current-stage-banner {
+                padding: 15px;
+            }
+
+            .stage-content {
+                padding: 20px;
+                margin-left: 50px;
+            }
+
+            .milestones-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .legend {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding: 20px;
+            }
+
+            article {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <header>
+            <h1>🌟 Artin's First Year: A Developmental Journey</h1>
+            <p class="subtitle">Tracking milestones, celebrating growth, and understanding each stage</p>
+        </header>
+
+        <div class="current-stage-banner">
+            <h2>📍 Current Stage: 0-3 Months (Newborn Period)</h2>
+            <p>Artin is in the foundational stage of life - building strength, forming bonds, and discovering the world!</p>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color physical"></div>
+                <span>Physical Development</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color cognitive"></div>
+                <span>Cognitive & Communication</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color social"></div>
+                <span>Social-Emotional</span>
+            </div>
+        </div>
+
+        <main>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+
+                <!-- Stage 1: 0-3 Months -->
+                <div class="timeline-stage">
+                    <div class="stage-marker current">🍼</div>
+                    <div class="stage-content current">
+                        <div class="stage-header">
+                            <div>
+                                <h2 class="stage-title">0-3 Months: Newborn Period</h2>
+                                <span class="stage-age">Current Stage</span>
+                                <p class="stage-subtitle">What's Happening Now</p>
+                            </div>
+                        </div>
+
+                        <div class="milestones-grid">
+                            <div class="milestone-card physical">
+                                <div class="milestone-header">
+                                    <span class="milestone-icon">💪</span>
+                                    <h3 class="milestone-title">Physical Development</h3>
+                                </div>
+                                <div class="milestone-content">
+                                    <ul>
+                                        <li><strong>Head Control:</strong> Gradually strengthening neck muscles, brief head lifts during tummy time</li>
+                                        <li><strong>Vision:</strong> Focusing on faces 8-12 inches away, tracking moving objects</li>
+                                        <li><strong>Reflexes:</strong> Strong primitive reflexes (rooting, sucking, grasping, Moro reflex)</li>
+                                        <li><strong>Movement:</strong> Random arm and leg movements, beginning to discover hands</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="milestone-card cognitive">
+                                <div class="milestone-header">
+                                    <span class="milestone-icon">🧠</span>
+                                    <h3 class="milestone-title">Cognitive & Communication</h3>
+                                </div>
+                                <div class="milestone-content">
+                                    <ul>
+                                        <li><strong>Recognition:</strong> Starting to recognize primary caregivers' faces and voices</li>
+                                        <li><strong>Sounds:</strong> Cooing, gurgling sounds (usually by 2-3 months)</li>
+                                        <li><strong>Alert Periods:</strong> Increasing wakeful periods for interaction</li>
+                                        <li><strong>Imitation:</strong> Beginning to mimic some facial expressions</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="milestone-card social">
+                                <div class="milestone-header">
+                                    <span class="milestone-icon">❤️</span>
+                                    <h3 class="milestone-title">Social-Emotional</h3>
+                                </div>
+                                <div class="milestone-content">
+                                    <ul>
+                                        <li><strong>First Smile:</strong> Social smiles emerging (6-8 weeks typically)</li>
+                                        <li><strong>Bonding:</strong> Strong attachment formation with primary caregivers</li>
+                                        <li><strong>Comfort:</strong> Learning to be soothed, self-regulation developing</li>
+                                        <li><strong>Eye Contact:</strong> Maintaining eye contact during feeding and interaction</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stage 2: 3-6 Months -->
+                <div class="timeline-stage">
+                    <div class="stage-marker">🎯</div>
+                    <div class="stage-content">
+                        <div class="stage-header">
+                            <div>
+                                <h2 class="stage-title">3-6 Months: Exciting Changes Ahead!</h2>
+                                <span class="stage-age">Next 3 Months</span>
+                            </div>
+                        </div>
+
+                        <div class="success-section">
+                            <h3>✨ Major Milestones to Expect</h3>
+                            <ul>
+                                <li><strong>Rolling Over:</strong> Front to back (4-5 months), back to front (5-6 months)</li>
+                                <li><strong>Sitting:</strong> Sitting with support, then brief independent sitting by 6 months</li>
+                                <li><strong>Reaching & Grasping:</strong> Intentional reaching for objects, transferring toys hand-to-hand</li>
+                                <li><strong>Babbling:</strong> "Ba-ba," "ma-ma" sounds (not yet meaningful words)</li>
+                                <li><strong>Laughter:</strong> Full belly laughs, giggles during play</li>
+                                <li><strong>Recognition:</strong> Strong recognition of familiar people, stranger awareness begins</li>
+                                <li><strong>Solid Foods:</strong> Introduction around 6 months (if showing readiness signs)</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-section">
+                            <h3>🎮 What to Practice</h3>
+                            <ul>
+                                <li>Tummy time (work up to 60+ minutes/day in short sessions)</li>
+                                <li>Reading books together (builds language even this early!)</li>
+                                <li>Play with rattles and soft toys (hand-eye coordination)</li>
+                                <li>Peek-a-boo games (object permanence concept)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stage 3: 6-9 Months -->
+                <div class="timeline-stage">
+                    <div class="stage-marker">🚀</div>
+                    <div class="stage-content">
+                        <div class="stage-header">
+                            <div>
+                                <h2 class="stage-title">6-9 Months: Mobility Emerges</h2>
+                                <span class="stage-age">Getting Ready to Move!</span>
+                            </div>
+                        </div>
+
+                        <div class="milestones-grid">
+                            <div class="milestone-card physical">
+                                <div class="milestone-header">
+                                    <span class="milestone-icon">🏃</span>
+                                    <h3 class="milestone-title">Physical Leaps</h3>
+                                </div>
+                                <div class="milestone-content">
+                                    <ul>
+                                        <li><strong>Sitting:</strong> Sitting independently without support (7-8 months)</li>
+                                        <li><strong>Crawling:</strong> Army crawling → hands-and-knees crawling (7-10 months)</li>
+                                        <li><strong>Pulling Up:</strong> Pulling to stand using furniture (8-9 months)</li>
+                                        <li><strong>Pincer Grasp:</strong> Picking up small objects with thumb and forefinger</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="milestone-card cognitive">
+                                <div class="milestone-header">
+                                    <span class="milestone-icon">💬</span>
+                                    <h3 class="milestone-title">Communication Boom</h3>
+                                </div>
+                                <div class="milestone-content">
+                                    <ul>
+                                        <li><strong>Babbling:</strong> Complex babbling with intonation patterns ("conversations")</li>
+                                        <li><strong>Understanding:</strong> Responds to own name, understands "no"</li>
+                                        <li><strong>Gestures:</strong> Waving bye-bye, reaching up to be picked up</li>
+                                        <li><strong>Pointing:</strong> Beginning to point at interesting things</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="milestone-card social">
+                                <div class="milestone-header">
+                                    <span class="milestone-icon">🧩</span>
+                                    <h3 class="milestone-title">Cognitive Growth</h3>
+                                </div>
+                                <div class="milestone-content">
+                                    <ul>
+                                        <li><strong>Object Permanence:</strong> Understanding objects exist even when hidden</li>
+                                        <li><strong>Cause & Effect:</strong> Dropping toys to watch them fall, pressing buttons to make sounds</li>
+                                        <li><strong>Problem Solving:</strong> Figuring out how to reach distant toys</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stage 4: 9-12 Months -->
+                <div class="timeline-stage">
+                    <div class="stage-marker">👶</div>
+                    <div class="stage-content">
+                        <div class="stage-header">
+                            <div>
+                                <h2 class="stage-title">9-12 Months: Pre-Toddler</h2>
+                                <span class="stage-age">Almost Walking!</span>
+                            </div>
+                        </div>
+
+                        <div class="milestones-grid">
+                            <div class="milestone-card physical">
+                                <div class="milestone-header">
+                                    <span class="milestone-icon">👟</span>
+                                    <h3 class="milestone-title">Physical Achievements</h3>
+                                </div>
+                                <div class="milestone-content">
+                                    <ul>
+                                        <li><strong>Cruising:</strong> Walking along furniture holding on (9-11 months)</li>
+                                        <li><strong>Standing:</strong> Standing independently for brief moments</li>
+                                        <li><strong>First Steps:</strong> Some babies walk by 12 months (range: 9-18 months is normal)</li>
+                                        <li><strong>Fine Motor:</strong> Stacking blocks, putting objects in containers</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="milestone-card cognitive">
+                                <div class="milestone-header">
+                                    <span class="milestone-icon">🗣️</span>
+                                    <h3 class="milestone-title">Language Development</h3>
+                                </div>
+                                <div class="milestone-content">
+                                    <ul>
+                                        <li><strong>First Words:</strong> Meaningful "mama," "dada," plus 1-2 other words</li>
+                                        <li><strong>Comprehension:</strong> Understanding simple commands ("come here," "give me")</li>
+                                        <li><strong>Gestures:</strong> Shaking head no, waving, pointing with purpose</li>
+                                        <li><strong>Joint Attention:</strong> Pointing to share interesting observations</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="milestone-card social">
+                                <div class="milestone-header">
+                                    <span class="milestone-icon">🤗</span>
+                                    <h3 class="milestone-title">Social-Emotional</h3>
+                                </div>
+                                <div class="milestone-content">
+                                    <ul>
+                                        <li><strong>Separation Anxiety:</strong> Peak around 9-12 months (normal development!)</li>
+                                        <li><strong>Independence:</strong> Wanting to do things "by myself"</li>
+                                        <li><strong>Preferences:</strong> Clear likes and dislikes for foods, activities, people</li>
+                                        <li><strong>Attachment:</strong> Secure base behavior (exploring, checking back with parent)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expandable Sections -->
+            <div class="expandable-section">
+                <div class="expandable-header" onclick="toggleExpand(this)">
+                    <h3>🎯 Key Developmental Principles</h3>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="expandable-content">
+                    <div class="info-section">
+                        <h3>🌈 Every Baby is Unique</h3>
+                        <ul>
+                            <li>Milestone ranges are guidelines, not deadlines</li>
+                            <li>Some babies excel in motor skills, others in communication</li>
+                            <li>Premature babies use "corrected age" for milestones</li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-section">
+                        <h3>⚠️ When to Seek Assessment (Red Flags)</h3>
+                        <ul>
+                            <li><strong>By 3 months:</strong> No social smiles, not tracking moving objects, very stiff or very floppy</li>
+                            <li><strong>By 6 months:</strong> No rolling, no reaching for objects, no babbling sounds</li>
+                            <li><strong>By 9 months:</strong> No sitting independently, no babbling, not responding to name</li>
+                            <li><strong>By 12 months:</strong> Not pulling to stand, no gestures (pointing, waving), no single words</li>
+                        </ul>
+                        <p><strong>Ontario Resources:</strong></p>
+                        <ul>
+                            <li>Telehealth Ontario: 811 (24/7 nurse advice)</li>
+                            <li>York Region Public Health: 1-800-361-5653</li>
+                            <li>Pediatrician for developmental concerns</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="expandable-section">
+                <div class="expandable-header" onclick="toggleExpand(this)">
+                    <h3>👨‍👦 Supporting Artin's Development</h3>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="expandable-content">
+                    <div class="success-section">
+                        <h3>✅ What Parents Can Do</h3>
+                        <ol>
+                            <li><strong>Responsive Parenting:</strong> Respond to cries and cues promptly (builds secure attachment)</li>
+                            <li><strong>Tummy Time:</strong> Daily practice from newborn period (prevents flat head, builds strength)</li>
+                            <li><strong>Talk & Sing:</strong> Constant narration of activities (language development)</li>
+                            <li><strong>Read Together:</strong> Even newborns benefit from hearing language rhythms</li>
+                            <li><strong>Safe Exploration:</strong> Baby-proof and allow freedom to move and explore</li>
+                            <li><strong>Limit Screen Time:</strong> AAP/CPS recommend zero screens under 18 months (except video calls)</li>
+                        </ol>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>👨 Father-Baby Bonding (Non-Feeding)</h3>
+                        <ul>
+                            <li>Skin-to-skin contact (regulates baby's temperature, heart rate)</li>
+                            <li>Bath time routine</li>
+                            <li>Baby-wearing during walks</li>
+                            <li>Reading books and singing songs</li>
+                            <li>Tummy time play sessions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="expandable-section">
+                <div class="expandable-header" onclick="toggleExpand(this)">
+                    <h3>📊 Growth Expectations</h3>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="expandable-content">
+                    <div class="info-section">
+                        <h3>📈 Average Growth (First Year)</h3>
+                        <ul>
+                            <li><strong>Weight:</strong> Birth weight doubles by 5-6 months, triples by 12 months</li>
+                            <li><strong>Length:</strong> Grows ~10 inches (25 cm) in first year</li>
+                            <li><strong>Head Circumference:</strong> Grows ~5 inches (12 cm) - important brain growth indicator</li>
+                        </ul>
+                    </div>
+
+                    <div class="success-section">
+                        <h3>🏥 Well-Baby Checkups (OHIP Covered)</h3>
+                        <p>2 weeks, 2 months, 4 months, 6 months, 9 months, 12 months</p>
+                        <p>Growth tracking, developmental screening, immunizations</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="expandable-section">
+                <div class="expandable-header" onclick="toggleExpand(this)">
+                    <h3>😴 Sleep Evolution</h3>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="expandable-content">
+                    <div class="milestone-card physical">
+                        <div class="milestone-header">
+                            <span class="milestone-icon">🌙</span>
+                            <h3 class="milestone-title">Newborn (0-3 months)</h3>
+                        </div>
+                        <div class="milestone-content">
+                            <ul>
+                                <li>14-17 hours/day, 2-4 hour stretches</li>
+                                <li>No circadian rhythm yet (develops ~3-4 months)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="milestone-card cognitive">
+                        <div class="milestone-header">
+                            <span class="milestone-icon">🌜</span>
+                            <h3 class="milestone-title">3-6 Months</h3>
+                        </div>
+                        <div class="milestone-content">
+                            <ul>
+                                <li>12-15 hours/day</li>
+                                <li>Longer nighttime stretches (4-6 hours)</li>
+                                <li>3-4 naps/day</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="milestone-card social">
+                        <div class="milestone-header">
+                            <span class="milestone-icon">💤</span>
+                            <h3 class="milestone-title">6-12 Months</h3>
+                        </div>
+                        <div class="milestone-content">
+                            <ul>
+                                <li>12-14 hours/day</li>
+                                <li>Consolidating to 2-3 naps</li>
+                                <li>May sleep through night (6-8 hour stretch)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p><strong>Sources:</strong> Canadian Paediatric Society (CPS), Health Canada, CDC 2022 Milestones, WHO Growth Standards, Attachment Theory (Bowlby/Ainsworth)</p>
+            <p>Created with love for Artin's journey | Generated: November 12, 2025</p>
+        </footer>
+    </article>
+
+    <script>
+        function toggleExpand(header) {
+            const section = header.parentElement;
+            section.classList.toggle('expanded');
+        }
+
+        // Auto-expand first section on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstExpandable = document.querySelector('.expandable-section');
+            if (firstExpandable) {
+                firstExpandable.classList.add('expanded');
+            }
+        });
+    </script>
+</body>
+</html>
