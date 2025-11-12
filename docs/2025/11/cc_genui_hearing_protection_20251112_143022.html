@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artin's Hearing Protection Muscle Development</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 10px;
+            background: #0d1117;
+            color: #c9d1d9;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        article {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+            padding: 30px 0;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #58a6ff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        header h1 {
+            margin: 0;
+            background: linear-gradient(135deg, #58a6ff 0%, #79c0ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            text-align: center;
+        }
+
+        header p {
+            text-align: center;
+            color: #8b949e;
+            margin: 12px 0 0 0;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        main {
+            animation: fadeInUp 0.7s ease-out;
+        }
+
+        section {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        section h2, section h3 {
+            margin-top: 0;
+            color: #58a6ff;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 8px;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .muscle-card {
+            background: linear-gradient(135deg, #1c2128 0%, #161b22 100%);
+            border: 2px solid #58a6ff;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .muscle-card:hover {
+            border-color: #79c0ff;
+            box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .muscle-card h3 {
+            margin-top: 0;
+            color: #79c0ff;
+            font-size: 1.3rem;
+            border: none;
+            padding: 0;
+        }
+
+        .muscle-card .emoji {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .muscle-card p {
+            margin: 12px 0;
+            line-height: 1.7;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 30px 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 30px;
+            animation: slideInLeft 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            background: #58a6ff;
+            border: 3px solid #0d1117;
+            border-radius: 50%;
+            box-shadow: 0 0 0 2px #58a6ff;
+        }
+
+        .timeline-item.active::before {
+            background: #3fb950;
+            box-shadow: 0 0 0 2px #3fb950;
+        }
+
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 32px;
+            width: 2px;
+            height: calc(100% + 30px);
+            background: linear-gradient(180deg, #58a6ff 0%, #30363d 100%);
+        }
+
+        .timeline-content {
+            background: #1c2128;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            border-color: #58a6ff;
+            box-shadow: 0 4px 12px rgba(88, 166, 255, 0.15);
+        }
+
+        .timeline-time {
+            color: #79c0ff;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .timeline-desc {
+            color: #c9d1d9;
+            margin-top: 6px;
+            font-size: 0.95rem;
+        }
+
+        .process-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .process-step {
+            background: linear-gradient(135deg, #1c2128 0%, #161b22 100%);
+            border: 2px solid #30363d;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            border-color: #58a6ff;
+            box-shadow: 0 0 20px rgba(88, 166, 255, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .step-number {
+            background: #58a6ff;
+            color: #0d1117;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto 12px;
+            font-size: 1.2rem;
+        }
+
+        .process-step p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .arrow {
+            display: none;
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #58a6ff;
+            font-size: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .process-flow {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .process-step:not(:last-child)::after {
+                content: '→';
+                position: absolute;
+                right: -24px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #58a6ff;
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.1) 0%, rgba(88, 166, 255, 0.05) 100%);
+            border: 2px solid #58a6ff;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            color: #79c0ff;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .stat-label {
+            color: #8b949e;
+            font-size: 0.9rem;
+            margin: 8px 0 0 0;
+        }
+
+        .info-section {
+            background: rgba(88, 166, 255, 0.1);
+            border-left: 4px solid #58a6ff;
+            border-radius: 0 8px 8px 0;
+            padding: 16px;
+            margin: 16px 0;
+        }
+
+        .info-section h4 {
+            color: #79c0ff;
+            margin-top: 0;
+        }
+
+        .warning-section {
+            background: rgba(210, 153, 34, 0.1);
+            border-left: 4px solid #d29922;
+            border-radius: 0 8px 8px 0;
+            padding: 16px;
+            margin: 16px 0;
+        }
+
+        .warning-section h4 {
+            color: #d29922;
+            margin-top: 0;
+        }
+
+        ul, ol {
+            line-height: 1.8;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        details {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 0;
+            margin: 16px 0;
+            cursor: pointer;
+        }
+
+        summary {
+            padding: 16px 20px;
+            font-weight: 600;
+            color: #58a6ff;
+            display: flex;
+            align-items: center;
+            transition: background 0.2s ease;
+            min-height: 48px;
+            user-select: none;
+        }
+
+        summary:hover {
+            background: #1c2128;
+        }
+
+        summary::marker {
+            color: #58a6ff;
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid #30363d;
+        }
+
+        details > *:not(summary) {
+            padding: 16px 20px;
+            border-top: 1px solid #30363d;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #30363d;
+            color: #8b949e;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            body {
+                padding: 30px;
+            }
+
+            article {
+                padding: 40px;
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            body {
+                padding: 40px;
+            }
+
+            article {
+                padding: 50px;
+                max-width: 1000px;
+            }
+
+            header {
+                padding: 40px 0;
+                margin-bottom: 40px;
+            }
+
+            header h1 {
+                font-size: 3rem;
+            }
+
+            section {
+                padding: 32px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .timeline-item {
+                padding-left: 32px;
+            }
+
+            .timeline-item::before {
+                left: 0;
+            }
+
+            .grid-container {
+                gap: 16px;
+            }
+
+            section {
+                padding: 16px;
+            }
+        }
+
+        .highlight {
+            background: rgba(88, 166, 255, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #79c0ff;
+        }
+
+        ::selection {
+            background: rgba(88, 166, 255, 0.3);
+            color: #ffffff;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0d1117;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #484f58;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <header>
+            <h1>Artin's Hearing Protection</h1>
+            <p>How the Protective Muscles of the Inner Ear Develop</p>
+        </header>
+
+        <main>
+            <!-- Overview Section -->
+            <section>
+                <h2>Overview: Your Built-in Sound Protection System</h2>
+                <p>The human ear has a remarkable natural defense mechanism that protects our hearing from loud sounds. Two small but mighty muscles work together to dampen dangerous noise levels and preserve our precious sense of hearing. Let's explore how Artin's protective muscles develop and function.</p>
+                <div class="info-section">
+                    <h4>Did You Know?</h4>
+                    <p>The stapedius muscle is the <strong>smallest skeletal muscle in the human body</strong>, yet it plays a critical role in hearing protection from the earliest days of life.</p>
+                </div>
+            </section>
+
+            <!-- The Two Protective Muscles -->
+            <section>
+                <h2>The Two Protective Muscles</h2>
+                <div class="grid-container">
+                    <div class="muscle-card">
+                        <div class="emoji">🛡️</div>
+                        <h3>Stapedius Muscle</h3>
+                        <p><strong>The External Protector</strong></p>
+                        <p>The smallest skeletal muscle in the human body, the stapedius protects against loud <span class="highlight">external sounds</span> from the environment. It connects to the stapes bone and dampens vibrations traveling through the middle ear.</p>
+                        <p><strong>Function:</strong> Reduces transmission of loud external noise by 15-20 dB</p>
+                    </div>
+                    <div class="muscle-card">
+                        <div class="emoji">👂</div>
+                        <h3>Tensor Tympani Muscle</h3>
+                        <p><strong>The Internal Protector</strong></p>
+                        <p>This muscle protects against sounds generated by our own actions—chewing, swallowing, and speaking. It connects to the malleus bone and controls the tension of the tympanum (eardrum).</p>
+                        <p><strong>Function:</strong> Protects inner ear from self-generated vibrations</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Development Timeline -->
+            <section>
+                <h2>Development Timeline: From Conception to Infancy</h2>
+                <p>The protective reflex develops gradually during pregnancy and the early months of life:</p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-time">6 Weeks Gestation</div>
+                            <div class="timeline-desc">Stapedius muscle tissue first becomes visible during early fetal development</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-time">29 Weeks Gestation</div>
+                            <div class="timeline-desc">The muscle structure is completely formed and ready for function</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item active">
+                        <div class="timeline-content">
+                            <div class="timeline-time">Day 1-2 After Birth</div>
+                            <div class="timeline-desc">The protective reflex is present in <strong>92.5%</strong> of newborns with thresholds of 85-96 dB HL</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item active">
+                        <div class="timeline-content">
+                            <div class="timeline-time">Week 6 of Life</div>
+                            <div class="timeline-desc">The reflex is present in <strong>95%</strong> of infants as the system continues to mature</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item active">
+                        <div class="timeline-content">
+                            <div class="timeline-time">12 Months (1 Year)</div>
+                            <div class="timeline-desc">Nearly <strong>100%</strong> presence with significantly improved thresholds—the protection is fully developed</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <p class="stat-number">6</p>
+                        <p class="stat-label">Weeks: First visible</p>
+                    </div>
+                    <div class="stat-box">
+                        <p class="stat-number">92.5%</p>
+                        <p class="stat-label">Present at birth</p>
+                    </div>
+                    <div class="stat-box">
+                        <p class="stat-number">95%</p>
+                        <p class="stat-label">By week 6</p>
+                    </div>
+                    <div class="stat-box">
+                        <p class="stat-number">100%</p>
+                        <p class="stat-label">By 12 months</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works -->
+            <section>
+                <h2>How the Protective Reflex Works</h2>
+                <p>The stapedial reflex (also called the acoustic reflex) is an automatic response that protects the inner ear from damage caused by loud sounds:</p>
+
+                <div class="process-flow">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <p><strong>Sound Detected</strong><br>Loud sound waves enter the ear canal</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <p><strong>Signal Travels</strong><br>Signal travels through auditory nerve (≈40ms delay)</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step">
+                        <div class="step-number">3</div>
+                        <p><strong>Muscles Contract</strong><br>Stapedius and tensor tympani contract</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <p><strong>Sound Dampened</strong><br>Vibrations reduced by 15-20 dB</p>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h4>Response Time</h4>
+                    <p>The acoustic reflex has a latency of approximately <strong>40 milliseconds</strong> from the time a loud sound is detected. This is why sudden, explosive sounds can still cause hearing damage—the reflex can't respond fast enough to prevent the initial shock.</p>
+                </div>
+            </section>
+
+            <!-- Important Limitations -->
+            <section>
+                <h2>Important Limitations of the Reflex</h2>
+
+                <div class="warning-section">
+                    <h4>Not Perfect Protection</h4>
+                    <p>While the hearing protection muscles are amazing, they have important limitations you should understand:</p>
+                </div>
+
+                <details>
+                    <summary>❌ Not Fast Enough for Sudden Explosions</summary>
+                    <p>The 40-millisecond delay means sudden, explosive sounds (fireworks, gunshots, backfires) can damage the inner ear before the protective reflex engages. This is why ear protection for loud events is so important.</p>
+                </details>
+
+                <details>
+                    <summary>✓ More Effective for Sustained Sounds</summary>
+                    <p>The reflex works best for ongoing loud sounds like machinery, concerts, or heavy traffic. Once activated, it provides continuous 15-20 dB of protection for as long as the loud sound persists.</p>
+                </details>
+
+                <details>
+                    <summary>📈 Continues Maturing Throughout First Year</summary>
+                    <p>Although present at birth in most infants, the protective reflex isn't fully mature and efficient until around 12 months of age. Thresholds improve significantly as the neural pathways develop and the muscles strengthen.</p>
+                </details>
+
+                <div class="info-section">
+                    <h4>Protection Threshold During Development</h4>
+                    <ul>
+                        <li><strong>At birth (Day 1-2):</strong> 85-96 dB HL threshold</li>
+                        <li><strong>At week 6:</strong> Improving but still developing</li>
+                        <li><strong>At 12 months:</strong> Near-adult levels with much lower thresholds</li>
+                    </ul>
+                    <p><em>Lower thresholds mean the reflex activates at quieter sound levels, providing more sensitive protection.</em></p>
+                </div>
+            </section>
+
+            <!-- Key Takeaways -->
+            <section>
+                <h2>Key Takeaways About Artin's Hearing Protection</h2>
+                <ul>
+                    <li>The <strong>stapedius</strong> is the body's smallest skeletal muscle but plays a crucial role in hearing protection</li>
+                    <li>The protective reflex develops early in pregnancy and is functional in <strong>92.5% of newborns</strong></li>
+                    <li>It provides <strong>15-20 dB of sound dampening</strong> for sustained loud sounds</li>
+                    <li>The reflex has a <strong>40-millisecond delay</strong>—too slow for sudden explosions</li>
+                    <li>Protection continues to improve throughout the <strong>first year of life</strong></li>
+                    <li>While helpful, this natural protection is not sufficient against all loud sounds—external ear protection (earplugs, earmuffs) is often necessary for extremely loud environments</li>
+                </ul>
+            </section>
+
+            <!-- Medical Context -->
+            <section>
+                <h2>Clinical Significance</h2>
+                <p>The acoustic reflex is so important that doctors test it as part of hearing evaluations:</p>
+                <ul>
+                    <li><strong>Acoustic reflex testing</strong> helps diagnose problems with the middle ear, facial nerve, or the reflex arc itself</li>
+                    <li><strong>Absent reflexes</strong> in newborns can indicate hearing loss or middle ear issues requiring further investigation</li>
+                    <li><strong>Development monitoring</strong> helps track normal hearing system maturation in infants</li>
+                    <li>The reflex's presence confirms the integrity of the entire hearing pathway from the cochlea to the brainstem</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>Infographic created with care about the remarkable biological systems that protect our hearing. Remember to protect your ears in loud environments!</p>
+        </footer>
+    </article>
+</body>
+</html>
