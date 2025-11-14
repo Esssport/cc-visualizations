@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newborn Visitor Safety Guide - Artin Izadjoo</title>
+    <style>
+        /* Base mobile-first styles */
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #c9d1d9;
+            background: #0d1117;
+            margin: 0;
+            padding: 10px;
+            min-height: 100vh;
+        }
+
+        article {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 15px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header styling */
+        header {
+            background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+            padding: 30px 20px;
+            margin: -15px -15px 30px -15px;
+            border-bottom: 3px solid #58a6ff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            background: linear-gradient(135deg, #58a6ff 0%, #79c0ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+        }
+
+        .baby-info {
+            background: rgba(88, 166, 255, 0.1);
+            border: 2px solid #58a6ff;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0 0 0;
+            display: inline-block;
+        }
+
+        .baby-info p {
+            margin: 5px 0;
+            font-size: 1rem;
+            color: #c9d1d9;
+        }
+
+        .baby-info strong {
+            color: #58a6ff;
+        }
+
+        /* Alert banner */
+        .seasonal-alert {
+            background: linear-gradient(135deg, rgba(248, 81, 73, 0.15) 0%, rgba(248, 81, 73, 0.05) 100%);
+            border: 2px solid #f85149;
+            border-left: 6px solid #f85149;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: 0 4px 6px rgba(248, 81, 73, 0.2);
+        }
+
+        .seasonal-alert h2 {
+            margin: 0 0 10px 0;
+            color: #f85149;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Timeline container */
+        .timeline-section {
+            margin: 40px 0;
+        }
+
+        .timeline-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .timeline-card {
+            background: #161b22;
+            border: 2px solid #30363d;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color) 0%, transparent 100%);
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .timeline-card.strict {
+            --accent-color: #f85149;
+            border-color: #f85149;
+        }
+
+        .timeline-card.cautious {
+            --accent-color: #d29922;
+            border-color: #d29922;
+        }
+
+        .timeline-card.moderate {
+            --accent-color: #58a6ff;
+            border-color: #58a6ff;
+        }
+
+        .timeline-card.relaxed {
+            --accent-color: #79c0ff;
+            border-color: #79c0ff;
+        }
+
+        .timeline-card.normal {
+            --accent-color: #3fb950;
+            border-color: #3fb950;
+        }
+
+        .timeline-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .timeline-age {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #58a6ff;
+        }
+
+        .risk-badge {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .risk-badge.strict {
+            background: rgba(248, 81, 73, 0.2);
+            color: #f85149;
+            border: 1px solid #f85149;
+        }
+
+        .risk-badge.cautious {
+            background: rgba(210, 153, 34, 0.2);
+            color: #d29922;
+            border: 1px solid #d29922;
+        }
+
+        .risk-badge.moderate {
+            background: rgba(88, 166, 255, 0.2);
+            color: #58a6ff;
+            border: 1px solid #58a6ff;
+        }
+
+        .risk-badge.relaxed {
+            background: rgba(121, 192, 255, 0.2);
+            color: #79c0ff;
+            border: 1px solid #79c0ff;
+        }
+
+        .risk-badge.normal {
+            background: rgba(63, 185, 80, 0.2);
+            color: #3fb950;
+            border: 1px solid #3fb950;
+        }
+
+        .timeline-card p {
+            margin: 10px 0;
+            line-height: 1.8;
+        }
+
+        /* Section styling */
+        section {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        section h2 {
+            margin-top: 0;
+            color: #58a6ff;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 12px;
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+        }
+
+        /* Grid layouts for cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .card {
+            background: #1c2128;
+            border: 1px solid #30363d;
+            border-left: 4px solid var(--card-accent, #58a6ff);
+            border-radius: 6px;
+            padding: 20px;
+            transition: all 0.2s ease;
+        }
+
+        .card:hover {
+            background: #21262d;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h3 {
+            margin: 0 0 15px 0;
+            color: var(--card-accent, #58a6ff);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card.safe {
+            --card-accent: #3fb950;
+        }
+
+        .card.avoid {
+            --card-accent: #f85149;
+        }
+
+        .card ul {
+            margin: 10px 0;
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+
+        .card li {
+            margin: 8px 0;
+        }
+
+        /* Protocol checklist */
+        .protocol-checklist {
+            background: #1c2128;
+            border: 2px solid #58a6ff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .protocol-checklist h3 {
+            margin: 0 0 20px 0;
+            color: #58a6ff;
+            font-size: 1.3rem;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #30363d;
+        }
+
+        .protocol-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            margin: 10px 0;
+            background: #161b22;
+            border-radius: 6px;
+            border-left: 4px solid #58a6ff;
+            transition: all 0.2s ease;
+        }
+
+        .protocol-item:hover {
+            background: #1c2128;
+            box-shadow: 0 2px 8px rgba(88, 166, 255, 0.2);
+        }
+
+        .protocol-number {
+            background: linear-gradient(135deg, #58a6ff 0%, #4184e4 100%);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.2rem;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 2px 4px rgba(88, 166, 255, 0.3);
+        }
+
+        .protocol-text {
+            flex: 1;
+            line-height: 1.8;
+        }
+
+        .protocol-text strong {
+            color: #58a6ff;
+        }
+
+        /* Emergency section */
+        .emergency-section {
+            background: linear-gradient(135deg, rgba(248, 81, 73, 0.15) 0%, rgba(248, 81, 73, 0.05) 100%);
+            border: 3px solid #f85149;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(248, 81, 73, 0.3);
+        }
+
+        .emergency-section h2 {
+            margin: 0 0 20px 0;
+            color: #f85149;
+            font-size: 2rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .emergency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .emergency-card {
+            background: #161b22;
+            border: 2px solid #f85149;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .emergency-card h3 {
+            margin: 0 0 15px 0;
+            color: #f85149;
+            font-size: 1.3rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #30363d;
+        }
+
+        .emergency-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .emergency-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid #30363d;
+            line-height: 1.8;
+        }
+
+        .emergency-card li:last-child {
+            border-bottom: none;
+        }
+
+        .phone-number {
+            display: inline-block;
+            background: rgba(88, 166, 255, 0.1);
+            color: #58a6ff;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: 1px solid #58a6ff;
+            margin-left: 10px;
+        }
+
+        /* Alternatives section */
+        .alternatives {
+            background: rgba(63, 185, 80, 0.1);
+            border: 2px solid #3fb950;
+            border-left: 6px solid #3fb950;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .alternatives h3 {
+            margin: 0 0 15px 0;
+            color: #3fb950;
+            font-size: 1.3rem;
+        }
+
+        .alternatives ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .alternatives li {
+            background: #161b22;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .alternatives li:hover {
+            background: #1c2128;
+            border-color: #3fb950;
+            transform: translateX(5px);
+        }
+
+        /* Parent rights callout */
+        .parent-rights {
+            background: linear-gradient(135deg, rgba(210, 153, 34, 0.15) 0%, rgba(210, 153, 34, 0.05) 100%);
+            border: 3px solid #d29922;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 4px 8px rgba(210, 153, 34, 0.2);
+        }
+
+        .parent-rights h2 {
+            margin: 0 0 20px 0;
+            color: #d29922;
+            font-size: 1.8rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .parent-rights ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .parent-rights li {
+            padding: 15px;
+            margin: 10px 0;
+            background: #161b22;
+            border-left: 4px solid #d29922;
+            border-radius: 6px;
+            line-height: 1.8;
+            transition: all 0.2s ease;
+        }
+
+        .parent-rights li:hover {
+            background: #1c2128;
+            transform: translateX(5px);
+        }
+
+        .parent-rights li::before {
+            content: '✓';
+            color: #d29922;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-right: 10px;
+        }
+
+        /* Responsive text */
+        h1 {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            word-wrap: break-word;
+        }
+
+        h2 {
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            word-wrap: break-word;
+        }
+
+        h3 {
+            font-size: clamp(1rem, 3vw, 1.4rem);
+            word-wrap: break-word;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            padding: 20px 0;
+            border-top: 1px solid #30363d;
+            color: #8b949e;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* Selection styling */
+        ::selection {
+            background: rgba(88, 166, 255, 0.3);
+            color: #ffffff;
+        }
+
+        ::-moz-selection {
+            background: rgba(88, 166, 255, 0.3);
+            color: #ffffff;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0d1117;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 6px;
+            border: 2px solid #0d1117;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #484f58;
+        }
+
+        /* iPad Portrait (768px - 1023px) */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            body {
+                padding: 30px;
+            }
+
+            article {
+                padding: 40px;
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            .timeline-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* iPad Landscape & iPad Pro Portrait (1024px - 1365px) */
+        @media (min-width: 1024px) and (max-width: 1365px) {
+            body {
+                padding: 40px;
+            }
+
+            article {
+                padding: 50px;
+                max-width: 1000px;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2.25rem;
+            }
+
+            .timeline-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .protocol-item,
+            .alternatives li,
+            button {
+                min-height: 48px;
+            }
+        }
+
+        /* iPad Pro Landscape & Desktop (1366px+) */
+        @media (min-width: 1366px) {
+            body {
+                padding: 40px;
+            }
+
+            article {
+                max-width: 1200px;
+                padding: 60px;
+            }
+        }
+
+        /* Mobile-specific adjustments */
+        @media (max-width: 767px) {
+            .timeline-container,
+            .card-grid,
+            .emergency-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .alternatives ul {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .baby-info {
+                display: block;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <header>
+            <h1>🍼 Newborn Visitor Safety Guide</h1>
+            <div class="baby-info">
+                <p><strong>Baby:</strong> Artin Izadjoo</p>
+                <p><strong>Age:</strong> 6 days old</p>
+                <p><strong>Current Date:</strong> November 14, 2025</p>
+                <p><strong>Season:</strong> Peak RSV Season in Ontario</p>
+            </div>
+        </header>
+
+        <main>
+            <div class="seasonal-alert">
+                <h2>🚨 SEASONAL ALERT: November in Ontario</h2>
+                <p><strong>This is HIGH RISK season for respiratory illnesses:</strong></p>
+                <ul>
+                    <li><strong>RSV peaks November-March</strong> - Leading cause of infant hospitalization</li>
+                    <li><strong>Flu season active</strong> - Newborns can't get vaccine until 6 months</li>
+                    <li><strong>COVID-19 still circulating</strong> - Extra precautions needed</li>
+                    <li><strong>Increased visitor restrictions</strong> - Protocols are non-negotiable during this period</li>
+                </ul>
+            </div>
+
+            <section class="timeline-section">
+                <h2>📅 Visitor Timeline (0-6 Months)</h2>
+                <p>Visitor restrictions change as your baby develops immunity. Follow this timeline carefully:</p>
+
+                <div class="timeline-container">
+                    <div class="timeline-card strict">
+                        <div class="timeline-header">
+                            <span class="timeline-age">0-2 Weeks</span>
+                            <span class="risk-badge strict">STRICT</span>
+                        </div>
+                        <p><strong>Current Status: Artin is HERE</strong></p>
+                        <p><strong>Immediate family only</strong> with strong protocols. This is the most vulnerable period.</p>
+                        <ul>
+                            <li>No exceptions to visitor rules</li>
+                            <li>All protocols mandatory</li>
+                            <li>No large gatherings</li>
+                            <li>Limit exposure to 2-3 people max</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-card cautious">
+                        <div class="timeline-header">
+                            <span class="timeline-age">2-8 Weeks</span>
+                            <span class="risk-badge cautious">CAUTIOUS</span>
+                        </div>
+                        <p><strong>Close family/friends only</strong> - maintain all protocols.</p>
+                        <ul>
+                            <li>30-60 minute visits</li>
+                            <li>2-3 visitors at a time</li>
+                            <li>All safety protocols still apply</li>
+                            <li>No sick visitors</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-card moderate">
+                        <div class="timeline-header">
+                            <span class="timeline-age">2 Months</span>
+                            <span class="risk-badge moderate">MODERATE</span>
+                        </div>
+                        <p><strong>First vaccines received</strong> - slightly lower risk but still cautious.</p>
+                        <ul>
+                            <li>DTaP, Hib, Polio vaccines received</li>
+                            <li>Can expand visitor circle slightly</li>
+                            <li>Protocols still important</li>
+                            <li>Monitor for vaccine reactions</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-card relaxed">
+                        <div class="timeline-header">
+                            <span class="timeline-age">3-4 Months</span>
+                            <span class="risk-badge relaxed">RELAXED</span>
+                        </div>
+                        <p><strong>More social interactions</strong> - still no kissing/sick visitors.</p>
+                        <ul>
+                            <li>Can attend small gatherings</li>
+                            <li>Longer visits okay</li>
+                            <li>Hand washing still required</li>
+                            <li>No face/hand kissing</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-card normal">
+                        <div class="timeline-header">
+                            <span class="timeline-age">6 Months</span>
+                            <span class="risk-badge normal">NORMAL</span>
+                        </div>
+                        <p><strong>Most social situations okay</strong> - flu vaccine received.</p>
+                        <ul>
+                            <li>Full vaccination schedule (except annual)</li>
+                            <li>Stronger immune system</li>
+                            <li>More resilient to minor illnesses</li>
+                            <li>Can travel and socialize more freely</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>🔒 Non-Negotiable Safety Protocols</h2>
+                <p><strong>These rules apply to EVERY visitor, no exceptions:</strong></p>
+
+                <div class="protocol-checklist">
+                    <h3>✓ Required for All Visitors</h3>
+
+                    <div class="protocol-item">
+                        <div class="protocol-number">1</div>
+                        <div class="protocol-text">
+                            <strong>Hand Washing (20 seconds)</strong> - Soap and water before holding baby. No hand sanitizer as substitute.
+                        </div>
+                    </div>
+
+                    <div class="protocol-item">
+                        <div class="protocol-number">2</div>
+                        <div class="protocol-text">
+                            <strong>NO KISSING</strong> - Face, hands, mouth are OFF LIMITS. HSV (herpes) can be fatal to newborns.
+                        </div>
+                    </div>
+
+                    <div class="protocol-item">
+                        <div class="protocol-number">3</div>
+                        <div class="protocol-text">
+                            <strong>Masks Recommended</strong> - Especially during November RSV/flu season. Required if any symptoms.
+                        </div>
+                    </div>
+
+                    <div class="protocol-item">
+                        <div class="protocol-number">4</div>
+                        <div class="protocol-text">
+                            <strong>Required Vaccinations:</strong>
+                            <ul style="margin: 10px 0 0 0; padding-left: 20px;">
+                                <li>Tdap (whooping cough) - within last 10 years</li>
+                                <li>Flu vaccine (current season)</li>
+                                <li>COVID-19 up to date</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="protocol-item">
+                        <div class="protocol-number">5</div>
+                        <div class="protocol-text">
+                            <strong>No Sick Visitors</strong> - Reschedule if unwell. Even mild cold symptoms = stay home.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>👥 Visitor Guidelines</h2>
+
+                <div class="card-grid">
+                    <div class="card safe">
+                        <h3>✅ Safe to Have (with protocols)</h3>
+                        <ul>
+                            <li><strong>Immediate household members</strong> - Parents, siblings living in home</li>
+                            <li><strong>Essential support</strong> - Grandparents helping with recovery</li>
+                            <li><strong>Close family</strong> - If healthy and vaccinated</li>
+                            <li><strong>Limit:</strong> 2-3 visitors at a time</li>
+                            <li><strong>Duration:</strong> 30-60 minute visits</li>
+                        </ul>
+                    </div>
+
+                    <div class="card avoid">
+                        <h3>🚫 Avoid</h3>
+                        <ul>
+                            <li><strong>Large gatherings</strong> - Too many infection vectors</li>
+                            <li><strong>Anyone with symptoms</strong> - Even mild cold symptoms</li>
+                            <li><strong>Unvaccinated individuals</strong> - No exceptions</li>
+                            <li><strong>Young children from daycare/school</strong> - Common RSV carriers</li>
+                            <li><strong>Non-essential visitors</strong> - Can wait 2-4 weeks</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alternatives">
+                    <h3>💡 Visitor Alternatives</h3>
+                    <ul>
+                        <li>📹 Video calls (FaceTime, Zoom)</li>
+                        <li>🌳 Outdoor visits (weather permitting)</li>
+                        <li>🪟 Window visits</li>
+                        <li>📱 Daily photo/video updates</li>
+                        <li>⏳ Delay visits 2-4 weeks</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="emergency-section">
+                <h2>🚨 Emergency Guidelines</h2>
+
+                <div class="emergency-grid">
+                    <div class="emergency-card">
+                        <h3>CALL 911 IMMEDIATELY</h3>
+                        <ul>
+                            <li><strong>Fever ≥100.4°F (38°C)</strong> - Any fever in newborn is emergency</li>
+                            <li><strong>Difficulty breathing</strong> - Rapid breathing, grunting, flaring nostrils</li>
+                            <li><strong>Blue/gray skin</strong> - Especially lips, face, or extremities</li>
+                            <li><strong>Won't wake for feeding</strong> - Lethargic or unresponsive</li>
+                            <li><strong>Seizure activity</strong> - Any unusual movements or stiffness</li>
+                        </ul>
+                    </div>
+
+                    <div class="emergency-card">
+                        <h3>CALL TELEHEALTH 811</h3>
+                        <ul>
+                            <li><strong>Persistent cough</strong> - Especially if worsening</li>
+                            <li><strong>Feeding refusal</strong> - Missing multiple feedings</li>
+                            <li><strong>Excessive fussiness</strong> - Inconsolable crying for hours</li>
+                            <li><strong>Decreased wet diapers</strong> - Less than 6 per day</li>
+                            <li><strong>Unusual symptoms</strong> - When unsure about severity</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="background: #161b22; border: 2px solid #58a6ff; border-radius: 8px; padding: 20px; margin-top: 20px;">
+                    <h3 style="margin: 0 0 15px 0; color: #58a6ff; text-align: center;">📞 Ontario Emergency Resources</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="padding: 10px 0; border-bottom: 1px solid #30363d;">
+                            <strong>Telehealth Ontario:</strong>
+                            <span class="phone-number">811</span>
+                            <span style="color: #8b949e; margin-left: 10px;">(24/7 nurse advice)</span>
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #30363d;">
+                            <strong>York Region Health Connection:</strong>
+                            <span class="phone-number">1-800-361-5653</span>
+                        </li>
+                        <li style="padding: 10px 0;">
+                            <strong>Healthy Babies Healthy Children:</strong> Public health nurse home visits
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="parent-rights">
+                <h2>💪 Your Rights as Parents</h2>
+                <p style="text-align: center; margin-bottom: 20px; font-style: italic; color: #d29922;">
+                    Your baby's safety matters more than anyone's feelings.
+                </p>
+                <ul>
+                    <li>You can say NO to any visitor at any time</li>
+                    <li>You can require masks, hand washing, and vaccination proof</li>
+                    <li>You can ask sick visitors to leave immediately</li>
+                    <li>Your baby's safety always comes first - no exceptions</li>
+                    <li>Your recovery matters too (breastfeeding, sleep, healing)</li>
+                    <li>You don't owe anyone an explanation for your boundaries</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <p><strong>Remember:</strong> These guidelines are designed to protect Artin during his most vulnerable weeks.</p>
+            <p>When in doubt, err on the side of caution. Trust your instincts as parents.</p>
+            <p style="margin-top: 20px; color: #58a6ff;">Generated: November 14, 2025 | Peak RSV Season</p>
+        </footer>
+    </article>
+</body>
+</html>
