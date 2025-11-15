@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artin's Developmental Journey: The First Year</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.8;
+            color: #c9d1d9;
+            background: #0d1117;
+            margin: 0;
+            padding: 10px;
+            min-height: 100vh;
+        }
+
+        /* Main Container */
+        article {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #161b22;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            animation: fadeInUp 0.6s ease-out;
+            padding: 15px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header Styling */
+        header {
+            background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+            padding: 40px;
+            margin: -15px -15px 30px -15px;
+            border-radius: 12px 12px 0 0;
+            border-bottom: 3px solid #58a6ff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #58a6ff 0%, #79c0ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        header .subtitle {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            color: #8b949e;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .meta-item {
+            background: rgba(88, 166, 255, 0.1);
+            border: 1px solid #58a6ff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: #58a6ff;
+            font-weight: 600;
+        }
+
+        /* Main Content Area */
+        main {
+            padding: 20px;
+        }
+
+        /* Typography */
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            color: #58a6ff;
+            margin: 40px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #30363d;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            color: #79c0ff;
+            margin: 30px 0 15px 0;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+
+        strong {
+            color: #e6edf3;
+            font-weight: 600;
+        }
+
+        /* Introduction Section */
+        .intro-section {
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.15) 0%, rgba(88, 166, 255, 0.05) 100%);
+            border-left: 4px solid #58a6ff;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(88, 166, 255, 0.2);
+        }
+
+        .intro-section h2 {
+            border-bottom: none;
+            margin-top: 0;
+        }
+
+        /* Phase Sections with Collapsible Details */
+        .phase-section {
+            margin: 30px 0;
+        }
+
+        details {
+            background: #1c2128;
+            border: 2px solid #30363d;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: #58a6ff;
+            box-shadow: 0 4px 16px rgba(88, 166, 255, 0.15);
+        }
+
+        summary {
+            padding: 24px 30px;
+            cursor: pointer;
+            user-select: none;
+            background: linear-gradient(135deg, #21262d 0%, #1c2128 100%);
+            font-weight: 700;
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            min-height: 64px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            color: #58a6ff;
+        }
+
+        summary:hover {
+            background: linear-gradient(135deg, #2d333b 0%, #21262d 100%);
+        }
+
+        summary::marker {
+            color: #58a6ff;
+            font-size: 1.5rem;
+        }
+
+        summary .emoji {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+
+        summary .phase-title {
+            flex: 1;
+        }
+
+        summary .phase-subtitle {
+            font-size: 0.85em;
+            color: #8b949e;
+            font-weight: 400;
+            margin-left: 10px;
+        }
+
+        details[open] summary {
+            background: linear-gradient(135deg, #1c2128 0%, #161b22 100%);
+            border-bottom: 3px solid #58a6ff;
+        }
+
+        details > div {
+            padding: 30px;
+        }
+
+        /* Brain Icon Animation */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        summary:hover .emoji {
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        /* Subsection Styling */
+        .subsection {
+            background: rgba(22, 27, 34, 0.5);
+            border-left: 3px solid #3fb950;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .subsection h3 {
+            margin-top: 0;
+            color: #3fb950;
+        }
+
+        .subsection.brain {
+            border-left-color: #d2a8ff;
+        }
+
+        .subsection.brain h3 {
+            color: #d2a8ff;
+        }
+
+        .subsection.sensory {
+            border-left-color: #ffa657;
+        }
+
+        .subsection.sensory h3 {
+            color: #ffa657;
+        }
+
+        .subsection.motor {
+            border-left-color: #f85149;
+        }
+
+        .subsection.motor h3 {
+            color: #f85149;
+        }
+
+        .subsection.cognitive {
+            border-left-color: #79c0ff;
+        }
+
+        .subsection.cognitive h3 {
+            color: #79c0ff;
+        }
+
+        .subsection.social {
+            border-left-color: #ff7b72;
+        }
+
+        .subsection.social h3 {
+            color: #ff7b72;
+        }
+
+        .subsection.action {
+            border-left-color: #3fb950;
+        }
+
+        .subsection.action h3 {
+            color: #3fb950;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        li {
+            margin: 10px 0;
+            line-height: 1.8;
+        }
+
+        li::marker {
+            color: #58a6ff;
+        }
+
+        /* Highlight Box */
+        .highlight {
+            background: rgba(63, 185, 80, 0.15);
+            border: 1px solid #3fb950;
+            border-left: 4px solid #3fb950;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .highlight strong {
+            color: #3fb950;
+        }
+
+        /* Current Status Box */
+        .current-status {
+            background: linear-gradient(135deg, rgba(255, 166, 87, 0.2) 0%, rgba(255, 166, 87, 0.05) 100%);
+            border: 2px solid #ffa657;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(255, 166, 87, 0.2);
+        }
+
+        .current-status::before {
+            content: "⭐ ";
+            font-size: 1.5em;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            padding: 30px;
+            border-top: 2px solid #30363d;
+            text-align: center;
+            color: #8b949e;
+            font-size: 14px;
+        }
+
+        .celebration {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        /* Selection Styling */
+        ::selection {
+            background: rgba(88, 166, 255, 0.3);
+            color: #ffffff;
+        }
+
+        ::-moz-selection {
+            background: rgba(88, 166, 255, 0.3);
+            color: #ffffff;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0d1117;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 6px;
+            border: 2px solid #0d1117;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #484f58;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            body {
+                padding: 30px;
+            }
+
+            article {
+                padding: 20px;
+            }
+
+            header {
+                padding: 50px 40px;
+                margin: -20px -20px 40px -20px;
+            }
+
+            main {
+                padding: 30px;
+            }
+
+            summary {
+                padding: 28px 35px;
+                font-size: 1.5rem;
+            }
+
+            details > div {
+                padding: 35px;
+            }
+        }
+
+        @media (min-width: 1024px) and (max-width: 1365px) {
+            body {
+                padding: 40px;
+            }
+
+            article {
+                padding: 30px;
+            }
+
+            header {
+                padding: 60px 50px;
+                margin: -30px -30px 50px -30px;
+            }
+
+            main {
+                padding: 40px;
+            }
+
+            summary {
+                padding: 30px 40px;
+                font-size: 1.6rem;
+                min-height: 72px;
+            }
+
+            details > div {
+                padding: 40px;
+            }
+        }
+
+        @media (min-width: 1366px) {
+            article {
+                max-width: 1200px;
+                padding: 40px;
+            }
+
+            header {
+                padding: 70px 60px;
+                margin: -40px -40px 60px -40px;
+            }
+
+            main {
+                padding: 50px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .meta-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            summary .phase-subtitle {
+                display: none;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+
+            article {
+                box-shadow: none;
+                background: white;
+            }
+
+            details {
+                border: 1px solid #ccc;
+            }
+
+            details[open] summary ~ * {
+                display: block;
+            }
+
+            summary::marker {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <header>
+            <h1>🧠 Artin's Developmental Journey</h1>
+            <div class="subtitle">A Biology-Focused Roadmap of Brain and Body Development</div>
+            <div class="meta-info">
+                <div class="meta-item">📅 Born: November 8, 2025</div>
+                <div class="meta-item">👶 Current Age: 7 days old</div>
+                <div class="meta-item">🎯 Journey Ahead: 12 months</div>
+            </div>
+        </header>
+
+        <main>
+            <section class="intro-section">
+                <h2>🚀 The Neurological Adventure Begins</h2>
+                <p>Welcome to the most extraordinary year of brain development in Artin's entire life. During these first 12 months, his brain will create <strong>over 1 million new neural connections every single second</strong>, sculpting a network more complex than the internet itself. This roadmap explores the fascinating biology behind each milestone and what you can do to support this incredible journey.</p>
+            </section>
+
+            <div class="phase-section">
+                <details open>
+                    <summary>
+                        <span class="emoji">🌟</span>
+                        <span class="phase-title">Phase 1: Newborn (0-3 Months) <span class="phase-subtitle">"The Neural Explosion"</span></span>
+                    </summary>
+                    <div>
+                        <div class="current-status">
+                            <strong>Current Status:</strong> Artin is here! At 7 days old, his brain is already hard at work.
+                        </div>
+
+                        <div class="subsection brain">
+                            <h3>🧠 Brain Development: The Foundation</h3>
+
+                            <p><strong>Synaptic Genesis</strong></p>
+                            <ul>
+                                <li><strong>1 million synapses forming per second</strong> - Artin's brain is creating connections at a rate he'll never experience again</li>
+                                <li><strong>Synaptic density:</strong> At birth, ~50 trillion connections; by 3 months, ~100 trillion (twice an adult brain!)</li>
+                                <li><strong>Myelination begins:</strong> Axons start wrapping in fatty myelin sheaths, speeding up signal transmission from 2 mph to 200 mph</li>
+                                <li><strong>Brain weight:</strong> Will increase from ~350g at birth to ~550g by 3 months (60% growth!)</li>
+                            </ul>
+
+                            <p><strong>Critical Brain Regions Active:</strong></p>
+                            <ul>
+                                <li><strong>Brainstem:</strong> Fully operational - controls breathing, heart rate, sleep-wake cycles</li>
+                                <li><strong>Cerebellum:</strong> Beginning to coordinate reflexes and early motor patterns</li>
+                                <li><strong>Primary sensory cortices:</strong> Processing touch, sound, taste, smell</li>
+                                <li><strong>Visual cortex:</strong> Under construction - wiring up rapidly</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection sensory">
+                            <h3>👁️ Sensory Awakening</h3>
+
+                            <p><strong>Vision Development</strong></p>
+                            <ul>
+                                <li><strong>Week 1 (NOW):</strong> Vision is 20/400 (legally blind by adult standards)
+                                    <ul>
+                                        <li>Can see 8-12 inches clearly - perfect for seeing parent's face during feeding</li>
+                                        <li>Prefers high-contrast patterns (black/white) and faces</li>
+                                        <li>Retinal ganglion cells are forming connections to lateral geniculate nucleus</li>
+                                    </ul>
+                                </li>
+                                <li><strong>By 1 month:</strong> Starting to track moving objects with jerky eye movements</li>
+                                <li><strong>By 2-3 months:</strong> Vision improves to 20/100, smooth visual tracking develops
+                                    <ul>
+                                        <li>V1 (primary visual cortex) neurons are fine-tuning their orientation selectivity</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <p><strong>Auditory System</strong></p>
+                            <ul>
+                                <li><strong>Already mature!</strong> Inner ear fully functional at birth</li>
+                                <li>Cochlear hair cells convert sound to electrical signals</li>
+                                <li>Auditory cortex is mapping sound frequencies and recognizing voices</li>
+                                <li><strong>Preference:</strong> High-pitched "parentese" activates reward centers more than normal speech</li>
+                            </ul>
+
+                            <p><strong>Tactile & Vestibular</strong></p>
+                            <ul>
+                                <li><strong>Skin is richest sensory organ:</strong> 5 million touch receptors sending constant data</li>
+                                <li><strong>Vestibular system (inner ear balance):</strong> Detecting head position and movement</li>
+                                <li><strong>Why babies love being held:</strong> Touch releases oxytocin, reduces cortisol stress hormones</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection motor">
+                            <h3>🤸 Motor Development: Reflexes to Control</h3>
+
+                            <p><strong>Primitive Reflexes (Subcortical - Automatic)</strong></p>
+                            <ul>
+                                <li><strong>Rooting reflex:</strong> Touch cheek → turns head to find nipple (medulla controls this)</li>
+                                <li><strong>Moro reflex:</strong> Startle response - arms extend then curl in (protective)</li>
+                                <li><strong>Grasp reflex:</strong> Hand closes around finger (spinal cord circuit)</li>
+                                <li><strong>These will disappear by 3-6 months</strong> as cortex takes over voluntary control</li>
+                            </ul>
+
+                            <p><strong>Emerging Motor Control</strong></p>
+                            <ul>
+                                <li><strong>Tummy time magic:</strong> Strengthens neck muscles AND stimulates vestibular system
+                                    <ul>
+                                        <li>By 1 month: Lifts head briefly (motor cortex neurons firing)</li>
+                                        <li>By 2 months: Holds head up 45° (cerebellar coordination improving)</li>
+                                        <li>By 3 months: Pushes up on forearms (pectorals and core activating)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection cognitive">
+                            <h3>🧩 Cognitive Development</h3>
+
+                            <p><strong>Learning & Memory</strong></p>
+                            <ul>
+                                <li><strong>Hippocampus:</strong> Not fully mature, but forming implicit memories
+                                    <ul>
+                                        <li>Recognizes mother's voice, smell, face</li>
+                                        <li>Classical conditioning works (smell + feeding = anticipatory rooting)</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Habituation:</strong> Learns to ignore repeated stimuli (neural efficiency)</li>
+                                <li><strong>Preference for novelty:</strong> Shows longer looking times at new patterns</li>
+                            </ul>
+
+                            <p><strong>Sleep Architecture</strong></p>
+                            <ul>
+                                <li><strong>50% REM sleep</strong> (vs 20% in adults) - brain is pruning synapses and consolidating learning</li>
+                                <li><strong>Polyphasic sleep:</strong> 16-18 hours/day in short cycles (circadian rhythm not yet established)</li>
+                                <li><strong>Suprachiasmatic nucleus (SCN):</strong> Starting to respond to light/dark cues</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection social">
+                            <h3>💝 Social-Emotional Development</h3>
+
+                            <p><strong>Attachment Biology</strong></p>
+                            <ul>
+                                <li><strong>Oxytocin surges</strong> during skin-to-skin contact, feeding, eye contact</li>
+                                <li><strong>Mirror neurons:</strong> Beginning to activate when seeing parent's facial expressions</li>
+                                <li><strong>Emotional contagion:</strong> Crying when other babies cry (precursor to empathy)</li>
+                            </ul>
+
+                            <p><strong>Communication</strong></p>
+                            <ul>
+                                <li><strong>Crying:</strong> Only tool to signal needs - activates parent's insula (empathy center)</li>
+                                <li><strong>Cooing begins ~6 weeks:</strong> Vocal play as larynx gains control</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection action">
+                            <h3>✅ What Parents Do (Biological Support)</h3>
+
+                            <ul>
+                                <li><strong>Feed Responsively:</strong> Breastfeeding or formula provides DHA/ARA for myelin formation. Responsive feeding strengthens attachment circuits (ventral tegmental area releases dopamine during feeding)</li>
+                                <li><strong>Provide High-Contrast Visual Stimulation:</strong> Black/white patterns, faces - optimize V1 cortex wiring. Face time: Social brain circuits need faces to wire properly</li>
+                                <li><strong>Tummy Time Daily:</strong> Strengthens motor cortex pathways. Vestibular stimulation critical for spatial awareness later</li>
+                                <li><strong>Respond to Cries:</strong> Reduces cortisol, builds secure attachment. Teaches brain that needs will be met (foundation of trust)</li>
+                                <li><strong>Safe Sleep:</strong> Back sleeping reduces SIDS risk. Room-sharing: Parental breathing regulates infant breathing patterns</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        <span class="emoji">🔗</span>
+                        <span class="phase-title">Phase 2: Infant (3-6 Months) <span class="phase-subtitle">"The Connection Architect"</span></span>
+                    </summary>
+                    <div>
+                        <div class="subsection brain">
+                            <h3>🧠 Brain Development: Building the Network</h3>
+
+                            <p><strong>Synaptic Pruning Begins</strong></p>
+                            <ul>
+                                <li>Peak synaptic density reached (~100 trillion connections)</li>
+                                <li>"Use it or lose it": Frequently used pathways strengthen, unused ones pruned</li>
+                                <li>Brain efficiency improving through selective elimination</li>
+                            </ul>
+
+                            <p><strong>Myelination Accelerates</strong></p>
+                            <ul>
+                                <li>Motor pathways myelinating rapidly → faster, smoother movements</li>
+                                <li>Visual pathways nearly complete → clearer, sharper vision</li>
+                                <li>Corpus callosum (bridge between hemispheres) thickening → better coordination</li>
+                            </ul>
+
+                            <p><strong>Circadian Rhythm Establishment</strong></p>
+                            <ul>
+                                <li><strong>Suprachiasmatic nucleus (SCN) matures:</strong> Light-dark cycles now regulate sleep</li>
+                                <li><strong>Melatonin production begins:</strong> Pineal gland starts nighttime secretion</li>
+                                <li><strong>Consolidation:</strong> Moving from polyphasic → 3-4 naps + longer night sleep</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection sensory">
+                            <h3>👁️ Sensory Maturation</h3>
+
+                            <p><strong>Vision Reaches Near-Adult Quality</strong></p>
+                            <ul>
+                                <li><strong>4 months:</strong> 20/40 vision - can see across a room</li>
+                                <li><strong>6 months:</strong> 20/20 vision in most infants</li>
+                                <li><strong>Depth perception emerges:</strong> Binocular vision neurons in V1 connecting</li>
+                                <li><strong>Color vision:</strong> Cone cells in retina fully functional - sees full color spectrum</li>
+                            </ul>
+
+                            <p><strong>Auditory Localization</strong></p>
+                            <ul>
+                                <li>Can turn to sound source with precision</li>
+                                <li>Superior olivary complex in brainstem calculating sound arrival time differences</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection motor">
+                            <h3>🤸 Motor Milestones: Purposeful Movement</h3>
+
+                            <p><strong>Gross Motor</strong></p>
+                            <ul>
+                                <li><strong>4 months:</strong> Rolls from tummy to back (core muscles + motor planning)</li>
+                                <li><strong>5 months:</strong> Rolls back to tummy (full body coordination)</li>
+                                <li><strong>6 months:</strong> Sits without support (trunk control, cerebellar balance)</li>
+                            </ul>
+
+                            <p><strong>Fine Motor</strong></p>
+                            <ul>
+                                <li><strong>3-4 months:</strong> Purposeful reaching (visual-motor integration) - Parietal cortex calculating distance and trajectory</li>
+                                <li><strong>4-5 months:</strong> Grasps objects voluntarily (palmar grasp)</li>
+                                <li><strong>6 months:</strong> Transfers objects hand-to-hand (corpus callosum coordination)</li>
+                            </ul>
+
+                            <p><strong>Hand-Eye Coordination</strong></p>
+                            <ul>
+                                <li>Parietal-frontal circuits linking vision → motor planning → execution</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection cognitive">
+                            <h3>🧩 Cognitive Leaps</h3>
+
+                            <p><strong>Social Brain Circuits</strong></p>
+                            <ul>
+                                <li><strong>Joint attention emerging:</strong> Looks where parent points/looks (Superior temporal sulcus + prefrontal cortex interaction)</li>
+                                <li><strong>Social referencing begins:</strong> Looks to parent's face for emotional cues</li>
+                            </ul>
+
+                            <p><strong>Memory & Learning</strong></p>
+                            <ul>
+                                <li><strong>Working memory:</strong> Can hold information for short periods</li>
+                                <li><strong>Explicit memory forming:</strong> Hippocampus maturing - remembers toys, routines</li>
+                                <li><strong>Cause-effect understanding:</strong> Shakes rattle → sound (prefrontal cortex making connections)</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection social">
+                            <h3>💝 Social-Emotional Development</h3>
+
+                            <p><strong>The Social Smile (6-8 weeks)</strong></p>
+                            <ul>
+                                <li><strong>Mirror neurons:</strong> Imitating facial expressions</li>
+                                <li><strong>Reward circuitry:</strong> Parent's smile → dopamine surge → baby smiles back</li>
+                            </ul>
+
+                            <p><strong>Laughter Emerges (~4 months)</strong></p>
+                            <ul>
+                                <li>Unexpected events (peek-a-boo) activate surprise circuits + reward centers</li>
+                            </ul>
+
+                            <p><strong>Stranger Wariness Begins (~5-6 months)</strong></p>
+                            <ul>
+                                <li>Amygdala starting to differentiate familiar vs unfamiliar faces</li>
+                                <li>Sign of healthy attachment formation</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection action">
+                            <h3>✅ What Parents Do</h3>
+
+                            <ul>
+                                <li><strong>Introduce Solid Foods (~6 months):</strong> Iron stores from birth depleting - need iron-rich foods. Oral motor development ready (tongue thrust reflex disappearing)</li>
+                                <li><strong>Play Interactive Games:</strong> Peek-a-boo teaches object permanence foundation. Sing songs: Auditory cortex + Broca's area (language) activation</li>
+                                <li><strong>Provide Safe Exploration:</strong> Reaching, grasping, mouthing: Sensory integration critical. Floor time: Motor cortex needs practice for crawling preparation</li>
+                                <li><strong>Maintain Responsive Care:</strong> Secure attachment → healthy stress response system (HPA axis regulation)</li>
+                                <li><strong>Sleep Training Can Begin (if desired):</strong> Circadian rhythm now established - can learn self-soothing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        <span class="emoji">🚀</span>
+                        <span class="phase-title">Phase 3: Mobile Infant (6-9 Months) <span class="phase-subtitle">"The Explorer's Brain"</span></span>
+                    </summary>
+                    <div>
+                        <div class="subsection brain">
+                            <h3>🧠 Brain Development: Memory & Spatial Intelligence</h3>
+
+                            <p><strong>Hippocampus Maturation</strong></p>
+                            <ul>
+                                <li><strong>Explicit long-term memory emerging:</strong> Remembers people, places, routines</li>
+                                <li><strong>Spatial memory:</strong> Cognitive maps forming (where is kitchen? where are toys?)</li>
+                                <li><strong>Neurogenesis:</strong> New neurons still being born in hippocampus</li>
+                            </ul>
+
+                            <p><strong>Prefrontal Cortex Development Begins</strong></p>
+                            <ul>
+                                <li><strong>Object permanence:</strong> Understands objects exist when hidden (Prefrontal cortex + parietal cortex interaction)</li>
+                                <li><strong>Working memory:</strong> Can hold goals in mind (crawl to toy)</li>
+                                <li><strong>Inhibitory control beginning:</strong> Can (sometimes) wait a moment for desired object</li>
+                            </ul>
+
+                            <p><strong>Language Circuits Activating</strong></p>
+                            <ul>
+                                <li><strong>Wernicke's area (comprehension):</strong> Understanding words before speaking
+                                    <ul>
+                                        <li>Responds to own name</li>
+                                        <li>Understands "no" and simple commands</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Broca's area (production):</strong> Preparing for speech
+                                    <ul>
+                                        <li>Babbling becomes more complex (ba-ba-ba → ba-da-ma)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection motor">
+                            <h3>🤸 Motor Revolution: Crawling & Beyond</h3>
+
+                            <p><strong>Gross Motor</strong></p>
+                            <ul>
+                                <li><strong>7 months:</strong> Sits confidently, pivots while sitting</li>
+                                <li><strong>8 months:</strong> Crawling begins (army crawl → hands-knees crawl)
+                                    <ul>
+                                        <li><strong>Neurological milestone:</strong> Requires cross-lateral coordination (left arm + right leg)</li>
+                                        <li>Cerebellum + motor cortex + basal ganglia working together</li>
+                                    </ul>
+                                </li>
+                                <li><strong>9 months:</strong> Pulls to stand using furniture (Leg muscles strengthening, balance systems integrating)</li>
+                            </ul>
+
+                            <p><strong>Fine Motor</strong></p>
+                            <ul>
+                                <li><strong>Pincer grasp (9 months):</strong> Thumb + index finger precision
+                                    <ul>
+                                        <li>Motor cortex's hand area developing fine control</li>
+                                        <li>Critical for self-feeding, tool use later</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Intentional release:</strong> Can let go of objects on purpose</li>
+                            </ul>
+
+                            <div class="highlight">
+                                <p><strong>Crawling's Brain Benefits</strong></p>
+                                <ul>
+                                    <li>Cross-lateral movement → corpus callosum strengthening</li>
+                                    <li>Depth perception practice → visual-spatial integration</li>
+                                    <li>Vestibular stimulation → balance and spatial awareness</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="subsection cognitive">
+                            <h3>🧩 Cognitive Explosion</h3>
+
+                            <p><strong>Object Permanence (8-9 months)</strong></p>
+                            <ul>
+                                <li><strong>A-not-B error:</strong> Searches for hidden object in wrong place (Prefrontal cortex still immature - can't override habit)</li>
+                                <li><strong>Understanding cause-effect:</strong> Drops spoon → parent retrieves it (repeats 20x!)</li>
+                            </ul>
+
+                            <p><strong>Categorization</strong></p>
+                            <ul>
+                                <li>Groups objects by similarity (all balls together, all blocks together)</li>
+                                <li>Temporal lobe neural networks making conceptual connections</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection social">
+                            <h3>💝 Social-Emotional Development</h3>
+
+                            <p><strong>Attachment Peak</strong></p>
+                            <ul>
+                                <li><strong>Separation anxiety (8-9 months):</strong> Amygdala-driven fear when caregiver leaves
+                                    <ul>
+                                        <li>Sign of healthy secure attachment</li>
+                                        <li>Prefrontal cortex can't yet regulate this fear</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Stranger anxiety:</strong> Wariness of unfamiliar people intensifies</li>
+                            </ul>
+
+                            <p><strong>Communication Explosion</strong></p>
+                            <ul>
+                                <li><strong>Gestures:</strong> Pointing (9 months) - shared intentionality</li>
+                                <li><strong>Proto-words:</strong> "Mama", "Dada" (may not be specific yet)</li>
+                                <li><strong>Intentional communication:</strong> Vocalizes to get attention</li>
+                            </ul>
+
+                            <p><strong>Emotional Regulation</strong></p>
+                            <ul>
+                                <li>Still relies on co-regulation (parent helps calm)</li>
+                                <li>Prefrontal cortex too immature for self-soothing</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection action">
+                            <h3>✅ What Parents Do</h3>
+
+                            <ul>
+                                <li><strong>Baby-Proof Everything:</strong> Mobile explorer needs safe space - removes environmental stressors (reduces cortisol)</li>
+                                <li><strong>Encourage Crawling:</strong> Floor time critical - don't rely on walkers/jumpers. Cross-lateral movement builds brain connections</li>
+                                <li><strong>Read Books Daily:</strong> Language comprehension exploding - Wernicke's area absorbing word-object connections. Parent-child reading time → 1.4 million more words heard by age 5</li>
+                                <li><strong>Play Object Permanence Games:</strong> Hide-and-seek with toys, peek-a-boo variations. Strengthens prefrontal cortex working memory</li>
+                                <li><strong>Respond to Separation Anxiety:</strong> Consistent goodbyes, reliable returns. Teaches brain that parent always comes back (builds secure attachment)</li>
+                                <li><strong>Finger Foods:</strong> Pincer grasp practice. Self-feeding builds motor cortex precision</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        <span class="emoji">🎓</span>
+                        <span class="phase-title">Phase 4: Pre-Toddler (9-12 Months) <span class="phase-subtitle">"The Problem Solver"</span></span>
+                    </summary>
+                    <div>
+                        <div class="subsection brain">
+                            <h3>🧠 Brain Development: Executive Function Emerging</h3>
+
+                            <p><strong>Prefrontal Cortex Development</strong></p>
+                            <ul>
+                                <li><strong>Planning & problem-solving:</strong> Can figure out how to reach distant toy (pull blanket)</li>
+                                <li><strong>Means-end thinking:</strong> Uses tools (bangs stick to get object)</li>
+                                <li><strong>Inhibitory control improving:</strong> Can wait a few seconds (marshmallow test precursor)</li>
+                                <li><strong>Working memory:</strong> Holds more information simultaneously</li>
+                            </ul>
+
+                            <p><strong>White Matter Growth</strong></p>
+                            <ul>
+                                <li>Myelination of major tracts → faster processing speed</li>
+                                <li>Information highways connecting brain regions more efficiently</li>
+                            </ul>
+
+                            <p><strong>Cerebellum Refinement</strong></p>
+                            <ul>
+                                <li>Motor learning accelerating - practice makes perfect</li>
+                                <li>Procedural memory forming (how to stack blocks, use spoon)</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection motor">
+                            <h3>🤸 Motor Mastery: Standing & First Steps</h3>
+
+                            <p><strong>Gross Motor</strong></p>
+                            <ul>
+                                <li><strong>10 months:</strong> Cruises along furniture (side-stepping while holding on)</li>
+                                <li><strong>11 months:</strong> Stands independently for seconds</li>
+                                <li><strong>12 months:</strong> First independent steps! (avg 12-15 months, but range is wide)
+                                    <ul>
+                                        <li><strong>Neurological achievement:</strong> Balance (vestibular + cerebellum) + strength + motor planning + courage!</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <p><strong>Fine Motor Precision</strong></p>
+                            <ul>
+                                <li><strong>Pincer grasp mastery:</strong> Picks up tiny objects (Cheerios, crumbs)</li>
+                                <li><strong>Pointing with intention:</strong> Declarative pointing ("look!") + imperative pointing ("I want!")</li>
+                                <li><strong>Tool use:</strong> Bangs spoon, stacks 2 blocks, turns pages (crudely)</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection cognitive">
+                            <h3>🧩 Cognitive Sophistication</h3>
+
+                            <p><strong>Object Permanence Mastery</strong></p>
+                            <ul>
+                                <li>Searches for hidden objects correctly</li>
+                                <li>A-not-B error resolved (prefrontal cortex maturation)</li>
+                            </ul>
+
+                            <p><strong>Imitation & Learning</strong></p>
+                            <ul>
+                                <li><strong>Deferred imitation:</strong> Copies actions seen hours/days ago (Hippocampus + prefrontal cortex storing and retrieving sequences)</li>
+                                <li><strong>Social learning:</strong> Watches parent use phone, tries to mimic</li>
+                            </ul>
+
+                            <p><strong>Problem Solving</strong></p>
+                            <ul>
+                                <li><strong>Insight learning:</strong> Suddenly figures out solution without trial-error</li>
+                                <li><strong>Goal-directed behavior:</strong> Removes obstacle to reach toy</li>
+                            </ul>
+
+                            <p><strong>Early Symbolism</strong></p>
+                            <ul>
+                                <li>Pretend play beginnings (holds phone to ear, "feeds" doll)</li>
+                                <li>Foundation for language and abstract thinking</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection social">
+                            <h3>💝 Social-Emotional & Language Development</h3>
+
+                            <p><strong>Language Explosion</strong></p>
+                            <ul>
+                                <li><strong>Comprehension:</strong> Understands 50-100 words (Temporal lobe creating vast semantic networks)</li>
+                                <li><strong>First true words (10-12 months):</strong> "Mama", "Dada", "ball", "dog" (Broca's area producing intentional speech)</li>
+                                <li><strong>Babbling becomes speech-like:</strong> Intonation patterns of native language</li>
+                            </ul>
+
+                            <p><strong>Joint Attention Mastery</strong></p>
+                            <ul>
+                                <li>Points to share interest (not just to request)</li>
+                                <li>Follows parent's gaze and pointing</li>
+                                <li>Foundation for language learning (word-referent mapping)</li>
+                            </ul>
+
+                            <p><strong>Emotional Range</strong></p>
+                            <ul>
+                                <li><strong>Frustration:</strong> When goals blocked (prefrontal cortex wants, but can't execute)</li>
+                                <li><strong>Pride:</strong> When accomplishes goal (first steps!)</li>
+                                <li><strong>Affection:</strong> Gives hugs, kisses (oxytocin-driven bonding)</li>
+                            </ul>
+
+                            <p><strong>Attachment Security</strong></p>
+                            <ul>
+                                <li>Uses parent as "secure base" to explore world</li>
+                                <li>Returns for emotional refueling</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection action">
+                            <h3>✅ What Parents Do</h3>
+
+                            <ul>
+                                <li><strong>Talk Constantly (Narrate Life):</strong> Describe everything: "I'm putting your socks on. Blue socks!" Language circuits need massive input - aim for 20,000 words/day</li>
+                                <li><strong>Read Interactive Books:</strong> Point to pictures, ask "Where's the dog?" Builds vocabulary + joint attention + print awareness</li>
+                                <li><strong>Encourage First Steps:</strong> Provide safe space to practice. Falling is learning - cerebellum + vestibular system calibrating. Praise effort, not just success (growth mindset foundation)</li>
+                                <li><strong>Allow Safe Exploration:</strong> "No" should be rare and important (stove, stairs, outlets). Exploration builds confidence + problem-solving circuits</li>
+                                <li><strong>Play Simple Pretend Games:</strong> Pretend to drink from cup, feed doll. Symbolic thinking foundation</li>
+                                <li><strong>Introduce Simple Rules:</strong> "Gentle touch" with pets/siblings. Prefrontal cortex learning social norms (very slowly!)</li>
+                                <li><strong>Maintain Routines:</strong> Predictability reduces amygdala stress response. Hippocampus builds temporal maps of daily life</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <section class="intro-section" style="margin-top: 50px;">
+                <h2>🌈 The Year Ahead: A Biological Miracle</h2>
+                <p>From newborn to walker, Artin's brain will transform from 350g to 1000g (triple birth weight!). He'll go from reflexive movements to intentional problem-solving, from crying to speaking words, from complete dependence to taking his first independent steps.</p>
+
+                <h3 style="color: #58a6ff; margin-top: 30px;">Key Biological Achievements:</h3>
+                <ul>
+                    <li><strong>700 trillion synaptic connections</strong> formed (then pruned to 500 trillion)</li>
+                    <li><strong>Vision:</strong> 20/400 → 20/20</li>
+                    <li><strong>Myelination:</strong> Signal speed increases 100-fold</li>
+                    <li><strong>Motor cortex:</strong> From reflexes → walking</li>
+                    <li><strong>Hippocampus:</strong> From implicit → explicit memories</li>
+                    <li><strong>Prefrontal cortex:</strong> From reactive → planful</li>
+                    <li><strong>Language circuits:</strong> From crying → first words</li>
+                    <li><strong>Attachment:</strong> From survival bonding → secure base for exploration</li>
+                </ul>
+
+                <h3 style="color: #3fb950; margin-top: 30px;">The Science of Parenting:</h3>
+                <p>Every interaction shapes Artin's developing brain. Responsive care reduces cortisol and builds secure attachment. Rich language input wires Wernicke's and Broca's areas. Tummy time and floor play strengthen motor cortex pathways. Face-to-face interaction activates mirror neurons and social circuits.</p>
+
+                <div class="highlight" style="margin-top: 25px;">
+                    <p style="font-size: 1.2em; text-align: center; margin: 0;"><strong>You're not just caring for a baby - you're sculpting a human brain. What an incredible privilege and responsibility!</strong></p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="celebration">🧠✨</div>
+            <p><strong>Happy brain building, Artin! Welcome to the adventure.</strong></p>
+            <p style="margin-top: 20px; font-size: 12px;">Generated with biological detail and parental love | A roadmap for nurturing neural development</p>
+        </footer>
+    </article>
+</body>
+</html>
