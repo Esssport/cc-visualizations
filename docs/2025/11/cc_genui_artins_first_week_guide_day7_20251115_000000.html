@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Essential care and developmental priorities for Artin, a 7-day-old newborn - Clinical reference guide for parents">
+    <title>Artin's First Week: Essential Care & Development Guide - Day 7</title>
+    <style>
+        /* Clinical Theme - Pure White Background, Medical Trust */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --text-primary: #000000;
+            --text-secondary: #212529;
+            --text-muted: #495057;
+            --accent-medical: #0077cc;
+            --accent-medical-light: #e6f2ff;
+            --border-color: #dee2e6;
+            --emergency-red: #dc3545;
+            --success-green: #28a745;
+            --warning-orange: #fd7e14;
+            --info-blue: #17a2b8;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Source Serif 4', 'Georgia', 'Times New Roman', serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
+            font-size: 16px;
+            padding: 0;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(135deg, var(--accent-medical-light) 0%, var(--bg-primary) 100%);
+            border-bottom: 4px solid var(--accent-medical);
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .header .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .header .meta {
+            display: inline-block;
+            background: var(--bg-primary);
+            padding: 15px 30px;
+            border-radius: 8px;
+            border: 2px solid var(--accent-medical);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header .meta strong {
+            color: var(--accent-medical);
+            font-weight: 600;
+        }
+
+        /* Quick Reference Card */
+        .quick-ref-card {
+            background: var(--accent-medical);
+            color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 50px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .quick-ref-card h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .quick-ref-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .quick-ref-item {
+            background: rgba(255,255,255,0.15);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffffff;
+        }
+
+        .quick-ref-item strong {
+            display: block;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+            opacity: 0.9;
+        }
+
+        .quick-ref-item span {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Emergency Alert Box */
+        .emergency-alert {
+            background: #fff5f5;
+            border: 3px solid var(--emergency-red);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 50px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .emergency-alert h2 {
+            color: var(--emergency-red);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .emergency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .emergency-section {
+            background: var(--bg-primary);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid var(--emergency-red);
+        }
+
+        .emergency-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--emergency-red);
+            font-weight: 700;
+        }
+
+        .emergency-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .emergency-section li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .emergency-section li::before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+        }
+
+        /* Section Cards */
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .section-card {
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-medical);
+        }
+
+        .section-card h2 {
+            font-size: 1.8rem;
+            color: var(--accent-medical);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+        }
+
+        .section-card .icon {
+            font-size: 2.5rem;
+        }
+
+        .section-card h3 {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            border-bottom: 2px solid var(--accent-medical-light);
+            padding-bottom: 5px;
+        }
+
+        .section-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .section-card li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--bg-secondary);
+        }
+
+        .section-card li:last-child {
+            border-bottom: none;
+        }
+
+        .section-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .section-card li strong {
+            color: var(--accent-medical);
+            font-weight: 600;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background: var(--accent-medical-light);
+            border-left: 5px solid var(--accent-medical);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .info-box strong {
+            color: var(--accent-medical);
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .success-box {
+            background: #d4edda;
+            border-left: 5px solid var(--success-green);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .success-box::before {
+            content: "✅ ";
+            font-size: 1.2rem;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 5px solid var(--warning-orange);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        /* Timeline Visual */
+        .timeline {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline h2 {
+            font-size: 2rem;
+            color: var(--accent-medical);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: var(--bg-primary);
+            border-radius: 8px;
+            border-left: 5px solid var(--accent-medical);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .timeline-number {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--accent-medical);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-content strong {
+            color: var(--accent-medical);
+        }
+
+        /* Checklist */
+        .checklist {
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .checklist h3 {
+            font-size: 1.5rem;
+            color: var(--accent-medical);
+            margin-bottom: 20px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            min-height: 48px;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            accent-color: var(--accent-medical);
+        }
+
+        .checklist-item label {
+            flex: 1;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        /* Print Button */
+        .print-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent-medical);
+            color: #ffffff;
+            border: none;
+            padding: 18px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            min-height: 48px;
+            min-width: 48px;
+            z-index: 1000;
+        }
+
+        .print-button:hover {
+            background: #005fa3;
+            transform: scale(1.05);
+            box-shadow: 0 8px 28px rgba(0,119,204,0.4);
+        }
+
+        .print-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-ref-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .emergency-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+
+            .print-button {
+                bottom: 15px;
+                right: 15px;
+                padding: 15px 25px;
+            }
+        }
+
+        /* iPad Portrait (768-1023px) */
+        @media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+            .container {
+                padding: 40px;
+            }
+
+            .section-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-card {
+                padding: 25px;
+            }
+
+            .section-card h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* iPad Landscape (1024-1365px) */
+        @media (min-width: 1024px) and (max-width: 1365px) and (orientation: landscape) {
+            .container {
+                padding: 50px;
+            }
+
+            .section-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .header h1 {
+                font-size: 3rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .print-button {
+                display: none;
+            }
+
+            .section-card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            body {
+                background: white;
+            }
+
+            .section-card:hover {
+                transform: none;
+                box-shadow: var(--shadow-sm);
+            }
+        }
+
+        /* Accessibility */
+        *:focus {
+            outline: 3px solid var(--accent-medical);
+            outline-offset: 2px;
+        }
+
+        @media (prefers-contrast: high) {
+            :root {
+                --text-primary: #000000;
+                --border-color: #000000;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Touch Optimization */
+        @media (hover: none) {
+            .section-card:hover {
+                transform: none;
+            }
+
+            * {
+                -webkit-tap-highlight-color: rgba(0,119,204,0.2);
+            }
+        }
+
+        /* Animation on Load */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        body {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🍼 Artin's First Week: Essential Care & Development Guide</h1>
+        <p class="subtitle">Day 7 - November 15, 2025</p>
+        <div class="meta">
+            <strong>Born:</strong> November 8, 2025 | <strong>Age:</strong> 7 days old
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Quick Reference Card -->
+        <div class="quick-ref-card">
+            <h2>📋 Quick Reference Card</h2>
+            <div class="quick-ref-grid">
+                <div class="quick-ref-item">
+                    <strong>Patient Name</strong>
+                    <span>Artin Izadjoo</span>
+                </div>
+                <div class="quick-ref-item">
+                    <strong>Date of Birth</strong>
+                    <span>November 8, 2025</span>
+                </div>
+                <div class="quick-ref-item">
+                    <strong>Current Age</strong>
+                    <span>7 days</span>
+                </div>
+                <div class="quick-ref-item">
+                    <strong>Next Checkup</strong>
+                    <span>November 22, 2025 (2 weeks)</span>
+                </div>
+                <div class="quick-ref-item">
+                    <strong>Emergency</strong>
+                    <span>911</span>
+                </div>
+                <div class="quick-ref-item">
+                    <strong>Telehealth Ontario</strong>
+                    <span>811</span>
+                </div>
+                <div class="quick-ref-item">
+                    <strong>York Region Public Health</strong>
+                    <span>1-800-361-5653</span>
+                </div>
+                <div class="quick-ref-item">
+                    <strong>ConnexOntario (Mental Health)</strong>
+                    <span>1-866-531-2600</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Emergency Alert -->
+        <div class="emergency-alert">
+            <h2>🚨 When to Seek Help</h2>
+            <div class="emergency-grid">
+                <div class="emergency-section">
+                    <h3>Call 911 (Emergency)</h3>
+                    <ul>
+                        <li>Difficulty breathing or blue lips</li>
+                        <li>Unresponsive or very limp</li>
+                        <li>Fever >38°C (100.4°F) under 3 months</li>
+                        <li>Seizure or unusual movements</li>
+                    </ul>
+                </div>
+                <div class="emergency-section">
+                    <h3>Call Telehealth 811 (Urgent)</h3>
+                    <ul>
+                        <li>Poor feeding (refusing 2+ feeds)</li>
+                        <li>Fewer than 6 wet diapers in 24 hours</li>
+                        <li>Jaundice spreading to arms/legs</li>
+                        <li>Excessive crying (2+ hours inconsolable)</li>
+                    </ul>
+                </div>
+                <div class="emergency-section">
+                    <h3>Routine Pediatrician Visit</h3>
+                    <ul>
+                        <li>2-week checkup scheduled (Nov 22)</li>
+                        <li>Vaccine schedule begins at 2 months</li>
+                        <li>Weight gain tracking</li>
+                        <li>General development questions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Sections -->
+        <div class="section-grid">
+            <!-- Feeding -->
+            <div class="section-card">
+                <h2><span class="icon">🍼</span> Feeding Priorities</h2>
+                <ul>
+                    <li><strong>Frequency:</strong> Every 2-3 hours (8-12 times per day)</li>
+                    <li><strong>Duration:</strong> 10-15 minutes per breast OR 2-4 oz formula</li>
+                    <li><strong>Hunger Cues:</strong> Rooting, sucking on hands, fussiness</li>
+                    <li><strong>Success Signs:</strong> 6+ wet diapers/day, weight gain tracking</li>
+                    <li><strong>Ontario Resources:</strong> Telehealth 811 for lactation support</li>
+                </ul>
+                <div class="success-box">
+                    Track feeding times and diaper output in the first 2 weeks to ensure adequate nutrition and hydration.
+                </div>
+            </div>
+
+            <!-- Sleep -->
+            <div class="section-card">
+                <h2><span class="icon">💤</span> Sleep Essentials</h2>
+                <h3>Sleep Patterns</h3>
+                <ul>
+                    <li><strong>Total Sleep:</strong> 16-20 hours per day</li>
+                    <li><strong>Sleep Cycles:</strong> 2-4 hour stretches (day and night)</li>
+                    <li><strong>Wake Windows:</strong> 45-60 minutes max</li>
+                </ul>
+                <h3>Safe Sleep (CPS 2022)</h3>
+                <ul>
+                    <li>Back to sleep (SIDS prevention)</li>
+                    <li>Firm mattress, no loose bedding</li>
+                    <li>Room sharing (not bed sharing)</li>
+                    <li>Temperature 18-20°C</li>
+                </ul>
+            </div>
+
+            <!-- Health Monitoring -->
+            <div class="section-card">
+                <h2><span class="icon">🏥</span> Health Monitoring</h2>
+                <ul>
+                    <li><strong>Jaundice Watch:</strong> Peak at days 3-5, watch for yellowing skin/eyes</li>
+                    <li><strong>Umbilical Cord:</strong> Keep dry, fold diaper below cord, watch for redness/discharge</li>
+                    <li><strong>Temperature:</strong> Normal 36.5-37.5°C (97.7-99.5°F)</li>
+                </ul>
+                <h3>Diaper Output</h3>
+                <ul>
+                    <li><strong>Wet:</strong> 6+ per day (hydration indicator)</li>
+                    <li><strong>Dirty:</strong> 3-4 per day (meconium transitioning to yellow)</li>
+                </ul>
+            </div>
+
+            <!-- Developmental Milestones -->
+            <div class="section-card">
+                <h2><span class="icon">👶</span> Developmental Milestones</h2>
+                <ul>
+                    <li><strong>Reflexes:</strong> Rooting, sucking, grasping, startle (Moro)</li>
+                    <li><strong>Vision:</strong> 8-12 inches focus (face distance during feeding)</li>
+                    <li><strong>Hearing:</strong> Responds to loud sounds, recognizes parent voices</li>
+                    <li><strong>Social:</strong> Brief eye contact, recognizes familiar faces</li>
+                </ul>
+                <div class="info-box">
+                    <strong>Did You Know?</strong>
+                    Artin can already recognize your voice and smell! These are powerful bonding tools in the first weeks.
+                </div>
+            </div>
+
+            <!-- Bonding & Soothing -->
+            <div class="section-card">
+                <h2><span class="icon">💕</span> Bonding & Soothing</h2>
+                <h3>Skin-to-Skin Contact</h3>
+                <ul>
+                    <li>Daily for both parents</li>
+                    <li>Regulates temperature and heart rate</li>
+                    <li>Promotes bonding and breastfeeding</li>
+                </ul>
+                <h3>5 S's for Soothing</h3>
+                <ul>
+                    <li><strong>Swaddle:</strong> Arms down, hips loose</li>
+                    <li><strong>Side/Stomach:</strong> While awake, supervised</li>
+                    <li><strong>Shush:</strong> White noise 50-70 dB</li>
+                    <li><strong>Swing:</strong> Gentle rocking motion</li>
+                    <li><strong>Suck:</strong> Pacifier or finger</li>
+                </ul>
+            </div>
+
+            <!-- Parent Self-Care -->
+            <div class="section-card">
+                <h2><span class="icon">🫂</span> Parent Self-Care</h2>
+                <ul>
+                    <li><strong>Mother's Recovery:</strong> Physical healing, pelvic floor exercises (after clearance)</li>
+                    <li><strong>Mental Health Screening:</strong> Watch for PPD/PPND signs (Edinburgh Scale)</li>
+                    <li><strong>Father/Partner Support:</strong> Non-feeding bonding (diaper changes, baths, skin-to-skin)</li>
+                </ul>
+                <h3>Ontario Resources</h3>
+                <ul>
+                    <li><strong>EarlyON Centres:</strong> Free parent programs</li>
+                    <li><strong>HBHC:</strong> Public health nurse home visits</li>
+                    <li><strong>ConnexOntario:</strong> 1-866-531-2600 (mental health)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Timeline: This Week's Focus -->
+        <div class="timeline">
+            <h2>📍 This Week's Focus Areas (Days 7-14)</h2>
+
+            <div class="timeline-item">
+                <div class="timeline-number">1</div>
+                <div class="timeline-content">
+                    <strong>Establish feeding routine and milk supply</strong> - Consistent feeding schedule helps regulate milk production and ensures adequate nutrition
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number">2</div>
+                <div class="timeline-content">
+                    <strong>Monitor jaundice resolution</strong> - Jaundice typically peaks days 3-5 and should be improving by day 7. Watch skin color daily.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number">3</div>
+                <div class="timeline-content">
+                    <strong>Umbilical cord falls off (typically day 7-14)</strong> - Keep area clean and dry. Fold diaper below cord. Small amount of bleeding is normal.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number">4</div>
+                <div class="timeline-content">
+                    <strong>Track weight gain</strong> - Should return to birth weight by day 10-14. Weigh at pediatrician visits or public health clinics.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number">5</div>
+                <div class="timeline-content">
+                    <strong>Practice tummy time</strong> - 1-2 minutes, 3-5 times/day while awake and supervised. Builds neck and shoulder strength.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number">6</div>
+                <div class="timeline-content">
+                    <strong>Begin simple black/white visual stimulation</strong> - High-contrast images help develop vision. Place 8-12 inches from face.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number">7</div>
+                <div class="timeline-content">
+                    <strong>Schedule 2-week pediatrician checkup</strong> - Important milestone visit on November 22, 2025 for weight check and development assessment.
+                </div>
+            </div>
+        </div>
+
+        <!-- Daily Checklist -->
+        <div class="checklist">
+            <h3>✓ Daily Care Checklist for Day 7</h3>
+            <div class="checklist-item">
+                <input type="checkbox" id="check1">
+                <label for="check1">8-12 feedings completed (every 2-3 hours)</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="check2">
+                <label for="check2">6+ wet diapers recorded</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="check3">
+                <label for="check3">3-4 dirty diapers (transitioning to yellow stool)</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="check4">
+                <label for="check4">Skin-to-skin time with both parents</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="check5">
+                <label for="check5">Tummy time practice (1-2 minutes, 3-5 times)</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="check6">
+                <label for="check6">Umbilical cord care (keep dry, check for redness)</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="check7">
+                <label for="check7">Jaundice check (skin and eye color)</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="check8">
+                <label for="check8">Temperature check if concerned (36.5-37.5°C)</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="check9">
+                <label for="check9">Parent rest periods (sleep when baby sleeps)</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="check10">
+                <label for="check10">Mental health check-in for both parents</label>
+            </div>
+        </div>
+
+        <!-- Important Reminders -->
+        <div class="info-box">
+            <strong>💡 Important Reminder for Week 2:</strong>
+            Weight gain is critical at this stage. Artin should return to his birth weight by days 10-14. If you notice poor feeding, excessive sleepiness, or fewer wet diapers, contact Telehealth Ontario (811) immediately. The 2-week pediatrician checkup on November 22 will confirm healthy growth.
+        </div>
+
+        <div class="warning-box">
+            <strong>⚠️ Fever Protocol (Under 3 Months):</strong> Any fever over 38°C (100.4°F) in a baby under 3 months old is a medical emergency. Do NOT give medication. Call 911 or go to the emergency room immediately. Young babies have immature immune systems and fevers can indicate serious infections.
+        </div>
+    </div>
+
+    <button class="print-button" onclick="window.print()" aria-label="Print this guide">
+        🖨️ Print Guide
+    </button>
+
+    <script>
+        // Accessibility: Announce page load to screen readers
+        if ('speechSynthesis' in window) {
+            const announcement = "Artin's first week essential care guide loaded. Use tab key to navigate sections.";
+            // Silently set for screen reader announcement without audible speech
+            console.log(announcement);
+        }
+
+        // Save checklist state to localStorage
+        const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+        const storageKey = 'artin-day7-checklist';
+
+        // Load saved state
+        const savedState = localStorage.getItem(storageKey);
+        if (savedState) {
+            const states = JSON.parse(savedState);
+            checkboxes.forEach((checkbox, index) => {
+                checkbox.checked = states[index] || false;
+            });
+        }
+
+        // Save state on change
+        checkboxes.forEach((checkbox, index) => {
+            checkbox.addEventListener('change', () => {
+                const states = Array.from(checkboxes).map(cb => cb.checked);
+                localStorage.setItem(storageKey, JSON.stringify(states));
+            });
+        });
+
+        // Print optimization
+        window.addEventListener('beforeprint', () => {
+            document.title = 'Artins_First_Week_Guide_Day7';
+        });
+
+        window.addEventListener('afterprint', () => {
+            document.title = "Artin's First Week: Essential Care & Development Guide - Day 7";
+        });
+    </script>
+</body>
+</html>
