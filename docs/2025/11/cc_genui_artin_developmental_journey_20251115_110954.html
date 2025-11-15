@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artin's First Year Journey - Developmental Roadmap</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.8;
+            color: #c9d1d9;
+            background: #0d1117;
+            margin: 0;
+            padding: 10px;
+            min-height: 100vh;
+        }
+
+        article {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 15px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+            padding: 40px 30px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #58a6ff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            background: linear-gradient(135deg, #58a6ff 0%, #79c0ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+        }
+
+        .subtitle {
+            color: #8b949e;
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            margin: 10px 0;
+        }
+
+        .timeline-container {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .timeline-header h2 {
+            color: #58a6ff;
+            margin: 0 0 10px 0;
+            font-size: clamp(1.3rem, 4vw, 2rem);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 40px;
+            background: #1c2128;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid #30363d;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3fb950 0%, #56d364 100%);
+            width: 1.92%;
+            transition: width 1s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: 600;
+            color: #c9d1d9;
+            font-size: 14px;
+            z-index: 1;
+        }
+
+        .current-day {
+            text-align: center;
+            margin-top: 15px;
+            color: #3fb950;
+            font-weight: 600;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+        }
+
+        .stage-section {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            margin: 24px 0;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .stage-section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .stage-section.current {
+            border: 2px solid #3fb950;
+            box-shadow: 0 0 20px rgba(63, 185, 80, 0.3);
+        }
+
+        .stage-section.upcoming {
+            border: 1px solid #58a6ff;
+        }
+
+        details {
+            margin: 0;
+        }
+
+        summary {
+            padding: 24px;
+            cursor: pointer;
+            user-select: none;
+            background: linear-gradient(135deg, #1c2128 0%, #161b22 100%);
+            font-weight: 600;
+            font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.2s ease;
+            position: relative;
+        }
+
+        summary:hover {
+            background: #21262d;
+        }
+
+        summary::marker {
+            color: #58a6ff;
+            font-size: 1.5rem;
+        }
+
+        .stage-section.current summary {
+            background: linear-gradient(135deg, #1c2128 0%, rgba(63, 185, 80, 0.1) 100%);
+            color: #3fb950;
+        }
+
+        .stage-section.upcoming summary {
+            background: linear-gradient(135deg, #1c2128 0%, rgba(88, 166, 255, 0.1) 100%);
+            color: #58a6ff;
+        }
+
+        .stage-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-left: 10px;
+        }
+
+        .badge-current {
+            background: rgba(63, 185, 80, 0.2);
+            border: 1px solid #3fb950;
+            color: #3fb950;
+        }
+
+        .badge-upcoming {
+            background: rgba(88, 166, 255, 0.2);
+            border: 1px solid #58a6ff;
+            color: #58a6ff;
+        }
+
+        details[open] summary {
+            border-bottom: 2px solid #58a6ff;
+        }
+
+        .stage-section.current details[open] summary {
+            border-bottom: 2px solid #3fb950;
+        }
+
+        .stage-content {
+            padding: 30px 24px;
+            line-height: 1.8;
+        }
+
+        .milestone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .milestone-card {
+            background: #1c2128;
+            border: 1px solid #30363d;
+            border-left: 4px solid #58a6ff;
+            border-radius: 6px;
+            padding: 20px;
+            transition: all 0.2s ease;
+        }
+
+        .milestone-card:hover {
+            border-left-color: #79c0ff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transform: translateX(4px);
+        }
+
+        .milestone-card h4 {
+            margin: 0 0 12px 0;
+            color: #58a6ff;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .milestone-card ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .milestone-card li {
+            margin: 8px 0;
+            color: #c9d1d9;
+        }
+
+        .info-section {
+            background: rgba(88, 166, 255, 0.1);
+            border: 1px solid #58a6ff;
+            border-left: 4px solid #58a6ff;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .info-section h4 {
+            margin: 0 0 12px 0;
+            color: #58a6ff;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+        }
+
+        .success-section {
+            background: rgba(63, 185, 80, 0.1);
+            border: 1px solid #3fb950;
+            border-left: 4px solid #3fb950;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .success-section h4 {
+            margin: 0 0 12px 0;
+            color: #3fb950;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+        }
+
+        .warning-section {
+            background: rgba(210, 153, 34, 0.1);
+            border: 1px solid #d29922;
+            border-left: 4px solid #d29922;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .warning-section h4 {
+            margin: 0 0 12px 0;
+            color: #d29922;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+        }
+
+        .checklist {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .checklist li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #3fb950;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+            background: #161b22;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #1c2128 0%, #161b22 100%);
+        }
+
+        thead th {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+            color: #8b949e;
+            padding: 16px;
+            text-align: left;
+            border-bottom: 2px solid #58a6ff;
+        }
+
+        tbody tr {
+            transition: background-color 0.2s ease;
+        }
+
+        tbody tr:hover {
+            background: rgba(88, 166, 255, 0.05);
+        }
+
+        tbody td {
+            padding: 16px;
+            border-bottom: 1px solid #30363d;
+            vertical-align: top;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 30px 20px;
+            border-top: 2px solid #30363d;
+            background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #8b949e;
+            font-size: 0.9rem;
+            margin: 8px 0;
+        }
+
+        footer .emphasis {
+            color: #58a6ff;
+            font-weight: 600;
+        }
+
+        ::selection {
+            background: rgba(88, 166, 255, 0.3);
+            color: #ffffff;
+        }
+
+        ::-moz-selection {
+            background: rgba(88, 166, 255, 0.3);
+            color: #ffffff;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0d1117;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 6px;
+            border: 2px solid #0d1117;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #484f58;
+        }
+
+        /* iPad Portrait (768px - 1023px) */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            body {
+                padding: 30px;
+            }
+
+            article {
+                padding: 40px;
+                max-width: 100%;
+            }
+
+            header {
+                padding: 50px 40px;
+            }
+
+            .milestone-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+
+        /* iPad Landscape & iPad Pro Portrait (1024px - 1365px) */
+        @media (min-width: 1024px) and (max-width: 1365px) {
+            body {
+                padding: 40px;
+            }
+
+            article {
+                padding: 50px;
+                max-width: 1100px;
+            }
+
+            header {
+                padding: 60px 50px;
+            }
+
+            .milestone-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+
+            summary {
+                min-height: 56px;
+                padding: 28px;
+            }
+        }
+
+        /* Desktop (1366px+) */
+        @media (min-width: 1366px) {
+            body {
+                padding: 40px;
+            }
+
+            article {
+                max-width: 1200px;
+                padding: 60px;
+            }
+
+            .milestone-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 767px) {
+            .milestone-grid {
+                grid-template-columns: 1fr;
+            }
+
+            summary {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .stage-badge {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <header>
+            <h1>🍼 Artin's First Year Journey</h1>
+            <p class="subtitle">A Developmental Roadmap for Your Amazing Baby</p>
+            <p class="subtitle" style="color: #3fb950; font-weight: 600;">Born: November 8, 2025 | Currently 7 Days Old</p>
+        </header>
+
+        <div class="timeline-container">
+            <div class="timeline-header">
+                <h2>📅 First Year Timeline</h2>
+                <p style="color: #8b949e; margin: 0;">Track Artin's journey through his first 365 days</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+                <div class="progress-text">Day 7 of 365</div>
+            </div>
+            <div class="current-day">
+                🎉 Week 1 Complete! 358 days of adventure ahead!
+            </div>
+        </div>
+
+        <main>
+            <!-- Current Stage: Newborn -->
+            <section class="stage-section current">
+                <details open>
+                    <summary>
+                        <span>🍼 Stage 1: Newborn (Days 1-28)</span>
+                        <span class="stage-badge badge-current">Current Stage</span>
+                    </summary>
+                    <div class="stage-content">
+                        <div class="success-section">
+                            <h4>🎯 Where Artin Is Right Now</h4>
+                            <p>This is Artin's current developmental stage. Every day brings new tiny miracles as he adjusts to life outside the womb.</p>
+                        </div>
+
+                        <div class="milestone-grid">
+                            <div class="milestone-card">
+                                <h4>💪 Physical Development</h4>
+                                <ul>
+                                    <li><strong>Weight:</strong> Expected to regain birth weight by day 10-14</li>
+                                    <li><strong>Sleep:</strong> 14-17 hours total (fragmented into 2-4 hour cycles)</li>
+                                    <li><strong>Vision:</strong> Can see 8-12 inches clearly (perfect for face-to-face bonding)</li>
+                                    <li><strong>Reflexes:</strong> Strong primitive reflexes (rooting, sucking, grasping, startle)</li>
+                                </ul>
+                            </div>
+
+                            <div class="milestone-card">
+                                <h4>🧠 What Artin is Learning</h4>
+                                <ul>
+                                    <li>Recognizing parents' voices and scents</li>
+                                    <li>Distinguishing day from night (gradual process)</li>
+                                    <li>Self-soothing attempts (finding hands, sucking)</li>
+                                    <li>Responding to touch and gentle sounds</li>
+                                </ul>
+                            </div>
+
+                            <div class="milestone-card">
+                                <h4>👨‍👩‍👦 Parent Care Priorities</h4>
+                                <ul class="checklist">
+                                    <li>Establish feeding routine - 8-12 feeds per day</li>
+                                    <li>Master safe sleep - Back to sleep, firm surface, room-sharing</li>
+                                    <li>Monitor output - 6+ wet diapers and 3+ dirty diapers daily by day 5</li>
+                                    <li>Bond through skin-to-skin - Regulates temperature, heart rate, and stress hormones</li>
+                                    <li>Track jaundice - Peak at days 3-5, watch for yellowing of skin/eyes</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="info-section">
+                            <h4>🏥 Doctor Visits</h4>
+                            <p><strong>2-week checkup:</strong> Weight check, feeding assessment, jaundice screening</p>
+                        </div>
+
+                        <div class="success-section">
+                            <h4>✨ What to Look Forward To</h4>
+                            <ul>
+                                <li>First social smile (coming in weeks 4-6!)</li>
+                                <li>Eye contact becoming more intentional</li>
+                                <li>Longer sleep stretches at night (eventually!)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Stage 2: Early Infancy -->
+            <section class="stage-section upcoming">
+                <details>
+                    <summary>
+                        <span>👁️ Stage 2: Early Infancy (1-3 Months)</span>
+                        <span class="stage-badge badge-upcoming">Upcoming</span>
+                    </summary>
+                    <div class="stage-content">
+                        <div class="info-section">
+                            <h4>📖 The "Fourth Trimester" - Adaptation Phase</h4>
+                            <p>This stage brings magical moments like the first social smile and those adorable coos. Artin will become more alert and interactive!</p>
+                        </div>
+
+                        <div class="milestone-grid">
+                            <div class="milestone-card">
+                                <h4>💪 Physical Milestones</h4>
+                                <ul>
+                                    <li><strong>Neck strength:</strong> Lifts head 45° during tummy time by 2 months</li>
+                                    <li><strong>Hand control:</strong> Begins batting at objects, brings hands to mouth</li>
+                                    <li><strong>Vision:</strong> Tracks moving objects, focuses on faces at 12+ inches</li>
+                                    <li><strong>Growth:</strong> Gains 5-7 oz per week, grows 1-1.5 inches per month</li>
+                                </ul>
+                            </div>
+
+                            <div class="milestone-card">
+                                <h4>🧠 Cognitive & Social Leaps</h4>
+                                <ul>
+                                    <li>🎉 <strong>First social smile</strong> (6-8 weeks) - deliberate response to your face</li>
+                                    <li>Coos and makes vowel sounds ("ahhh", "ohhh")</li>
+                                    <li>Recognizes parents' faces and prefers them to strangers</li>
+                                    <li>Shows excitement by wiggling arms and legs</li>
+                                    <li>Begins to self-soothe (finding thumb, looking at hands)</li>
+                                </ul>
+                            </div>
+
+                            <div class="milestone-card">
+                                <h4>😴 Sleep Development</h4>
+                                <ul>
+                                    <li><strong>Total sleep:</strong> 14-16 hours (starting to consolidate at night)</li>
+                                    <li><strong>Night sleep:</strong> 8-10 hours with 2-3 wakings for feeds</li>
+                                    <li><strong>Naps:</strong> 3-4 naps per day (30 min - 2 hours each)</li>
+                                    <li><strong>Wake windows:</strong> 60-90 minutes between naps</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="milestone-card">
+                            <h4>🍼 Feeding Changes</h4>
+                            <ul>
+                                <li><strong>Frequency:</strong> 7-9 feeds per day (stretching between feeds)</li>
+                                <li><strong>Amount:</strong> 4-6 oz per bottle feed (if formula feeding)</li>
+                                <li><strong>Feeding cues:</strong> More predictable hunger signals</li>
+                                <li><strong>Growth spurt:</strong> Expect cluster feeding around 6 weeks and 3 months</li>
+                            </ul>
+                        </div>
+
+                        <div class="milestone-card">
+                            <h4>👨‍👩‍👦 Parent Care Priorities</h4>
+                            <ul class="checklist">
+                                <li>Tummy time - Start with 3-5 minutes, 2-3x daily (builds neck strength)</li>
+                                <li>Talk and sing - Narrate daily activities to build language foundation</li>
+                                <li>Create bedtime routine - Bath, feed, song, sleep (consistency helps)</li>
+                                <li>Watch for postpartum mood - Screen for PPD/PPND (EPDS screening)</li>
+                                <li>Introduce vitamin D - 400 IU daily if breastfeeding (Health Canada)</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-section">
+                            <h4>🏥 Doctor Visits</h4>
+                            <p><strong>2-month checkup:</strong> First vaccinations (DTaP, IPV, Hib, PCV, Rotavirus)</p>
+                        </div>
+
+                        <div class="warning-section">
+                            <h4>⚠️ Red Flags to Watch</h4>
+                            <ul>
+                                <li>No social smile by 8 weeks</li>
+                                <li>Doesn't track objects with eyes</li>
+                                <li>Fever >100.4°F (call doctor immediately at this age)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Stage 3: Developing Personality -->
+            <section class="stage-section upcoming">
+                <details>
+                    <summary>
+                        <span>🤲 Stage 3: Developing Personality (3-6 Months)</span>
+                        <span class="stage-badge badge-upcoming">Upcoming</span>
+                    </summary>
+                    <div class="stage-content">
+                        <div class="info-section">
+                            <h4>📖 The "Golden Age" - Predictable & Delightful</h4>
+                            <p>Get ready for belly laughs, rolling, and maybe even sitting up! This stage is often called the "golden age" because babies are predictable, delightful, and not yet mobile enough to get into trouble.</p>
+                        </div>
+
+                        <div class="milestone-grid">
+                            <div class="milestone-card">
+                                <h4>💪 Physical Milestones</h4>
+                                <ul>
+                                    <li><strong>Rolling:</strong> Front to back (4 months), back to front (5-6 months)</li>
+                                    <li><strong>Sitting:</strong> Sits with support (4 months), sits independently (6 months)</li>
+                                    <li><strong>Reaching:</strong> Deliberately grabs toys, transfers objects hand to hand</li>
+                                    <li><strong>Mouthing:</strong> Everything goes in the mouth (oral exploration phase)</li>
+                                    <li><strong>Growth:</strong> Doubles birth weight by 5-6 months</li>
+                                </ul>
+                            </div>
+
+                            <div class="milestone-card">
+                                <h4>🧠 Cognitive & Social Leaps</h4>
+                                <ul>
+                                    <li>😂 <strong>First laugh</strong> (3-4 months) - genuine belly laughs at peek-a-boo</li>
+                                    <li>Recognizes own name when spoken</li>
+                                    <li>Shows distinct preferences for people and toys</li>
+                                    <li>Babbles consonant-vowel combinations ("ba-ba", "ma-ma")</li>
+                                    <li>Understands cause and effect (shaking rattle makes sound)</li>
+                                    <li>Stranger awareness begins (prefers familiar faces)</li>
+                                </ul>
+                            </div>
+
+                            <div class="milestone-card">
+                                <h4>😴 Sleep Development</h4>
+                                <ul>
+                                    <li><strong>Total sleep:</strong> 12-15 hours (most at night!)</li>
+                                    <li><strong>Night sleep:</strong> 10-12 hours (may sleep through by 6 months)</li>
+                                    <li><strong>Naps:</strong> 3 naps per day (morning, afternoon, early evening)</li>
+                                    <li><strong>Wake windows:</strong> 1.5-2.5 hours</li>
+                                    <li><strong>Sleep training option:</strong> Can begin gentle methods after 4 months (if desired)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="milestone-card">
+                            <h4>🍼 Feeding Changes</h4>
+                            <ul>
+                                <li><strong>Solids introduction:</strong> Start around 6 months (signs of readiness)</li>
+                                <li>Sits with minimal support</li>
+                                <li>Lost tongue-thrust reflex</li>
+                                <li>Shows interest in food</li>
+                                <li>Can bring objects to mouth</li>
+                                <li><strong>Milk feeds:</strong> Still primary nutrition (breast or formula)</li>
+                                <li><strong>Amount:</strong> 6-8 oz per bottle, 5-6 times daily</li>
+                            </ul>
+                        </div>
+
+                        <div class="milestone-card">
+                            <h4>👨‍👩‍👦 Parent Care Priorities</h4>
+                            <ul class="checklist">
+                                <li>Create safe play space - Baby-proofing begins (rolling babies move!)</li>
+                                <li>Read daily - High-contrast books, board books with textures</li>
+                                <li>Prepare for solids - Iron-fortified cereal, purées, or baby-led weaning</li>
+                                <li>Encourage reaching - Place toys slightly out of reach to motivate</li>
+                                <li>Respond to babbling - Conversation turns build language skills</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-section">
+                            <h4>🏥 Doctor Visits</h4>
+                            <ul>
+                                <li><strong>4-month checkup:</strong> Vaccinations (DTaP, IPV, Hib, PCV, Rotavirus)</li>
+                                <li><strong>6-month checkup:</strong> Vaccinations, developmental screening, discuss solids</li>
+                            </ul>
+                        </div>
+
+                        <div class="success-section">
+                            <h4>✨ What to Look Forward To</h4>
+                            <ul>
+                                <li>Sitting independently - changes perspective on the world</li>
+                                <li>First foods - messy, hilarious, camera-ready moments</li>
+                                <li>Longer night sleep stretches - some babies sleep 10+ hours!</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Stage 4: Mobility Emerges -->
+            <section class="stage-section upcoming">
+                <details>
+                    <summary>
+                        <span>🧗 Stage 4: Mobility Emerges (6-9 Months)</span>
+                        <span class="stage-badge badge-upcoming">Upcoming</span>
+                    </summary>
+                    <div class="stage-content">
+                        <div class="info-section">
+                            <h4>📖 The Explorer - Everything is Fascinating</h4>
+                            <p>Crawling begins! This stage transforms your living room into an adventure zone. Baby-proofing becomes essential as Artin discovers the joy of movement.</p>
+                        </div>
+
+                        <div class="milestone-grid">
+                            <div class="milestone-card">
+                                <h4>💪 Physical Milestones</h4>
+                                <ul>
+                                    <li><strong>Crawling:</strong> Army crawl (7 months), hands-and-knees crawl (8-9 months)</li>
+                                    <li><strong>Standing:</strong> Pulls to stand with support (8-9 months)</li>
+                                    <li><strong>Pincer grasp:</strong> Picks up small objects with thumb and forefinger</li>
+                                    <li><strong>Teeth:</strong> First teeth appear (usually lower front incisors, 6-10 months)</li>
+                                    <li><strong>Growth:</strong> Gains 3-5 oz per week (slower than early months)</li>
+                                </ul>
+                            </div>
+
+                            <div class="milestone-card">
+                                <h4>🧠 Cognitive & Social Leaps</h4>
+                                <ul>
+                                    <li><strong>Object permanence</strong> - understands objects exist when hidden (peek-a-boo becomes hilarious)</li>
+                                    <li>Responds to own name consistently</li>
+                                    <li>Shows separation anxiety (healthy attachment sign)</li>
+                                    <li>Imitates sounds and gestures (waves bye-bye, claps)</li>
+                                    <li>Understands "no" (even if doesn't always obey!)</li>
+                                    <li>Points at objects of interest</li>
+                                </ul>
+                            </div>
+
+                            <div class="milestone-card">
+                                <h4>😴 Sleep Development</h4>
+                                <ul>
+                                    <li><strong>Total sleep:</strong> 12-14 hours</li>
+                                    <li><strong>Night sleep:</strong> 11-12 hours (usually consolidated)</li>
+                                    <li><strong>Naps:</strong> Transitioning from 3 to 2 naps (morning and afternoon)</li>
+                                    <li><strong>Wake windows:</strong> 2.5-3.5 hours</li>
+                                    <li><strong>Sleep regression:</strong> Common around 8-10 months (practice new skills at night)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="milestone-card">
+                            <h4>🍼 Feeding Changes</h4>
+                            <ul>
+                                <li><strong>Solids:</strong> 2-3 meals per day, variety of textures</li>
+                                <li><strong>Self-feeding:</strong> Finger foods, learning to use spoon (messy!)</li>
+                                <li><strong>Milk:</strong> 24-32 oz formula or 4-6 breastfeeds per day</li>
+                                <li><strong>Water:</strong> Introduce sippy cup with water at meals</li>
+                                <li><strong>Allergen introduction:</strong> Introduce peanuts, eggs, dairy (early = protective)</li>
+                            </ul>
+                        </div>
+
+                        <div class="milestone-card">
+                            <h4>👨‍👩‍👦 Parent Care Priorities</h4>
+                            <ul class="checklist">
+                                <li>Baby-proof thoroughly - Outlet covers, cabinet locks, stair gates</li>
+                                <li>Encourage crawling - Place toys out of reach, create crawling obstacle course</li>
+                                <li>Practice self-feeding - Offer soft finger foods (banana, avocado, steamed veggies)</li>
+                                <li>Narrate everything - "I'm putting the cup on the table" builds vocabulary</li>
+                                <li>Establish dental care - Wipe gums/teeth with soft cloth after feeds</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-section">
+                            <h4>🏥 Doctor Visits</h4>
+                            <p><strong>9-month checkup:</strong> Developmental screening, lead and iron screening (if needed)</p>
+                        </div>
+
+                        <div class="warning-section">
+                            <h4>⚠️ Red Flags to Watch</h4>
+                            <ul>
+                                <li>No babbling by 9 months</li>
+                                <li>Doesn't respond to name</li>
+                                <li>No weight-bearing on legs when supported</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Stage 5: Almost a Toddler -->
+            <section class="stage-section upcoming">
+                <details>
+                    <summary>
+                        <span>🎂 Stage 5: Almost a Toddler (9-12 Months)</span>
+                        <span class="stage-badge badge-upcoming">Upcoming</span>
+                    </summary>
+                    <div class="stage-content">
+                        <div class="info-section">
+                            <h4>📖 The Communicator - Understanding So Much</h4>
+                            <p>The final stretch to the first birthday! Artin may take his first steps, say his first words, and show a distinct personality. Get ready to celebrate an amazing year!</p>
+                        </div>
+
+                        <div class="milestone-grid">
+                            <div class="milestone-card">
+                                <h4>💪 Physical Milestones</h4>
+                                <ul>
+                                    <li><strong>Cruising:</strong> Walks while holding furniture (9-11 months)</li>
+                                    <li><strong>Standing alone:</strong> Stands without support (10-12 months)</li>
+                                    <li><strong>First steps:</strong> Some babies walk by 12 months (range is 9-18 months)</li>
+                                    <li><strong>Stacking:</strong> Stacks 2 blocks, puts objects in containers</li>
+                                    <li><strong>Teeth:</strong> 4-8 teeth by first birthday</li>
+                                </ul>
+                            </div>
+
+                            <div class="milestone-card">
+                                <h4>🧠 Cognitive & Social Leaps</h4>
+                                <ul>
+                                    <li><strong>First words:</strong> "Mama", "Dada" used meaningfully (10-12 months)</li>
+                                    <li>Follows simple commands ("Come here", "Give me the ball")</li>
+                                    <li>Understands 50+ words even if can't say them</li>
+                                    <li>Shows preferences and opinions (shakes head "no")</li>
+                                    <li>Plays interactive games (patty-cake, peek-a-boo)</li>
+                                    <li>Tests boundaries (throws food to see reaction)</li>
+                                </ul>
+                            </div>
+
+                            <div class="milestone-card">
+                                <h4>😴 Sleep Development</h4>
+                                <ul>
+                                    <li><strong>Total sleep:</strong> 12-14 hours</li>
+                                    <li><strong>Night sleep:</strong> 11-12 hours (hopefully uninterrupted!)</li>
+                                    <li><strong>Naps:</strong> 2 naps (some transition to 1 nap late in this stage)</li>
+                                    <li><strong>Wake windows:</strong> 3-4 hours</li>
+                                    <li><strong>12-month sleep regression:</strong> Common as brain develops rapidly</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="milestone-card">
+                            <h4>🍼 Feeding Changes</h4>
+                            <ul>
+                                <li><strong>Solids:</strong> 3 meals + 2 snacks, eating many family foods</li>
+                                <li><strong>Self-feeding:</strong> Uses fingers, attempts spoon/fork (messy but learning!)</li>
+                                <li><strong>Milk:</strong> 16-24 oz formula or 3-4 breastfeeds</li>
+                                <li><strong>Transition planning:</strong> Can switch to whole milk at 12 months (if desired)</li>
+                                <li><strong>Hydration:</strong> 4-6 oz water throughout the day</li>
+                            </ul>
+                        </div>
+
+                        <div class="milestone-card">
+                            <h4>👨‍👩‍👦 Parent Care Priorities</h4>
+                            <ul class="checklist">
+                                <li>Support standing/walking - Push toys, hold hands for walking practice</li>
+                                <li>Read interactive books - Lift-the-flap, touch-and-feel books</li>
+                                <li>Name everything - "That's a dog! The dog says woof!" (label + sound)</li>
+                                <li>Allow safe exploration - Create "yes spaces" where baby can explore freely</li>
+                                <li>Plan first birthday - Simple celebration, smash cake photos!</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-section">
+                            <h4>🏥 Doctor Visits</h4>
+                            <p><strong>12-month checkup:</strong> Vaccinations (MMR, Varicella, Hep A), developmental screening</p>
+                        </div>
+
+                        <div class="success-section">
+                            <h4>✨ What to Look Forward To</h4>
+                            <ul>
+                                <li>First birthday celebration - YOU made it through the first year!</li>
+                                <li>First words - hearing "mama" or "dada" intentionally is magical</li>
+                                <li>First steps - the beginning of true independence</li>
+                                <li>More consistent sleep - many 12-month-olds sleep through the night</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Quick Reference Table -->
+            <section class="stage-section">
+                <details>
+                    <summary>
+                        <span>📊 Quick Reference: Milestones Summary</span>
+                    </summary>
+                    <div class="stage-content">
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Age</th>
+                                        <th>Physical</th>
+                                        <th>Cognitive/Social</th>
+                                        <th>Communication</th>
+                                        <th>Sleep</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="background: rgba(63, 185, 80, 0.1);">
+                                        <td><strong>0-1 mo</strong></td>
+                                        <td>Lifts head briefly</td>
+                                        <td>Focuses on faces</td>
+                                        <td>Cries for needs</td>
+                                        <td>14-17 hrs, fragmented</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>1-3 mo</strong></td>
+                                        <td>Holds head steady</td>
+                                        <td>Social smile</td>
+                                        <td>Coos, vowel sounds</td>
+                                        <td>14-16 hrs, consolidating</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>3-6 mo</strong></td>
+                                        <td>Rolls both ways, sits</td>
+                                        <td>Laughs, grabs toys</td>
+                                        <td>Babbles</td>
+                                        <td>12-15 hrs, longer nights</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>6-9 mo</strong></td>
+                                        <td>Crawls, pulls to stand</td>
+                                        <td>Object permanence</td>
+                                        <td>Imitates sounds</td>
+                                        <td>12-14 hrs, 2-3 naps</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>9-12 mo</strong></td>
+                                        <td>Cruises, may walk</td>
+                                        <td>Follows commands</td>
+                                        <td>First words</td>
+                                        <td>12-14 hrs, 1-2 naps</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Parent Resources -->
+            <section class="stage-section">
+                <details>
+                    <summary>
+                        <span>🎯 Parent Survival Guide & Resources</span>
+                    </summary>
+                    <div class="stage-content">
+                        <div class="milestone-grid">
+                            <div class="milestone-card">
+                                <h4>📅 Every Month</h4>
+                                <ul class="checklist">
+                                    <li>Track growth (weight, length, head circumference)</li>
+                                    <li>Monitor developmental milestones</li>
+                                    <li>Take photos/videos (you'll treasure these!)</li>
+                                    <li>Update baby book or journal</li>
+                                    <li>Check car seat fit (rear-facing until 2+ years)</li>
+                                </ul>
+                            </div>
+
+                            <div class="milestone-card">
+                                <h4>📅 Quarterly</h4>
+                                <ul class="checklist">
+                                    <li>Pediatrician checkups (2, 4, 6, 9, 12 months)</li>
+                                    <li>Review sleep safety (adjust crib mattress height as baby sits/stands)</li>
+                                    <li>Reassess baby-proofing (new skills = new hazards)</li>
+                                    <li>Update emergency contacts</li>
+                                </ul>
+                            </div>
+
+                            <div class="milestone-card">
+                                <h4>🇨🇦 Ontario Resources</h4>
+                                <ul>
+                                    <li><strong>Telehealth Ontario:</strong> 1-866-797-0000 (24/7 nurse advice)</li>
+                                    <li><strong>York Region Health Connection:</strong> 1-800-361-5653 (public health nurses)</li>
+                                    <li><strong>EarlyON Centres:</strong> Free parent-baby programs</li>
+                                    <li><strong>Well-baby visits:</strong> Covered by OHIP (free)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="info-section">
+                            <h4>💙 A Note for Parents</h4>
+                            <p>Every baby develops at their own pace. Artin may hit some milestones early and others later—this is completely normal. The ranges provided are guidelines, not rigid timelines.</p>
+                            <p><strong>What matters most:</strong></p>
+                            <ul>
+                                <li>Responding to Artin's cues with warmth and consistency</li>
+                                <li>Creating a safe environment for exploration</li>
+                                <li>Celebrating small victories</li>
+                                <li>Asking for help when you need it</li>
+                                <li>Trusting your instincts</li>
+                            </ul>
+                            <p style="font-weight: 600; color: #3fb950;">You're doing an amazing job. The fact that you're reading this roadmap shows your dedication to Artin's wellbeing. Take it one day at a time, and remember: the days are long, but the years are short.</p>
+                        </div>
+                    </div>
+                </details>
+            </section>
+        </main>
+
+        <footer>
+            <p><strong class="emphasis">Generated for Artin Izadjoo</strong></p>
+            <p>Born: November 8, 2025 | Current Age: 7 days</p>
+            <p>Evidence-based guidance from Canadian Paediatric Society, Health Canada, AAP, WHO</p>
+            <p style="font-size: 0.85rem; margin-top: 20px; color: #6e7681;">
+                <em>This roadmap is for informational purposes. Always consult your pediatrician for personalized medical advice.</em>
+            </p>
+        </footer>
+    </article>
+</body>
+</html>
