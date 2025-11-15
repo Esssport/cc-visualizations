@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive developmental timeline showing Artin's language and musical development from birth through age 7">
+    <title>Artin's Musical & Language Development Journey | Birth to 7 Years</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@200;400;700;900&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===================================
+           RESET & BASE STYLES
+           =================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Crimson Pro', 'Crimson Text', Georgia, serif;
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
+            font-weight: 400;
+            line-height: 1.8;
+            color: #e8e4dc;
+            background: #1a1611;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Academic Theme Paper Texture Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        /* ===================================
+           TYPOGRAPHY
+           =================================== */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: #e8e4dc;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(2.25rem, 4vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            font-weight: 700;
+            margin-top: 3rem;
+            margin-bottom: 1.25rem;
+            border-bottom: 2px solid #3a3228;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: clamp(1.35rem, 2vw, 1.85rem);
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #6ba4e7;
+        }
+
+        h4 {
+            font-size: clamp(1.125rem, 1.75vw, 1.5rem);
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #f4a940;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+        }
+
+        strong {
+            font-weight: 700;
+            color: #f4a940;
+        }
+
+        em {
+            font-style: italic;
+            color: #b8b0a5;
+        }
+
+        code {
+            font-family: 'Source Code Pro', 'Courier New', monospace;
+            font-size: 0.9em;
+            background: #252019;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            color: #6ba4e7;
+        }
+
+        /* ===================================
+           LAYOUT CONTAINERS
+           =================================== */
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* ===================================
+           HEADER / HERO SECTION
+           =================================== */
+        .hero {
+            background: linear-gradient(180deg, #252019 0%, #1a1611 100%);
+            padding: 4rem 1.5rem;
+            margin-bottom: 3rem;
+            border-bottom: 3px solid #6ba4e7;
+            text-align: center;
+            animation: page-turn 0.8s ease-out;
+        }
+
+        .hero h1 {
+            color: #6ba4e7;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            color: #f4a940;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .overview {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
+            color: #b8b0a5;
+        }
+
+        /* ===================================
+           TABLE OF CONTENTS
+           =================================== */
+        .toc {
+            background: #252019;
+            border: 2px solid #3a3228;
+            border-left: 4px solid #6ba4e7;
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            animation: fade-in-up 0.6s ease-out 0.2s both;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            border: none;
+            font-size: clamp(1.35rem, 2vw, 1.85rem);
+            color: #6ba4e7;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: #e8e4dc;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            display: block;
+            padding: 0.25rem 0;
+        }
+
+        .toc a:hover {
+            color: #6ba4e7;
+            transform: translateX(4px);
+            transition: all 0.2s ease;
+        }
+
+        /* ===================================
+           SECTION CARDS
+           =================================== */
+        .section-card {
+            background: #252019;
+            border: 1px solid #3a3228;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            animation: fade-in-up 0.6s ease-out both;
+            transition: all 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(107, 164, 231, 0.15);
+        }
+
+        .section-card.current-stage {
+            border: 2px solid #4db86d;
+            border-left: 6px solid #4db86d;
+            background: linear-gradient(135deg, #252019 0%, #1e261e 100%);
+        }
+
+        .current-badge {
+            display: inline-block;
+            background: #4db86d;
+            color: #1a1611;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* ===================================
+           MILESTONE LISTS
+           =================================== */
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        li::marker {
+            color: #f4a940;
+        }
+
+        /* ===================================
+           HIGHLIGHT BOXES
+           =================================== */
+        .note-box {
+            background: #2d2517;
+            border-left: 4px solid #f4a940;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .note-box strong {
+            color: #f4a940;
+        }
+
+        .info-box {
+            background: #1c2d42;
+            border-left: 4px solid #6ba4e7;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .success-box {
+            background: #1a3a1a;
+            border-left: 4px solid #4db86d;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .warning-box {
+            background: #3a2d1a;
+            border-left: 4px solid #f0932b;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        /* ===================================
+           TABLES
+           =================================== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: #252019;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        thead {
+            background: #3a3228;
+        }
+
+        th {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            color: #e8e4dc;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 2px solid #6ba4e7;
+        }
+
+        td {
+            padding: 0.875rem 1rem;
+            border-bottom: 1px solid #3a3228;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr {
+            transition: background 0.2s ease;
+        }
+
+        tbody tr:hover {
+            background: #2d2720;
+        }
+
+        /* ===================================
+           HORIZONTAL RULE
+           =================================== */
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #3a3228, transparent);
+            margin: 3rem 0;
+        }
+
+        /* ===================================
+           LINKS
+           =================================== */
+        a {
+            color: #6ba4e7;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #f4a940;
+            text-decoration: underline;
+        }
+
+        /* ===================================
+           ANIMATIONS
+           =================================== */
+        @keyframes page-turn {
+            from {
+                opacity: 0;
+                filter: blur(3px);
+                transform: scale(0.98);
+            }
+            to {
+                opacity: 1;
+                filter: blur(0);
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll-triggered animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===================================
+           TIMELINE VISUAL
+           =================================== */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #6ba4e7, #f4a940, #4db86d);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: #6ba4e7;
+            border-radius: 50%;
+            border: 3px solid #1a1611;
+        }
+
+        /* ===================================
+           FOOTER
+           =================================== */
+        footer {
+            background: #252019;
+            border-top: 2px solid #3a3228;
+            padding: 2rem 1.5rem;
+            margin-top: 4rem;
+            text-align: center;
+            color: #b8b0a5;
+            font-size: 0.9rem;
+        }
+
+        /* ===================================
+           RESPONSIVE DESIGN
+           =================================== */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .section-card {
+                padding: 1.5rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            table {
+                font-size: 0.875rem;
+            }
+
+            th, td {
+                padding: 0.625rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 14px;
+            }
+
+            .timeline {
+                padding-left: 1.5rem;
+            }
+
+            .timeline-item::before {
+                left: -2rem;
+            }
+        }
+
+        /* ===================================
+           ACCESSIBILITY
+           =================================== */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        *:focus {
+            outline: 2px solid #6ba4e7;
+            outline-offset: 2px;
+        }
+
+        /* Skip to main content link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #6ba4e7;
+            color: #1a1611;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <h1>Artin's Musical & Language Development Journey</h1>
+        <p class="subtitle">From Newborn to Young Musician (0-7 Years)</p>
+        <div class="overview">
+            <p>This interactive timeline shows how Artin will develop both <strong>language abilities</strong> (when he'll talk) and <strong>musical skills</strong> (how he'll learn to play music) from birth through age 7. Both domains develop in parallel, with fascinating connections between musical and linguistic development.</p>
+        </div>
+    </header>
+
+    <main id="main-content" class="container">
+        <!-- TABLE OF CONTENTS -->
+        <nav class="toc" aria-label="Table of Contents">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#birth-3-months">Birth to 3 Months: The Foundation (Current Stage)</a></li>
+                <li><a href="#3-6-months">3-6 Months: Early Vocalizations & Musical Awareness</a></li>
+                <li><a href="#6-12-months">6-12 Months: First Words & Musical Engagement</a></li>
+                <li><a href="#12-18-months">12-18 Months: Vocabulary Growth & Musical Play</a></li>
+                <li><a href="#18-24-months">18-24 Months: Language Explosion & Musical Expression</a></li>
+                <li><a href="#2-3-years">2-3 Years: Conversational Language & Musical Fundamentals</a></li>
+                <li><a href="#3-4-years">3-4 Years: Articulate Speech & Early Musical Skills</a></li>
+                <li><a href="#4-5-years">4-5 Years: Fluent Language & Beginning Instruments</a></li>
+                <li><a href="#5-7-years">5-7 Years: Advanced Language & Musical Literacy</a></li>
+                <li><a href="#connection">The Language-Music Connection</a></li>
+                <li><a href="#summary">Timeline Summary & Quick Reference Tables</a></li>
+                <li><a href="#takeaways">Key Takeaways & Recommendations</a></li>
+            </ul>
+        </nav>
+
+        <!-- SECTION: BIRTH TO 3 MONTHS -->
+        <section id="birth-3-months" class="section-card current-stage scroll-reveal">
+            <span class="current-badge">Current Stage - 7 Days Old</span>
+            <h2>Birth to 3 Months: The Foundation</h2>
+
+            <h3>Language Development</h3>
+            <h4>What's Happening:</h4>
+            <ul>
+                <li><strong>Crying as communication</strong> - Artin's primary language right now</li>
+                <li>Different cry patterns for hunger, discomfort, tiredness</li>
+                <li><strong>Cooing begins</strong> around 6-8 weeks (soft "oooh" and "aaah" sounds)</li>
+                <li>Responds to familiar voices (especially parents)</li>
+                <li>Startles at loud noises, calms to soothing voices</li>
+            </ul>
+
+            <h4>Neural Development:</h4>
+            <ul>
+                <li>Auditory cortex rapidly developing</li>
+                <li>Brain forming sound discrimination pathways</li>
+                <li>Beginning to distinguish speech from other sounds</li>
+                <li>Recognizing prosody (rhythm and melody of language)</li>
+            </ul>
+
+            <h3>Musical Development</h3>
+            <h4>What's Happening:</h4>
+            <ul>
+                <li><strong>Responds to music and rhythm</strong> - calms to lullabies</li>
+                <li>Startles at sudden loud sounds (protective reflex)</li>
+                <li>Prefers human voice over instrumental music</li>
+                <li>May move eyes toward music source</li>
+                <li>Soothed by rhythmic sounds (white noise, heartbeat)</li>
+            </ul>
+
+            <h4>Musical Foundations:</h4>
+            <ul>
+                <li>Developing basic auditory processing</li>
+                <li>Forming early rhythm perception (from womb experience)</li>
+                <li>Beginning pitch discrimination</li>
+                <li>Preference for consonant vs dissonant sounds</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Activities for Parents:</h4>
+                <ul>
+                    <li>Sing lullabies during feeding/bedtime</li>
+                    <li>Play soft classical music (Mozart, Brahms lullabies)</li>
+                    <li>Talk to Artin with exaggerated prosody ("motherese")</li>
+                    <li>Create rhythmic sounds (gentle shushing, humming)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION: 3-6 MONTHS -->
+        <section id="3-6-months" class="section-card scroll-reveal">
+            <h2>3-6 Months: Early Vocalizations & Musical Awareness</h2>
+
+            <h3>Language Development</h3>
+            <h4>Milestones:</h4>
+            <ul>
+                <li><strong>Babbling begins</strong> (4-6 months) - "ba-ba-ba", "ma-ma-ma"</li>
+                <li>Experimenting with vowel sounds</li>
+                <li><strong>Turn-taking</strong> in "conversations" (coos when parent pauses)</li>
+                <li>Laughing and squealing</li>
+                <li>Imitating speech sounds</li>
+                <li>Recognizing own name by 5-6 months</li>
+            </ul>
+
+            <h4>Brain Development:</h4>
+            <ul>
+                <li>Language centers (Broca's and Wernicke's areas) activating</li>
+                <li>Synaptic pruning begins (optimizing for native language)</li>
+                <li>Mirror neurons supporting imitation</li>
+            </ul>
+
+            <div class="note-box">
+                <p><strong>Answer: When will he talk?</strong><br>
+                Not yet meaningful words, but <strong>pre-language communication is happening!</strong></p>
+            </div>
+
+            <h3>Musical Development</h3>
+            <h4>Milestones:</h4>
+            <ul>
+                <li><strong>Moves body to music</strong> - kicks legs, waves arms rhythmically</li>
+                <li>Enjoys musical toys (rattles, musical mobiles)</li>
+                <li>Turns head toward sound sources</li>
+                <li>Vocalizes along with music (musical babbling)</li>
+                <li>Shows preferences for certain songs</li>
+            </ul>
+
+            <h4>Musical Skills:</h4>
+            <ul>
+                <li>Developing beat perception</li>
+                <li>Beginning melodic contour recognition</li>
+                <li>Exploring vocal range through babbling</li>
+                <li>Connecting movement with rhythm</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Activities for Parents:</h4>
+                <ul>
+                    <li>Play varied music genres (classical, jazz, folk, world music)</li>
+                    <li>Dance while holding Artin</li>
+                    <li>Use musical toys (rattles, music boxes)</li>
+                    <li>Sing interactive songs ("Itsy Bitsy Spider" with hand motions)</li>
+                    <li>Mirror his babbling sounds (musical "conversations")</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION: 6-12 MONTHS -->
+        <section id="6-12-months" class="section-card scroll-reveal">
+            <h2>6-12 Months: First Words & Musical Engagement</h2>
+
+            <h3>Language Development</h3>
+            <h4>Major Milestones:</h4>
+            <ul>
+                <li><strong>First meaningful words</strong> appear (9-12 months) 🎉</li>
+                <li>Common first words: "mama", "dada", "ball", "up", "no"</li>
+                <li><strong>Receptive language explodes</strong> - understands 50+ words by 12 months</li>
+                <li>Follows simple commands ("Come here", "Give me")</li>
+                <li>Points to request things</li>
+                <li>Uses gestures (waving bye-bye, shaking head)</li>
+                <li>Recognizes names of familiar people and objects</li>
+            </ul>
+
+            <h4>Brain Development:</h4>
+            <ul>
+                <li>Vocabulary spurt beginning</li>
+                <li>Understanding word-object associations</li>
+                <li>Joint attention skills (following parent's gaze/point)</li>
+            </ul>
+
+            <div class="success-box">
+                <p><strong>Answer: When will he talk?</strong><br>
+                <strong>By 12 months, Artin will likely say 1-3 meaningful words!</strong> 🗣️</p>
+            </div>
+
+            <h3>Musical Development</h3>
+            <h4>Major Milestones:</h4>
+            <ul>
+                <li><strong>Bounces and dances</strong> to music spontaneously</li>
+                <li>Attempts to clap hands (rhythm coordination)</li>
+                <li>Vocalizes melodically (proto-singing)</li>
+                <li>Explores sound-making with objects (banging, shaking)</li>
+                <li>Shows excitement when favorite songs play</li>
+                <li>May sway or rock to music</li>
+            </ul>
+
+            <h4>Musical Skills:</h4>
+            <ul>
+                <li>Strong beat perception</li>
+                <li>Beginning to match pitch (approximations)</li>
+                <li>Exploring dynamics (loud/soft with objects)</li>
+                <li>Rhythm-movement coordination developing</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Activities for Parents:</h4>
+                <ul>
+                    <li>Provide simple percussion instruments (drum, shakers, tambourine)</li>
+                    <li>Sing action songs ("If You're Happy and You Know It")</li>
+                    <li>Play music during daily routines (consistent associations)</li>
+                    <li>Encourage clapping and dancing</li>
+                    <li>Introduce variety of musical styles</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION: 12-18 MONTHS -->
+        <section id="12-18-months" class="section-card scroll-reveal">
+            <h2>12-18 Months: Vocabulary Growth & Musical Play</h2>
+
+            <h3>Language Development</h3>
+            <h4>Major Milestones:</h4>
+            <ul>
+                <li><strong>Vocabulary: 10-50 words</strong> by 18 months</li>
+                <li>Uses words to label objects, people, actions</li>
+                <li>Understands 100-200 words (comprehension >> production)</li>
+                <li>Follows 2-step commands ("Get your shoe and bring it here")</li>
+                <li>Uses intonation (question vs statement)</li>
+                <li><strong>Beginning to combine words</strong> (late 18 months): "More milk", "Daddy go"</li>
+            </ul>
+
+            <h4>Communication:</h4>
+            <ul>
+                <li>Pointing with intent (requesting, commenting, asking)</li>
+                <li>Using words + gestures together</li>
+                <li>"No" becomes a favorite word</li>
+                <li>Shows interest in books and naming pictures</li>
+            </ul>
+
+            <h4>Brain Development:</h4>
+            <ul>
+                <li>Rapid vocabulary acquisition (word mapping)</li>
+                <li>Syntax foundations forming</li>
+                <li>Social communication skills developing</li>
+            </ul>
+
+            <h3>Musical Development</h3>
+            <h4>Major Milestones:</h4>
+            <ul>
+                <li><strong>Dances spontaneously</strong> to music</li>
+                <li>Tries to sing along (approximating melodies)</li>
+                <li>Explores instruments with intent</li>
+                <li>Shows rhythmic coordination (clapping in time)</li>
+                <li>Requests favorite songs</li>
+                <li>Moves to different musical tempos</li>
+            </ul>
+
+            <h4>Musical Skills:</h4>
+            <ul>
+                <li>Pitch matching improving</li>
+                <li>Rhythm reproduction (simple patterns)</li>
+                <li>Beginning melodic memory (recognizes songs)</li>
+                <li>Exploring timbre (different instrument sounds)</li>
+            </ul>
+
+            <h4>First Instruments:</h4>
+            <ul>
+                <li><strong>Simple percussion</strong> (drums, xylophones, shakers)</li>
+                <li>Exploration-focused play (not formal instruction)</li>
+                <li>Cause-and-effect learning (hit drum → sound)</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Activities for Parents:</h4>
+                <ul>
+                    <li>Simple instrument play sessions (5-10 minutes)</li>
+                    <li>Singing nursery rhymes daily</li>
+                    <li>Music and movement games</li>
+                    <li>Introduce instrument sounds (piano, guitar, drums)</li>
+                    <li>Make homemade instruments (rice shakers, pot drums)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION: 18-24 MONTHS -->
+        <section id="18-24-months" class="section-card scroll-reveal">
+            <h2>18-24 Months: Language Explosion & Musical Expression</h2>
+
+            <h3>Language Development</h3>
+            <div class="success-box">
+                <p><strong>MAJOR MILESTONE: Vocabulary Explosion 🚀</strong></p>
+            </div>
+
+            <h4>Milestones:</h4>
+            <ul>
+                <li><strong>Vocabulary: 50-200+ words</strong> by 24 months</li>
+                <li>Learning 5-10 new words per week</li>
+                <li><strong>Two-word phrases</strong> become common: "Big dog", "Want cookie", "Daddy car"</li>
+                <li>Uses pronouns (me, mine, you)</li>
+                <li>Asks simple questions ("What's that?", "Where daddy?")</li>
+                <li>Beginning to use verbs and adjectives</li>
+                <li>Follows 2-3 step commands</li>
+            </ul>
+
+            <h4>Communication:</h4>
+            <ul>
+                <li>Conversational turn-taking improving</li>
+                <li>Uses language to express needs, share information</li>
+                <li>Enjoys repetition (same story/song multiple times)</li>
+                <li>Beginning pretend play with language</li>
+            </ul>
+
+            <h4>Brain Development:</h4>
+            <ul>
+                <li>Syntax acquisition accelerating</li>
+                <li>Grammar foundations forming</li>
+                <li>Semantic categories developing (animals, food, toys)</li>
+            </ul>
+
+            <div class="success-box">
+                <p><strong>Answer: When will he talk?</strong><br>
+                <strong>By 24 months, Artin will be having simple conversations!</strong> 💬</p>
+            </div>
+
+            <h3>Musical Development</h3>
+            <h4>Major Milestones:</h4>
+            <ul>
+                <li><strong>Sings recognizable songs</strong> (approximating melodies)</li>
+                <li>Creates spontaneous songs (improvisation)</li>
+                <li>Shows strong rhythm sense</li>
+                <li>Enjoys playing simple instruments independently</li>
+                <li>Requests specific songs by name</li>
+                <li>Dances with coordinated movements</li>
+            </ul>
+
+            <h4>Musical Skills:</h4>
+            <ul>
+                <li>Melodic contour reproduction</li>
+                <li>Rhythm patterns (clapping simple beats)</li>
+                <li>Dynamic awareness (loud/soft expression)</li>
+                <li>Beginning tonal center recognition</li>
+            </ul>
+
+            <h4>Instruments at This Age:</h4>
+            <ul>
+                <li><strong>Percussion family</strong> (drums, tambourines, triangles, cymbals)</li>
+                <li><strong>Simple melodic</strong> (xylophones, metallophones)</li>
+                <li><strong>Exploration-based</strong> - not formal lessons yet</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Activities for Parents:</h4>
+                <ul>
+                    <li>Daily music play sessions (10-15 minutes)</li>
+                    <li>Singing games with actions</li>
+                    <li>Introduce classical music for children (Peter and the Wolf, Carnival of the Animals)</li>
+                    <li>Rhythm games (clapping patterns)</li>
+                    <li>Dance parties at home</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION: 2-3 YEARS -->
+        <section id="2-3-years" class="section-card scroll-reveal">
+            <h2>2-3 Years: Conversational Language & Musical Fundamentals</h2>
+
+            <h3>Language Development</h3>
+            <h4>Major Milestones:</h4>
+            <ul>
+                <li><strong>Vocabulary: 200-1,000 words</strong> by age 3</li>
+                <li><strong>Simple sentences</strong> (3-4 words): "I want more juice", "Daddy went to work"</li>
+                <li>Uses plural forms, past tense (may overgeneralize: "I goed")</li>
+                <li>Asks lots of questions ("Why?", "How?", "When?")</li>
+                <li>Tells simple stories</li>
+                <li>Speaks in longer conversational turns</li>
+                <li>Strangers can understand 75% of speech by age 3</li>
+            </ul>
+
+            <h4>Communication:</h4>
+            <ul>
+                <li>Complex pretend play with language</li>
+                <li>Understands spatial concepts (in, on, under)</li>
+                <li>Follows multi-step instructions</li>
+                <li>Beginning to understand time concepts (today, tomorrow, yesterday)</li>
+            </ul>
+
+            <h4>Brain Development:</h4>
+            <ul>
+                <li>Grammar mastery accelerating</li>
+                <li>Narrative skills emerging</li>
+                <li>Abstract thinking beginning</li>
+            </ul>
+
+            <div class="success-box">
+                <p><strong>Answer: When will he talk?</strong><br>
+                <strong>By age 3, Artin will be a chatty conversationalist!</strong> 🎙️</p>
+            </div>
+
+            <h3>Musical Development</h3>
+            <h4>Major Milestones:</h4>
+            <ul>
+                <li><strong>Sings complete simple songs</strong> accurately</li>
+                <li>Recognizes and names familiar tunes</li>
+                <li>Can match pitch more consistently</li>
+                <li>Shows interest in "playing music" (not just exploring sounds)</li>
+                <li>Develops favorite songs and musical preferences</li>
+                <li>Moves to music with improved coordination</li>
+            </ul>
+
+            <h4>Musical Skills:</h4>
+            <ul>
+                <li>Basic rhythm reproduction (clapping/tapping patterns)</li>
+                <li>Melodic memory (remembers song sequences)</li>
+                <li>Beginning to distinguish instruments by sound</li>
+                <li>Understanding musical concepts (fast/slow, loud/soft, high/low)</li>
+            </ul>
+
+            <h4>Pre-Instrumental Development:</h4>
+            <ul>
+                <li><strong>Not ready for formal lessons</strong> yet (fine motor still developing)</li>
+                <li>Focus on <strong>musical play and exploration</strong></li>
+                <li>Group music classes (Kindermusik, Music Together)</li>
+                <li>Singing, dancing, percussion instruments</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Activities for Parents:</h4>
+                <ul>
+                    <li>Group music classes (socialization + music)</li>
+                    <li>Variety of musical genres (classical, jazz, folk, world)</li>
+                    <li>Instrument identification games</li>
+                    <li>Simple rhythm games (echo clapping)</li>
+                    <li>Encourage singing throughout the day</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION: 3-4 YEARS -->
+        <section id="3-4-years" class="section-card scroll-reveal">
+            <h2>3-4 Years: Articulate Speech & Early Musical Skills</h2>
+
+            <h3>Language Development</h3>
+            <h4>Major Milestones:</h4>
+            <ul>
+                <li><strong>Vocabulary: 1,000-2,000 words</strong> by age 4</li>
+                <li><strong>Complex sentences</strong> with conjunctions: "I went to the park and I played on the swings"</li>
+                <li>Uses pronouns correctly (he, she, they)</li>
+                <li>Tells detailed stories with sequence</li>
+                <li>Understands and uses time concepts better</li>
+                <li>Speech is 90-100% intelligible to strangers</li>
+                <li>Can recite name, age, address</li>
+            </ul>
+
+            <h4>Communication:</h4>
+            <ul>
+                <li>Sophisticated pretend play scenarios</li>
+                <li>Understands humor (simple jokes, silly words)</li>
+                <li>Asks abstract questions ("Why is the sky blue?")</li>
+                <li>Can describe feelings and emotions</li>
+            </ul>
+
+            <h4>Brain Development:</h4>
+            <ul>
+                <li>Advanced grammar mastery</li>
+                <li>Metalinguistic awareness beginning (thinking about language)</li>
+                <li>Reading readiness developing</li>
+            </ul>
+
+            <h3>Musical Development</h3>
+            <h4>Major Milestones:</h4>
+            <ul>
+                <li><strong>Can learn simple instruments</strong> with proper instruction</li>
+                <li>Improved fine motor control for instrument playing</li>
+                <li>Sings in tune more consistently</li>
+                <li>Can clap/tap complex rhythm patterns</li>
+                <li>Understands basic musical notation concepts (visually)</li>
+                <li>Shows personal musical preferences</li>
+            </ul>
+
+            <h4>First Formal Instrument Possibilities:</h4>
+            <ul>
+                <li><strong>Piano/Keyboard</strong> - visual layout helps learning, gentle on small fingers</li>
+                <li><strong>Recorder</strong> - simple fingering, breath control practice</li>
+                <li><strong>Ukulele</strong> - small size, soft nylon strings</li>
+                <li><strong>Percussion</strong> - various instruments for rhythm foundation</li>
+            </ul>
+
+            <div class="note-box">
+                <h4>Readiness Signs:</h4>
+                <ul>
+                    <li>Can follow 2-3 step instructions independently</li>
+                    <li>Shows sustained interest (15-20 minutes)</li>
+                    <li>Fine motor skills developed (can hold pencil, use scissors)</li>
+                    <li>Interested in "learning music" (not just playing)</li>
+                </ul>
+            </div>
+
+            <h4>Considerations:</h4>
+            <ul>
+                <li><strong>Group lessons</strong> often better than private at this age</li>
+                <li>Keep sessions short (15-20 minutes)</li>
+                <li>Focus on fun and exploration, not perfection</li>
+                <li>Suzuki method effective for this age (learn by ear first)</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Activities for Parents:</h4>
+                <ul>
+                    <li>Explore instrument options (try different ones)</li>
+                    <li>Attend children's concerts</li>
+                    <li>Introduce music notation visually (not reading yet)</li>
+                    <li>Rhythm and melody games</li>
+                    <li>Encourage creative music-making</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION: 4-5 YEARS -->
+        <section id="4-5-years" class="section-card scroll-reveal">
+            <h2>4-5 Years: Fluent Language & Beginning Instruments</h2>
+
+            <h3>Language Development</h3>
+            <h4>Major Milestones:</h4>
+            <ul>
+                <li><strong>Vocabulary: 2,000-5,000 words</strong> by age 5</li>
+                <li>Speaks in complex, grammatically correct sentences</li>
+                <li>Uses all parts of speech correctly</li>
+                <li>Tells elaborate stories with beginning, middle, end</li>
+                <li>Understands and uses abstract concepts</li>
+                <li>Can have extended conversations on topics</li>
+                <li>Speech is fully intelligible</li>
+            </ul>
+
+            <h4>Literacy Connection:</h4>
+            <ul>
+                <li>Pre-reading skills (letter recognition, phonemic awareness)</li>
+                <li>Understands that print carries meaning</li>
+                <li>May begin to write letters and name</li>
+                <li>Interested in books and storytelling</li>
+            </ul>
+
+            <h4>Brain Development:</h4>
+            <ul>
+                <li>Language foundations largely complete</li>
+                <li>Metalinguistic skills developing</li>
+                <li>Critical period for second language acquisition</li>
+            </ul>
+
+            <div class="success-box">
+                <p><strong>Answer: When will he talk?</strong><br>
+                <strong>By age 5, Artin will be a fluent speaker, telling stories, asking complex questions, and having sophisticated conversations!</strong> 🎭</p>
+            </div>
+
+            <h3>Musical Development</h3>
+            <h4>Major Milestones:</h4>
+            <ul>
+                <li><strong>Formal music lessons are viable</strong> at this age</li>
+                <li>Can follow complex musical instructions</li>
+                <li>Improved pitch accuracy and rhythm precision</li>
+                <li>Can learn to read basic music notation</li>
+                <li>Shows developing musical taste and preferences</li>
+                <li>Can practice independently for short periods</li>
+            </ul>
+
+            <h4>Recommended Instruments:</h4>
+            <ul>
+                <li><strong>Piano</strong> - most popular first instrument, excellent foundation</li>
+                <li><strong>Violin</strong> - Suzuki method highly effective</li>
+                <li><strong>Guitar</strong> (1/4 or 1/2 size) - acoustic or classical</li>
+                <li><strong>Recorder</strong> - common school introduction</li>
+                <li><strong>Drums/Percussion</strong> - excellent for rhythm foundation</li>
+            </ul>
+
+            <h4>Formal Instruction:</h4>
+            <ul>
+                <li><strong>Private lessons</strong> (20-30 minutes weekly)</li>
+                <li><strong>Group classes</strong> (musicianship, theory)</li>
+                <li>Combination approach often best</li>
+                <li>Practice expectations: 10-15 minutes daily</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Activities for Parents:</h4>
+                <ul>
+                    <li>Support home practice (create routine)</li>
+                    <li>Attend recitals and concerts together</li>
+                    <li>Encourage composition and improvisation</li>
+                    <li>Make music a family activity</li>
+                    <li>Celebrate progress, not perfection</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION: 5-7 YEARS -->
+        <section id="5-7-years" class="section-card scroll-reveal">
+            <h2>5-7 Years: Advanced Language & Musical Literacy</h2>
+
+            <h3>Language Development</h3>
+            <h4>Major Milestones:</h4>
+            <ul>
+                <li><strong>Vocabulary: 5,000-10,000+ words</strong> by age 7</li>
+                <li>Masters complex grammar structures</li>
+                <li>Uses figurative language (metaphors, idioms)</li>
+                <li>Tells sophisticated stories with detail</li>
+                <li>Can discuss abstract concepts (time, emotions, hypotheticals)</li>
+                <li>Beginning to read and write independently</li>
+            </ul>
+
+            <h4>Literacy Development:</h4>
+            <ul>
+                <li>Reading fluency developing (decoding → comprehension)</li>
+                <li>Writing sentences and short stories</li>
+                <li>Spelling and phonics mastery</li>
+                <li>Enjoying chapter books</li>
+            </ul>
+
+            <h4>Cognitive Development:</h4>
+            <ul>
+                <li>Concrete operational thinking (Piaget)</li>
+                <li>Logical reasoning improving</li>
+                <li>Metacognition developing (thinking about thinking)</li>
+            </ul>
+
+            <h3>Musical Development</h3>
+            <h4>Major Milestones:</h4>
+            <ul>
+                <li><strong>Playing instruments with technique</strong></li>
+                <li>Reading music notation fluently (age-appropriate level)</li>
+                <li>Understanding musical theory concepts (scales, chords, rhythm values)</li>
+                <li>Can learn more complex pieces</li>
+                <li>May participate in ensembles (school band, choir, orchestra)</li>
+                <li>Developing practice discipline</li>
+            </ul>
+
+            <h4>Instrument Progression:</h4>
+            <ul>
+                <li><strong>Original instruments continue</strong> - advancing in skill</li>
+                <li><strong>Additional instruments possible</strong> - many start second instrument</li>
+                <li><strong>School music programs</strong> - band, orchestra, choir options</li>
+                <li><strong>Ensemble experience</strong> - playing with others</li>
+            </ul>
+
+            <h4>Musical Skills:</h4>
+            <ul>
+                <li>Technical facility improving</li>
+                <li>Musical expression developing</li>
+                <li>Improvisation and composition abilities</li>
+                <li>Critical listening skills</li>
+                <li>Performance confidence</li>
+            </ul>
+
+            <h4>Formal Music Education:</h4>
+            <ul>
+                <li>Private lessons (30-45 minutes weekly)</li>
+                <li>Practice expectations: 20-30 minutes daily</li>
+                <li>Music theory classes</li>
+                <li>Ensemble participation</li>
+                <li>Recitals and performances</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Activities for Parents:</h4>
+                <ul>
+                    <li>Maintain consistent practice schedule</li>
+                    <li>Attend live performances together</li>
+                    <li>Support school music programs</li>
+                    <li>Encourage creative music exploration</li>
+                    <li>Consider music summer camps</li>
+                    <li>Make practice engaging (not punitive)</li>
+                </ul>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- SECTION: THE CONNECTION -->
+        <section id="connection" class="section-card scroll-reveal">
+            <h2>The Language-Music Connection</h2>
+
+            <h3>Why Musical Training Enhances Language Development</h3>
+
+            <h4>Shared Neural Pathways:</h4>
+            <ul>
+                <li>Both language and music processed in overlapping brain regions</li>
+                <li>Auditory processing skills transfer between domains</li>
+                <li>Rhythm perception supports phonological awareness (reading)</li>
+                <li>Melodic contour recognition aids prosody understanding</li>
+            </ul>
+
+            <h4>Research Findings:</h4>
+            <ul>
+                <li>Musical training enhances phonological awareness (critical for reading)</li>
+                <li>Rhythm skills predict reading ability</li>
+                <li>Musicians show enhanced language processing</li>
+                <li>Music training can support language learning disabilities</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Practical Connections:</h4>
+                <ul>
+                    <li><strong>Singing nursery rhymes</strong> teaches language rhythm and rhyme</li>
+                    <li><strong>Instrument practice</strong> develops listening discrimination</li>
+                    <li><strong>Music notation</strong> supports visual-symbolic learning (pre-reading)</li>
+                    <li><strong>Performance</strong> builds communication confidence</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION: SUMMARY TABLES -->
+        <section id="summary" class="section-card scroll-reveal">
+            <h2>Timeline Summary: When Will Artin Talk & Play Music?</h2>
+
+            <h3>Language Milestones Quick Reference</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Age</th>
+                        <th>Language Milestone</th>
+                        <th>Vocabulary Size</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Birth-3 months</strong></td>
+                        <td>Crying, cooing</td>
+                        <td>Pre-verbal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3-6 months</strong></td>
+                        <td>Babbling begins</td>
+                        <td>Pre-verbal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6-12 months</strong></td>
+                        <td>Babbling with consonants</td>
+                        <td>Pre-verbal</td>
+                    </tr>
+                    <tr style="background: rgba(77, 184, 109, 0.1);">
+                        <td><strong>9-12 months</strong></td>
+                        <td><strong>FIRST WORDS! 🎉</strong></td>
+                        <td>1-3 words</td>
+                    </tr>
+                    <tr>
+                        <td><strong>12-18 months</strong></td>
+                        <td>Single words, pointing</td>
+                        <td>10-50 words</td>
+                    </tr>
+                    <tr style="background: rgba(77, 184, 109, 0.1);">
+                        <td><strong>18-24 months</strong></td>
+                        <td><strong>TWO-WORD PHRASES</strong></td>
+                        <td>50-200 words</td>
+                    </tr>
+                    <tr style="background: rgba(77, 184, 109, 0.1);">
+                        <td><strong>2-3 years</strong></td>
+                        <td><strong>SIMPLE SENTENCES</strong></td>
+                        <td>200-1,000 words</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3-4 years</strong></td>
+                        <td>Complex sentences</td>
+                        <td>1,000-2,000 words</td>
+                    </tr>
+                    <tr style="background: rgba(77, 184, 109, 0.1);">
+                        <td><strong>4-5 years</strong></td>
+                        <td><strong>FLUENT CONVERSATIONS</strong></td>
+                        <td>2,000-5,000 words</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5-7 years</strong></td>
+                        <td>Sophisticated language</td>
+                        <td>5,000-10,000+ words</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Musical Milestones Quick Reference</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Age</th>
+                        <th>Musical Milestone</th>
+                        <th>Instrument Readiness</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Birth-3 months</strong></td>
+                        <td>Responds to music, calmed by rhythm</td>
+                        <td>None - sensory stage</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3-6 months</strong></td>
+                        <td>Moves to music, musical babbling</td>
+                        <td>None - exploration</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6-12 months</strong></td>
+                        <td>Bounces to rhythm, attempts clapping</td>
+                        <td>None - movement play</td>
+                    </tr>
+                    <tr>
+                        <td><strong>12-18 months</strong></td>
+                        <td>Dances, explores instruments</td>
+                        <td>Simple percussion only</td>
+                    </tr>
+                    <tr>
+                        <td><strong>18-24 months</strong></td>
+                        <td>Sings along, rhythmic play</td>
+                        <td>Percussion exploration</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2-3 years</strong></td>
+                        <td>Sings complete songs, rhythm patterns</td>
+                        <td>Percussion, group classes</td>
+                    </tr>
+                    <tr style="background: rgba(107, 164, 231, 0.1);">
+                        <td><strong>3-4 years</strong></td>
+                        <td><strong>CAN START SIMPLE INSTRUMENTS</strong></td>
+                        <td>Piano, recorder, ukulele</td>
+                    </tr>
+                    <tr style="background: rgba(107, 164, 231, 0.1);">
+                        <td><strong>4-5 years</strong></td>
+                        <td><strong>FORMAL LESSONS VIABLE</strong></td>
+                        <td>Most instruments possible</td>
+                    </tr>
+                    <tr style="background: rgba(107, 164, 231, 0.1);">
+                        <td><strong>5-7 years</strong></td>
+                        <td><strong>READING MUSIC, TECHNIQUE</strong></td>
+                        <td>Advanced technique, ensembles</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECTION: KEY TAKEAWAYS -->
+        <section id="takeaways" class="section-card scroll-reveal">
+            <h2>Key Takeaways for Artin's Parents</h2>
+
+            <h3>Language Development</h3>
+            <ol>
+                <li><strong>First words typically appear 9-12 months</strong> - Artin will likely say "mama" or "dada" around his first birthday</li>
+                <li><strong>Conversations begin 18-24 months</strong> - Simple two-word phrases emerge</li>
+                <li><strong>Fluent speech by age 4-5</strong> - Complex sentences, storytelling, questions</li>
+                <li><strong>Reading connection</strong> - Language development supports literacy</li>
+            </ol>
+
+            <h3>Musical Development</h3>
+            <ol>
+                <li><strong>Musical awareness is present from birth</strong> - Artin already responds to rhythm and music</li>
+                <li><strong>Exploration phase: 0-3 years</strong> - Singing, dancing, simple percussion</li>
+                <li><strong>Formal instruction possible: 3-4 years</strong> - If interested, piano/recorder can start</li>
+                <li><strong>Optimal starting age: 4-6 years</strong> - Fine motor skills and attention span ready</li>
+                <li><strong>Music enhances language</strong> - Singing and rhythm support speech development</li>
+            </ol>
+
+            <h3>Practical Recommendations</h3>
+            <ol>
+                <li><strong>Talk and sing to Artin constantly</strong> - Narrate daily activities, sing during routines</li>
+                <li><strong>Read books daily</strong> - Language exposure is critical</li>
+                <li><strong>Play varied music</strong> - Classical, jazz, folk, world music, children's songs</li>
+                <li><strong>Encourage musical play</strong> - Provide percussion instruments, dance together</li>
+                <li><strong>Follow his interests</strong> - Some children show strong musical affinity early</li>
+                <li><strong>Don't rush formal lessons</strong> - Exploration and play build foundation</li>
+                <li><strong>Make it joyful</strong> - Both language and music should be fun, not forced</li>
+            </ol>
+
+            <h3>Resources for Parents</h3>
+
+            <h4>Music Programs (Ages 0-5)</h4>
+            <ul>
+                <li><strong>Music Together</strong> - Parent-child classes (birth-5 years)</li>
+                <li><strong>Kindermusik</strong> - Age-appropriate music education</li>
+                <li><strong>Suzuki Early Childhood Education</strong> - (Ages 2-3, pre-instrumental)</li>
+            </ul>
+
+            <h4>Formal Instrument Instruction (Ages 4+)</h4>
+            <ul>
+                <li><strong>Suzuki Method</strong> - Learn by ear, parent involvement</li>
+                <li><strong>Royal Conservatory of Music</strong> - Structured curriculum</li>
+                <li><strong>Yamaha Music School</strong> - Group and individual lessons</li>
+                <li><strong>Orff-Schulwerk</strong> - Creative, play-based approach</li>
+            </ul>
+
+            <h4>Language Development Resources</h4>
+            <ul>
+                <li><strong>Read-aloud programs</strong> - Library story times</li>
+                <li><strong>Speech-language milestones</strong> - CDC checklists</li>
+                <li><strong>Pediatrician monitoring</strong> - Regular developmental screenings</li>
+            </ul>
+
+            <div class="warning-box">
+                <h4>Signs to Watch For (Concerns)</h4>
+                <p><strong>Language:</strong></p>
+                <ul>
+                    <li>No babbling by 9 months</li>
+                    <li>No words by 16 months</li>
+                    <li>No two-word phrases by 24 months</li>
+                    <li>Regression in language skills</li>
+                </ul>
+                <p><strong>Musical/Hearing:</strong></p>
+                <ul>
+                    <li>Doesn't respond to sounds by 3 months</li>
+                    <li>Doesn't turn toward voices by 6 months</li>
+                    <li>Doesn't startle at loud noises</li>
+                </ul>
+                <p><strong>→ Consult pediatrician if concerns arise. Early intervention is highly effective.</strong></p>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- CONCLUSION -->
+        <section class="section-card scroll-reveal">
+            <h2>Conclusion: The Journey Ahead</h2>
+
+            <p>Artin, at just 7 days old, is already on an incredible journey of language and musical development. Over the next 5-7 years, he will:</p>
+
+            <ul>
+                <li><strong>Learn to communicate</strong> - From cries to conversations</li>
+                <li><strong>Develop musical abilities</strong> - From responding to rhythm to playing instruments</li>
+                <li><strong>Build cognitive skills</strong> - Language and music enhance brain development</li>
+                <li><strong>Express himself creatively</strong> - Through words and music</li>
+            </ul>
+
+            <div class="success-box">
+                <h4>The most important factors:</h4>
+                <ol>
+                    <li>❤️ <strong>Rich language environment</strong> - Talk, read, sing constantly</li>
+                    <li>🎵 <strong>Musical exposure</strong> - Varied genres, singing, instruments</li>
+                    <li>🎮 <strong>Playful exploration</strong> - Learning through joy, not pressure</li>
+                    <li>👨‍👩‍👦 <strong>Parental involvement</strong> - Your engagement is key</li>
+                    <li>⏰ <strong>Patience</strong> - Development unfolds at individual pace</li>
+                </ol>
+            </div>
+
+            <p style="font-size: 1.25rem; text-align: center; margin-top: 2rem; color: #f4a940;">
+                <strong>Congratulations on Artin's arrival!</strong> You're about to witness one of the most remarkable transformations in human development - from a newborn to a talking, singing, music-making child. Enjoy every stage of this incredible journey! 🎉🎵💬
+            </p>
+        </section>
+
+        <!-- RESEARCH ATTRIBUTION -->
+        <section class="section-card scroll-reveal" style="background: #252019; border: 1px solid #3a3228; margin-top: 3rem;">
+            <p style="font-size: 0.9rem; color: #b8b0a5; margin: 0;">
+                <em>This timeline is based on typical developmental milestones from research by:</em><br>
+                Centers for Disease Control and Prevention (CDC) • American Academy of Pediatrics (AAP) • Canadian Paediatric Society (CPS) • Suzuki Association of the Americas • Music Educators National Conference (MENC) • Developmental psychology research (Piaget, Vygotsky, Bruner)
+            </p>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Generated with Claude Code Visualizer Skill • Academic Theme</p>
+        <p>WCAG 2.1 AA Compliant • Responsive Design • Scroll-Triggered Animations</p>
+        <p>&copy; 2025 • For Educational Purposes</p>
+    </footer>
+
+    <!-- SCROLL REVEAL JAVASCRIPT -->
+    <script>
+        // Intersection Observer for scroll-triggered animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with scroll-reveal class
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Track viewport height for mobile devices
+        const setViewportHeight = () => {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        };
+
+        setViewportHeight();
+        window.addEventListener('resize', setViewportHeight);
+
+        // Log page performance
+        window.addEventListener('load', () => {
+            if (window.performance) {
+                const perfData = window.performance.timing;
+                const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+                console.log(`Page load time: ${pageLoadTime}ms`);
+            }
+        });
+    </script>
+</body>
+</html>
