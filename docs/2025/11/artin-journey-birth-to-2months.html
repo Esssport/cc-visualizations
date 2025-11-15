@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artin's Developmental Journey: Birth to 2 Months - Educational Biology Guide</title>
+  <meta name="description" content="A comprehensive, biology-focused educational guide to Artin's first 60 days of development, covering brain growth, motor skills, sensory development, and immune system maturation.">
+
+  <style>
+/**
+ * Academic Educational Theme
+ * Enhanced academic theme with educational glossary system support.
+ */
+
+/* ============================================================================
+   CSS Custom Properties (Theme Variables)
+   ============================================================================ */
+
+:root {
+  /* Academic Theme Colors (Dark Mode) */
+  --bg-color: #1a1611;
+  --surface-color: #252019;
+  --text-color: #e8e4dc;
+  --text-secondary: #b8b4ac;
+  --border-color: #3a352e;
+
+  /* Accent Colors */
+  --accent-color: #d4a574;
+  --accent-rgb: 212, 165, 116;
+  --accent-contrast: #1a1611;
+
+  /* Educational-Specific Colors */
+  --tooltip-bg: #2a2419;
+  --tooltip-text: #f0ece4;
+  --term-underline: #d4a574;
+
+  /* Typography */
+  --font-serif: 'Crimson Pro', 'Georgia', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Shadows */
+  --shadow-tooltip: 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.2s ease;
+
+  /* Z-index Layers */
+  --z-tooltip: 1000;
+}
+
+/* ============================================================================
+   Global Resets and Base Styles
+   ============================================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ============================================================================
+   Educational Layout
+   ============================================================================ */
+
+.educational-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--spacing-xl);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+@media (max-width: 1024px) {
+  .educational-layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+/* ============================================================================
+   Content Area
+   ============================================================================ */
+
+.content-area {
+  max-width: 800px;
+}
+
+.content-area header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.content-area h1 {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.content-area .subtitle {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  color: var(--text-secondary);
+  font-weight: 400;
+  margin-bottom: var(--spacing-sm);
+}
+
+.content-area .status-info {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: var(--accent-color);
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: rgba(var(--accent-rgb), 0.1);
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--accent-color);
+}
+
+.content-area h2 {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-color);
+  margin-top: calc(var(--spacing-xl) * 1.5);
+  margin-bottom: var(--spacing-md);
+}
+
+.content-area h3 {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-color);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+.content-area h4 {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.content-area p {
+  margin-bottom: var(--spacing-md);
+}
+
+.content-area ul, .content-area ol {
+  margin-bottom: var(--spacing-md);
+  padding-left: var(--spacing-lg);
+}
+
+.content-area li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.content-area strong {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.content-area em {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.content-area hr {
+  border: none;
+  border-top: 2px solid var(--border-color);
+  margin: var(--spacing-xl) 0;
+}
+
+.milestone-box {
+  background: rgba(var(--accent-rgb), 0.08);
+  border-left: 4px solid var(--accent-color);
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  border-radius: var(--radius-sm);
+}
+
+.milestone-box h4 {
+  margin-top: 0;
+}
+
+.warning-box {
+  background: rgba(220, 100, 100, 0.1);
+  border-left: 4px solid #dc6464;
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  border-radius: var(--radius-sm);
+}
+
+/* ============================================================================
+   Technical Terms
+   ============================================================================ */
+
+.technical-term {
+  text-decoration: underline dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--term-underline);
+  color: var(--text-color);
+  cursor: help;
+  position: relative;
+  transition: background-color var(--transition-normal),
+              outline var(--transition-normal);
+  word-wrap: break-word;
+}
+
+.technical-term:hover,
+.technical-term:focus {
+  background-color: rgba(var(--accent-rgb), 0.08);
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.technical-term:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+  background-color: rgba(var(--accent-rgb), 0.12);
+}
+
+@media (pointer: coarse) {
+  .technical-term {
+    padding: 4px 2px;
+    margin: -4px -2px;
+  }
+}
+
+/* ============================================================================
+   Glossary Tooltip
+   ============================================================================ */
+
+.glossary-tooltip {
+  position: fixed;
+  z-index: var(--z-tooltip);
+  max-width: 400px;
+  min-width: 280px;
+  background: var(--tooltip-bg);
+  color: var(--tooltip-text);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-tooltip);
+  border: 1px solid rgba(var(--accent-rgb), 0.2);
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity var(--transition-normal),
+              transform var(--transition-normal);
+  pointer-events: none;
+}
+
+.glossary-tooltip[aria-hidden="false"] {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.glossary-tooltip::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 24px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid var(--tooltip-bg);
+}
+
+.glossary-tooltip.position-above::before {
+  top: auto;
+  bottom: -8px;
+  border-bottom: none;
+  border-top: 8px solid var(--tooltip-bg);
+}
+
+.tooltip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-sm);
+  gap: var(--spacing-sm);
+}
+
+.tooltip-header h4 {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin: 0;
+  flex: 1;
+}
+
+.tooltip-content {
+  margin-bottom: var(--spacing-sm);
+}
+
+.tooltip-content .definition {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--tooltip-text);
+  margin: 0;
+}
+
+.tooltip-example {
+  margin-top: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tooltip-example strong {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.tooltip-example p {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+@media (pointer: coarse) {
+  .glossary-tooltip {
+    max-width: 90vw;
+    font-size: 16px;
+  }
+}
+
+/* ============================================================================
+   Complexity Toggle
+   ============================================================================ */
+
+.complexity-toggle-group {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.complexity-toggle {
+  flex: 1;
+  padding: 6px 12px;
+  border: none;
+  background: transparent;
+  color: var(--tooltip-text);
+  font-size: 13px;
+  font-family: var(--font-sans);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.complexity-toggle[aria-checked="true"] {
+  background: var(--accent-color);
+  color: var(--accent-contrast);
+  font-weight: 600;
+}
+
+.complexity-toggle:hover:not([aria-checked="true"]) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.complexity-toggle:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* ============================================================================
+   Glossary Sidebar
+   ============================================================================ */
+
+.glossary-sidebar {
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: var(--spacing-lg);
+  background: rgba(37, 32, 25, 0.8);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .glossary-sidebar {
+    position: sticky;
+    bottom: 0;
+    top: auto;
+    max-height: 300px;
+    background: var(--bg-color);
+    border-top: 2px solid var(--border-color);
+    border-radius: 0;
+    padding-top: var(--spacing-md);
+  }
+}
+
+.sidebar-header h2 {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.glossary-search {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-size: 14px;
+  font-family: var(--font-sans);
+  margin-top: var(--spacing-sm);
+  transition: border-color var(--transition-fast),
+              box-shadow var(--transition-fast);
+}
+
+.glossary-search:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.1);
+}
+
+.glossary-search::placeholder {
+  color: var(--text-secondary);
+}
+
+.glossary-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-md) 0;
+}
+
+.glossary-entry {
+  margin-bottom: var(--spacing-sm);
+}
+
+.glossary-term {
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border: none;
+  background: var(--bg-color);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color var(--transition-fast);
+  gap: var(--spacing-sm);
+}
+
+.glossary-term:hover {
+  background: rgba(var(--accent-rgb), 0.1);
+}
+
+.glossary-term[aria-expanded="true"] {
+  background: rgba(var(--accent-rgb), 0.15);
+  font-weight: 600;
+}
+
+.glossary-term:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.term-name {
+  font-size: 15px;
+  font-family: var(--font-sans);
+  color: var(--text-color);
+  flex: 1;
+}
+
+.complexity-badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: var(--accent-color);
+  color: var(--accent-contrast);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-family: var(--font-sans);
+  flex-shrink: 0;
+}
+
+.glossary-definition {
+  padding: var(--spacing-sm);
+  margin-top: 4px;
+  background: rgba(37, 32, 25, 0.5);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: var(--font-sans);
+  color: var(--text-secondary);
+}
+
+/* ============================================================================
+   Accessibility
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .glossary-tooltip,
+  .technical-term {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  :root {
+    --accent-color: #f4c589;
+    --border-color: #5a5550;
+  }
+
+  .technical-term {
+    text-decoration-thickness: 2px;
+  }
+
+  .glossary-tooltip {
+    border-width: 2px;
+  }
+}
+
+/* ============================================================================
+   Scrollbar Styling
+   ============================================================================ */
+
+.glossary-sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.glossary-sidebar::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-radius: 4px;
+}
+
+.glossary-sidebar::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.glossary-sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+.glossary-sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) var(--bg-color);
+}
+
+/* ============================================================================
+   Responsive
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 17px;
+  }
+
+  .content-area h1 {
+    font-size: 36px;
+  }
+
+  .content-area h2 {
+    font-size: 28px;
+  }
+
+  .content-area h3 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+
+  .content-area h1 {
+    font-size: 28px;
+  }
+
+  .content-area h2 {
+    font-size: 24px;
+  }
+
+  .content-area h3 {
+    font-size: 20px;
+  }
+
+  .glossary-tooltip {
+    max-width: 95vw;
+    padding: var(--spacing-sm);
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="educational-layout">
+    <main class="content-area">
+      <header>
+        <h1>Artin's Developmental Journey: Birth to 2 Months</h1>
+        <p class="subtitle">A Biology-Focused Roadmap for the First 60 Days</p>
+        <div class="status-info">
+          <strong>Current Status:</strong> Artin Izadjoo, 7 days old (Born November 8, 2025)<br>
+          <strong>Next Major Milestone:</strong> 2 Months (Target: January 8, 2026)
+        </div>
+      </header>
+
+      <h2>🧠 Brain Development: The Extraordinary Neural Revolution</h2>
+
+      <h3>Synaptogenesis - Building the Neural Network</h3>
+
+      <h4>What's Happening:</h4>
+      <ul>
+        <li>Artin's brain is forming <strong>1 million neural connections per second</strong></li>
+        <li>Synaptic density will increase dramatically from birth through age 2</li>
+        <li>This is "explosive <span class="technical-term" data-term="synaptogenesis" tabindex="0" role="button" aria-expanded="false">synaptogenesis</span>" - the fastest growth period in human life</li>
+        <li>Experience-dependent development: neurons that fire together, wire together</li>
+      </ul>
+
+      <h4>The Biology:</h4>
+      <p>During the first 2 months, Artin's brain will produce FAR more synapses than he'll ultimately keep - up to 2x adult density by age 2-3. This overproduction allows maximum flexibility for learning. Later, his brain will "prune" unused connections to optimize efficiency.</p>
+
+      <h4>Real-World Impact:</h4>
+      <p>Every interaction with Artin - eye contact, talking, singing, gentle touch - literally shapes his neural architecture. The synapses that get used strengthen; those that don't eventually disappear.</p>
+
+      <h3>Myelination - Upgrading the Brain's Wiring</h3>
+
+      <h4>What's Happening:</h4>
+      <ul>
+        <li>Myelin sheaths are forming around nerve fibers (<span class="technical-term" data-term="axon" tabindex="0" role="button" aria-expanded="false">axons</span>)</li>
+        <li>This insulation allows electrical signals to travel <strong>up to 100x faster</strong></li>
+        <li><span class="technical-term" data-term="myelination" tabindex="0" role="button" aria-expanded="false">Myelination</span> follows a caudal-cranial (tail-to-head) pattern</li>
+        <li>Most rapid during the first 5 years, but explosive in months 0-2</li>
+      </ul>
+
+      <h4>The Biology:</h4>
+      <p>Think of <span class="technical-term" data-term="myelination" tabindex="0" role="button" aria-expanded="false">myelination</span> as upgrading from dial-up internet (0.5-2 m/s signal speed) to fiber optic (100 m/s). Unmyelinated neurons conduct signals slowly; myelinated neurons are lightning-fast. This is why newborns have delayed responses - their neural "broadband" is still being installed!</p>
+
+      <h4>Real-World Impact:</h4>
+      <p>As <span class="technical-term" data-term="myelination" tabindex="0" role="button" aria-expanded="false">myelination</span> progresses, you'll see Artin's movements become less jerky and more coordinated. His visual tracking will improve, his startle reflex will moderate, and he'll begin intentional movements.</p>
+
+      <h3>Right-Hemisphere Dominance</h3>
+
+      <h4>What's Happening:</h4>
+      <ul>
+        <li>The <span class="technical-term" data-term="right-hemisphere-dominance" tabindex="0" role="button" aria-expanded="false">right hemisphere</span> develops first in Year 1</li>
+        <li>This side processes emotions, faces, and nonverbal communication</li>
+        <li>The <span class="technical-term" data-term="orbitofrontal-cortex" tabindex="0" role="button" aria-expanded="false">orbitofrontal cortex</span> (emotion regulation center) is building through caregiver interactions</li>
+        <li>Right-brain to right-brain communication between parent and baby</li>
+      </ul>
+
+      <h4>The Biology:</h4>
+      <p>This explains why babies are social creatures from day one. Artin's right hemisphere is wired to read facial expressions, respond to emotional tone, and engage in proto-conversations long before language emerges.</p>
+
+      <h4>Real-World Impact:</h4>
+      <p>Your facial expressions, tone of voice, and emotional attunement are literally building Artin's brain architecture. Responsive caregiving downregulates stress hormones (cortisol) and strengthens neural pathways for emotional regulation.</p>
+
+      <hr>
+
+      <h2>🏃 Motor Development: From Reflexes to Intention</h2>
+
+      <h3>Primitive Reflexes - Evolutionary Survival Tools</h3>
+
+      <h4>Active Reflexes (Birth to 2 Months):</h4>
+
+      <div class="milestone-box">
+        <h4>Rooting & Sucking Reflexes</h4>
+        <ul>
+          <li><strong>Biology:</strong> Orchestrated by the brainstem, these <span class="technical-term" data-term="primitive-reflexes" tabindex="0" role="button" aria-expanded="false">reflexes</span> bypass conscious control</li>
+          <li><strong>Purpose:</strong> Ensure feeding before cortical development</li>
+          <li><strong>Timeline:</strong> Peak at birth, begin fading by 4 months</li>
+        </ul>
+      </div>
+
+      <div class="milestone-box">
+        <h4>Moro Reflex (Startle Response)</h4>
+        <ul>
+          <li><strong>Biology:</strong> Full-body startle to sudden stimuli</li>
+          <li><strong>Evolutionary Purpose:</strong> Allowed ancestral infants to cling to mothers when falling</li>
+          <li><strong>Timeline:</strong> Present at birth, integrates by 4-6 months</li>
+        </ul>
+      </div>
+
+      <div class="milestone-box">
+        <h4>Palmar Grasp Reflex</h4>
+        <ul>
+          <li><strong>Biology:</strong> Involuntary hand closure when palm stimulated</li>
+          <li><strong>Evolutionary Purpose:</strong> Ancestral infants clung to mother's fur</li>
+          <li><strong>Timeline:</strong> Present at birth, replaced by voluntary grasp by 5-6 months</li>
+        </ul>
+      </div>
+
+      <div class="milestone-box">
+        <h4>Tonic Neck Reflex ("Fencing Position")</h4>
+        <ul>
+          <li><strong>Biology:</strong> When head turns, arm extends on same side</li>
+          <li><strong>Purpose:</strong> Prevents rolling over too early, lays groundwork for hand-eye coordination</li>
+          <li><strong>Timeline:</strong> Peaks at 1 month, fades by 4 months</li>
+        </ul>
+      </div>
+
+      <h3>Reflex Integration - The Cortex Takes Over</h3>
+
+      <h4>What's Happening:</h4>
+      <ul>
+        <li>As Artin's <span class="technical-term" data-term="frontal-lobes" tabindex="0" role="button" aria-expanded="false">frontal lobes</span> mature, voluntary control replaces reflexive movements</li>
+        <li><span class="technical-term" data-term="myelination" tabindex="0" role="button" aria-expanded="false">Myelination</span> of motor pathways enables faster, more precise signals</li>
+        <li>Early reflex movements create patterns for neural network formation</li>
+      </ul>
+
+      <h4>The Biology:</h4>
+      <p>Reflex integration is controlled by <span class="technical-term" data-term="frontal-lobes" tabindex="0" role="button" aria-expanded="false">frontal lobe</span> maturation. Persistence of <span class="technical-term" data-term="primitive-reflexes" tabindex="0" role="button" aria-expanded="false">primitive reflexes</span> beyond 6 months can indicate neurological concerns - the cortex should have "turned off" brainstem dominance.</p>
+
+      <h4>Milestones by 2 Months:</h4>
+      <ul>
+        <li>✅ <strong>Improved neck control</strong> - Less head lag when pulled to sit</li>
+        <li>✅ <strong>Prone lifting</strong> - Lifts head and chest to 45-degree angle</li>
+        <li>✅ <strong>Forearm support</strong> - Pushes up on forearms during tummy time</li>
+        <li>✅ <strong>Hand unfisting</strong> - Open palms more frequently</li>
+        <li>✅ <strong>Hand regard</strong> - Watches own hands (visual-motor integration!)</li>
+      </ul>
+
+      <hr>
+
+      <h2>👁️ Sensory Development: The World Comes Into Focus</h2>
+
+      <h3>Vision - From Blurry to Colorful</h3>
+
+      <h4>Birth State:</h4>
+      <ul>
+        <li>Focus range: 8-10 inches (perfect face-to-feeding distance!)</li>
+        <li>Only sees high-contrast patterns (black/white, bold stripes)</li>
+        <li>Innate preference for faces over other patterns</li>
+      </ul>
+
+      <h4>By 2 Months:</h4>
+      <ul>
+        <li><strong>180-degree tracking</strong> - Follows moving objects side-to-side</li>
+        <li><strong>Color vision emerging</strong> - RED perceived first, then yellow → green → blue</li>
+        <li><strong>Convergence</strong> - Both eyes learn to focus on same point</li>
+        <li><strong>Sustained eye contact</strong> - Foundation for social communication</li>
+      </ul>
+
+      <h4>The Biology:</h4>
+      <p>Color vision develops based on <span class="technical-term" data-term="cone-cells" tabindex="0" role="button" aria-expanded="false">cone cell</span> maturation in the retina. Red cones mature first (why babies see red before other colors), followed by green and blue cones. Full color vision takes several months.</p>
+
+      <h4>Real-World Impact:</h4>
+      <p>Use high-contrast toys and books now. By 2 months, introduce red toys first, then gradually add other colors as Artin's <span class="technical-term" data-term="cone-cells" tabindex="0" role="button" aria-expanded="false">cone cells</span> mature.</p>
+
+      <h3>Hearing - Already Expert Level</h3>
+
+      <h4>What's Special:</h4>
+      <ul>
+        <li>Hearing is the ONLY sense fully functional at birth</li>
+        <li>Artin heard sounds from 28 weeks in utero</li>
+        <li>Sound waves traveled through amniotic fluid</li>
+      </ul>
+
+      <h4>Current Capabilities:</h4>
+      <ul>
+        <li>✅ <strong>Voice recognition</strong> - Recognizes and prefers mother's voice</li>
+        <li>✅ <strong>Sound localization</strong> - Turns head toward sounds (~30-degree accuracy)</li>
+        <li>✅ <strong>Tone differentiation</strong> - Responds differently to soothing vs. harsh tones</li>
+        <li>✅ <strong>Speech sound discrimination</strong> - Can differentiate phonemes</li>
+      </ul>
+
+      <h4>By 2 Months:</h4>
+      <ul>
+        <li>Quiets or smiles in response to familiar voices</li>
+        <li>More precise sound localization (turns head directly to sound)</li>
+        <li>Proto-conversations - vocalizes in response to caregiver speech</li>
+      </ul>
+
+      <h3>Touch & Proprioception - The First Language</h3>
+
+      <h4>What's Happening:</h4>
+      <ul>
+        <li>Touch receptors are highly developed at birth</li>
+        <li>Skin-to-skin contact regulates heart rate, breathing, temperature, and cortisol</li>
+        <li><span class="technical-term" data-term="proprioception" tabindex="0" role="button" aria-expanded="false">Proprioception</span> (body position awareness) developing through movement</li>
+      </ul>
+
+      <h4>The Biology:</h4>
+      <p>The <span class="technical-term" data-term="vagus-nerve" tabindex="0" role="button" aria-expanded="false">vagus nerve</span> connects gut and skin to the brain. Touch literally calms the nervous system by activating the parasympathetic ("rest and digest") response and downregulating the sympathetic ("fight or flight") response.</p>
+
+      <h4>Real-World Impact:</h4>
+      <p>Skin-to-skin contact isn't just nice - it's neurobiologically regulatory. It literally stabilizes Artin's vital signs and stress hormones.</p>
+
+      <hr>
+
+      <h2>🥛 Digestive System: Building the Gut-Brain Highway</h2>
+
+      <h3>Enzyme Development - Learning to Digest</h3>
+
+      <h4>What's Happening:</h4>
+      <ul>
+        <li><strong>Gastric acid production DOUBLES</strong> in first 2 months</li>
+        <li>Key enzymes maturing: <span class="technical-term" data-term="enterokinase" tabindex="0" role="button" aria-expanded="false">enterokinase</span> (proteins), <span class="technical-term" data-term="gastric-lipase" tabindex="0" role="button" aria-expanded="false">gastric lipase</span> (fats), <span class="technical-term" data-term="lactase" tabindex="0" role="button" aria-expanded="false">lactase</span> (milk sugars)</li>
+        <li>Enzyme activity increases gradually but still immature compared to older infants</li>
+      </ul>
+
+      <h4>The Biology:</h4>
+      <p>Newborns have limited digestive capacity. Small, frequent feedings are required because:</p>
+      <ol>
+        <li>Stomach capacity is tiny (~20-60 mL at birth)</li>
+        <li>Gastric emptying time is short</li>
+        <li>Enzyme production is ramping up</li>
+      </ol>
+
+      <h4>Real-World Impact:</h4>
+      <p>Expect frequent feedings (8-12 times per day). This isn't a problem - it's biology! Artin's digestive system is optimized for human milk's composition and small volumes.</p>
+
+      <h3>Microbiome Colonization - The Gut-Brain Axis</h3>
+
+      <h4>What's Happening:</h4>
+      <ul>
+        <li>First 0-36 months is the critical window for microbe-human interaction</li>
+        <li>Birth to 2 months: Initial colonization phase</li>
+        <li>Breastfed infants dominated by <span class="technical-term" data-term="bifidobacterium" tabindex="0" role="button" aria-expanded="false">Bifidobacterium</span> species</li>
+        <li><span class="technical-term" data-term="human-milk-oligosaccharides" tabindex="0" role="button" aria-expanded="false">Human milk oligosaccharides (HMOs)</span> function as prebiotics</li>
+      </ul>
+
+      <h4>The Biology - This is FASCINATING:</h4>
+      <p><strong>HMO Magic:</strong> Human milk contains 200+ oligosaccharides that ARTIN CANNOT DIGEST. They're not for him - they're food for beneficial bacteria! This is nature's probiotic delivery system.</p>
+
+      <p><strong><span class="technical-term" data-term="gut-brain-axis" tabindex="0" role="button" aria-expanded="false">Gut-Brain</span> Telegraph:</strong> The <span class="technical-term" data-term="vagus-nerve" tabindex="0" role="button" aria-expanded="false">vagus nerve</span> is 90% afferent (gut→brain). Your gut literally "talks" to your brain more than your brain talks to your gut. Gut microbes influence:</p>
+      <ul>
+        <li>Blood-brain barrier formation</li>
+        <li>Neurogenesis (new neuron creation)</li>
+        <li>Microglia maturation (brain's immune cells)</li>
+        <li><span class="technical-term" data-term="myelination" tabindex="0" role="button" aria-expanded="false">Myelination</span> (neural insulation)</li>
+        <li>Neurotransmitter production (e.g., GABA affects temperament!)</li>
+      </ul>
+
+      <h4>Real-World Impact:</h4>
+      <p>Breastfeeding (if possible) provides both nutrition AND the right bacteria to colonize Artin's gut. These bacteria will influence his immune system, metabolism, and even brain development.</p>
+
+      <hr>
+
+      <h2>🛡️ Immune System: The Training Period</h2>
+
+      <h3>Immunological State - Baby's Immune Bootcamp</h3>
+
+      <h4>Current Status:</h4>
+      <ul>
+        <li>Artin's immune system is "<span class="technical-term" data-term="th2-polarized" tabindex="0" role="button" aria-expanded="false">Th2-polarized</span>" (dampened responses)</li>
+        <li>Qualitatively and quantitatively poorer antibody responses than older infants</li>
+        <li>Cannot predict infant immune responses from adult models - babies are unique!</li>
+      </ul>
+
+      <h4>Maternal Protection:</h4>
+
+      <div class="milestone-box">
+        <h4>Maternal IgG (Antibodies):</h4>
+        <ul>
+          <li>Transported across placenta before birth</li>
+          <li>Provides temporary passive immunity</li>
+          <li><strong>Wanes during first few months</strong> - lowest protection at 2-6 months</li>
+        </ul>
+      </div>
+
+      <div class="milestone-box">
+        <h4>Secretory IgA (Breast Milk):</h4>
+        <ul>
+          <li>Present in breast milk</li>
+          <li>Coats digestive tract for local mucosal immunity</li>
+          <li>Short-lived protection - requires continued breastfeeding</li>
+        </ul>
+      </div>
+
+      <h3>Infant Immune Development</h3>
+
+      <h4>The Biology:</h4>
+      <p>2024 research revealed that infant <span class="technical-term" data-term="b-cells" tabindex="0" role="button" aria-expanded="false">B cells</span> respond very differently to vaccinations:</p>
+      <ul>
+        <li>Some B cells don't enter <span class="technical-term" data-term="germinal-centers" tabindex="0" role="button" aria-expanded="false">germinal centers</span> (optimal antibody production sites)</li>
+        <li>This explains weaker, shorter-lived antibody responses</li>
+        <li>Infant's adaptive immune system is developing but immature</li>
+      </ul>
+
+      <h4>The Thymus - Proportionally HUGE:</h4>
+      <p>In infants, the <span class="technical-term" data-term="thymus" tabindex="0" role="button" aria-expanded="false">thymus</span> (T-cell training ground) is proportionally the largest it will ever be. It's working overtime to train immune cells to distinguish "self" from "non-self."</p>
+
+      <h4>Vaccination at 2 Months:</h4>
+      <p>Artin will receive 6 vaccines at his 2-month appointment:</p>
+      <ul>
+        <li>✅ Hepatitis B (dose 2)</li>
+        <li>✅ Rotavirus (dose 1)</li>
+        <li>✅ DTaP - Diphtheria, Tetanus, Pertussis (dose 1)</li>
+        <li>✅ Hib - Haemophilus influenzae type b (dose 1)</li>
+        <li>✅ PCV - Pneumococcal conjugate (dose 1)</li>
+        <li>✅ IPV - Inactivated polio (dose 1)</li>
+      </ul>
+
+      <p><strong>Why So Many?</strong> <span class="technical-term" data-term="maternal-igg" tabindex="0" role="button" aria-expanded="false">Maternal antibodies</span> are waning, and Artin's own immune system needs training. Multiple doses are required because infant <span class="technical-term" data-term="b-cells" tabindex="0" role="button" aria-expanded="false">B cells</span> don't respond as strongly as adult B cells.</p>
+
+      <hr>
+
+      <h2>🎯 Developmental Milestones: What to Expect</h2>
+
+      <h3>Social-Emotional Milestones - THE SOCIAL SMILE</h3>
+
+      <div class="milestone-box">
+        <h4>2 to 3 Months - MAJOR NEUROLOGICAL MILESTONE:</h4>
+
+        <p><strong>The <span class="technical-term" data-term="social-smile" tabindex="0" role="button" aria-expanded="false">Social Smile</span>:</strong></p>
+        <ul>
+          <li>More symmetrical than reflexive smile</li>
+          <li>Lasts longer, involves whole face including eyes ("<span class="technical-term" data-term="duchenne-smile" tabindex="0" role="button" aria-expanded="false">Duchenne smile</span>")</li>
+          <li><strong>Expects a response</strong> from caregiver</li>
+          <li>Foundation for all future emotional communication</li>
+        </ul>
+
+        <p><strong>The Biology:</strong> Social smiling requires coordinated facial muscle control AND cognitive understanding that "my smile makes my caregiver smile." It's the first clear evidence of social cognition - a profound brain development milestone.</p>
+      </div>
+
+      <h4>Attachment Development:</h4>
+      <ul>
+        <li>Birth to 6 weeks: Pre-attachment phase (no caregiver preference)</li>
+        <li>6 weeks to 6 months: <span class="technical-term" data-term="attachment-in-the-making" tabindex="0" role="button" aria-expanded="false">Attachment-in-the-making</span> (differential responsiveness emerges)</li>
+        <li>Artin will begin preferring familiar caregivers by 2 months</li>
+        <li>No separation distress yet (that comes at 6-8 months)</li>
+      </ul>
+
+      <h3>Language & Communication Milestones</h3>
+
+      <h4>Birth to 6 Weeks:</h4>
+      <ul>
+        <li>Different cry patterns (hunger, pain, tired) become more distinct</li>
+        <li>Reflexive sounds (grunts, sneezes, hiccups)</li>
+      </ul>
+
+      <h4>6 to 8 Weeks - THE BIG ONE:</h4>
+      <ul>
+        <li>✅ <strong><span class="technical-term" data-term="cooing" tabindex="0" role="button" aria-expanded="false">COOING</span> EMERGES</strong> - First vowel sounds: "aaah," "oooh," "eeeh"</li>
+        <li>Gurgling and pleasure sounds</li>
+        <li>Proto-conversations: vocalizes in response to caregiver speech</li>
+        <li>Turn-taking begins (you talk → baby listens → baby vocalizes → you respond)</li>
+      </ul>
+
+      <hr>
+
+      <h2>📋 Parent Action Plan: Supporting Artin's Development</h2>
+
+      <h3>Daily Practices (Birth to 2 Months)</h3>
+
+      <h4>Brain Development:</h4>
+      <ul>
+        <li>✅ <strong>Face-to-face interaction</strong> - 5-10 minutes daily (builds neural pathways for social cognition)</li>
+        <li>✅ <strong>Talk constantly</strong> - Narrate your actions (language exposure shapes future vocabulary)</li>
+        <li>✅ <strong>Sing songs</strong> - Repetition strengthens neural connections</li>
+        <li>✅ <strong>Responsive caregiving</strong> - Answer cries promptly (downregulates stress hormones)</li>
+      </ul>
+
+      <h4>Motor Development:</h4>
+      <ul>
+        <li>✅ <strong>Tummy time</strong> - 3-5 minutes, 3x daily (strengthens neck, shoulders, arms)</li>
+        <li>✅ <strong>Encourage reaching</strong> - Hold toys 8-10 inches away (visual tracking + motor planning)</li>
+        <li>✅ <strong>Gentle exercises</strong> - Bicycle legs, arm stretches (proprioceptive input)</li>
+      </ul>
+
+      <h4>Sensory Development:</h4>
+      <ul>
+        <li>✅ <strong>High-contrast visuals</strong> - Black/white patterns, bold stripes (optimal for newborn vision)</li>
+        <li>✅ <strong>Red toys first</strong> - Red cones mature before blue/green (by 2 months)</li>
+        <li>✅ <strong>Skin-to-skin contact</strong> - Daily (regulates vital signs, stress hormones)</li>
+        <li>✅ <strong>Varied sounds</strong> - Music, nature sounds, different voices (auditory stimulation)</li>
+      </ul>
+
+      <h4>Digestive & Immune Support:</h4>
+      <ul>
+        <li>✅ <strong>Breastfeeding</strong> (if possible) - Provides <span class="technical-term" data-term="human-milk-oligosaccharides" tabindex="0" role="button" aria-expanded="false">HMOs</span> for <span class="technical-term" data-term="microbiome" tabindex="0" role="button" aria-expanded="false">microbiome</span> + <span class="technical-term" data-term="secretory-iga" tabindex="0" role="button" aria-expanded="false">secretory IgA</span> for immunity</li>
+        <li>✅ <strong>Small, frequent feedings</strong> - 8-12 times daily (matches limited stomach capacity)</li>
+        <li>✅ <strong>Vaccination on schedule</strong> - 2-month appointment is critical (<span class="technical-term" data-term="maternal-igg" tabindex="0" role="button" aria-expanded="false">maternal antibodies</span> waning)</li>
+      </ul>
+
+      <h3>Red Flags - When to Call Healthcare Provider</h3>
+
+      <div class="warning-box">
+        <h4>Neurological Concerns:</h4>
+        <ul>
+          <li>❌ No response to loud sounds</li>
+          <li>❌ Doesn't track objects by 2 months</li>
+          <li>❌ Very stiff or very floppy body</li>
+          <li>❌ Persistent asymmetry (always turns head one direction)</li>
+        </ul>
+
+        <h4>Feeding/Digestive Concerns:</h4>
+        <ul>
+          <li>❌ Refuses to eat or difficulty feeding</li>
+          <li>❌ Projectile vomiting</li>
+          <li>❌ No wet diapers for 6+ hours (dehydration)</li>
+          <li>❌ Blood in stool</li>
+        </ul>
+
+        <h4>Immune/Illness Concerns:</h4>
+        <ul>
+          <li>❌ <strong>Fever in babies &lt;3 months is ALWAYS urgent</strong> (Call Telehealth 811 immediately)</li>
+          <li>❌ Difficulty breathing, grunting, flaring nostrils</li>
+          <li>❌ Blue lips or skin</li>
+          <li>❌ Unresponsive or lethargic</li>
+        </ul>
+
+        <h4>Emergency (911):</h4>
+        <ul>
+          <li>Difficulty breathing</li>
+          <li>Unresponsive</li>
+          <li>Seizure</li>
+          <li>Blue lips/skin</li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <h2>🎓 The Science of Wonder</h2>
+
+      <p>Artin's first 2 months represent one of the most extraordinary periods of human development. Here's what's happening simultaneously:</p>
+
+      <h4>At the cellular level:</h4>
+      <ul>
+        <li>1 million neural connections forming per second</li>
+        <li><span class="technical-term" data-term="myelin-sheath" tabindex="0" role="button" aria-expanded="false">Myelin sheaths</span> wrapping around <span class="technical-term" data-term="axon" tabindex="0" role="button" aria-expanded="false">axons</span> at lightning speed</li>
+        <li>Gut bacteria colonizing and communicating with brain</li>
+        <li>Immune cells learning to distinguish friend from foe</li>
+      </ul>
+
+      <h4>At the systems level:</h4>
+      <ul>
+        <li>Visual system gaining color perception</li>
+        <li>Motor system transitioning from reflexes to intention</li>
+        <li>Digestive system ramping up enzyme production</li>
+        <li>Immune system training through <span class="technical-term" data-term="maternal-igg" tabindex="0" role="button" aria-expanded="false">maternal antibodies</span> and vaccinations</li>
+      </ul>
+
+      <h4>At the experiential level:</h4>
+      <ul>
+        <li><span class="technical-term" data-term="social-smile" tabindex="0" role="button" aria-expanded="false">Social smiling</span> emerges (first evidence of social cognition)</li>
+        <li><span class="technical-term" data-term="cooing" tabindex="0" role="button" aria-expanded="false">Cooing</span> begins (first voluntary vocalizations)</li>
+        <li>Hand regard develops (visual-motor integration)</li>
+        <li>Attachment bonds strengthen (differential responsiveness)</li>
+      </ul>
+
+      <p><strong>Every interaction matters.</strong> Your voice, your face, your touch - these aren't just nice experiences. They're literally sculpting Artin's neural architecture, regulating his stress response, and building the foundation for a lifetime of learning and connection.</p>
+
+      <hr>
+
+      <div class="status-info" style="margin-top: var(--spacing-xl);">
+        <strong>Data Sources:</strong> Canadian Paediatric Society (CPS), Health Canada, CDC 2022 developmental milestones, 2024 infant immune system research (Nature, PNAS), WHO infant growth standards<br><br>
+        <strong>Medical Disclaimer:</strong> This educational content is based on authoritative medical sources but does not constitute medical advice. Always consult Artin's pediatrician for personalized guidance. For urgent concerns, call Telehealth Ontario (811). For emergencies, call 911.<br><br>
+        <strong>Created for:</strong> Artin Izadjoo | <strong>Date:</strong> November 15, 2025 | <strong>Age:</strong> 7 days old
+      </div>
+    </main>
+
+    <aside class="glossary-sidebar" role="complementary" aria-label="Glossary">
+      <div class="sidebar-header">
+        <h2>Glossary</h2>
+        <input type="search"
+               placeholder="Search terms..."
+               aria-label="Search glossary"
+               class="glossary-search"
+               id="glossary-search">
+      </div>
+
+      <ul class="glossary-list" id="glossary-list" role="list">
+        <!-- Populated by JavaScript -->
+      </ul>
+    </aside>
+  </div>
+
+  <script>
+    // Glossary data with three-level definitions
+    const glossaryData = {
+      "synaptogenesis": {
+        term: "Synaptogenesis",
+        definitions: {
+          simple: "The process of creating connections between brain cells. Think of it like building roads between cities - the more roads, the better the communication.",
+          standard: "The formation of synapses (connections) between neurons in the brain. This process is most rapid in infancy and early childhood.",
+          technical: "The process by which synaptic junctions form between neurons through axon terminal-dendrite interactions, mediated by cell adhesion molecules and neurotransmitter systems. Peak density occurs at ~15,000 synapses per neuron by 12 months."
+        },
+        example: "Like building a massive highway system in a new city - billions of connections being made every day to support learning and development.",
+        complexity: "intermediate"
+      },
+      "myelination": {
+        term: "Myelination",
+        definitions: {
+          simple: "Adding a protective coating to nerve fibers, like insulating electrical wires. This makes brain signals travel much faster.",
+          standard: "The process of forming a myelin sheath around nerve fibers, which increases signal transmission speed and efficiency in the nervous system.",
+          technical: "The formation of a lipid-rich, multi-layered membrane around axons by oligodendrocytes (CNS) and Schwann cells (PNS), enabling saltatory conduction and increasing nerve impulse velocity from 0.5-2 m/s to up to 150 m/s."
+        },
+        example: "Like upgrading from dial-up internet to fiber optic - signals go from slow and delayed to lightning-fast.",
+        complexity: "intermediate"
+      },
+      "axon": {
+        term: "Axon",
+        definitions: {
+          simple: "The long wire-like part of a brain cell that sends messages to other cells.",
+          standard: "The elongated fiber of a neuron that conducts electrical impulses away from the cell body to other neurons or muscles.",
+          technical: "The cylindrical projection of a neuron that propagates action potentials via voltage-gated sodium channels. Axons can be myelinated or unmyelinated and terminate at synaptic terminals."
+        },
+        example: "Like a telephone wire that carries your voice from one phone to another.",
+        complexity: "beginner"
+      },
+      "myelin-sheath": {
+        term: "Myelin Sheath",
+        definitions: {
+          simple: "A fatty coating that wraps around nerve fibers to protect them and speed up signals.",
+          standard: "An insulating layer of fatty material that surrounds nerve fibers and increases the speed of electrical signal transmission.",
+          technical: "A multi-layered lipid membrane composed primarily of sphingomyelin and cerebrosides, wrapped concentrically around axons. Nodes of Ranvier (gaps in myelin) enable saltatory conduction."
+        },
+        example: "Like the rubber insulation around electrical wires - protects the wire and prevents signal loss.",
+        complexity: "intermediate"
+      },
+      "right-hemisphere-dominance": {
+        term: "Right-Hemisphere Dominance",
+        definitions: {
+          simple: "In babies, the right side of the brain develops first. This side handles emotions and recognizing faces.",
+          standard: "Early brain development is characterized by accelerated maturation of the right cerebral hemisphere, which processes emotions, faces, and nonverbal communication.",
+          technical: "Asymmetric neurodevelopmental trajectory whereby right cortical regions (particularly orbitofrontal cortex) show accelerated synaptogenesis and myelination in Year 1, facilitating affect regulation and attachment formation."
+        },
+        example: "Like building the emotional foundation of a house before adding the language and logic wings.",
+        complexity: "intermediate"
+      },
+      "orbitofrontal-cortex": {
+        term: "Orbitofrontal Cortex",
+        definitions: {
+          simple: "The part of the brain behind your forehead that helps manage emotions and social behavior.",
+          standard: "A region of the frontal lobe involved in emotion regulation, decision-making, and social behavior. It develops rapidly through caregiver interactions in infancy.",
+          technical: "The ventromedial prefrontal cortex region posterior to the orbital plate of the frontal bone, critical for limbic-cortical integration, affect regulation, and reward-based decision-making. Shows experience-dependent plasticity in infancy."
+        },
+        example: "Like your brain's emotional control center - helps you decide how to react to situations.",
+        complexity: "advanced"
+      },
+      "primitive-reflexes": {
+        term: "Primitive Reflexes",
+        definitions: {
+          simple: "Automatic movements that babies are born with to help them survive, like sucking and grasping.",
+          standard: "Involuntary motor responses present at birth that are controlled by the brainstem. They help with survival and later integrate as the cortex matures.",
+          technical: "Subcortical motor patterns mediated by brainstem and spinal cord circuits, present at birth and typically inhibited by cortical maturation by 6 months. Persistence beyond normal timeframes may indicate neurological dysfunction."
+        },
+        example: "Like a car's automatic safety features that work without you thinking about them.",
+        complexity: "beginner"
+      },
+      "frontal-lobes": {
+        term: "Frontal Lobes",
+        definitions: {
+          simple: "The front part of the brain that controls thinking, planning, and voluntary movements.",
+          standard: "The anterior region of the cerebral cortex responsible for executive functions, motor control, and decision-making. Matures gradually from infancy through young adulthood.",
+          technical: "The prefrontal cortical regions anterior to the central sulcus, comprising motor cortex (precentral gyrus) and prefrontal cortex (dorsolateral, ventromedial, orbitofrontal subdivisions). Exhibits protracted myelination extending into the third decade."
+        },
+        example: "Like the CEO's office in a company - makes the big decisions and controls voluntary actions.",
+        complexity: "beginner"
+      },
+      "proprioception": {
+        term: "Proprioception",
+        definitions: {
+          simple: "Your body's sense of where your arms, legs, and other body parts are in space, even without looking.",
+          standard: "The sense of body position and movement in space, provided by receptors in muscles, tendons, and joints.",
+          technical: "Somatosensory feedback from mechanoreceptors (muscle spindles, Golgi tendon organs, joint receptors) conveyed via dorsal column-medial lemniscus pathway to somatosensory cortex, enabling spatial awareness and motor coordination."
+        },
+        example: "Like GPS for your body parts - you know where your hand is even with your eyes closed.",
+        complexity: "intermediate"
+      },
+      "cone-cells": {
+        term: "Cone Cells (Retina)",
+        definitions: {
+          simple: "Special cells in your eyes that let you see colors. Babies develop red vision first, then other colors.",
+          standard: "Photoreceptor cells in the retina responsible for color vision and visual acuity in bright light. Three types detect red, green, and blue wavelengths.",
+          technical: "Retinal photoreceptors containing photopsin pigments sensitive to short (420nm, blue), medium (534nm, green), or long (564nm, red) wavelengths. L-cones (red) mature first in infancy, followed by M-cones and S-cones."
+        },
+        example: "Like three different color filters in a camera - one for red, one for green, one for blue.",
+        complexity: "intermediate"
+      },
+      "vagus-nerve": {
+        term: "Vagus Nerve",
+        definitions: {
+          simple: "A major nerve that connects your brain to your heart, lungs, and stomach. It helps calm you down and digest food.",
+          standard: "The tenth cranial nerve, which regulates heart rate, digestion, and the parasympathetic 'rest and digest' nervous system response.",
+          technical: "Cranial nerve X, the primary parasympathetic nerve providing efferent innervation to thoracic and abdominal viscera. Contains 80-90% afferent fibers conveying interoceptive signals to the nucleus tractus solitarius. Critical for gut-brain axis communication."
+        },
+        example: "Like a two-way telephone line between your brain and your organs, mostly carrying messages from gut to brain.",
+        complexity: "advanced"
+      },
+      "enterokinase": {
+        term: "Enterokinase",
+        definitions: {
+          simple: "A digestive enzyme in the small intestine that helps break down proteins from food.",
+          standard: "An enzyme produced by the small intestine that activates trypsinogen into trypsin, initiating protein digestion.",
+          technical: "A serine protease produced by duodenal enterocytes that catalyzes the conversion of inactive trypsinogen to active trypsin by cleaving the Lys6-Ile7 bond. Critical for initiating the proteolytic cascade in protein digestion."
+        },
+        example: "Like a key that unlocks other digestive tools, starting the protein breakdown process.",
+        complexity: "advanced"
+      },
+      "gastric-lipase": {
+        term: "Gastric Lipase",
+        definitions: {
+          simple: "An enzyme in the stomach that starts breaking down fats from milk.",
+          standard: "A digestive enzyme secreted by the stomach that begins the breakdown of dietary fats, particularly important in infants.",
+          technical: "An acid-stable lipase secreted by gastric chief cells that hydrolyzes triglycerides at sn-3 position. Accounts for 10-30% of fat digestion in adults but plays a more significant role in neonates with immature pancreatic function."
+        },
+        example: "Like scissors that start cutting fat molecules into smaller pieces before they reach the intestines.",
+        complexity: "advanced"
+      },
+      "lactase": {
+        term: "Lactase",
+        definitions: {
+          simple: "The enzyme that breaks down milk sugar (lactose) so babies can digest breast milk or formula.",
+          standard: "An enzyme produced in the small intestine that breaks down lactose (milk sugar) into glucose and galactose for absorption.",
+          technical: "A β-galactosidase enzyme expressed on the brush border of small intestinal enterocytes that hydrolyzes lactose into glucose and galactose. Activity is highest in infancy and typically declines post-weaning in most populations."
+        },
+        example: "Like a can opener specifically designed for milk sugar - breaks it down so the body can absorb it.",
+        complexity: "intermediate"
+      },
+      "human-milk-oligosaccharides": {
+        term: "Human Milk Oligosaccharides (HMOs)",
+        definitions: {
+          simple: "Special sugars in breast milk that babies can't digest, but they feed good bacteria in the baby's gut.",
+          standard: "Complex carbohydrates in human milk that serve as prebiotics, promoting the growth of beneficial gut bacteria rather than being digested by the infant.",
+          technical: "Unconjugated glycans comprising the third most abundant solid component of human milk (5-15 g/L). Over 200 structurally distinct HMOs serve as selective substrates for Bifidobacterium species, shaping infant microbiome composition and immune development."
+        },
+        example: "Like fertilizer for a garden - it's not food for the baby, but it feeds the good bacteria that help the baby.",
+        complexity: "advanced"
+      },
+      "gut-brain-axis": {
+        term: "Gut-Brain Axis",
+        definitions: {
+          simple: "The communication system between your digestive system and your brain. They constantly send messages to each other.",
+          standard: "The bidirectional communication network between the gastrointestinal tract and the central nervous system, involving neural, hormonal, and immune pathways.",
+          technical: "A bidirectional neurohumoral communication system comprising the vagus nerve (primary afferent pathway), enteric nervous system, hypothalamic-pituitary-adrenal axis, and microbial metabolites (SCFAs, neurotransmitters). Influences neurogenesis, myelination, and behavior."
+        },
+        example: "Like a two-way street where your gut tells your brain how you feel, and your brain tells your gut how to respond.",
+        complexity: "advanced"
+      },
+      "microbiome": {
+        term: "Microbiome",
+        definitions: {
+          simple: "The community of trillions of good bacteria living in your gut that help with digestion and health.",
+          standard: "The collection of microorganisms (bacteria, viruses, fungi) living in and on the body, particularly in the gut, that play crucial roles in health and development.",
+          technical: "The collective genome of commensal, symbiotic, and pathogenic microorganisms colonizing the human body. The gut microbiome reaches adult-like composition by age 2-3 and influences immune training, metabolic programming, and neurodevelopment via the gut-brain axis."
+        },
+        example: "Like a diverse ecosystem in your gut - billions of tiny helpers working together to keep you healthy.",
+        complexity: "intermediate"
+      },
+      "bifidobacterium": {
+        term: "Bifidobacterium",
+        definitions: {
+          simple: "A type of good bacteria that lives in babies' intestines and helps with digestion and immunity.",
+          standard: "A genus of beneficial bacteria that dominates the gut microbiome of breastfed infants, promoted by HMOs in breast milk.",
+          technical: "Gram-positive, anaerobic bacteria of the Actinobacteria phylum that constitute 60-90% of the fecal microbiota in breastfed infants. Species such as B. longum subsp. infantis possess unique enzymes to metabolize HMOs, producing SCFAs that influence immune development."
+        },
+        example: "Like friendly gardeners in your gut that eat the special sugars from breast milk and help keep you healthy.",
+        complexity: "intermediate"
+      },
+      "th2-polarized": {
+        term: "Th2-Polarized",
+        definitions: {
+          simple: "A state where the baby's immune system is set to be less aggressive, allowing it to tolerate new foods and bacteria.",
+          standard: "An immune state characterized by T helper 2 cell dominance, which dampens inflammatory responses and promotes tolerance in infants.",
+          technical: "A predominance of Th2 cytokine profile (IL-4, IL-5, IL-13) over Th1 responses (IFN-γ, IL-12) in neonatal immunity. This bias promotes IgE production and eosinophil activation while suppressing cell-mediated immunity, facilitating tolerance to commensal antigens and allergens."
+        },
+        example: "Like setting your home security system to 'friendly mode' when guests arrive - less aggressive, more welcoming.",
+        complexity: "expert"
+      },
+      "maternal-igg": {
+        term: "Maternal IgG",
+        definitions: {
+          simple: "Antibodies (immune defenders) passed from mother to baby during pregnancy that provide temporary protection.",
+          standard: "Immunoglobulin G antibodies transferred from mother to fetus across the placenta, providing passive immunity for the first few months of life.",
+          technical: "Maternal IgG subclasses (IgG1, IgG2, IgG3, IgG4) actively transported across the placental syncytiotrophoblast via neonatal Fc receptors (FcRn). Levels peak at birth and decline with a half-life of ~21 days, reaching nadir at 2-6 months."
+        },
+        example: "Like borrowed armor from mom - provides protection until the baby's own immune system is ready.",
+        complexity: "intermediate"
+      },
+      "secretory-iga": {
+        term: "Secretory IgA",
+        definitions: {
+          simple: "Special antibodies in breast milk that coat the baby's intestines and protect against germs.",
+          standard: "Immunoglobulin A antibodies present in breast milk that provide local immune protection to the infant's mucosal surfaces.",
+          technical: "Dimeric IgA joined by J chain and complexed with secretory component, present at 1-2 g/L in colostrum and 0.5-1 g/L in mature milk. Resists proteolytic degradation in the GI tract, coating enterocytes to prevent pathogen adhesion and neutralize toxins."
+        },
+        example: "Like a protective shield painted on the inside of the intestines, blocking germs from getting through.",
+        complexity: "advanced"
+      },
+      "b-cells": {
+        term: "B Cells",
+        definitions: {
+          simple: "Immune cells that make antibodies to fight infections. Babies' B cells are still learning how to do this well.",
+          standard: "White blood cells that produce antibodies in response to infections or vaccines. They mature in the bone marrow and are part of the adaptive immune system.",
+          technical: "Lymphocytes originating from hematopoietic stem cells in bone marrow that undergo V(D)J recombination to generate diverse B cell receptors (BCRs). Upon antigen encounter, B cells differentiate into plasma cells (antibody secretion) or memory B cells in germinal centers."
+        },
+        example: "Like a factory that custom-builds weapons (antibodies) to fight specific invaders.",
+        complexity: "intermediate"
+      },
+      "germinal-centers": {
+        term: "Germinal Centers",
+        definitions: {
+          simple: "Special training schools inside lymph nodes where immune cells learn to make better antibodies.",
+          standard: "Structures within lymph nodes where B cells undergo maturation and selection to produce high-quality antibodies.",
+          technical: "Specialized microanatomical structures within secondary lymphoid follicles where antigen-activated B cells undergo somatic hypermutation, affinity maturation, and class-switch recombination. Infant B cells show reduced germinal center participation, explaining weaker antibody responses."
+        },
+        example: "Like an elite training academy for immune cells - they go in good and come out excellent.",
+        complexity: "advanced"
+      },
+      "thymus": {
+        term: "Thymus",
+        definitions: {
+          simple: "An organ behind your breastbone that trains immune cells to protect you without attacking your own body.",
+          standard: "A lymphoid organ located behind the sternum where T cells mature and learn to distinguish self from non-self. It is proportionally largest in infancy.",
+          technical: "A primary lymphoid organ comprising cortical and medullary regions where bone marrow-derived T cell progenitors undergo positive selection (cortex) and negative selection (medulla) to eliminate auto-reactive clones. Thymic output peaks in infancy and involutes with age."
+        },
+        example: "Like a military boot camp for immune cells - they learn who's a friend and who's an enemy.",
+        complexity: "intermediate"
+      },
+      "cooing": {
+        term: "Cooing",
+        definitions: {
+          simple: "The first vowel sounds babies make, like 'ooo' and 'aaa,' usually starting around 6-8 weeks.",
+          standard: "Early prelinguistic vocalizations consisting of vowel-like sounds, representing the first stage of intentional vocal communication.",
+          technical: "Phonologically simple vocalizations characterized by open vocal tract configurations producing vowel-like sounds (typically back vowels). Emerges 6-8 weeks as motor control of larynx and oral musculature improves, preceding canonical babbling."
+        },
+        example: "Like a baby's first attempts at singing - practicing the sounds that will later become words.",
+        complexity: "beginner"
+      },
+      "social-smile": {
+        term: "Social Smile",
+        definitions: {
+          simple: "A real smile directed at people, not just a reflex. It shows the baby recognizes you and wants to interact.",
+          standard: "A genuine, voluntary smile in response to social interaction, emerging around 6-8 weeks. It differs from reflexive smiling and indicates developing social cognition.",
+          technical: "A Duchenne smile (involving orbicularis oculi and zygomaticus major muscles) elicited by social stimuli, mediated by cortical maturation. Represents integration of visual recognition, emotional processing, and motor planning - a milestone in social-emotional development."
+        },
+        example: "Like the difference between a camera's automatic flash and deliberately turning on a light - intentional and meaningful.",
+        complexity: "beginner"
+      },
+      "duchenne-smile": {
+        term: "Duchenne Smile",
+        definitions: {
+          simple: "A genuine smile that involves the eyes and cheeks, not just the mouth. It shows real happiness.",
+          standard: "An authentic smile that involves both the mouth and eye muscles, indicating genuine positive emotion rather than a polite or social smile.",
+          technical: "A smile characterized by simultaneous contraction of zygomaticus major (raises mouth corners) and orbicularis oculi pars lateralis (creates crow's feet), mediated by separate neural pathways. The orbicularis oculi component is under involuntary control, making Duchenne smiles indicators of genuine affect."
+        },
+        example: "Like the difference between a fake smile for a photo and the smile when you see someone you love.",
+        complexity: "intermediate"
+      },
+      "attachment-in-the-making": {
+        term: "Attachment-in-the-Making",
+        definitions: {
+          simple: "The phase when babies start to recognize and prefer familiar caregivers, usually between 6 weeks and 6 months.",
+          standard: "The second phase of attachment development (Bowlby) where infants begin showing preference for familiar caregivers but don't yet show separation anxiety.",
+          technical: "Bowlby's Phase 2 of attachment (6 weeks-6 months) characterized by emerging differential responsiveness to caregivers mediated by right-hemisphere orbitofrontal cortex maturation. Precedes clear-cut attachment (Phase 3, 6-24 months) when separation protest emerges."
+        },
+        example: "Like a baby starting to recognize the difference between mom/dad and strangers, but not yet upset when they leave.",
+        complexity: "intermediate"
+      }
+    };
+
+    // Create tooltip element (singleton pattern)
+    const tooltip = document.createElement('div');
+    tooltip.className = 'glossary-tooltip';
+    tooltip.setAttribute('role', 'tooltip');
+    tooltip.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(tooltip);
+
+    let currentTerm = null;
+    let hideTooltipTimeout = null;
+
+    // Position tooltip intelligently
+    function positionTooltip(termElement) {
+      const termRect = termElement.getBoundingClientRect();
+      const tooltipRect = tooltip.getBoundingClientRect();
+      const viewport = {
+        width: window.innerWidth,
+        height: window.innerHeight
+      };
+
+      let top = termRect.bottom + 8;
+      let left = termRect.left;
+
+      // Check right edge
+      if (left + tooltipRect.width > viewport.width - 16) {
+        left = viewport.width - tooltipRect.width - 16;
+      }
+
+      // Check left edge
+      if (left < 16) {
+        left = 16;
+      }
+
+      // Check bottom edge
+      if (top + tooltipRect.height > viewport.height - 16) {
+        top = termRect.top - tooltipRect.height - 8;
+        tooltip.classList.add('position-above');
+      } else {
+        tooltip.classList.remove('position-above');
+      }
+
+      // Check top edge
+      if (top < 16) {
+        top = (viewport.height - tooltipRect.height) / 2;
+        left = (viewport.width - tooltipRect.width) / 2;
+      }
+
+      tooltip.style.top = `${top}px`;
+      tooltip.style.left = `${left}px`;
+    }
+
+    // Show tooltip
+    function showTooltip(termElement, termId) {
+      clearTimeout(hideTooltipTimeout);
+
+      const data = glossaryData[termId];
+      if (!data) {
+        console.warn(`Term not found: ${termId}`);
+        return;
+      }
+
+      currentTerm = termId;
+
+      // Render tooltip content
+      tooltip.innerHTML = `
+        <div class="tooltip-header">
+          <h4>${data.term}</h4>
+        </div>
+        <div class="complexity-toggle-group" role="radiogroup" aria-label="Definition complexity level">
+          <button class="complexity-toggle" role="radio" aria-checked="true" data-level="simple">
+            Simple
+          </button>
+          <button class="complexity-toggle" role="radio" aria-checked="false" data-level="standard">
+            Standard
+          </button>
+          <button class="complexity-toggle" role="radio" aria-checked="false" data-level="technical">
+            Technical
+          </button>
+        </div>
+        <div class="tooltip-content">
+          <p class="definition simple">${data.definitions.simple}</p>
+          <p class="definition standard" hidden>${data.definitions.standard}</p>
+          <p class="definition technical" hidden>${data.definitions.technical}</p>
+        </div>
+        ${data.example ? `
+          <div class="tooltip-example">
+            <strong>Example:</strong>
+            <p>${data.example}</p>
+          </div>
+        ` : ''}
+      `;
+
+      // Setup complexity toggles
+      tooltip.querySelectorAll('.complexity-toggle').forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const level = toggle.dataset.level;
+
+          tooltip.querySelectorAll('.complexity-toggle').forEach(t =>
+            t.setAttribute('aria-checked', 'false')
+          );
+          toggle.setAttribute('aria-checked', 'true');
+
+          tooltip.querySelectorAll('.definition').forEach(def => {
+            def.hidden = !def.classList.contains(level);
+          });
+        });
+      });
+
+      // Show tooltip
+      tooltip.setAttribute('aria-hidden', 'false');
+      termElement.setAttribute('aria-expanded', 'true');
+
+      // Position after render
+      requestAnimationFrame(() => {
+        positionTooltip(termElement);
+      });
+    }
+
+    // Hide tooltip
+    function hideTooltip() {
+      hideTooltipTimeout = setTimeout(() => {
+        tooltip.setAttribute('aria-hidden', 'true');
+        document.querySelectorAll('.technical-term').forEach(term => {
+          term.setAttribute('aria-expanded', 'false');
+        });
+        currentTerm = null;
+      }, 300);
+    }
+
+    // Setup all technical terms
+    document.querySelectorAll('.technical-term').forEach(term => {
+      // Mouse hover
+      term.addEventListener('mouseenter', () => {
+        showTooltip(term, term.dataset.term);
+      });
+
+      term.addEventListener('mouseleave', () => {
+        hideTooltip();
+      });
+
+      // Click to pin
+      term.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (currentTerm === term.dataset.term) {
+          hideTooltip();
+        } else {
+          showTooltip(term, term.dataset.term);
+        }
+      });
+
+      // Keyboard navigation
+      term.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          showTooltip(term, term.dataset.term);
+        }
+      });
+    });
+
+    // Tooltip hover (keep open when hovering tooltip)
+    tooltip.addEventListener('mouseenter', () => {
+      clearTimeout(hideTooltipTimeout);
+    });
+
+    tooltip.addEventListener('mouseleave', () => {
+      hideTooltip();
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        tooltip.setAttribute('aria-hidden', 'true');
+        document.querySelectorAll('.technical-term').forEach(term => {
+          term.setAttribute('aria-expanded', 'false');
+        });
+        currentTerm = null;
+      }
+    });
+
+    // Populate glossary sidebar
+    const glossaryList = document.getElementById('glossary-list');
+    const glossarySearch = document.getElementById('glossary-search');
+
+    const sortedTerms = Object.entries(glossaryData).sort((a, b) =>
+      a[1].term.localeCompare(b[1].term)
+    );
+
+    sortedTerms.forEach(([id, data]) => {
+      const li = document.createElement('li');
+      li.className = 'glossary-entry';
+      li.innerHTML = `
+        <button class="glossary-term"
+                aria-expanded="false"
+                data-term="${id}">
+          <span class="term-name">${data.term}</span>
+          <span class="complexity-badge">${data.complexity}</span>
+        </button>
+        <div class="glossary-definition" hidden>
+          <p>${data.definitions.simple}</p>
+        </div>
+      `;
+      glossaryList.appendChild(li);
+    });
+
+    // Glossary term click
+    glossaryList.addEventListener('click', (e) => {
+      const button = e.target.closest('.glossary-term');
+      if (!button) return;
+
+      const definition = button.nextElementSibling;
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+      // Close all other definitions
+      glossaryList.querySelectorAll('.glossary-term').forEach(term => {
+        term.setAttribute('aria-expanded', 'false');
+        term.nextElementSibling.hidden = true;
+      });
+
+      // Toggle this definition
+      button.setAttribute('aria-expanded', !isExpanded);
+      definition.hidden = isExpanded;
+    });
+
+    // Glossary search
+    glossarySearch.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase();
+
+      glossaryList.querySelectorAll('.glossary-entry').forEach(entry => {
+        const termName = entry.querySelector('.term-name').textContent.toLowerCase();
+        entry.style.display = termName.includes(query) ? 'block' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
