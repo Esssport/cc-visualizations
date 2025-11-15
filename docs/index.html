@@ -84,7 +84,7 @@
             height: 400%;
             border: none;
             transform: scale(0.5);
-            transform-origin: top left;
+            transform-origin: center;
             pointer-events: none;
         }
 
@@ -221,7 +221,7 @@
                 <div class="card-content">
                     <h3 class="card-title">${viz.title}</h3>
                     <div class="card-meta">
-                        <span>${new Date(viz.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+                        <span>${new Date(viz.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' })}</span>
                     </div>
                     <p class="card-description">${viz.description || 'No description available.'}</p>
                     <a href="${viz.path}" class="card-link">View Visualization</a>
@@ -238,4 +238,4 @@
     </script>
 </body>
 </html>
-<!-- Rebuilt Fri Nov 15 14:30:00 EST 2025 -->
+<!-- Rebuilt Fri Nov 15 14:45:00 EST 2025 - Fixed timezone bug and iframe centering -->
