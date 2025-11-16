@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Major Biology Breakthroughs 2023-2025: Cellular Understanding, DNA Research & Longevity Science">
+  <title>Major Biology Breakthroughs 2023-2025 | Educational Visualization</title>
+
+  <style>
+    /* ===== THEME: ACADEMIC (DARK MODE) ===== */
+    :root {
+      --bg-primary: #1a1611;
+      --bg-secondary: #252019;
+      --bg-elevated: #2d271e;
+      --text-primary: #e8e4dc;
+      --text-secondary: #b8b0a5;
+      --accent-blue: #6ba4e7;
+      --accent-orange: #f4a940;
+      --success-green: #4db86d;
+      --warning-orange: #f0932b;
+      --error-red: #e74c3c;
+      --border-color: #3a3228;
+
+      --font-serif: 'Crimson Pro', 'Crimson Text', Georgia, serif;
+      --font-sans: 'Inter Display', -apple-system, system-ui, sans-serif;
+      --font-mono: 'Source Code Pro', 'Courier New', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-serif);
+      font-size: clamp(1rem, 1.5vw, 1.125rem);
+      line-height: 1.8;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ===== LAYOUT ===== */
+    .educational-container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .glossary-sidebar {
+      position: sticky;
+      top: 0;
+      width: 320px;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 32px 24px;
+      background: var(--bg-secondary);
+      border-right: 1px solid var(--border-color);
+      flex-shrink: 0;
+    }
+
+    .content-area {
+      flex: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 32px;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 1024px) {
+      .glossary-sidebar {
+        position: fixed;
+        left: -320px;
+        z-index: 1000;
+        transition: left 0.3s ease;
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .glossary-sidebar.open {
+        left: 0;
+      }
+
+      .sidebar-toggle {
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        z-index: 999;
+        background: var(--accent-blue);
+        color: white;
+        border: none;
+        padding: 12px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-family: var(--font-sans);
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    @media (min-width: 1025px) {
+      .sidebar-toggle {
+        display: none;
+      }
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-sans);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 0.75em;
+      color: var(--text-primary);
+    }
+
+    h1 {
+      font-size: clamp(2.25rem, 4vw, 3.5rem);
+      margin-bottom: 0.5em;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-orange));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 700;
+      margin-top: 1.5em;
+      padding-bottom: 0.25em;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    h3 {
+      font-size: clamp(1.35rem, 2vw, 1.85rem);
+      font-weight: 700;
+      margin-top: 1.25em;
+      color: var(--accent-orange);
+    }
+
+    h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 1em;
+    }
+
+    p {
+      margin-bottom: 1em;
+    }
+
+    strong {
+      font-weight: 700;
+      color: var(--accent-orange);
+    }
+
+    ul, ol {
+      margin-left: 1.5em;
+      margin-bottom: 1em;
+    }
+
+    li {
+      margin-bottom: 0.5em;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border-color);
+      margin: 2em 0;
+    }
+
+    /* ===== GLOSSARY SIDEBAR ===== */
+    .sidebar-header h3 {
+      font-family: var(--font-sans);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1em;
+      color: var(--accent-blue);
+    }
+
+    .glossary-search {
+      width: 100%;
+      padding: 10px 12px;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+
+    .glossary-search:focus {
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 2px;
+    }
+
+    .glossary-filters {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 6px 12px;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      color: var(--text-secondary);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover {
+      background: var(--bg-elevated);
+      border-color: var(--accent-blue);
+    }
+
+    .filter-btn.active {
+      background: var(--accent-blue);
+      border-color: var(--accent-blue);
+      color: white;
+    }
+
+    .glossary-list {
+      list-style: none;
+      margin: 0;
+    }
+
+    .glossary-item {
+      margin-bottom: 4px;
+    }
+
+    .glossary-link {
+      display: block;
+      width: 100%;
+      padding: 8px 12px;
+      background: transparent;
+      border: none;
+      border-left: 3px solid transparent;
+      text-align: left;
+      color: var(--text-secondary);
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .glossary-link:hover {
+      background: var(--bg-elevated);
+      border-left-color: var(--accent-blue);
+      color: var(--text-primary);
+    }
+
+    .glossary-item[data-importance="critical"] .glossary-link {
+      font-weight: 600;
+    }
+
+    .glossary-item.hidden {
+      display: none;
+    }
+
+    .term-count {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 2px 6px;
+      background: var(--bg-elevated);
+      border-radius: 3px;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    /* ===== GLOSSARY TOOLTIPS ===== */
+    .glossary-term {
+      color: var(--accent-blue);
+      text-decoration: underline dotted 1px var(--accent-blue);
+      cursor: help;
+      position: relative;
+      transition: color 0.2s;
+    }
+
+    .glossary-term:hover {
+      color: var(--accent-orange);
+      text-decoration-color: var(--accent-orange);
+    }
+
+    .glossary-term:focus {
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    .tooltip {
+      position: fixed;
+      z-index: 10000;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      max-width: 480px;
+      width: 90vw;
+      padding: 0;
+      display: none;
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .tooltip.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .tooltip-header {
+      padding: 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .tooltip-term {
+      font-family: var(--font-sans);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin-bottom: 12px;
+    }
+
+    .tooltip-levels {
+      display: flex;
+      gap: 6px;
+    }
+
+    .level-btn {
+      padding: 4px 10px;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      color: var(--text-secondary);
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .level-btn:hover {
+      background: var(--bg-secondary);
+      border-color: var(--accent-blue);
+    }
+
+    .level-btn.active {
+      background: var(--accent-blue);
+      border-color: var(--accent-blue);
+      color: white;
+    }
+
+    .tooltip-body {
+      padding: 16px;
+    }
+
+    .tooltip-definition {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .tooltip-example {
+      padding: 12px;
+      background: var(--bg-primary);
+      border-left: 3px solid var(--accent-orange);
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .tooltip-example-label {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-orange);
+      margin-bottom: 6px;
+    }
+
+    .tooltip-example-text {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--text-secondary);
+    }
+
+    .tooltip-related {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .tooltip-related-label {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .related-term-link {
+      color: var(--accent-blue);
+      text-decoration: none;
+      margin: 0 4px;
+      transition: color 0.2s;
+    }
+
+    .related-term-link:hover {
+      color: var(--accent-orange);
+      text-decoration: underline;
+    }
+
+    /* ===== IMAGES ===== */
+    .diagram-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 1.5em 0;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .diagram-caption {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      text-align: center;
+      margin-top: 0.5em;
+      font-style: italic;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fade-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .content-area > article {
+      animation: fade-in-up 0.6s ease-out;
+    }
+
+    /* ===== ACCESSIBILITY ===== */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* High contrast focus indicators */
+    button:focus-visible,
+    input:focus-visible,
+    .glossary-term:focus-visible {
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 2px;
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="sidebar-toggle" aria-label="Toggle glossary sidebar" aria-expanded="false">
+    📚 Glossary
+  </button>
+
+  <div class="educational-container">
+
+    <!-- GLOSSARY SIDEBAR -->
+    <aside class="glossary-sidebar" role="complementary" aria-label="Glossary navigation">
+      <div class="sidebar-header">
+        <h3>Glossary <span class="term-count" id="term-count">37 terms</span></h3>
+      </div>
+
+      <input
+        type="search"
+        class="glossary-search"
+        placeholder="Search terms..."
+        aria-label="Search glossary terms"
+        id="glossary-search"
+      />
+
+      <div class="glossary-filters">
+        <button class="filter-btn active" data-importance="all">All</button>
+        <button class="filter-btn" data-importance="critical">Critical</button>
+        <button class="filter-btn" data-importance="important">Important</button>
+      </div>
+
+      <ul class="glossary-list" id="glossary-list">
+        <li class="glossary-item" data-term="alphafold" data-importance="critical">
+          <button class="glossary-link">AlphaFold</button>
+        </li>
+        <li class="glossary-item" data-term="atp" data-importance="important">
+          <button class="glossary-link">ATP</button>
+        </li>
+        <li class="glossary-item" data-term="base editing" data-importance="critical">
+          <button class="glossary-link">Base Editing</button>
+        </li>
+        <li class="glossary-item" data-term="casgevy" data-importance="important">
+          <button class="glossary-link">CASGEVY</button>
+        </li>
+        <li class="glossary-item" data-term="cognition" data-importance="important">
+          <button class="glossary-link">Cognition</button>
+        </li>
+        <li class="glossary-item" data-term="crispr" data-importance="critical">
+          <button class="glossary-link">CRISPR</button>
+        </li>
+        <li class="glossary-item" data-term="epigenome editing" data-importance="critical">
+          <button class="glossary-link">Epigenome Editing</button>
+        </li>
+        <li class="glossary-item" data-term="er-100" data-importance="important">
+          <button class="glossary-link">ER-100</button>
+        </li>
+        <li class="glossary-item" data-term="gene editing" data-importance="critical">
+          <button class="glossary-link">Gene Editing</button>
+        </li>
+        <li class="glossary-item" data-term="healthspan" data-importance="important">
+          <button class="glossary-link">Healthspan</button>
+        </li>
+        <li class="glossary-item" data-term="il-11" data-importance="important">
+          <button class="glossary-link">IL-11</button>
+        </li>
+        <li class="glossary-item" data-term="metformin" data-importance="important">
+          <button class="glossary-link">Metformin</button>
+        </li>
+        <li class="glossary-item" data-term="methylation" data-importance="important">
+          <button class="glossary-link">Methylation</button>
+        </li>
+        <li class="glossary-item" data-term="mitochondria" data-importance="critical">
+          <button class="glossary-link">Mitochondria</button>
+        </li>
+        <li class="glossary-item" data-term="nad+" data-importance="critical">
+          <button class="glossary-link">NAD+</button>
+        </li>
+        <li class="glossary-item" data-term="off-target effects" data-importance="important">
+          <button class="glossary-link">Off-Target Effects</button>
+        </li>
+        <li class="glossary-item" data-term="organoids" data-importance="critical">
+          <button class="glossary-link">Organoids</button>
+        </li>
+        <li class="glossary-item" data-term="partial reprogramming" data-importance="critical">
+          <button class="glossary-link">Partial Reprogramming</button>
+        </li>
+        <li class="glossary-item" data-term="prime editing" data-importance="critical">
+          <button class="glossary-link">Prime Editing</button>
+        </li>
+        <li class="glossary-item" data-term="rapamycin" data-importance="important">
+          <button class="glossary-link">Rapamycin</button>
+        </li>
+        <li class="glossary-item" data-term="senescent cells" data-importance="critical">
+          <button class="glossary-link">Senescent Cells</button>
+        </li>
+        <li class="glossary-item" data-term="senolytics" data-importance="critical">
+          <button class="glossary-link">Senolytics</button>
+        </li>
+        <li class="glossary-item" data-term="sickle cell disease" data-importance="important">
+          <button class="glossary-link">Sickle Cell Disease</button>
+        </li>
+        <li class="glossary-item" data-term="single-cell resolution" data-importance="important">
+          <button class="glossary-link">Single-Cell Resolution</button>
+        </li>
+        <li class="glossary-item" data-term="spatial transcriptomics" data-importance="critical">
+          <button class="glossary-link">Spatial Transcriptomics</button>
+        </li>
+        <li class="glossary-item" data-term="stem cells" data-importance="important">
+          <button class="glossary-link">Stem Cells</button>
+        </li>
+        <li class="glossary-item" data-term="yamanaka factors" data-importance="critical">
+          <button class="glossary-link">Yamanaka Factors</button>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content-area" role="main">
+      <article>
+        <h1>Major Biology Breakthroughs 2023-2025</h1>
+
+        <h2>Cellular Understanding, DNA Research & Longevity Science</h2>
+
+        <p>The years 2023-2025 represent a transformative period in biology, marking the transition from "understanding aging" to "treating aging as a disease." This comprehensive guide covers 19 major breakthroughs across three critical areas of biological research.</p>
+
+        <hr>
+
+        <h2>1. Cellular Understanding</h2>
+
+        <p>Understanding how cells function, communicate, and organize has reached unprecedented levels through revolutionary new technologies and AI-powered insights.</p>
+
+        <h3>Breakthrough 1: Spatial Transcriptomics Revolution (2024-2025)</h3>
+
+        <p><strong>The Discovery:</strong> Scientists integrated <span class="glossary-term" data-term="crispr" tabindex="0">CRISPR</span> screening with <span class="glossary-term" data-term="spatial transcriptomics" tabindex="0">spatial transcriptomics</span> using a technique called Perturb-FISH, enabling researchers to see exactly where genes are active within tissues at <span class="glossary-term" data-term="single-cell resolution" tabindex="0">single-cell resolution</span> while simultaneously screening genetic perturbations.</p>
+
+        <p><strong>Research Team:</strong> Published in Cell (2025)</p>
+
+        <p><strong>Why It Matters:</strong> For the first time, we can observe how cells communicate and organize in their native tissue environment. This is like upgrading from studying individual words to reading entire sentences in their proper context.</p>
+
+        <img src="https://replicate.delivery/xezq/Nw1UKKWiob6YHJ45jqIqNFuEoKjo03Xjsdyfs4I4XbbcV90KA/out-0.webp" alt="Spatial Transcriptomics visualization showing gene activity mapping in tissue" class="diagram-image">
+        <p class="diagram-caption">Figure 1: Spatial transcriptomics enables visualization of gene activity at single-cell resolution within tissue architecture</p>
+
+        <p><strong>Applications:</strong></p>
+        <ul>
+          <li>Understanding disease mechanisms in real tissue architecture</li>
+          <li>Drug development targeting cell-cell communication</li>
+          <li>Disease modeling in <span class="glossary-term" data-term="organoids" tabindex="0">organoids</span> with spatial precision</li>
+        </ul>
+
+        <p><strong>Current Status:</strong> Active research tool transforming cell biology and tissue engineering</p>
+
+        <h3>Breakthrough 2: Human Neural Organoid Cell Atlas (December 2024)</h3>
+
+        <p><strong>The Discovery:</strong> Researchers integrated 36 single-cell transcriptomic datasets totaling 1.7+ million cells to create the first comprehensive map of human brain development in <span class="glossary-term" data-term="organoids" tabindex="0">organoids</span>, comparing 26 different protocols.</p>
+
+        <p><strong>Research Team:</strong> Published in Nature</p>
+
+        <p><strong>Why It Matters:</strong> Brain organoids ("mini-brains" grown from <span class="glossary-term" data-term="stem cells" tabindex="0">stem cells</span>) can now be standardized and validated, creating reproducible models for studying neurological diseases and testing treatments.</p>
+
+        <p><strong>Applications:</strong></p>
+        <ul>
+          <li>Drug testing for Alzheimer's, Parkinson's, and schizophrenia</li>
+          <li>Understanding autism and developmental disorders</li>
+          <li>Personalized medicine for brain conditions using patient-derived organoids</li>
+        </ul>
+
+        <p><strong>Current Status:</strong> Published atlas available for researchers worldwide</p>
+
+        <h3>Breakthrough 3: AI-Powered Virtual Cells (2024-2025)</h3>
+
+        <p><strong>The Discovery:</strong> Artificial intelligence systems, notably DeepMind's <span class="glossary-term" data-term="alphafold" tabindex="0">AlphaFold</span> 3, can now predict cell behavior and molecular interactions including protein structures, DNA-RNA-ligand interactions without expensive laboratory experiments.</p>
+
+        <img src="https://replicate.delivery/xezq/wbtky4mtZAKlMhsVIZbBRvSQYeXV9NmRBO724IA1h4qaV90KA/out-0.webp" alt="Gene editing comparison showing different precision levels" class="diagram-image">
+        <p class="diagram-caption">Figure 2: Comparison of gene editing technologies showing increasing precision from CRISPR to base editing to prime editing</p>
+
+        <p><strong>Research Team:</strong> DeepMind and multiple institutions</p>
+
+        <p><strong>Why It Matters:</strong> What once required months of lab work costing hundreds of thousands of dollars can now be predicted computationally in hours or days. The 2024 Nobel Prize in Chemistry was awarded for AlphaFold development.</p>
+
+        <p><strong>Applications:</strong></p>
+        <ul>
+          <li>Accelerated drug discovery (from years to weeks)</li>
+          <li>Understanding disease mechanisms computationally</li>
+          <li>Predicting drug side effects before synthesis</li>
+        </ul>
+
+        <p><strong>Current Status:</strong> AlphaFold 3 released for academic use (November 2024); already producing first drug candidates</p>
+
+        <h3>Breakthrough 4: Mitochondrial Reprogramming (2025)</h3>
+
+        <p><strong>The Discovery:</strong> Nanoengineered mitochondrial transplantation and energy metabolism nanomedicines can rejuvenate aged cells by restoring <span class="glossary-term" data-term="mitochondria" tabindex="0">mitochondrial</span> function and <span class="glossary-term" data-term="atp" tabindex="0">ATP</span> energy production.</p>
+
+        <img src="https://replicate.delivery/xezq/FJHNxXT7reXYVieRQyjqa0fMQGvGHf6tUiUgqiy1SeArXVPtC/out-0.webp" alt="Mitochondrial aging process showing decline in function" class="diagram-image">
+        <p class="diagram-caption">Figure 3: Mitochondrial aging and the decline in cellular energy production over time</p>
+
+        <p><strong>Research Team:</strong> Multiple institutions; key study on ATP synthase-based nanomedicine published 2025</p>
+
+        <p><strong>Why It Matters:</strong> <span class="glossary-term" data-term="mitochondria" tabindex="0">Mitochondria</span> are the "powerplants" of cells. When they decline with age, cells lose energy and function poorly. This technology can reverse that decline.</p>
+
+        <p><strong>Applications:</strong></p>
+        <ul>
+          <li>Reversed osteoporosis in mice through bone cell rejuvenation</li>
+          <li>Treating age-related blood disorders</li>
+          <li>Potential therapy for mitochondrial diseases</li>
+        </ul>
+
+        <p><strong>Current Status:</strong> Preclinical (animal studies) showing dramatic results; human trials needed</p>
+
+        <h3>Breakthrough 5: Supercharged Mitochondria Discovery (April 2025)</h3>
+
+        <p><strong>The Discovery:</strong> Aging blood <span class="glossary-term" data-term="stem cells" tabindex="0">stem cells</span> with Dnmt3a mutations have double the energy-producing capacity of normal cells, explaining why certain mutations dominate in aging blood.</p>
+
+        <p><strong>Research Team:</strong> Published in leading journal (April 2025)</p>
+
+        <p><strong>Why It Matters:</strong> This explains a major puzzle in aging: why some mutated cells outcompete healthy ones, leading to age-related blood disorders and cancers.</p>
+
+        <p><strong>Applications:</strong></p>
+        <ul>
+          <li>Understanding clonal hematopoiesis (age-related blood changes)</li>
+          <li>Potential therapeutic target to prevent blood cancers</li>
+          <li>New insights into cellular competition during aging</li>
+        </ul>
+
+        <p><strong>Current Status:</strong> Fundamental discovery; therapeutic development ongoing</p>
+
+        <hr>
+
+        <h2>2. DNA Research & Gene Editing</h2>
+
+        <p><span class="glossary-term" data-term="gene editing" tabindex="0">Gene editing</span> has moved from laboratory research to approved therapies, with multiple next-generation technologies entering human trials.</p>
+
+        <h3>Breakthrough 6: CASGEVY - First CRISPR Therapy Approved (2023-2024)</h3>
+
+        <p><strong>The Discovery:</strong> <span class="glossary-term" data-term="casgevy" tabindex="0">CASGEVY</span> became the first FDA-approved <span class="glossary-term" data-term="crispr" tabindex="0">CRISPR</span> gene editing therapy for genetic blood disorders.</p>
+
+        <img src="https://replicate.delivery/xezq/RfuZ40H2tywVWazQ53Q94AZeEFjmM9nC3qBwNBEPiKizq6pVA/out-0.webp" alt="CRISPR mechanism showing DNA cutting and editing process" class="diagram-image">
+        <p class="diagram-caption">Figure 4: CRISPR-Cas9 mechanism for precise DNA editing</p>
+
+        <p><strong>Research Team:</strong> Vertex Pharmaceuticals & CRISPR Therapeutics</p>
+
+        <p><strong>Timeline:</strong></p>
+        <ul>
+          <li><strong>November 2023:</strong> UK approval (<span class="glossary-term" data-term="sickle cell disease" tabindex="0">sickle cell disease</span> & beta thalassemia)</li>
+          <li><strong>December 2023:</strong> FDA approval (sickle cell disease)</li>
+          <li><strong>January 2024:</strong> FDA expansion (beta thalassemia)</li>
+          <li><strong>September 2024:</strong> Canada approval (both conditions)</li>
+        </ul>
+
+        <p><strong>Why It Matters:</strong> This marks the beginning of the CRISPR medicine era. Patients with previously incurable genetic blood disorders can now be cured by editing their own stem cells.</p>
+
+        <p><strong>How It Works:</strong> Doctors remove patients' blood <span class="glossary-term" data-term="stem cells" tabindex="0">stem cells</span>, use CRISPR to edit the defective gene, and return the corrected cells to the patient.</p>
+
+        <p><strong>Current Status:</strong> <strong>APPROVED</strong> - Patients receiving treatment now</p>
+
+        <h3>Breakthrough 7: Prime Editing Enters Human Trials (2024)</h3>
+
+        <p><strong>The Discovery:</strong> PM359, the first <span class="glossary-term" data-term="prime editing" tabindex="0">prime editing</span> therapy, entered human trials. Prime editing is more precise than CRISPR - it can make exact DNA changes without cutting both DNA strands.</p>
+
+        <p><strong>Research Team:</strong> Prime Medicine (FDA cleared 2024)</p>
+
+        <p><strong>Target Disease:</strong> Chronic granulomatous disease (CGD) - a rare immune deficiency</p>
+
+        <p><strong>First Results:</strong> The first patient showed significant NADPH oxidase activity increase, exceeding the clinical benefit threshold.</p>
+
+        <p><strong>Why It Matters:</strong> <span class="glossary-term" data-term="prime editing" tabindex="0">Prime editing</span> can make precise changes like "search and replace" in a document, while traditional CRISPR is more like "cut and paste." This precision means fewer errors and side effects.</p>
+
+        <p><strong>Current Status:</strong> <strong>Phase 1 clinical trial active</strong> with promising early results</p>
+
+        <h3>Breakthrough 8: Base Editing Clinical Advances (2024)</h3>
+
+        <p><strong>The Discovery:</strong> Multiple <span class="glossary-term" data-term="base editing" tabindex="0">base editing</span> therapies showing clinical efficacy in human trials. Base editing can correct single-letter DNA mutations (like changing an A to a G).</p>
+
+        <p><strong>Research Teams:</strong></p>
+        <ul>
+          <li>NIAID (X-linked chronic granulomatous disease)</li>
+          <li>BEAM Therapeutics (BEAM-101 for sickle cell disease)</li>
+        </ul>
+
+        <p><strong>Results:</strong></p>
+        <ul>
+          <li>December 2024: 7 sickle cell patients showed >60% fetal hemoglobin induction and <40% sickle hemoglobin reduction</li>
+          <li>Phase 1 trials active for familial hypercholesterolemia</li>
+          <li>Phase 1 trials active for alpha-1 antitrypsin deficiency</li>
+        </ul>
+
+        <p><strong>Why It Matters:</strong> Many genetic diseases are caused by single-letter typos in DNA. <span class="glossary-term" data-term="base editing" tabindex="0">Base editing</span> can fix these typos directly without cutting DNA.</p>
+
+        <p><strong>Current Status:</strong> <strong>Multiple Phase 1/2 trials active</strong></p>
+
+        <h3>Breakthrough 9: Epigenome Editing Breakthroughs (2024)</h3>
+
+        <p><strong>The Discovery:</strong> The first epigenome silencer for chronic hepatitis B virus achieved heritable <span class="glossary-term" data-term="epigenome editing" tabindex="0">epigenome editing</span> in vivo (in living organisms).</p>
+
+        <p><strong>Research Team:</strong> Multiple groups</p>
+
+        <p><strong>Why It Matters:</strong> <span class="glossary-term" data-term="epigenome editing" tabindex="0">Epigenome editing</span> can turn genes on or off without changing the DNA sequence itself - like dimming a light switch versus rewiring the electrical circuit. Changes can be inherited by daughter cells.</p>
+
+        <p><strong>Applications:</strong></p>
+        <ul>
+          <li>Curing chronic hepatitis B</li>
+          <li>Microbiome editing for health</li>
+          <li>Reversible gene regulation (can be undone if needed)</li>
+        </ul>
+
+        <p><strong>Current Status:</strong> <strong>First in vivo epigenome editor progressing to clinical trials</strong></p>
+
+        <h3>Breakthrough 10: High-Fidelity CRISPR Systems (2023-2024)</h3>
+
+        <p><strong>The Discovery:</strong> New CRISPR variants (SpCas9-HF1 and eSpCas9) with dramatically reduced <span class="glossary-term" data-term="off-target effects" tabindex="0">off-target effects</span> were developed and validated.</p>
+
+        <p><strong>Research Team:</strong> Multiple institutions</p>
+
+        <p><strong>Why It Matters:</strong> Early CRISPR sometimes edited the wrong parts of DNA (<span class="glossary-term" data-term="off-target effects" tabindex="0">off-target effects</span>). These new versions are far more accurate, making gene editing safer.</p>
+
+        <p><strong>Applications:</strong> All future CRISPR therapies can use these safer variants</p>
+
+        <p><strong>Current Status:</strong> Standard research tool; being incorporated into all new clinical therapies</p>
+
+        <h3>Breakthrough 11: AlphaFold-Accelerated Drug Discovery (2023)</h3>
+
+        <p><strong>The Discovery:</strong> The first successful drug candidate was designed using <span class="glossary-term" data-term="alphafold" tabindex="0">AlphaFold</span> AI, identifying a CDK20 inhibitor for liver cancer.</p>
+
+        <p><strong>Research Team:</strong> Published in Chemical Science (2023)</p>
+
+        <p><strong>The Numbers:</strong></p>
+        <ul>
+          <li><strong>Traditional approach:</strong> Months/years, hundreds of compounds</li>
+          <li><strong>AlphaFold approach:</strong> 30 days, only 7 compounds synthesized</li>
+        </ul>
+
+        <p><strong>Why It Matters:</strong> This demonstrates 10-100x acceleration in drug discovery. What took years can now be done in weeks.</p>
+
+        <p><strong>Current Status:</strong> Demonstrating feasibility; multiple pharma companies now using AlphaFold for drug design</p>
+
+        <hr>
+
+        <h2>3. Longevity & Anti-Aging</h2>
+
+        <p>The most exciting frontier: treating aging itself as a reversible condition rather than an inevitable decline.</p>
+
+        <h3>Breakthrough 12: Partial Epigenetic Reprogramming - Approaching Human Trials (2024-2025)</h3>
+
+        <p><strong>The Discovery:</strong> <span class="glossary-term" data-term="er-100" tabindex="0">ER-100</span>, the first <span class="glossary-term" data-term="partial reprogramming" tabindex="0">partial reprogramming</span> therapy, is heading to human trials in Q1 2026.</p>
+
+        <img src="https://replicate.delivery/xezq/Yrirn6Dv7I4IApA4tzPNT9fkTJJulXxee3hAyrY18Pj3V1TrA/out-0.webp" alt="Cellular reprogramming process showing rejuvenation pathway" class="diagram-image">
+        <p class="diagram-caption">Figure 5: Cellular reprogramming using Yamanaka factors to reverse aging without dedifferentiation</p>
+
+        <p><strong>Research Team:</strong> Life Biosciences (co-founded by David Sinclair)</p>
+
+        <p><strong>The Technology:</strong> Uses 3 of 4 <span class="glossary-term" data-term="yamanaka factors" tabindex="0">Yamanaka factors</span> (Oct4, Sox2, Klf4) in controlled, cyclic dosing to partially "reset" cells to a younger state without making them become stem cells.</p>
+
+        <p><strong>Preclinical Results:</strong></p>
+        <ul>
+          <li>Extended median lifespan in 124-week-old mice by <strong>109%</strong></li>
+          <li>Improved frailty scores and <span class="glossary-term" data-term="healthspan" tabindex="0">healthspan</span></li>
+          <li>Restored youthful <span class="glossary-term" data-term="methylation" tabindex="0">methylation</span> patterns in nonhuman primates</li>
+          <li>Zero tumor formation with continuous dosing</li>
+        </ul>
+
+        <p><strong>First Human Trials:</strong> Q1 2026 for glaucoma and non-arteritic anterior ischemic optic neuropathy (NAION)</p>
+
+        <p><strong>Why It Matters:</strong> This is the first attempt to use cellular reprogramming to reverse aging in humans. If successful, it could address multiple age-related diseases simultaneously.</p>
+
+        <p><strong>Current Status:</strong> <strong>IND-enabling studies complete; human trials starting 2026</strong></p>
+
+        <h3>Breakthrough 13: Chemical Age Reversal (July 2023)</h3>
+
+        <p><strong>The Discovery:</strong> Harvard researchers created the first chemical cocktail that can reprogram cells to a younger state without gene therapy.</p>
+
+        <p><strong>Research Team:</strong> Harvard Medical School (David Sinclair lab)</p>
+
+        <p><strong>Why It Matters:</strong> Chemical reprogramming is potentially safer and easier to deliver than gene therapy. You could take a pill instead of receiving gene therapy.</p>
+
+        <p><strong>Results:</strong></p>
+        <ul>
+          <li>Reversed blindness in monkeys (April 2023)</li>
+          <li>Safely rejuvenated multiple cell types</li>
+        </ul>
+
+        <p><strong>Current Status:</strong> <strong>Preclinical; preparing for human trials</strong></p>
+
+        <h3>Breakthrough 14: Anti-IL-11 Lifespan Extension (July 2024)</h3>
+
+        <p><strong>The Discovery:</strong> Blocking <span class="glossary-term" data-term="il-11" tabindex="0">interleukin-11</span> (a pro-inflammatory protein) extends lifespan and protects from age-related diseases in mice.</p>
+
+        <p><strong>Research Team:</strong> Duke-NUS Medical School</p>
+
+        <p><strong>Why It Matters:</strong> <span class="glossary-term" data-term="il-11" tabindex="0">IL-11</span> increases with age and drives inflammation and tissue damage. Blocking it addresses a root cause of aging.</p>
+
+        <p><strong>Results:</strong> Protected mice from multiple age-associated pathologies including fibrosis and metabolic dysfunction</p>
+
+        <p><strong>Current Status:</strong> Preclinical animal studies; promising broad anti-aging effects</p>
+
+        <h3>Breakthrough 15: Senolytics - Human Trial Results (2024)</h3>
+
+        <p><strong>The Discovery:</strong> Dasatinib + Quercetin (D+Q) improved <span class="glossary-term" data-term="cognition" tabindex="0">cognition</span> in older adults with mild cognitive impairment.</p>
+
+        <img src="https://replicate.delivery/xezq/cnXquEa8fo2VaSZbkNeP6qfe6V15UNEuwCkn3YEBHyTAsqnWB/out-0.webp" alt="Senolytic drug action on senescent cells" class="diagram-image">
+        <p class="diagram-caption">Figure 6: Senolytic drugs selectively eliminate senescent "zombie cells" to restore tissue function</p>
+
+        <p><strong>Research Team:</strong> Wake Forest University (SToMP-AD trial) and multiple institutions</p>
+
+        <p><strong>What Are Senolytics?</strong> Drugs that selectively eliminate <span class="glossary-term" data-term="senescent cells" tabindex="0">senescent cells</span> (zombie cells that don't die but cause inflammation and damage).</p>
+
+        <p><strong>Results:</strong></p>
+        <ul>
+          <li>December 2024: 6-week D+Q regimen <strong>significantly improved cognition</strong> in adults with mild cognitive impairment</li>
+          <li>Well-tolerated even in frail elderly</li>
+          <li>Extended mouse lifespan by 36% in previous studies</li>
+        </ul>
+
+        <p><strong>Active Trials:</strong></p>
+        <ul>
+          <li><strong>SToMP-AD Phase 2</strong> (Alzheimer's): Recruiting through 2025, completion 2027</li>
+          <li>Multiple trials for frailty, organ function, osteoarthritis</li>
+        </ul>
+
+        <p><strong>Current Status:</strong> <strong>Phase 2 human trials active</strong> showing cognitive benefits</p>
+
+        <h3>Breakthrough 16: NAD+ Precursor Breakthroughs (2024-2025)</h3>
+
+        <p><strong>The Discovery:</strong> Nicotinamide riboside (NR) showed significant anti-aging effects in humans, including a landmark trial in Werner Syndrome (accelerated aging disease).</p>
+
+        <img src="https://replicate.delivery/xezq/SVe39vmtxG2RQSeYC91z6VIVqWVbyoNQdWNsQkC0tIIDr6pVA/out-0.webp" alt="NAD+ metabolic pathway showing biosynthesis and consumption" class="diagram-image">
+        <p class="diagram-caption">Figure 7: NAD+ biosynthesis pathway and its critical role in cellular energy and repair</p>
+
+        <p><strong>What is NAD+?</strong> A critical molecule that declines with age. It's essential for energy production, DNA repair, and cellular health.</p>
+
+        <p><strong>Results:</strong></p>
+        <ul>
+          <li>Safely boosted <span class="glossary-term" data-term="nad+" tabindex="0">NAD+</span> levels in humans</li>
+          <li>Improved cardiovascular health</li>
+          <li>Reduced skin ulcers in Werner Syndrome patients</li>
+          <li>Protected kidney function</li>
+          <li>Benefits against chronic inflammation, metabolic disorders, muscle weakness</li>
+        </ul>
+
+        <p><strong>NMN Results:</strong> 21 registered clinical trials; doses up to 1200mg/day shown safe; improved physical performance, insulin sensitivity, and endurance</p>
+
+        <p><strong>Current Status:</strong> <strong>Multiple Phase 2 trials active</strong>; supplements widely available</p>
+
+        <h3>Breakthrough 17: Rapamycin Low-Dose Studies (2024)</h3>
+
+        <p><strong>The Discovery:</strong> Low-dose <span class="glossary-term" data-term="rapamycin" tabindex="0">rapamycin</span> (1mg/day) enhances immune function and reduces infections in elderly without causing immunosuppression.</p>
+
+        <p><strong>Research Team:</strong> Oxford study (8-week trial)</p>
+
+        <p><strong>What is Rapamycin?</strong> An mTOR inhibitor that mimics beneficial effects of caloric restriction. Originally an immunosuppressant, but low doses may have anti-aging effects.</p>
+
+        <p><strong>Results:</strong></p>
+        <ul>
+          <li>Reduced <span class="glossary-term" data-term="senescent cells" tabindex="0">senescent cells</span> in older adults</li>
+          <li>Enhanced immune function at low doses (opposite of high-dose effect)</li>
+          <li>Meta-analysis shows rapamycin mirrors dietary restriction effects better than <span class="glossary-term" data-term="metformin" tabindex="0">metformin</span></li>
+        </ul>
+
+        <p><strong>Current Status:</strong> <strong>Human trials ongoing</strong>; safe at low doses (1mg every 3-7 days)</p>
+
+        <h3>Breakthrough 18: Metformin TAME Trial (2024-2025)</h3>
+
+        <p><strong>The Discovery:</strong> Targeting Aging with <span class="glossary-term" data-term="metformin" tabindex="0">Metformin</span> (TAME) - the largest anti-aging clinical trial - is actively recruiting.</p>
+
+        <img src="https://replicate.delivery/xezq/ViLTWuA8JfUOQqgnkwelL9gbRhZ1ZzWRZ3OSbtn6uh7Fr6pVA/out-0.webp" alt="Epigenetic clock showing age-related methylation changes" class="diagram-image">
+        <p class="diagram-caption">Figure 8: Epigenetic clock based on DNA methylation patterns that track biological aging</p>
+
+        <p><strong>Research Team:</strong> Multi-center collaboration led by Nir Barzilai</p>
+
+        <p><strong>What is Metformin?</strong> A diabetes drug with potential anti-aging properties. Used by millions safely for decades.</p>
+
+        <p><strong>Trial Design:</strong></p>
+        <ul>
+          <li>Composite endpoints: age-related diseases (heart disease, cancer, cognitive decline)</li>
+          <li>Biomarkers of aging</li>
+          <li>Multi-year follow-up</li>
+        </ul>
+
+        <p><strong>Why It Matters:</strong> If successful, this could be the first FDA-approved anti-aging drug, paving the way for treating aging as a condition.</p>
+
+        <p><strong>Current Status:</strong> <strong>Active recruitment in 2025</strong>; results pending in coming years</p>
+
+        <h3>Breakthrough 19: Combination Therapy Results (2024)</h3>
+
+        <p><strong>The Discovery:</strong> <span class="glossary-term" data-term="metformin" tabindex="0">Metformin</span> + <span class="glossary-term" data-term="rapamycin" tabindex="0">Rapamycin</span> combination extended lifespan 23% in mice - superior to either drug alone.</p>
+
+        <p><strong>Research Team:</strong> Animal aging studies</p>
+
+        <p><strong>The Numbers:</strong></p>
+        <ul>
+          <li>Rapamycin alone: 18% (females), 10% (males)</li>
+          <li><strong>Combination: 23%</strong> (both sexes)</li>
+        </ul>
+
+        <p><strong>Why It Matters:</strong> Combining interventions targeting different aging mechanisms may have synergistic effects. The whole is greater than the sum of parts.</p>
+
+        <p><strong>Current Status:</strong> Animal studies; human trials needed</p>
+
+        <hr>
+
+        <h2>Key Institutions & Companies Leading the Research</h2>
+
+        <h3>Academic Powerhouses:</h3>
+        <ul>
+          <li><strong>Harvard Medical School</strong> (David Sinclair lab) - <span class="glossary-term" data-term="partial reprogramming" tabindex="0">Partial reprogramming</span>, chemical age reversal</li>
+          <li><strong>Duke-NUS Medical School</strong> - Anti-IL-11 research</li>
+          <li><strong>Northwestern Medicine Human Longevity Laboratory</strong> (launched Feb 2024)</li>
+          <li><strong>Wake Forest University</strong> - <span class="glossary-term" data-term="senolytics" tabindex="0">Senolytic</span> trials</li>
+          <li><strong>Oxford University</strong> - <span class="glossary-term" data-term="rapamycin" tabindex="0">Rapamycin</span> studies</li>
+          <li><strong>Multiple NIH Institutes</strong> (NIAID, NIA)</li>
+        </ul>
+
+        <h3>Biotech Pioneers:</h3>
+        <ul>
+          <li><strong>Life Biosciences</strong> - <span class="glossary-term" data-term="er-100" tabindex="0">ER-100</span> partial reprogramming (human trials 2026)</li>
+          <li><strong>Vertex Pharmaceuticals & CRISPR Therapeutics</strong> - <span class="glossary-term" data-term="casgevy" tabindex="0">CASGEVY</span> (approved, treating patients)</li>
+          <li><strong>Prime Medicine</strong> - PM359 <span class="glossary-term" data-term="prime editing" tabindex="0">prime editing</span> (Phase 1 active)</li>
+          <li><strong>BEAM Therapeutics</strong> - BEAM-101 <span class="glossary-term" data-term="base editing" tabindex="0">base editing</span> (Phase 1 active)</li>
+          <li><strong>Retro Biosciences</strong> - $180M from Sam Altman; autophagy program trial expected 2025</li>
+          <li><strong>Altos Labs</strong> - Well-funded reprogramming research ($3B backing)</li>
+          <li><strong>UNITY Biotechnology</strong> - Senolytic therapies</li>
+          <li><strong>DeepMind/Isomorphic Labs</strong> - <span class="glossary-term" data-term="alphafold" tabindex="0">AlphaFold</span> 3 for drug discovery</li>
+        </ul>
+
+        <hr>
+
+        <h2>Timeline: From Lab to Clinic</h2>
+
+        <h3>Already Treating Patients (2024):</h3>
+        <ul>
+          <li><strong><span class="glossary-term" data-term="casgevy" tabindex="0">CASGEVY</span></strong> (CRISPR therapy) - Sickle cell disease & beta thalassemia</li>
+        </ul>
+
+        <h3>In Human Clinical Trials Now (2024-2025):</h3>
+        <ul>
+          <li><strong><span class="glossary-term" data-term="prime editing" tabindex="0">Prime editing</span></strong> (PM359) - Phase 1 active</li>
+          <li><strong><span class="glossary-term" data-term="base editing" tabindex="0">Base editing</span></strong> - Multiple Phase 1/2 trials</li>
+          <li><strong><span class="glossary-term" data-term="senolytics" tabindex="0">Senolytics</span></strong> (D+Q) - Phase 2 trials showing cognitive benefits</li>
+          <li><strong><span class="glossary-term" data-term="nad+" tabindex="0">NAD+</span> precursors</strong> - 21+ trials for NMN, multiple for NR</li>
+          <li><strong><span class="glossary-term" data-term="rapamycin" tabindex="0">Rapamycin</span></strong> low-dose - Multiple trials</li>
+          <li><strong><span class="glossary-term" data-term="metformin" tabindex="0">Metformin</span> TAME</strong> - Active recruitment</li>
+        </ul>
+
+        <h3>Human Trials Starting Very Soon:</h3>
+        <ul>
+          <li><strong><span class="glossary-term" data-term="partial reprogramming" tabindex="0">Partial reprogramming</span></strong> (<span class="glossary-term" data-term="er-100" tabindex="0">ER-100</span>) - Q1 2026</li>
+          <li><strong>Retro Biosciences</strong> autophagy program - 2025</li>
+        </ul>
+
+        <h3>Preparing for Human Trials:</h3>
+        <ul>
+          <li>Chemical age reversal cocktail</li>
+          <li>Anti-<span class="glossary-term" data-term="il-11" tabindex="0">IL-11</span> therapy</li>
+          <li><span class="glossary-term" data-term="mitochondria" tabindex="0">Mitochondrial</span> transplantation therapies</li>
+          <li><span class="glossary-term" data-term="epigenome editing" tabindex="0">Epigenome</span> editors for hepatitis B</li>
+          <li>Metformin + Rapamycin combination</li>
+        </ul>
+
+        <hr>
+
+        <h2>Practical Implications & What This Means for You</h2>
+
+        <h3>Available Today:</h3>
+        <ul>
+          <li><strong><span class="glossary-term" data-term="nad+" tabindex="0">NAD+</span> precursors</strong> (NMN, NR) - Available as supplements, 21+ clinical trials</li>
+          <li><strong>Low-dose <span class="glossary-term" data-term="rapamycin" tabindex="0">rapamycin</span></strong> - Some longevity physicians prescribing off-label (1mg every 3-7 days)</li>
+          <li><strong><span class="glossary-term" data-term="metformin" tabindex="0">Metformin</span></strong> - Off-label use for longevity being explored</li>
+        </ul>
+
+        <h3>Near-Term (2025-2027):</h3>
+        <ul>
+          <li><strong><span class="glossary-term" data-term="partial reprogramming" tabindex="0">Partial reprogramming</span> therapies</strong> for vision loss (2026)</li>
+          <li><strong>Expanded gene editing approvals</strong> for more genetic diseases</li>
+          <li><strong><span class="glossary-term" data-term="senolytics" tabindex="0">Senolytic</span> therapies</strong> for Alzheimer's and frailty</li>
+          <li><strong>Results from TAME trial</strong> - potential first anti-aging drug approval</li>
+        </ul>
+
+        <h3>Medium-Term (2027-2030):</h3>
+        <ul>
+          <li><strong>Broader anti-aging therapies</strong> based on reprogramming</li>
+          <li><strong>Gene editing for common conditions</strong> (high cholesterol, metabolic diseases)</li>
+          <li><strong><span class="glossary-term" data-term="mitochondria" tabindex="0">Mitochondrial</span> therapies</strong> for aging and energy metabolism</li>
+          <li><strong>AI-designed drugs</strong> entering clinic at scale</li>
+        </ul>
+
+        <h3>Transformative Potential:</h3>
+        <p>The 2023-2025 period marks a historic shift from "understanding aging" to "treating aging as a disease." Multiple independent approaches - <span class="glossary-term" data-term="epigenome editing" tabindex="0">epigenetic reprogramming</span>, <span class="glossary-term" data-term="senolytics" tabindex="0">senolytics</span>, <span class="glossary-term" data-term="nad+" tabindex="0">NAD+</span> restoration, mitochondrial enhancement, and <span class="glossary-term" data-term="gene editing" tabindex="0">gene editing</span> - are all showing promise <strong>simultaneously</strong>.</p>
+
+        <p><strong>First-generation therapies</strong> (available 2025-2030) may extend <span class="glossary-term" data-term="healthspan" tabindex="0">healthspan</span> by 10-20 years. <strong>Combination therapies</strong> (2030s) could be far more dramatic, potentially extending healthy lifespan by decades.</p>
+
+        <p>For the first time in human history, we have not just theories but <strong>actual therapies in human trials</strong> designed to reverse aspects of aging itself.</p>
+
+        <hr>
+
+        <h2>The Bottom Line</h2>
+
+        <p>We are witnessing the birth of a new medical paradigm: <strong>treating aging as a reversible condition</strong>. What was science fiction in 2020 is now science fact in 2025:</p>
+
+        <ul>
+          <li>✅ <strong>First CRISPR cure approved</strong> (<span class="glossary-term" data-term="casgevy" tabindex="0">CASGEVY</span>)</li>
+          <li>✅ <strong>Cellular age reversal in humans starting 2026</strong> (<span class="glossary-term" data-term="er-100" tabindex="0">ER-100</span>)</li>
+          <li>✅ <strong>Zombie cell elimination showing cognitive benefits</strong> (<span class="glossary-term" data-term="senolytics" tabindex="0">Senolytics</span>)</li>
+          <li>✅ <strong>AI designing drugs in weeks instead of years</strong> (<span class="glossary-term" data-term="alphafold" tabindex="0">AlphaFold</span>)</li>
+          <li>✅ <strong><span class="glossary-term" data-term="mitochondria" tabindex="0">Mitochondrial</span> rejuvenation reversing disease in mice</strong> (energy metabolism nanomedicines)</li>
+        </ul>
+
+        <p>The question is no longer "Can we slow aging?" but "How much can we reverse it, and how soon?"</p>
+
+        <hr>
+
+        <p><em>This educational resource covers peer-reviewed research and registered clinical trials from 2023-2025. Always consult healthcare professionals before making medical decisions.</em></p>
+
+      </article>
+    </main>
+
+  </div>
+
+  <!-- TOOLTIP CONTAINER -->
+  <div class="tooltip" id="tooltip" role="tooltip" aria-hidden="true">
+    <div class="tooltip-header">
+      <h4 class="tooltip-term" id="tooltip-term"></h4>
+      <div class="tooltip-levels">
+        <button class="level-btn active" data-level="simple">Simple</button>
+        <button class="level-btn" data-level="standard">Standard</button>
+        <button class="level-btn" data-level="technical">Technical</button>
+      </div>
+    </div>
+    <div class="tooltip-body">
+      <p class="tooltip-definition" id="tooltip-definition"></p>
+      <div class="tooltip-example" id="tooltip-example">
+        <div class="tooltip-example-label">Example</div>
+        <div class="tooltip-example-text" id="tooltip-example-text"></div>
+      </div>
+      <div class="tooltip-related" id="tooltip-related"></div>
+    </div>
+  </div>
+
+  <script>
+    'use strict';
+
+    // ===== EMBEDDED GLOSSARY DATA =====
+    const GLOSSARY_DATA = [
+  {
+    "term": "CRISPR",
+    "simple": "A molecular tool that acts like 'find and replace' for DNA, allowing scientists to edit genes with precision",
+    "standard": "Clustered Regularly Interspaced Short Palindromic Repeats - a gene-editing technology that uses guide RNA and Cas9 protein to cut and modify specific DNA sequences",
+    "technical": "A CRISPR-Cas9 system consists of guide RNA (gRNA) that binds complementary target DNA sequences and Cas9 endonuclease that introduces double-strand breaks, enabling homology-directed repair (HDR) or non-homologous end joining (NHEJ) for precise genome modifications",
+    "real_world_example": "Like using 'Ctrl+F' to find a typo in a document and then correcting it - CRISPR finds specific DNA sequences and edits them",
+    "domain_example": "CASGEVY, the first FDA-approved CRISPR therapy (Dec 2023), cures sickle cell disease by editing patients' blood stem cells. Scientists also integrated CRISPR screening with spatial transcriptomics to create Perturb-FISH, enabling observation of gene activity in native tissue environments",
+    "related_terms": ["prime editing", "base editing", "gene editing", "CASGEVY", "off-target effects"]
+  },
+  {
+    "term": "gene editing",
+    "simple": "The ability to change specific parts of DNA to fix genetic problems or add new traits, like editing text in a document",
+    "standard": "Technologies that enable precise, targeted changes to the genome of living cells and organisms, including insertion, deletion, modification, or replacement of DNA sequences",
+    "technical": "Genome editing encompasses multiple technologies (CRISPR-Cas9, TALENs, zinc finger nucleases, prime editing, base editing) that utilize sequence-specific nucleases or catalytically inactive variants fused to deaminases or reverse transcriptases to achieve programmable DNA modifications without requiring homologous recombination",
+    "real_world_example": "Like having the ability to go into a recipe book and change specific ingredients to fix a mistake or create a better version",
+    "domain_example": "Gene editing has moved from laboratory research to approved therapies between 2023-2025, with CASGEVY (CRISPR therapy) approved for sickle cell disease and beta thalassemia, PM359 (prime editing) in Phase 1 trials for chronic granulomatous disease, and multiple base editing therapies showing clinical efficacy",
+    "related_terms": ["CRISPR", "prime editing", "base editing", "epigenome editing", "CASGEVY"]
+  },
+  {
+    "term": "spatial transcriptomics",
+    "simple": "A technology that shows which genes are turned on in different parts of a tissue, like a detailed map showing what's happening where",
+    "standard": "A technique that reveals the location and activity level of thousands of genes simultaneously within tissue samples, preserving the spatial organization of cells while measuring their gene expression",
+    "technical": "Spatially-resolved transcriptomic profiling technologies (including Perturb-FISH, MERFISH, seqFISH+, and spatial barcoding methods) that combine fluorescence in situ hybridization or spatial barcoding with high-throughput sequencing to map mRNA transcripts at single-cell or subcellular resolution within their native tissue architecture",
+    "real_world_example": "Like upgrading from knowing which apps are running on your phone to seeing a heat map of exactly where on the screen each app is being used and how intensely",
+    "domain_example": "The 2024-2025 Spatial Transcriptomics Revolution integrated CRISPR screening with spatial transcriptomics using Perturb-FISH, enabling researchers to see exactly where genes are active within tissues at single-cell resolution while simultaneously screening genetic perturbations - allowing observation of cell communication and organization in native tissue environments",
+    "related_terms": ["single-cell resolution", "organoids", "CRISPR", "stem cells"]
+  },
+  {
+    "term": "organoids",
+    "simple": "Tiny 3D organ-like structures grown in a lab from stem cells, like mini-organs that scientists can study and test",
+    "standard": "Three-dimensional cell culture systems derived from stem cells or tissue-specific progenitor cells that self-organize into structures mimicking the architecture and function of real organs",
+    "technical": "Self-assembling 3D multicellular constructs derived from pluripotent or adult stem cells embedded in extracellular matrix scaffolds (e.g., Matrigel) that recapitulate organ-specific cellular heterogeneity, spatial organization, and functional characteristics through autonomous differentiation and morphogenesis, enabling in vitro modeling of development and disease",
+    "real_world_example": "Like growing a miniature working model of a building from a blueprint - you can test designs, simulate problems, and see how changes affect the structure without building the real thing",
+    "domain_example": "The December 2024 Human Neural Organoid Cell Atlas integrated 36 single-cell transcriptomic datasets totaling 1.7+ million cells to create the first comprehensive map of human brain development in organoids, comparing 26 different protocols. Brain organoids can now be standardized and validated for drug testing for Alzheimer's, Parkinson's, schizophrenia, and personalized medicine using patient-derived organoids",
+    "related_terms": ["stem cells", "single-cell resolution", "spatial transcriptomics"]
+  },
+  {
+    "term": "AlphaFold",
+    "simple": "An AI system that can predict the 3D shape of proteins from their genetic code, solving in hours what used to take scientists months",
+    "standard": "A deep learning artificial intelligence system developed by DeepMind that predicts protein three-dimensional structures from amino acid sequences with near-experimental accuracy",
+    "technical": "AlphaFold 3 is a neural network architecture combining attention mechanisms and iterative refinement that predicts protein structures, protein-protein interactions, protein-DNA/RNA complexes, and protein-ligand binding from sequence data, achieving atomic-level accuracy by learning from experimental structure databases and evolutionary information encoded in multiple sequence alignments",
+    "real_world_example": "Like having an expert architect who can instantly draw detailed 3D blueprints of a building just by reading the list of materials - saving months of design work",
+    "domain_example": "AlphaFold 3 (released November 2024) received the 2024 Nobel Prize in Chemistry and has already produced its first drug candidates. The first successful drug candidate designed using AlphaFold was a CDK20 inhibitor for liver cancer, created in just 30 days with only 7 compounds synthesized - versus traditional approaches requiring months/years and hundreds of compounds",
+    "related_terms": ["gene editing", "CRISPR"]
+  },
+  {
+    "term": "mitochondria",
+    "simple": "The 'power plants' of cells that produce energy, and when they decline with age, cells lose energy and function poorly",
+    "standard": "Membrane-bound organelles found in most eukaryotic cells that generate adenosine triphosphate (ATP) through cellular respiration, serving as the primary source of cellular energy",
+    "technical": "Double-membrane organelles containing their own circular DNA (mtDNA) and ribosomes that perform oxidative phosphorylation via the electron transport chain and ATP synthase complex, producing ~90% of cellular ATP while also regulating calcium homeostasis, apoptosis signaling, and reactive oxygen species (ROS) generation",
+    "real_world_example": "Like the engine in a car - when it's running well, everything works smoothly, but when it starts failing, the whole vehicle loses power and performance",
+    "domain_example": "2025 breakthroughs in nanoengineered mitochondrial transplantation and ATP synthase-based nanomedicines can rejuvenate aged cells by restoring mitochondrial function, reversing osteoporosis in mice through bone cell rejuvenation. A separate April 2025 discovery showed aging blood stem cells with Dnmt3a mutations have double the energy-producing capacity of normal cells",
+    "related_terms": ["ATP", "stem cells", "NAD+"]
+  },
+  {
+    "term": "prime editing",
+    "simple": "A more precise gene editing tool than CRISPR that can make exact DNA changes like 'search and replace' in a word processor, without cutting both strands",
+    "standard": "A next-generation gene editing technology that uses a modified Cas9 protein fused to reverse transcriptase to make precise insertions, deletions, and base substitutions without requiring double-strand DNA breaks or donor DNA templates",
+    "technical": "A CRISPR-based genome editing system utilizing a catalytically impaired Cas9 nickase fused to an engineered reverse transcriptase and a prime editing guide RNA (pegRNA) that encodes both the target sequence and desired edit, enabling programmable installation of all 12 types of point mutations plus insertions and deletions (up to ~80 bp) via reverse transcription of the pegRNA extension directly into genomic DNA without DSB-dependent pathways",
+    "real_world_example": "Like using a word processor's 'find and replace' function with perfect precision versus CRISPR's 'cut and paste' approach - fewer errors and cleaner edits",
+    "domain_example": "PM359, the first prime editing therapy, entered human trials in 2024 (FDA cleared) for chronic granulomatous disease (CGD). The first patient showed significant NADPH oxidase activity increase, exceeding the clinical benefit threshold. Prime editing is more precise than CRISPR, making exact changes with fewer errors and side effects",
+    "related_terms": ["CRISPR", "base editing", "gene editing", "off-target effects"]
+  },
+  {
+    "term": "base editing",
+    "simple": "A gene editing tool that fixes single-letter typos in DNA directly, like correcting a spelling mistake without rewriting the whole sentence",
+    "standard": "A precision genome editing technique that converts one DNA base pair to another (e.g., C-G to T-A) at a target genomic location without making double-strand breaks or requiring donor DNA templates",
+    "technical": "A CRISPR-derived technology employing catalytically dead or nickase Cas9 variants fused to deaminase enzymes (cytosine base editors using APOBEC or activation-induced deaminase, or adenine base editors using TadA) that catalyze direct nucleobase modifications within a programmable editing window, enabling C-to-T, A-to-G, or other transition mutations with minimal indel formation or off-target editing",
+    "real_world_example": "Like having an eraser and pen that can change just one wrong letter in a typed page without affecting anything else around it",
+    "domain_example": "Multiple base editing therapies showed clinical efficacy in 2024 trials: BEAM-101 for sickle cell disease showed >60% fetal hemoglobin induction and <40% sickle hemoglobin reduction in 7 patients (December 2024). NIAID trials for X-linked chronic granulomatous disease and Phase 1 trials for familial hypercholesterolemia and alpha-1 antitrypsin deficiency are active",
+    "related_terms": ["CRISPR", "prime editing", "gene editing", "sickle cell disease"]
+  },
+  {
+    "term": "epigenome editing",
+    "simple": "Turning genes on or off like a dimmer switch without changing the DNA itself - changes can be passed down to new cells",
+    "standard": "Technologies that modify gene expression by altering epigenetic marks (DNA methylation, histone modifications) without changing the underlying DNA sequence, enabling reversible and heritable gene regulation",
+    "technical": "Targeted epigenetic modification using catalytically inactive dCas9 or dCas12 fused to epigenetic effector domains (DNA methyltransferases like DNMT3A, demethylases like TET1, histone acetyltransferases, or deacetylases) to induce site-specific changes in chromatin state and transcriptional activity that persist through cell division via epigenetic inheritance mechanisms, without altering genomic DNA sequences",
+    "real_world_example": "Like installing a dimmer switch on a light versus rewiring the electrical circuit - you can control how bright the light is without changing the wiring, and the dimmer setting can stay in place",
+    "domain_example": "The first epigenome silencer for chronic hepatitis B virus achieved heritable epigenome editing in vivo (2024), progressing to clinical trials. Applications include curing chronic hepatitis B, microbiome editing for health, and reversible gene regulation that can be undone if needed",
+    "related_terms": ["gene editing", "CRISPR", "methylation", "partial reprogramming"]
+  },
+  {
+    "term": "Yamanaka factors",
+    "simple": "Four special genes (Oct4, Sox2, Klf4, c-Myc) that can reset adult cells back to a stem-cell-like state, discovered by Nobel Prize winner Shinya Yamanaka",
+    "standard": "A set of four transcription factors (Oct4, Sox2, Klf4, and c-Myc) that can reprogram differentiated somatic cells into induced pluripotent stem cells (iPSCs), resetting cellular identity and age-related changes",
+    "technical": "The canonical quartet of pioneer transcription factors (OCT4/POU5F1, SOX2, KLF4, MYC) that cooperatively bind closed chromatin, activate pluripotency networks, and suppress lineage-specific programs to induce epigenetic reprogramming of somatic cells to a ground-state pluripotent configuration resembling embryonic stem cells, with telomere elongation and erasure of age-associated DNA methylation patterns",
+    "real_world_example": "Like having a 'factory reset' button that can turn a specialized smartphone app back into basic operating system code that could become any type of app again",
+    "domain_example": "ER-100, the first partial reprogramming therapy heading to human trials in Q1 2026, uses 3 of 4 Yamanaka factors (Oct4, Sox2, Klf4) in controlled, cyclic dosing to partially reset cells to a younger state without making them become stem cells. This extended median lifespan in 124-week-old mice by 109% and restored youthful methylation patterns in nonhuman primates",
+    "related_terms": ["partial reprogramming", "stem cells", "methylation", "ER-100"]
+  },
+  {
+    "term": "partial reprogramming",
+    "simple": "Resetting cells partway back to a younger state without turning them into stem cells - like rewinding a clock a few hours instead of back to zero",
+    "standard": "A controlled cellular rejuvenation technique that uses transient expression of reprogramming factors to reverse age-related cellular changes while maintaining cell identity and differentiation status",
+    "technical": "Cyclic or temporally-limited expression of a subset of Yamanaka factors (typically OSK without c-Myc) to induce partial epigenetic rejuvenation, reverting age-associated DNA methylation patterns, chromatin structure, and cellular function toward youthful states while avoiding complete dedifferentiation to pluripotency through precise dosing kinetics and factor selection that prevent activation of full pluripotency networks",
+    "real_world_example": "Like restoring an old car to better condition - you repair worn parts and restore performance without completely rebuilding it from scratch into a new vehicle",
+    "domain_example": "ER-100 from Life Biosciences represents the first partial reprogramming therapy approaching human trials (Q1 2026) for glaucoma and NAION. It extended median lifespan in 124-week-old mice by 109%, improved frailty scores, restored youthful methylation patterns in nonhuman primates, with zero tumor formation. Chemical age reversal from Harvard (July 2023) created cocktails that reprogram cells without gene therapy, reversing blindness in monkeys",
+    "related_terms": ["Yamanaka factors", "epigenome editing", "methylation", "ER-100", "stem cells"]
+  },
+  {
+    "term": "senolytics",
+    "simple": "Drugs that selectively kill 'zombie cells' - old damaged cells that refuse to die and cause inflammation and damage to surrounding healthy cells",
+    "standard": "Therapeutic agents that selectively induce apoptosis in senescent cells, eliminating these dysfunctional cells that accumulate with age and contribute to age-related diseases through inflammatory secretions",
+    "technical": "Small molecule compounds (e.g., dasatinib + quercetin, navitoclax, fisetin) that target pro-survival pathways upregulated in senescent cells (BCL-2 family proteins, PI3K/AKT, p53/p21-dependent networks) to overcome their apoptosis resistance and induce selective elimination of cells exhibiting senescence-associated secretory phenotype (SASP), thereby reducing chronic inflammation and tissue dysfunction",
+    "real_world_example": "Like removing broken-down, abandoned cars from a parking lot - they're taking up space, leaking fluids, and making the whole area worse, but once removed, the lot functions better",
+    "domain_example": "Dasatinib + Quercetin (D+Q) improved cognition in older adults with mild cognitive impairment in December 2024 trials. The 6-week D+Q regimen significantly improved cognition and was well-tolerated even in frail elderly. SToMP-AD Phase 2 trials for Alzheimer's are recruiting through 2025 (completion 2027). Previous studies showed D+Q extended mouse lifespan by 36%",
+    "related_terms": ["senescent cells", "cognition", "healthspan", "IL-11"]
+  },
+  {
+    "term": "senescent cells",
+    "simple": "Old 'zombie cells' that are damaged and should die but instead hang around causing inflammation and harming nearby healthy cells",
+    "standard": "Cells that have permanently stopped dividing due to stress or damage but remain metabolically active, secreting inflammatory factors that damage surrounding tissue and contribute to aging",
+    "technical": "Cells in a state of stable cell cycle arrest (typically p16INK4a/p21-positive) induced by telomere attrition, oncogene activation, DNA damage, or oxidative stress, characterized by senescence-associated β-galactosidase activity, chromatin remodeling (SAHF formation), and senescence-associated secretory phenotype (SASP) involving secretion of pro-inflammatory cytokines (IL-6, IL-8), chemokines, proteases, and growth factors that promote tissue dysfunction",
+    "real_world_example": "Like a factory worker who stopped doing their job but stays at the workplace complaining loudly, disrupting other workers and spreading negativity throughout the building",
+    "domain_example": "Low-dose rapamycin (1mg/day, 8-week Oxford trial, 2024) reduced senescent cells in older adults while enhancing immune function. Senolytics that eliminate these cells - particularly Dasatinib + Quercetin - showed significant cognitive improvement in trials and are in Phase 2 trials for Alzheimer's (SToMP-AD)",
+    "related_terms": ["senolytics", "rapamycin", "healthspan", "cognition"]
+  },
+  {
+    "term": "NAD+",
+    "simple": "A critical energy molecule in every cell that declines with age - it's essential for producing energy, repairing DNA, and keeping cells healthy",
+    "standard": "Nicotinamide adenine dinucleotide - a coenzyme present in all living cells that plays essential roles in energy metabolism, DNA repair, and cellular signaling, with levels that decline significantly during aging",
+    "technical": "A redox-active dinucleotide coenzyme that functions as an electron carrier in glycolysis, TCA cycle, and oxidative phosphorylation (NAD+/NADH), while also serving as a substrate for NAD+-consuming enzymes including sirtuins (deacetylases), PARPs (DNA repair), and CD38 (calcium signaling), with biosynthesis via salvage pathway from nicotinamide riboside (NR) or nicotinamide mononucleotide (NMN) or de novo from tryptophan",
+    "real_world_example": "Like the electrical charge in a rechargeable battery - as it depletes with age, the device (your cells) can't function at full capacity, but recharging it restores performance",
+    "domain_example": "Nicotinamide riboside (NR) showed significant anti-aging effects in 2024-2025 human trials, including a landmark Werner Syndrome trial that reduced skin ulcers and improved cardiovascular health. NMN in 21 registered clinical trials (doses up to 1200mg/day) improved physical performance, insulin sensitivity, and endurance. Multiple Phase 2 trials are active for benefits against chronic inflammation, metabolic disorders, and muscle weakness",
+    "related_terms": ["mitochondria", "ATP", "healthspan", "metformin"]
+  },
+  {
+    "term": "rapamycin",
+    "simple": "A drug that mimics the beneficial effects of eating less food (caloric restriction) by slowing down cell growth pathways, potentially extending lifespan",
+    "standard": "An mTOR (mechanistic target of rapamycin) inhibitor originally used as an immunosuppressant that, at low doses, may extend lifespan by mimicking caloric restriction and enhancing cellular quality control processes",
+    "technical": "A macrolide antibiotic that forms a complex with FKBP12 to allosterically inhibit mTORC1 kinase activity, suppressing protein synthesis, cell growth, and anabolic metabolism while enhancing autophagy, mitophagy, and stress resistance pathways that recapitulate beneficial effects of dietary restriction on healthspan and longevity through nutrient-sensing pathway modulation",
+    "real_world_example": "Like putting your cell phone in low-power mode - it slows down some functions but helps the battery (your cells) last much longer and work more efficiently",
+    "domain_example": "Low-dose rapamycin (1mg/day, Oxford 8-week trial, 2024) enhanced immune function and reduced infections in elderly without immunosuppression, opposite the high-dose effect. Rapamycin reduced senescent cells in older adults. Meta-analysis shows rapamycin mirrors dietary restriction effects better than metformin. Combination therapy with metformin + rapamycin extended lifespan 23% in mice - superior to either drug alone (rapamycin alone: 18% females, 10% males)",
+    "related_terms": ["metformin", "senescent cells", "senolytics", "healthspan", "NAD+"]
+  },
+  {
+    "term": "metformin",
+    "simple": "A common diabetes drug taken by millions that may slow aging by improving how cells process energy and respond to nutrients",
+    "standard": "A biguanide antidiabetic medication that improves insulin sensitivity and glucose metabolism, with emerging evidence suggesting potential anti-aging effects through metabolic pathway modulation",
+    "technical": "A biguanide compound that inhibits hepatic gluconeogenesis primarily through mild complex I inhibition in the mitochondrial electron transport chain, activating AMPK (AMP-activated protein kinase) energy-sensing pathways, improving insulin sensitivity, reducing oxidative stress, and potentially extending healthspan through mechanisms overlapping with caloric restriction and exercise mimetics",
+    "real_world_example": "Like a fuel efficiency optimizer for your car's engine - it helps the engine (your cells) use fuel (glucose) more efficiently and run cleaner, potentially making it last longer",
+    "domain_example": "The TAME trial (Targeting Aging with Metformin), the largest anti-aging clinical trial, is actively recruiting in 2025. If successful, this could be the first FDA-approved anti-aging drug. Combination therapy of metformin + rapamycin extended lifespan 23% in mice, superior to either drug alone. Metformin is being explored for off-label longevity use",
+    "related_terms": ["rapamycin", "NAD+", "healthspan", "ATP"]
+  },
+  {
+    "term": "ATP",
+    "simple": "The energy currency of cells - the molecule that powers nearly every cellular process, like money that cells spend to do work",
+    "standard": "Adenosine triphosphate - the primary energy-carrying molecule in all living organisms that stores and transfers chemical energy within cells for metabolism, movement, and biosynthesis",
+    "technical": "A nucleoside triphosphate consisting of adenine, ribose, and three phosphate groups whose terminal high-energy phosphate bonds (ΔG° = -30.5 kJ/mol upon hydrolysis to ADP) provide immediately accessible chemical energy for endergonic cellular processes, synthesized primarily through oxidative phosphorylation in mitochondria via ATP synthase (Complex V) coupling proton-motive force to phosphorylation, or through substrate-level phosphorylation in glycolysis",
+    "real_world_example": "Like the coins in a video game that characters collect and spend to perform actions - without ATP coins, cells can't power their functions",
+    "domain_example": "2025 breakthroughs in ATP synthase-based nanomedicines can rejuvenate aged cells by restoring mitochondrial function and ATP energy production, reversing osteoporosis in mice. Aging blood stem cells with Dnmt3a mutations (April 2025 discovery) have double the energy-producing capacity of normal cells, explaining age-related blood disorders",
+    "related_terms": ["mitochondria", "NAD+", "metformin"]
+  },
+  {
+    "term": "single-cell resolution",
+    "simple": "The ability to study individual cells one at a time instead of looking at millions of cells mixed together, revealing unique differences between cells",
+    "standard": "Analytical techniques that measure molecular features (gene expression, proteins, epigenetic marks) in individual cells rather than bulk tissue, revealing cellular heterogeneity and rare cell populations",
+    "technical": "Technologies including single-cell RNA sequencing (scRNA-seq), single-cell ATAC-seq, CyTOF, and spatial transcriptomics that isolate and profile individual cells or maintain spatial context while achieving cellular resolution, employing microfluidics, droplet-based barcoding, or in situ hybridization to quantify transcriptomes, epigenomes, proteomes, or metabolomes at the single-cell level, enabling identification of cell states, lineages, and trajectories",
+    "real_world_example": "Like interviewing each person in a crowd individually versus taking a survey of the whole group - you discover unique perspectives and rare opinions that get lost in averages",
+    "domain_example": "The December 2024 Human Neural Organoid Cell Atlas integrated 36 single-cell transcriptomic datasets totaling 1.7+ million cells to map brain development. Spatial transcriptomics at single-cell resolution using Perturb-FISH enables observation of exactly where genes are active within tissues while screening genetic perturbations",
+    "related_terms": ["spatial transcriptomics", "organoids", "stem cells"]
+  },
+  {
+    "term": "CASGEVY",
+    "simple": "The world's first approved CRISPR medicine that cures genetic blood diseases by editing patients' own stem cells",
+    "standard": "The first FDA and UK-approved CRISPR/Cas9 gene therapy (developed by Vertex Pharmaceuticals and CRISPR Therapeutics) for treating sickle cell disease and beta thalassemia",
+    "technical": "An ex vivo autologous CRISPR-Cas9 gene-edited cell therapy that harvests patient hematopoietic stem cells, uses CRISPR to disrupt the BCL11A erythroid enhancer region (thereby derepressing fetal hemoglobin expression), and reinfuses edited cells following myeloablative conditioning to achieve functional cure through restored oxygen-carrying capacity via elevated HbF levels",
+    "real_world_example": "Like taking defective parts out of a machine, fixing them in a workshop using precise tools, and putting the repaired parts back - the machine now works properly",
+    "domain_example": "CASGEVY received UK approval in November 2023 for sickle cell disease and beta thalassemia, FDA approval in December 2023 for sickle cell disease, FDA expansion in January 2024 for beta thalassemia, and Canada approval in September 2024 for both conditions. Patients are receiving treatment now, marking the beginning of the CRISPR medicine era",
+    "related_terms": ["CRISPR", "gene editing", "sickle cell disease", "stem cells"]
+  },
+  {
+    "term": "sickle cell disease",
+    "simple": "A genetic blood disorder where red blood cells become crescent-shaped instead of round, causing pain and organ damage by blocking blood flow",
+    "standard": "A hereditary hemoglobinopathy caused by a single point mutation in the beta-globin gene, resulting in abnormal hemoglobin (HbS) that polymerizes under low oxygen, deforming red blood cells into rigid sickle shapes",
+    "technical": "An autosomal recessive genetic disorder resulting from a single nucleotide polymorphism (GAG→GTG) in codon 6 of the HBB gene, producing hemoglobin S (β6 Glu→Val) that polymerizes during deoxygenation, causing erythrocyte sickling, hemolysis, vaso-occlusive crises, chronic anemia, and multiorgan ischemic damage, treatable via upregulation of fetal hemoglobin (HbF) which inhibits HbS polymerization",
+    "real_world_example": "Like having delivery trucks that randomly transform into rigid, crescent-shaped vehicles that get stuck in narrow roads, blocking traffic and damaging the roads",
+    "domain_example": "CASGEVY became the first approved CRISPR cure for sickle cell disease in December 2023, editing patients' blood stem cells to reactivate fetal hemoglobin production. Base editing therapy BEAM-101 showed >60% fetal hemoglobin induction and <40% sickle hemoglobin reduction in 7 patients (December 2024)",
+    "related_terms": ["CASGEVY", "base editing", "gene editing", "CRISPR", "stem cells"]
+  },
+  {
+    "term": "off-target effects",
+    "simple": "Unintended genetic changes that happen when gene editing tools accidentally modify the wrong parts of DNA, like typos made while editing",
+    "standard": "Unintended DNA modifications at genomic sites other than the intended target location during gene editing, potentially causing harmful mutations or cellular dysfunction",
+    "technical": "Sequence-dependent or sequence-independent cleavage or modification events at non-target genomic loci caused by guide RNA mismatch tolerance, Cas nuclease promiscuity, or chromatin accessibility variations, detected through whole-genome sequencing, GUIDE-seq, CIRCLE-seq, or CHANGE-seq, with risk mitigated through high-fidelity Cas variants (SpCas9-HF1, eSpCas9), truncated gRNAs, or ribonucleoprotein delivery",
+    "real_world_example": "Like using 'find and replace' in a document but accidentally changing words you didn't mean to - the tool found similar-looking text and changed it too",
+    "domain_example": "New high-fidelity CRISPR variants (SpCas9-HF1 and eSpCas9) developed in 2023-2024 dramatically reduced off-target effects, making gene editing safer. Early CRISPR sometimes edited the wrong parts of DNA, but these new versions are far more accurate and are being incorporated into all new clinical therapies",
+    "related_terms": ["CRISPR", "prime editing", "base editing", "gene editing"]
+  },
+  {
+    "term": "IL-11",
+    "simple": "A protein (interleukin-11) that increases with age and drives inflammation and tissue scarring, making organs work worse over time",
+    "standard": "Interleukin-11 - a cytokine belonging to the IL-6 family that promotes inflammation, fibrosis, and cellular senescence, with levels that increase during aging and contribute to age-related pathologies",
+    "technical": "A pleiotropic cytokine that signals through IL-11Rα and gp130 receptor complex to activate JAK-STAT, ERK-MAPK, and PI3K-AKT pathways, driving pro-fibrotic responses through myofibroblast activation, extracellular matrix deposition, epithelial-mesenchymal transition, and metabolic dysfunction, while also promoting cellular senescence and SASP in multiple tissues during aging",
+    "real_world_example": "Like a chemical alarm signal that's supposed to trigger temporary repairs but gets stuck in the 'on' position as you age, causing constant inflammation and scar tissue buildup",
+    "domain_example": "Anti-IL-11 therapy (July 2024, Duke-NUS Medical School) blocked interleukin-11 to extend lifespan and protect from age-related diseases in mice. IL-11 increases with age and drives inflammation and tissue damage; blocking it addresses a root cause of aging, protecting mice from multiple age-associated pathologies including fibrosis and metabolic dysfunction",
+    "related_terms": ["senescent cells", "senolytics", "healthspan"]
+  },
+  {
+    "term": "stem cells",
+    "simple": "Unspecialized cells that can develop into many different cell types and can divide indefinitely to produce more cells",
+    "standard": "Undifferentiated cells capable of self-renewal and differentiation into specialized cell types, including embryonic stem cells (pluripotent) and adult stem cells (multipotent or tissue-specific)",
+    "technical": "Cells characterized by capacity for unlimited self-renewal through asymmetric division and multilineage differentiation potential, regulated by core pluripotency transcription factors (OCT4, SOX2, NANOG in embryonic stem cells), niche signals, and epigenetic states, classified as totipotent (zygote), pluripotent (ESCs, iPSCs), multipotent (hematopoietic, mesenchymal), or unipotent (progenitor cells)",
+    "real_world_example": "Like blank keys that can be cut to open any lock - they start with potential to become anything and get shaped into specific forms as needed",
+    "domain_example": "CASGEVY therapy removes patients' blood stem cells, uses CRISPR to edit the defective gene, and returns corrected cells. The December 2024 Human Neural Organoid Cell Atlas used stem cells to grow brain organoids. April 2025 research on aging blood stem cells with Dnmt3a mutations revealed they have double the energy-producing capacity. Brain organoids grown from stem cells enable disease modeling and personalized medicine",
+    "related_terms": ["organoids", "CASGEVY", "Yamanaka factors", "partial reprogramming", "sickle cell disease"]
+  },
+  {
+    "term": "methylation",
+    "simple": "Chemical tags added to DNA that control whether genes are turned on or off, like bookmarks that tell cells which genetic instructions to use",
+    "standard": "The addition of methyl groups (CH3) to DNA bases, particularly cytosine, serving as an epigenetic modification that regulates gene expression without changing the DNA sequence",
+    "technical": "Covalent addition of methyl groups to the 5-position of cytosine (5-methylcytosine, 5mC) primarily at CpG dinucleotides, catalyzed by DNA methyltransferases (DNMT1, DNMT3A/B), creating heritable epigenetic marks that recruit methyl-binding proteins and chromatin remodeling complexes to repress transcription, with genome-wide methylation patterns (methylome/epigenetic clock) changing predictably during aging",
+    "real_world_example": "Like sticky notes placed on pages of an instruction manual - they don't change the text but mark which sections should be read or ignored",
+    "domain_example": "ER-100 partial reprogramming therapy restored youthful methylation patterns in nonhuman primates, reversing age-associated DNA methylation changes. Epigenome editing can modify methylation to silence genes (like the first epigenome silencer for chronic hepatitis B virus) without changing DNA sequences",
+    "related_terms": ["epigenome editing", "partial reprogramming", "Yamanaka factors", "ER-100"]
+  },
+  {
+    "term": "healthspan",
+    "simple": "The number of years a person lives in good health without major diseases or disabilities, not just total years alive",
+    "standard": "The period of life spent in good health, free from chronic diseases and disabilities, as distinguished from total lifespan which includes years of age-related decline",
+    "technical": "The duration of life characterized by functional independence, absence of age-related pathologies (cardiovascular disease, neurodegeneration, cancer, metabolic syndrome), maintained physiological reserve, and quality of life metrics, measured through composite endpoints including frailty indices, activities of daily living (ADLs), biomarkers of aging, and disease-free survival rather than mere chronological longevity",
+    "real_world_example": "Like the difference between a car's total mileage and the miles it ran smoothly without breakdowns - healthspan counts only the good years, not years spent 'in the shop'",
+    "domain_example": "ER-100 partial reprogramming extended median lifespan in 124-week-old mice by 109% while improving frailty scores and healthspan. Senolytics (D+Q) showed cognitive benefits in elderly. NAD+ precursors improved cardiovascular health, physical performance, and reduced chronic inflammation. First-generation therapies (2025-2030) may extend healthspan by 10-20 years",
+    "related_terms": ["senolytics", "partial reprogramming", "NAD+", "rapamycin", "metformin"]
+  },
+  {
+    "term": "ER-100",
+    "simple": "The first partial reprogramming therapy heading to human trials in 2026, designed to reset cells to a younger state to reverse aging",
+    "standard": "A partial cellular reprogramming therapy developed by Life Biosciences (co-founded by David Sinclair) that uses controlled expression of three Yamanaka factors to rejuvenate cells without dedifferentiation",
+    "technical": "An investigational gene therapy utilizing cyclic, controlled expression of three Yamanaka transcription factors (Oct4, Sox2, Klf4 - excluding c-Myc to prevent tumorigenesis) to induce partial epigenetic reprogramming, reversing age-associated DNA methylation patterns and cellular dysfunction while maintaining differentiated cell identity through precise dosing kinetics that avoid pluripotency induction",
+    "real_world_example": "Like a software update that refreshes your device's performance by clearing accumulated errors and resetting settings, without erasing your programs or data",
+    "domain_example": "ER-100 is heading to human trials in Q1 2026 for glaucoma and non-arteritic anterior ischemic optic neuropathy (NAION). Preclinical results showed extended median lifespan in 124-week-old mice by 109%, improved frailty scores and healthspan, restored youthful methylation patterns in nonhuman primates, with zero tumor formation with continuous dosing. IND-enabling studies are complete",
+    "related_terms": ["partial reprogramming", "Yamanaka factors", "methylation", "healthspan"]
+  },
+  {
+    "term": "cognition",
+    "simple": "Mental abilities including memory, thinking, learning, attention, and problem-solving - the brain functions that decline with age or disease",
+    "standard": "The mental processes involved in acquiring knowledge and understanding, including perception, attention, memory, reasoning, language, and decision-making",
+    "technical": "Higher-order neurological processes mediated by cortical and subcortical networks that encompass executive function (prefrontal cortex), episodic and working memory (hippocampus, temporal lobes), attention (parietal networks), processing speed (white matter integrity), and language (perisylvian regions), assessed through neuropsychological testing batteries (MoCA, MMSE, NIH Toolbox) and quantified via composite cognitive scores",
+    "real_world_example": "Like a computer's processing power, RAM, and storage working together - it's how fast you think, how much you remember, and how well you solve problems",
+    "domain_example": "Dasatinib + Quercetin (D+Q) senolytics improved cognition in older adults with mild cognitive impairment in December 2024 trials. The 6-week D+Q regimen significantly improved cognition and was well-tolerated even in frail elderly. SToMP-AD Phase 2 trials are recruiting through 2025 for Alzheimer's cognitive benefits (completion 2027)",
+    "related_terms": ["senolytics", "senescent cells", "healthspan", "NAD+"]
+  }
+];
+
+    // ===== TOOLTIP FUNCTIONALITY =====
+    const tooltip = document.getElementById('tooltip');
+    const tooltipTerm = document.getElementById('tooltip-term');
+    const tooltipDefinition = document.getElementById('tooltip-definition');
+    const tooltipExample = document.getElementById('tooltip-example');
+    const tooltipExampleText = document.getElementById('tooltip-example-text');
+    const tooltipRelated = document.getElementById('tooltip-related');
+
+    let currentTerm = null;
+    let currentLevel = 'simple';
+    let hideTimeout = null;
+
+    // Create a map for quick lookups
+    const glossaryMap = new Map();
+    GLOSSARY_DATA.forEach(entry => {
+      glossaryMap.set(entry.term.toLowerCase(), entry);
+    });
+
+    function showTooltip(e) {
+      clearTimeout(hideTimeout);
+
+      const termElement = e.currentTarget;
+      const termKey = termElement.dataset.term;
+      const termData = glossaryMap.get(termKey);
+
+      if (!termData) return;
+
+      currentTerm = termData;
+      updateTooltipContent();
+
+      // Position tooltip near the term
+      const rect = termElement.getBoundingClientRect();
+      const tooltipRect = tooltip.getBoundingClientRect();
+
+      let left = rect.left;
+      let top = rect.bottom + 8;
+
+      // Keep tooltip on screen
+      if (left + tooltipRect.width > window.innerWidth - 20) {
+        left = window.innerWidth - tooltipRect.width - 20;
+      }
+
+      if (top + tooltipRect.height > window.innerHeight - 20) {
+        top = rect.top - tooltipRect.height - 8;
+      }
+
+      tooltip.style.left = left + 'px';
+      tooltip.style.top = top + 'px';
+      tooltip.classList.add('active');
+      tooltip.setAttribute('aria-hidden', 'false');
+    }
+
+    function scheduleHide() {
+      hideTimeout = setTimeout(() => {
+        tooltip.classList.remove('active');
+        tooltip.setAttribute('aria-hidden', 'true');
+      }, 300);
+    }
+
+    function updateTooltipContent() {
+      if (!currentTerm) return;
+
+      tooltipTerm.textContent = currentTerm.term;
+      tooltipDefinition.textContent = currentTerm[currentLevel];
+
+      // Show domain example
+      const exampleType = currentLevel === 'simple' ? 'real_world_example' : 'domain_example';
+      tooltipExampleText.textContent = currentTerm[exampleType];
+
+      // Show related terms
+      if (currentTerm.related_terms && currentTerm.related_terms.length > 0) {
+        tooltipRelated.innerHTML = '<span class="tooltip-related-label">Related:</span> ' +
+          currentTerm.related_terms.map(term =>
+            `<a href="#" class="related-term-link" data-term="${term.toLowerCase()}">${term}</a>`
+          ).join(', ');
+      } else {
+        tooltipRelated.innerHTML = '';
+      }
+    }
+
+    function switchDefinitionLevel(e) {
+      const level = e.target.dataset.level;
+      currentLevel = level;
+
+      document.querySelectorAll('.level-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      e.target.classList.add('active');
+
+      updateTooltipContent();
+    }
+
+    // Attach event listeners to glossary terms
+    document.querySelectorAll('.glossary-term').forEach(term => {
+      term.addEventListener('mouseenter', showTooltip);
+      term.addEventListener('mouseleave', scheduleHide);
+      term.addEventListener('focus', showTooltip);
+      term.addEventListener('blur', scheduleHide);
+    });
+
+    // Keep tooltip open when hovering over it
+    tooltip.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
+    tooltip.addEventListener('mouseleave', scheduleHide);
+
+    // Level switching
+    document.querySelectorAll('.level-btn').forEach(btn => {
+      btn.addEventListener('click', switchDefinitionLevel);
+    });
+
+    // Related term clicks
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('related-term-link')) {
+        e.preventDefault();
+        const termKey = e.target.dataset.term;
+        const termElement = document.querySelector(`.glossary-term[data-term="${termKey}"]`);
+        if (termElement) {
+          termElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          termElement.focus();
+        }
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (tooltip.classList.contains('active')) {
+        if (e.key === 'Escape') {
+          tooltip.classList.remove('active');
+          tooltip.setAttribute('aria-hidden', 'true');
+        }
+      }
+    });
+
+    // ===== GLOSSARY SIDEBAR =====
+    const glossarySearch = document.getElementById('glossary-search');
+    const glossaryList = document.getElementById('glossary-list');
+    const termCount = document.getElementById('term-count');
+
+    // Search functionality
+    glossarySearch.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      const items = glossaryList.querySelectorAll('.glossary-item');
+      let visibleCount = 0;
+
+      items.forEach(item => {
+        const termText = item.querySelector('.glossary-link').textContent.toLowerCase();
+        if (termText.includes(searchTerm)) {
+          item.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      termCount.textContent = `${visibleCount} ${visibleCount === 1 ? 'term' : 'terms'}`;
+    });
+
+    // Filter functionality
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const importance = e.target.dataset.importance;
+
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+
+        const items = glossaryList.querySelectorAll('.glossary-item');
+        let visibleCount = 0;
+
+        items.forEach(item => {
+          if (importance === 'all' || item.dataset.importance === importance) {
+            item.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+
+        termCount.textContent = `${visibleCount} ${visibleCount === 1 ? 'term' : 'terms'}`;
+      });
+    });
+
+    // Glossary link clicks
+    document.querySelectorAll('.glossary-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const termKey = e.currentTarget.parentElement.dataset.term;
+        const termElement = document.querySelector(`.glossary-term[data-term="${termKey}"]`);
+        if (termElement) {
+          termElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          termElement.focus();
+
+          // Highlight briefly
+          termElement.style.background = 'var(--accent-orange)';
+          termElement.style.color = 'white';
+          termElement.style.padding = '2px 4px';
+          termElement.style.borderRadius = '2px';
+          setTimeout(() => {
+            termElement.style.background = '';
+            termElement.style.color = '';
+            termElement.style.padding = '';
+            termElement.style.borderRadius = '';
+          }, 2000);
+        }
+      });
+    });
+
+    // Sidebar toggle for mobile
+    const sidebarToggle = document.querySelector('.sidebar-toggle');
+    const sidebar = document.querySelector('.glossary-sidebar');
+
+    if (sidebarToggle) {
+      sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        const isOpen = sidebar.classList.contains('open');
+        sidebarToggle.setAttribute('aria-expanded', isOpen);
+      });
+    }
+
+    // Close sidebar when clicking outside on mobile
+    document.addEventListener('click', (e) => {
+      if (window.innerWidth <= 1024 &&
+          !sidebar.contains(e.target) &&
+          !sidebarToggle.contains(e.target) &&
+          sidebar.classList.contains('open')) {
+        sidebar.classList.remove('open');
+        sidebarToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+  </script>
+
+</body>
+</html>
