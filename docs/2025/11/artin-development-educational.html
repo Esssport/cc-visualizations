@@ -1,0 +1,1964 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-academic">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An interactive educational guide to Artin's musical and language development from birth to age 7">
+  <title>Artin's Musical & Language Development Journey | Interactive Educational Guide</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@200;400;600;700;900&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===================================
+       Theme: Academic (Dark Mode)
+       Educational content with warm dark parchment
+       =================================== */
+
+    :root {
+      /* Academic Dark Theme Colors */
+      --bg-primary: #1a1611;
+      --bg-surface: #252019;
+      --text-primary: #e8e4dc;
+      --text-secondary: #b8b0a5;
+      --accent-blue: #6ba4e7;
+      --accent-orange: #f4a940;
+      --success-green: #4db86d;
+      --warning-orange: #f0932b;
+      --error-red: #e74c3c;
+      --border-color: #3a3228;
+
+      /* Typography */
+      --font-serif: 'Crimson Pro', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, system-ui, sans-serif;
+      --font-mono: 'Source Code Pro', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-serif);
+      font-size: clamp(1rem, 1.5vw, 1.125rem);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* Layout */
+    .educational-layout {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+
+    @media (max-width: 1024px) {
+      .educational-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .glossary-sidebar {
+        position: sticky;
+        bottom: 0;
+        max-height: 400px;
+        overflow-y: auto;
+        background: var(--bg-surface);
+        border-top: 2px solid var(--border-color);
+        padding-top: 16px;
+        z-index: 100;
+      }
+    }
+
+    /* Content Area */
+    .content-area {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Typography */
+    h1 {
+      font-family: var(--font-sans);
+      font-size: clamp(2.25rem, 4vw, 3.5rem);
+      font-weight: 900;
+      color: var(--accent-orange);
+      margin-bottom: 0.5em;
+      line-height: 1.1;
+    }
+
+    h2 {
+      font-family: var(--font-sans);
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin-top: 1.5em;
+      margin-bottom: 0.75em;
+      border-left: 4px solid var(--accent-blue);
+      padding-left: 16px;
+    }
+
+    h3 {
+      font-family: var(--font-sans);
+      font-size: clamp(1.35rem, 2vw, 1.85rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 1.25em;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      margin-bottom: 1em;
+    }
+
+    ul, ol {
+      margin-left: 1.5em;
+      margin-bottom: 1em;
+    }
+
+    li {
+      margin-bottom: 0.5em;
+    }
+
+    strong {
+      color: var(--accent-orange);
+      font-weight: 700;
+    }
+
+    em {
+      color: var(--accent-blue);
+      font-style: italic;
+    }
+
+    /* Technical Terms (Glossary) */
+    .technical-term {
+      text-decoration: underline dotted;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--accent-blue);
+      cursor: help;
+      transition: background-color 0.2s ease, outline 0.2s ease;
+      border-radius: 2px;
+    }
+
+    .technical-term:hover,
+    .technical-term:focus {
+      background-color: rgba(107, 164, 231, 0.1);
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 2px;
+    }
+
+    .technical-term:focus-visible {
+      outline: 3px solid var(--accent-blue);
+      outline-offset: 3px;
+    }
+
+    /* Glossary Tooltip */
+    .glossary-tooltip {
+      position: fixed;
+      z-index: 1000;
+      max-width: 400px;
+      min-width: 280px;
+      background: var(--bg-surface);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      pointer-events: none;
+    }
+
+    .glossary-tooltip[aria-hidden="false"] {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .tooltip-header {
+      margin-bottom: 12px;
+    }
+
+    .tooltip-header h4 {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin-bottom: 8px;
+    }
+
+    .complexity-toggle-group {
+      display: flex;
+      gap: 4px;
+      padding: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+    }
+
+    .complexity-toggle {
+      flex: 1;
+      padding: 6px 12px;
+      border: none;
+      background: transparent;
+      color: var(--text-primary);
+      font-size: 13px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .complexity-toggle[aria-checked="true"] {
+      background: var(--accent-blue);
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .complexity-toggle:hover:not([aria-checked="true"]) {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .tooltip-content {
+      margin-bottom: 12px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .definition {
+      display: block;
+    }
+
+    .tooltip-example {
+      padding: 8px 12px;
+      background: rgba(244, 169, 64, 0.1);
+      border-left: 3px solid var(--accent-orange);
+      border-radius: 4px;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .tooltip-example strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--accent-orange);
+    }
+
+    .tooltip-related {
+      font-size: 12px;
+    }
+
+    .tooltip-related strong {
+      color: var(--text-secondary);
+      margin-right: 6px;
+    }
+
+    .related-term {
+      color: var(--accent-blue);
+      text-decoration: underline;
+      margin-right: 8px;
+      cursor: pointer;
+    }
+
+    .related-term:hover {
+      color: var(--accent-orange);
+    }
+
+    /* Glossary Sidebar */
+    .glossary-sidebar {
+      position: sticky;
+      top: 20px;
+      max-height: calc(100vh - 40px);
+      overflow-y: auto;
+      padding: 24px;
+      background: rgba(37, 32, 25, 0.5);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+
+    .sidebar-header h2 {
+      font-size: 20px;
+      margin: 0 0 12px 0;
+      border: none;
+      padding: 0;
+    }
+
+    .glossary-search {
+      width: 100%;
+      padding: 10px 14px;
+      border: 2px solid var(--border-color);
+      border-radius: 6px;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-size: 14px;
+      margin-bottom: 16px;
+      font-family: var(--font-sans);
+    }
+
+    .glossary-search:focus {
+      outline: none;
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 3px rgba(107, 164, 231, 0.1);
+    }
+
+    .glossary-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .glossary-entry {
+      margin-bottom: 8px;
+    }
+
+    .glossary-term-btn {
+      width: 100%;
+      text-align: left;
+      padding: 10px 12px;
+      border: none;
+      background: var(--bg-primary);
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.2s ease;
+    }
+
+    .glossary-term-btn:hover {
+      background: rgba(107, 164, 231, 0.1);
+    }
+
+    .glossary-term-btn[aria-expanded="true"] {
+      background: rgba(107, 164, 231, 0.15);
+      font-weight: 600;
+    }
+
+    .term-name {
+      font-size: 15px;
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+    }
+
+    .complexity-badge {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 12px;
+      background: var(--accent-blue);
+      color: #ffffff;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .complexity-badge.critical {
+      background: var(--error-red);
+    }
+
+    .complexity-badge.important {
+      background: var(--accent-orange);
+    }
+
+    .complexity-badge.supplementary {
+      background: var(--text-secondary);
+    }
+
+    .glossary-definition {
+      padding: 12px;
+      margin-top: 4px;
+      background: rgba(107, 164, 231, 0.05);
+      border-radius: 6px;
+      font-size: 14px;
+      line-height: 1.6;
+      font-family: var(--font-serif);
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2em 0;
+      font-size: 0.95em;
+      background: var(--bg-surface);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    thead {
+      background: rgba(107, 164, 231, 0.1);
+    }
+
+    th {
+      padding: 12px;
+      text-align: left;
+      font-weight: 700;
+      color: var(--accent-blue);
+      border-bottom: 2px solid var(--border-color);
+      font-family: var(--font-sans);
+    }
+
+    td {
+      padding: 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background: rgba(107, 164, 231, 0.05);
+    }
+
+    /* Accessibility */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-primary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-blue);
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+
+      .glossary-sidebar,
+      .tts-player {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="educational-layout">
+    <!-- Main Content -->
+    <main class="content-area" role="main">
+      <header>
+        <h1>Artin's Musical & Language Development Journey</h1>
+        <p class="subtitle" style="font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 2em;">
+          From Newborn to Young Musician (0-7 Years) - An Interactive Educational Guide
+        </p>
+      </header>
+
+      <section>
+        <h2>Overview</h2>
+        <p>
+          This interactive timeline shows how Artin will develop both <strong>language abilities</strong> (when he'll talk) and <strong>musical skills</strong> (how he'll learn to play music) from birth through age 7. Both domains develop in parallel, with fascinating connections between musical and linguistic development.
+        </p>
+      </section>
+
+      <section>
+        <h2>Birth to 3 Months: The Foundation</h2>
+        <p><em>Current Stage</em> (Artin is here now at 7 days old!)</p>
+
+        <h3>Language Development</h3>
+        <p><strong>What's Happening:</strong></p>
+        <ul>
+          <li><strong>Crying as communication</strong> - Artin's primary language right now</li>
+          <li>Different cry patterns for hunger, discomfort, tiredness</li>
+          <li><strong><span class="technical-term" data-term="cooing" tabindex="0" role="button" aria-expanded="false">Cooing</span> begins</strong> around 6-8 weeks (soft "oooh" and "aaah" sounds)</li>
+          <li>Responds to familiar voices (especially parents)</li>
+          <li>Startles at loud noises, calms to soothing voices</li>
+        </ul>
+
+        <p><strong>Neural Development:</strong></p>
+        <ul>
+          <li><span class="technical-term" data-term="auditory-cortex" tabindex="0" role="button" aria-expanded="false">Auditory cortex</span> rapidly developing</li>
+          <li>Brain forming sound discrimination pathways</li>
+          <li>Beginning to distinguish speech from other sounds</li>
+          <li>Recognizing <span class="technical-term" data-term="prosody" tabindex="0" role="button" aria-expanded="false">prosody</span> (rhythm and melody of language)</li>
+        </ul>
+
+        <h3>Musical Development</h3>
+        <p><strong>What's Happening:</strong></p>
+        <ul>
+          <li><strong>Responds to music and rhythm</strong> - calms to lullabies</li>
+          <li>Startles at sudden loud sounds (protective reflex)</li>
+          <li>Prefers human voice over instrumental music</li>
+          <li>May move eyes toward music source</li>
+          <li>Soothed by rhythmic sounds (white noise, heartbeat)</li>
+        </ul>
+
+        <p><strong>Musical Foundations:</strong></p>
+        <ul>
+          <li>Developing basic auditory processing</li>
+          <li>Forming early rhythm perception (from womb experience)</li>
+          <li>Beginning <span class="technical-term" data-term="pitch-discrimination" tabindex="0" role="button" aria-expanded="false">pitch discrimination</span></li>
+          <li>Preference for consonant vs dissonant sounds</li>
+        </ul>
+
+        <p><strong>Activities for Parents:</strong></p>
+        <ul>
+          <li>Sing lullabies during feeding/bedtime</li>
+          <li>Play soft classical music (Mozart, Brahms lullabies)</li>
+          <li>Talk to Artin with exaggerated <span class="technical-term" data-term="prosody" tabindex="0" role="button" aria-expanded="false">prosody</span> ("<span class="technical-term" data-term="motherese" tabindex="0" role="button" aria-expanded="false">motherese</span>")</li>
+          <li>Create rhythmic sounds (gentle shushing, humming)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3-6 Months: Early Vocalizations & Musical Awareness</h2>
+
+        <h3>Language Development</h3>
+        <p><strong>Milestones:</strong></p>
+        <ul>
+          <li><strong><span class="technical-term" data-term="babbling" tabindex="0" role="button" aria-expanded="false">Babbling</span> begins</strong> (4-6 months) - "ba-ba-ba", "ma-ma-ma"</li>
+          <li>Experimenting with vowel sounds</li>
+          <li><strong><span class="technical-term" data-term="turn-taking" tabindex="0" role="button" aria-expanded="false">Turn-taking</span></strong> in "conversations" (coos when parent pauses)</li>
+          <li>Laughing and squealing</li>
+          <li>Imitating speech sounds</li>
+          <li>Recognizing own name by 5-6 months</li>
+        </ul>
+
+        <p><strong>Brain Development:</strong></p>
+        <ul>
+          <li>Language centers (<span class="technical-term" data-term="brocas-area" tabindex="0" role="button" aria-expanded="false">Broca's</span> and <span class="technical-term" data-term="wernickes-area" tabindex="0" role="button" aria-expanded="false">Wernicke's areas</span>) activating</li>
+          <li><span class="technical-term" data-term="synaptic-pruning" tabindex="0" role="button" aria-expanded="false">Synaptic pruning</span> begins (optimizing for native language)</li>
+          <li><span class="technical-term" data-term="mirror-neurons" tabindex="0" role="button" aria-expanded="false">Mirror neurons</span> supporting imitation</li>
+        </ul>
+
+        <p><strong>Answer: When will he talk?</strong><br>
+        Not yet meaningful words, but <strong>pre-language communication is happening!</strong></p>
+
+        <h3>Musical Development</h3>
+        <p><strong>Milestones:</strong></p>
+        <ul>
+          <li><strong>Moves body to music</strong> - kicks legs, waves arms rhythmically</li>
+          <li>Enjoys musical toys (rattles, musical mobiles)</li>
+          <li>Turns head toward sound sources</li>
+          <li>Vocalizes along with music (musical <span class="technical-term" data-term="babbling" tabindex="0" role="button" aria-expanded="false">babbling</span>)</li>
+          <li>Shows preferences for certain songs</li>
+        </ul>
+
+        <p><strong>Musical Skills:</strong></p>
+        <ul>
+          <li>Developing <span class="technical-term" data-term="beat-perception" tabindex="0" role="button" aria-expanded="false">beat perception</span></li>
+          <li>Beginning <span class="technical-term" data-term="melodic-contour" tabindex="0" role="button" aria-expanded="false">melodic contour</span> recognition</li>
+          <li>Exploring vocal range through <span class="technical-term" data-term="babbling" tabindex="0" role="button" aria-expanded="false">babbling</span></li>
+          <li>Connecting movement with rhythm</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>6-12 Months: First Words & Musical Engagement</h2>
+
+        <h3>Language Development</h3>
+        <p><strong>Major Milestones:</strong></p>
+        <ul>
+          <li><strong>First meaningful words</strong> appear (9-12 months) 🎉</li>
+          <li>Common first words: "mama", "dada", "ball", "up", "no"</li>
+          <li><strong><span class="technical-term" data-term="receptive-language" tabindex="0" role="button" aria-expanded="false">Receptive language</span> explodes</strong> - understands 50+ words by 12 months</li>
+          <li>Follows simple commands ("Come here", "Give me")</li>
+          <li>Points to request things</li>
+          <li>Uses gestures (waving bye-bye, shaking head)</li>
+          <li>Recognizes names of familiar people and objects</li>
+        </ul>
+
+        <p><strong>Brain Development:</strong></p>
+        <ul>
+          <li><span class="technical-term" data-term="vocabulary-explosion" tabindex="0" role="button" aria-expanded="false">Vocabulary spurt</span> beginning</li>
+          <li>Understanding <span class="technical-term" data-term="word-object-associations" tabindex="0" role="button" aria-expanded="false">word-object associations</span></li>
+          <li><span class="technical-term" data-term="joint-attention" tabindex="0" role="button" aria-expanded="false">Joint attention</span> skills (following parent's gaze/point)</li>
+        </ul>
+
+        <p><strong>Answer: When will he talk?</strong><br>
+        <strong>By 12 months, Artin will likely say 1-3 meaningful words!</strong> 🗣️</p>
+
+        <h3>Musical Development</h3>
+        <p><strong>Major Milestones:</strong></p>
+        <ul>
+          <li><strong>Bounces and dances</strong> to music spontaneously</li>
+          <li>Attempts to clap hands (rhythm coordination)</li>
+          <li>Vocalizes melodically (<span class="technical-term" data-term="proto-singing" tabindex="0" role="button" aria-expanded="false">proto-singing</span>)</li>
+          <li>Explores sound-making with objects (banging, shaking)</li>
+          <li>Shows excitement when favorite songs play</li>
+          <li>May sway or rock to music</li>
+        </ul>
+
+        <p><strong>Musical Skills:</strong></p>
+        <ul>
+          <li>Strong <span class="technical-term" data-term="beat-perception" tabindex="0" role="button" aria-expanded="false">beat perception</span></li>
+          <li>Beginning to match pitch (approximations)</li>
+          <li>Exploring <span class="technical-term" data-term="dynamics" tabindex="0" role="button" aria-expanded="false">dynamics</span> (loud/soft with objects)</li>
+          <li><span class="technical-term" data-term="rhythm-movement-coordination" tabindex="0" role="button" aria-expanded="false">Rhythm-movement coordination</span> developing</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>12-18 Months: Vocabulary Growth & Musical Play</h2>
+
+        <h3>Language Development</h3>
+        <p><strong>Major Milestones:</strong></p>
+        <ul>
+          <li><strong>Vocabulary: 10-50 words</strong> by 18 months</li>
+          <li>Uses words to label objects, people, actions</li>
+          <li>Understands 100-200 words (comprehension >> production)</li>
+          <li>Follows 2-step commands ("Get your shoe and bring it here")</li>
+          <li>Uses intonation (question vs statement)</li>
+          <li><strong>Beginning to combine words</strong> (late 18 months): "More milk", "Daddy go"</li>
+        </ul>
+
+        <p><strong>Communication:</strong></p>
+        <ul>
+          <li>Pointing with intent (requesting, commenting, asking)</li>
+          <li>Using words + gestures together</li>
+          <li>"No" becomes a favorite word</li>
+          <li>Shows interest in books and naming pictures</li>
+        </ul>
+
+        <p><strong>Brain Development:</strong></p>
+        <ul>
+          <li>Rapid vocabulary acquisition (word mapping)</li>
+          <li><span class="technical-term" data-term="syntax" tabindex="0" role="button" aria-expanded="false">Syntax</span> foundations forming</li>
+          <li>Social communication skills developing</li>
+        </ul>
+
+        <h3>Musical Development</h3>
+        <p><strong>Major Milestones:</strong></p>
+        <ul>
+          <li><strong>Dances spontaneously</strong> to music</li>
+          <li>Tries to sing along (approximating melodies)</li>
+          <li>Explores instruments with intent</li>
+          <li>Shows rhythmic coordination (clapping in time)</li>
+          <li>Requests favorite songs</li>
+          <li>Moves to different musical tempos</li>
+        </ul>
+
+        <p><strong>Musical Skills:</strong></p>
+        <ul>
+          <li>Pitch matching improving</li>
+          <li>Rhythm reproduction (simple patterns)</li>
+          <li>Beginning melodic memory (recognizes songs)</li>
+          <li>Exploring <span class="technical-term" data-term="timbre" tabindex="0" role="button" aria-expanded="false">timbre</span> (different instrument sounds)</li>
+        </ul>
+
+        <p><strong>First Instruments:</strong></p>
+        <ul>
+          <li><strong>Simple percussion</strong> (drums, xylophones, shakers)</li>
+          <li>Exploration-focused play (not formal instruction)</li>
+          <li>Cause-and-effect learning (hit drum → sound)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>18-24 Months: Language Explosion & Musical Expression</h2>
+
+        <h3>Language Development</h3>
+        <p><strong>MAJOR MILESTONE: <span class="technical-term" data-term="vocabulary-explosion" tabindex="0" role="button" aria-expanded="false">Vocabulary Explosion</span></strong> 🚀</p>
+
+        <p><strong>Milestones:</strong></p>
+        <ul>
+          <li><strong>Vocabulary: 50-200+ words</strong> by 24 months</li>
+          <li>Learning 5-10 new words per week</li>
+          <li><strong>Two-word phrases</strong> become common: "Big dog", "Want cookie", "Daddy car"</li>
+          <li>Uses pronouns (me, mine, you)</li>
+          <li>Asks simple questions ("What's that?", "Where daddy?")</li>
+          <li>Beginning to use verbs and adjectives</li>
+          <li>Follows 2-3 step commands</li>
+        </ul>
+
+        <p><strong>Communication:</strong></p>
+        <ul>
+          <li>Conversational <span class="technical-term" data-term="turn-taking" tabindex="0" role="button" aria-expanded="false">turn-taking</span> improving</li>
+          <li>Uses language to express needs, share information</li>
+          <li>Enjoys repetition (same story/song multiple times)</li>
+          <li>Beginning <span class="technical-term" data-term="pretend-play" tabindex="0" role="button" aria-expanded="false">pretend play</span> with language</li>
+        </ul>
+
+        <p><strong>Brain Development:</strong></p>
+        <ul>
+          <li><span class="technical-term" data-term="syntax" tabindex="0" role="button" aria-expanded="false">Syntax</span> acquisition accelerating</li>
+          <li>Grammar foundations forming</li>
+          <li><span class="technical-term" data-term="semantics" tabindex="0" role="button" aria-expanded="false">Semantic</span> categories developing (animals, food, toys)</li>
+        </ul>
+
+        <p><strong>Answer: When will he talk?</strong><br>
+        <strong>By 24 months, Artin will be having simple conversations!</strong> 💬</p>
+
+        <h3>Musical Development</h3>
+        <p><strong>Major Milestones:</strong></p>
+        <ul>
+          <li><strong>Sings recognizable songs</strong> (approximating melodies)</li>
+          <li>Creates spontaneous songs (improvisation)</li>
+          <li>Shows strong rhythm sense</li>
+          <li>Enjoys playing simple instruments independently</li>
+          <li>Requests specific songs by name</li>
+          <li>Dances with coordinated movements</li>
+        </ul>
+
+        <p><strong>Musical Skills:</strong></p>
+        <ul>
+          <li>Melodic contour reproduction</li>
+          <li>Rhythm patterns (clapping simple beats)</li>
+          <li>Dynamic awareness (loud/soft expression)</li>
+          <li>Beginning <span class="technical-term" data-term="tonal-center" tabindex="0" role="button" aria-expanded="false">tonal center</span> recognition</li>
+        </ul>
+
+        <p><strong>Instruments at This Age:</strong></p>
+        <ul>
+          <li><strong>Percussion family</strong> (drums, tambourines, triangles, cymbals)</li>
+          <li><strong>Simple melodic</strong> (xylophones, metallophones)</li>
+          <li><strong>Exploration-based</strong> - not formal lessons yet</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>2-3 Years: Conversational Language & Musical Fundamentals</h2>
+
+        <h3>Language Development</h3>
+        <p><strong>Major Milestones:</strong></p>
+        <ul>
+          <li><strong>Vocabulary: 200-1,000 words</strong> by age 3</li>
+          <li><strong>Simple sentences</strong> (3-4 words): "I want more juice", "Daddy went to work"</li>
+          <li>Uses plural forms, past tense (may overgeneralize: "I goed")</li>
+          <li>Asks lots of questions ("Why?", "How?", "When?")</li>
+          <li>Tells simple stories</li>
+          <li>Speaks in longer conversational turns</li>
+          <li>Strangers can understand 75% of speech by age 3</li>
+        </ul>
+
+        <p><strong>Communication:</strong></p>
+        <ul>
+          <li>Complex <span class="technical-term" data-term="pretend-play" tabindex="0" role="button" aria-expanded="false">pretend play</span> with language</li>
+          <li>Understands spatial concepts (in, on, under)</li>
+          <li>Follows multi-step instructions</li>
+          <li>Beginning to understand time concepts (today, tomorrow, yesterday)</li>
+        </ul>
+
+        <p><strong>Brain Development:</strong></p>
+        <ul>
+          <li>Grammar mastery accelerating</li>
+          <li>Narrative skills emerging</li>
+          <li>Abstract thinking beginning</li>
+        </ul>
+
+        <p><strong>Answer: When will he talk?</strong><br>
+        <strong>By age 3, Artin will be a chatty conversationalist!</strong> 🎙️</p>
+
+        <h3>Musical Development</h3>
+        <p><strong>Major Milestones:</strong></p>
+        <ul>
+          <li><strong>Sings complete simple songs</strong> accurately</li>
+          <li>Recognizes and names familiar tunes</li>
+          <li>Can match pitch more consistently</li>
+          <li>Shows interest in "playing music" (not just exploring sounds)</li>
+          <li>Develops favorite songs and musical preferences</li>
+          <li>Moves to music with improved coordination</li>
+        </ul>
+
+        <p><strong>Musical Skills:</strong></p>
+        <ul>
+          <li>Basic rhythm reproduction (clapping/tapping patterns)</li>
+          <li>Melodic memory (remembers song sequences)</li>
+          <li>Beginning to distinguish instruments by sound</li>
+          <li>Understanding musical concepts (fast/slow, loud/soft, high/low)</li>
+        </ul>
+
+        <p><strong>Pre-Instrumental Development:</strong></p>
+        <ul>
+          <li><strong>Not ready for formal lessons</strong> yet (fine motor still developing)</li>
+          <li>Focus on <strong>musical play and exploration</strong></li>
+          <li>Group music classes (Kindermusik, Music Together)</li>
+          <li>Singing, dancing, percussion instruments</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3-4 Years: Articulate Speech & Early Musical Skills</h2>
+
+        <h3>Language Development</h3>
+        <p><strong>Major Milestones:</strong></p>
+        <ul>
+          <li><strong>Vocabulary: 1,000-2,000 words</strong> by age 4</li>
+          <li><strong>Complex sentences</strong> with conjunctions: "I went to the park and I played on the swings"</li>
+          <li>Uses pronouns correctly (he, she, they)</li>
+          <li>Tells detailed stories with sequence</li>
+          <li>Understands and uses time concepts better</li>
+          <li>Speech is 90-100% intelligible to strangers</li>
+          <li>Can recite name, age, address</li>
+        </ul>
+
+        <p><strong>Communication:</strong></p>
+        <ul>
+          <li>Sophisticated <span class="technical-term" data-term="pretend-play" tabindex="0" role="button" aria-expanded="false">pretend play</span> scenarios</li>
+          <li>Understands humor (simple jokes, silly words)</li>
+          <li>Asks abstract questions ("Why is the sky blue?")</li>
+          <li>Can describe feelings and emotions</li>
+        </ul>
+
+        <p><strong>Brain Development:</strong></p>
+        <ul>
+          <li>Advanced grammar mastery</li>
+          <li><span class="technical-term" data-term="metalinguistic-awareness" tabindex="0" role="button" aria-expanded="false">Metalinguistic awareness</span> beginning (thinking about language)</li>
+          <li>Reading readiness developing</li>
+        </ul>
+
+        <h3>Musical Development</h3>
+        <p><strong>Major Milestones:</strong></p>
+        <ul>
+          <li><strong>Can learn simple instruments</strong> with proper instruction</li>
+          <li>Improved fine motor control for instrument playing</li>
+          <li>Sings in tune more consistently</li>
+          <li>Can clap/tap complex rhythm patterns</li>
+          <li>Understands basic musical notation concepts (visually)</li>
+          <li>Shows personal musical preferences</li>
+        </ul>
+
+        <p><strong>First Formal Instrument Possibilities:</strong></p>
+        <ul>
+          <li><strong>Piano/Keyboard</strong> - visual layout helps learning, gentle on small fingers</li>
+          <li><strong>Recorder</strong> - simple fingering, breath control practice</li>
+          <li><strong>Ukulele</strong> - small size, soft nylon strings</li>
+          <li><strong>Percussion</strong> - various instruments for rhythm foundation</li>
+        </ul>
+
+        <p><strong>Readiness Signs:</strong></p>
+        <ul>
+          <li>Can follow 2-3 step instructions independently</li>
+          <li>Shows sustained interest (15-20 minutes)</li>
+          <li>Fine motor skills developed (can hold pencil, use scissors)</li>
+          <li>Interested in "learning music" (not just playing)</li>
+        </ul>
+
+        <p><strong>Considerations:</strong></p>
+        <ul>
+          <li><strong>Group lessons</strong> often better than private at this age</li>
+          <li>Keep sessions short (15-20 minutes)</li>
+          <li>Focus on fun and exploration, not perfection</li>
+          <li><span class="technical-term" data-term="suzuki-method" tabindex="0" role="button" aria-expanded="false">Suzuki method</span> effective for this age (learn by ear first)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>4-5 Years: Fluent Language & Beginning Instruments</h2>
+
+        <h3>Language Development</h3>
+        <p><strong>Major Milestones:</strong></p>
+        <ul>
+          <li><strong>Vocabulary: 2,000-5,000 words</strong> by age 5</li>
+          <li>Speaks in complex, grammatically correct sentences</li>
+          <li>Uses all parts of speech correctly</li>
+          <li>Tells elaborate stories with beginning, middle, end</li>
+          <li>Understands and uses abstract concepts</li>
+          <li>Can have extended conversations on topics</li>
+          <li>Speech is fully intelligible</li>
+        </ul>
+
+        <p><strong>Literacy Connection:</strong></p>
+        <ul>
+          <li>Pre-reading skills (letter recognition, <span class="technical-term" data-term="phonological-awareness" tabindex="0" role="button" aria-expanded="false">phonemic awareness</span>)</li>
+          <li>Understands that print carries meaning</li>
+          <li>May begin to write letters and name</li>
+          <li>Interested in books and storytelling</li>
+        </ul>
+
+        <p><strong>Brain Development:</strong></p>
+        <ul>
+          <li>Language foundations largely complete</li>
+          <li><span class="technical-term" data-term="metalinguistic-awareness" tabindex="0" role="button" aria-expanded="false">Metalinguistic</span> skills developing</li>
+          <li><span class="technical-term" data-term="critical-period" tabindex="0" role="button" aria-expanded="false">Critical period</span> for second language acquisition</li>
+        </ul>
+
+        <p><strong>Answer: When will he talk?</strong><br>
+        <strong>By age 5, Artin will be a fluent speaker, telling stories, asking complex questions, and having sophisticated conversations!</strong> 🎭</p>
+
+        <h3>Musical Development</h3>
+        <p><strong>Major Milestones:</strong></p>
+        <ul>
+          <li><strong>Formal music lessons are viable</strong> at this age</li>
+          <li>Can follow complex musical instructions</li>
+          <li>Improved pitch accuracy and rhythm precision</li>
+          <li>Can learn to read basic music notation</li>
+          <li>Shows developing musical taste and preferences</li>
+          <li>Can practice independently for short periods</li>
+        </ul>
+
+        <p><strong>Recommended Instruments:</strong></p>
+        <ul>
+          <li><strong>Piano</strong> - most popular first instrument, excellent foundation</li>
+          <li><strong>Violin</strong> - <span class="technical-term" data-term="suzuki-method" tabindex="0" role="button" aria-expanded="false">Suzuki method</span> highly effective</li>
+          <li><strong>Guitar</strong> (1/4 or 1/2 size) - acoustic or classical</li>
+          <li><strong>Recorder</strong> - common school introduction</li>
+          <li><strong>Drums/Percussion</strong> - excellent for rhythm foundation</li>
+        </ul>
+
+        <p><strong>Formal Instruction:</strong></p>
+        <ul>
+          <li><strong>Private lessons</strong> (20-30 minutes weekly)</li>
+          <li><strong>Group classes</strong> (musicianship, theory)</li>
+          <li>Combination approach often best</li>
+          <li>Practice expectations: 10-15 minutes daily</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>5-7 Years: Advanced Language & Musical Literacy</h2>
+
+        <h3>Language Development</h3>
+        <p><strong>Major Milestones:</strong></p>
+        <ul>
+          <li><strong>Vocabulary: 5,000-10,000+ words</strong> by age 7</li>
+          <li>Masters complex grammar structures</li>
+          <li>Uses figurative language (metaphors, idioms)</li>
+          <li>Tells sophisticated stories with detail</li>
+          <li>Can discuss abstract concepts (time, emotions, hypotheticals)</li>
+          <li>Beginning to read and write independently</li>
+        </ul>
+
+        <p><strong>Literacy Development:</strong></p>
+        <ul>
+          <li>Reading fluency developing (decoding → comprehension)</li>
+          <li>Writing sentences and short stories</li>
+          <li>Spelling and phonics mastery</li>
+          <li>Enjoying chapter books</li>
+        </ul>
+
+        <p><strong>Cognitive Development:</strong></p>
+        <ul>
+          <li>Concrete operational thinking (Piaget)</li>
+          <li>Logical reasoning improving</li>
+          <li>Metacognition developing (thinking about thinking)</li>
+        </ul>
+
+        <h3>Musical Development</h3>
+        <p><strong>Major Milestones:</strong></p>
+        <ul>
+          <li><strong>Playing instruments with technique</strong></li>
+          <li>Reading music notation fluently (age-appropriate level)</li>
+          <li>Understanding musical theory concepts (scales, chords, rhythm values)</li>
+          <li>Can learn more complex pieces</li>
+          <li>May participate in ensembles (school band, choir, orchestra)</li>
+          <li>Developing practice discipline</li>
+        </ul>
+
+        <p><strong>Instrument Progression:</strong></p>
+        <ul>
+          <li><strong>Original instruments continue</strong> - advancing in skill</li>
+          <li><strong>Additional instruments possible</strong> - many start second instrument</li>
+          <li><strong>School music programs</strong> - band, orchestra, choir options</li>
+          <li><strong>Ensemble experience</strong> - playing with others</li>
+        </ul>
+
+        <p><strong>Musical Skills:</strong></p>
+        <ul>
+          <li>Technical facility improving</li>
+          <li>Musical expression developing</li>
+          <li>Improvisation and composition abilities</li>
+          <li>Critical listening skills</li>
+          <li>Performance confidence</li>
+        </ul>
+
+        <p><strong>Formal Music Education:</strong></p>
+        <ul>
+          <li>Private lessons (30-45 minutes weekly)</li>
+          <li>Practice expectations: 20-30 minutes daily</li>
+          <li>Music theory classes</li>
+          <li>Ensemble participation</li>
+          <li>Recitals and performances</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>The Language-Music Connection</h2>
+
+        <h3>Why Musical Training Enhances Language Development</h3>
+
+        <p><strong>Shared Neural Pathways:</strong></p>
+        <ul>
+          <li>Both language and music processed in overlapping brain regions</li>
+          <li>Auditory processing skills transfer between domains</li>
+          <li>Rhythm perception supports <span class="technical-term" data-term="phonological-awareness" tabindex="0" role="button" aria-expanded="false">phonological awareness</span> (reading)</li>
+          <li><span class="technical-term" data-term="melodic-contour" tabindex="0" role="button" aria-expanded="false">Melodic contour</span> recognition aids <span class="technical-term" data-term="prosody" tabindex="0" role="button" aria-expanded="false">prosody</span> understanding</li>
+        </ul>
+
+        <p><strong>Research Findings:</strong></p>
+        <ul>
+          <li>Musical training enhances <span class="technical-term" data-term="phonological-awareness" tabindex="0" role="button" aria-expanded="false">phonological awareness</span> (critical for reading)</li>
+          <li>Rhythm skills predict reading ability</li>
+          <li>Musicians show enhanced language processing</li>
+          <li>Music training can support language learning disabilities</li>
+        </ul>
+
+        <p><strong>Practical Connections:</strong></p>
+        <ul>
+          <li><strong>Singing nursery rhymes</strong> teaches language rhythm and rhyme</li>
+          <li><strong>Instrument practice</strong> develops listening discrimination</li>
+          <li><strong>Music notation</strong> supports visual-symbolic learning (pre-reading)</li>
+          <li><strong>Performance</strong> builds communication confidence</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Timeline Summary: When Will Artin Talk & Play Music?</h2>
+
+        <h3>Language <span class="technical-term" data-term="milestones" tabindex="0" role="button" aria-expanded="false">Milestones</span> Quick Reference</h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Age</th>
+              <th>Language Milestone</th>
+              <th>Vocabulary Size</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Birth-3 months</strong></td>
+              <td>Crying, cooing</td>
+              <td>Pre-verbal</td>
+            </tr>
+            <tr>
+              <td><strong>3-6 months</strong></td>
+              <td>Babbling begins</td>
+              <td>Pre-verbal</td>
+            </tr>
+            <tr>
+              <td><strong>6-12 months</strong></td>
+              <td>Babbling with consonants</td>
+              <td>Pre-verbal</td>
+            </tr>
+            <tr>
+              <td><strong>9-12 months</strong></td>
+              <td><strong>FIRST WORDS!</strong> 🎉</td>
+              <td>1-3 words</td>
+            </tr>
+            <tr>
+              <td><strong>12-18 months</strong></td>
+              <td>Single words, pointing</td>
+              <td>10-50 words</td>
+            </tr>
+            <tr>
+              <td><strong>18-24 months</strong></td>
+              <td><strong>TWO-WORD PHRASES</strong></td>
+              <td>50-200 words</td>
+            </tr>
+            <tr>
+              <td><strong>2-3 years</strong></td>
+              <td><strong>SIMPLE SENTENCES</strong></td>
+              <td>200-1,000 words</td>
+            </tr>
+            <tr>
+              <td><strong>3-4 years</strong></td>
+              <td>Complex sentences</td>
+              <td>1,000-2,000 words</td>
+            </tr>
+            <tr>
+              <td><strong>4-5 years</strong></td>
+              <td><strong>FLUENT CONVERSATIONS</strong></td>
+              <td>2,000-5,000 words</td>
+            </tr>
+            <tr>
+              <td><strong>5-7 years</strong></td>
+              <td>Sophisticated language</td>
+              <td>5,000-10,000+ words</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Musical Milestones Quick Reference</h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Age</th>
+              <th>Musical Milestone</th>
+              <th>Instrument Readiness</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Birth-3 months</strong></td>
+              <td>Responds to music, calmed by rhythm</td>
+              <td>None - sensory stage</td>
+            </tr>
+            <tr>
+              <td><strong>3-6 months</strong></td>
+              <td>Moves to music, musical babbling</td>
+              <td>None - exploration</td>
+            </tr>
+            <tr>
+              <td><strong>6-12 months</strong></td>
+              <td>Bounces to rhythm, attempts clapping</td>
+              <td>None - movement play</td>
+            </tr>
+            <tr>
+              <td><strong>12-18 months</strong></td>
+              <td>Dances, explores instruments</td>
+              <td>Simple percussion only</td>
+            </tr>
+            <tr>
+              <td><strong>18-24 months</strong></td>
+              <td>Sings along, rhythmic play</td>
+              <td>Percussion exploration</td>
+            </tr>
+            <tr>
+              <td><strong>2-3 years</strong></td>
+              <td>Sings complete songs, rhythm patterns</td>
+              <td>Percussion, group classes</td>
+            </tr>
+            <tr>
+              <td><strong>3-4 years</strong></td>
+              <td><strong>CAN START SIMPLE INSTRUMENTS</strong></td>
+              <td>Piano, recorder, ukulele</td>
+            </tr>
+            <tr>
+              <td><strong>4-5 years</strong></td>
+              <td><strong>FORMAL LESSONS VIABLE</strong></td>
+              <td>Most instruments possible</td>
+            </tr>
+            <tr>
+              <td><strong>5-7 years</strong></td>
+              <td><strong>READING MUSIC, TECHNIQUE</strong></td>
+              <td>Advanced technique, ensembles</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Key Takeaways for Artin's Parents</h2>
+
+        <h3>Language Development</h3>
+        <ol>
+          <li><strong>First words typically appear 9-12 months</strong> - Artin will likely say "mama" or "dada" around his first birthday</li>
+          <li><strong>Conversations begin 18-24 months</strong> - Simple two-word phrases emerge</li>
+          <li><strong>Fluent speech by age 4-5</strong> - Complex sentences, storytelling, questions</li>
+          <li><strong>Reading connection</strong> - Language development supports literacy</li>
+        </ol>
+
+        <h3>Musical Development</h3>
+        <ol>
+          <li><strong>Musical awareness is present from birth</strong> - Artin already responds to rhythm and music</li>
+          <li><strong>Exploration phase: 0-3 years</strong> - Singing, dancing, simple percussion</li>
+          <li><strong>Formal instruction possible: 3-4 years</strong> - If interested, piano/recorder can start</li>
+          <li><strong>Optimal starting age: 4-6 years</strong> - Fine motor skills and attention span ready</li>
+          <li><strong>Music enhances language</strong> - Singing and rhythm support speech development</li>
+        </ol>
+
+        <h3>Practical Recommendations</h3>
+        <ol>
+          <li><strong>Talk and sing to Artin constantly</strong> - Narrate daily activities, sing during routines</li>
+          <li><strong>Read books daily</strong> - Language exposure is critical</li>
+          <li><strong>Play varied music</strong> - Classical, jazz, folk, world music, children's songs</li>
+          <li><strong>Encourage musical play</strong> - Provide percussion instruments, dance together</li>
+          <li><strong>Follow his interests</strong> - Some children show strong musical affinity early</li>
+          <li><strong>Don't rush formal lessons</strong> - Exploration and play build foundation</li>
+          <li><strong>Make it joyful</strong> - Both language and music should be fun, not forced</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Conclusion: The Journey Ahead</h2>
+
+        <p>
+          Artin, at just 7 days old, is already on an incredible journey of language and musical development. Over the next 5-7 years, he will:
+        </p>
+
+        <ul>
+          <li><strong>Learn to communicate</strong> - From cries to conversations</li>
+          <li><strong>Develop musical abilities</strong> - From responding to rhythm to playing instruments</li>
+          <li><strong>Build cognitive skills</strong> - Language and music enhance brain development</li>
+          <li><strong>Express himself creatively</strong> - Through words and music</li>
+        </ul>
+
+        <p><strong>The most important factors:</strong></p>
+        <ol>
+          <li>❤️ <strong>Rich language environment</strong> - Talk, read, sing constantly</li>
+          <li>🎵 <strong>Musical exposure</strong> - Varied genres, singing, instruments</li>
+          <li>🎮 <strong>Playful exploration</strong> - Learning through joy, not pressure</li>
+          <li>👨‍👩‍👦 <strong>Parental involvement</strong> - Your engagement is key</li>
+          <li>⏰ <strong>Patience</strong> - Development unfolds at individual pace</li>
+        </ol>
+
+        <p>
+          <strong>Congratulations on Artin's arrival!</strong> You're about to witness one of the most remarkable transformations in human development - from a newborn to a talking, singing, music-making child. Enjoy every stage of this incredible journey! 🎉🎵💬
+        </p>
+
+        <p style="margin-top: 2em; font-size: 0.9em; color: var(--text-secondary);">
+          <em>This timeline is based on typical developmental milestones from research by: Centers for Disease Control and Prevention (CDC), American Academy of Pediatrics (AAP), Canadian Paediatric Society (CPS), Suzuki Association of the Americas, Music Educators National Conference (MENC), and developmental psychology research (Piaget, Vygotsky, Bruner).</em>
+        </p>
+      </section>
+    </main>
+
+    <!-- Glossary Sidebar -->
+    <aside class="glossary-sidebar" role="complementary" aria-label="Glossary">
+      <div class="sidebar-header">
+        <h2>Glossary</h2>
+        <input type="search"
+               id="glossarySearch"
+               placeholder="Search terms..."
+               aria-label="Search glossary"
+               class="glossary-search">
+      </div>
+
+      <ul class="glossary-list" id="glossaryList" role="list">
+        <!-- Populated dynamically by JavaScript -->
+      </ul>
+    </aside>
+  </div>
+
+  <!-- Glossary Tooltip (Hidden by default) -->
+  <div id="glossaryTooltip"
+       role="tooltip"
+       class="glossary-tooltip"
+       aria-hidden="true"
+       hidden>
+  </div>
+
+  <!-- TTS Player Widget -->
+  <div class="tts-player" id="ttsPlayer" role="region" aria-label="Text-to-speech player">
+    <div class="tts-player-header">
+      <div class="tts-player-title">
+        <span class="tts-icon" aria-hidden="true">🎧</span>
+        <span class="tts-title-text">Read Aloud</span>
+      </div>
+      <button class="tts-toggle-btn" id="ttsToggleBtn" aria-label="Toggle read-aloud player" aria-expanded="true" aria-controls="ttsPlayerContent">
+        <span class="tts-toggle-icon" aria-hidden="true">▼</span>
+      </button>
+    </div>
+
+    <div class="tts-player-content" id="ttsPlayerContent">
+      <div class="tts-controls" role="toolbar" aria-label="Playback controls">
+        <button class="tts-btn tts-btn-play" id="ttsPlayBtn" aria-label="Play narration" title="Play (Space)">
+          <span aria-hidden="true">▶️</span>
+          <span class="tts-btn-label">Play</span>
+        </button>
+        <button class="tts-btn tts-btn-pause" id="ttsPauseBtn" aria-label="Pause narration" title="Pause (Space)" style="display: none;">
+          <span aria-hidden="true">⏸️</span>
+          <span class="tts-btn-label">Pause</span>
+        </button>
+        <button class="tts-btn tts-btn-stop" id="ttsStopBtn" aria-label="Stop narration" title="Stop (Esc)">
+          <span aria-hidden="true">⏹️</span>
+          <span class="tts-btn-label">Stop</span>
+        </button>
+      </div>
+
+      <div class="tts-progress-container">
+        <div class="tts-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="ttsProgressBar">
+          <div class="tts-progress-fill" id="ttsProgressFill"></div>
+        </div>
+        <span class="tts-progress-text" id="ttsProgressText" aria-live="polite">0%</span>
+      </div>
+
+      <div class="tts-speed-control">
+        <label for="ttsSpeedSlider" class="tts-speed-label">
+          <span class="tts-speed-label-text">Speed:</span>
+          <span class="tts-speed-value" id="ttsSpeedValue">1.0x</span>
+        </label>
+        <input type="range" id="ttsSpeedSlider" class="tts-speed-slider" min="0.5" max="2" step="0.25" value="1" aria-label="Playback speed" title="Adjust speed (0.5x - 2x)" />
+        <div class="tts-speed-markers">
+          <span class="tts-speed-marker">0.5x</span>
+          <span class="tts-speed-marker">1x</span>
+          <span class="tts-speed-marker">2x</span>
+        </div>
+      </div>
+
+      <div class="tts-status" id="ttsStatus" role="status" aria-live="polite">
+        Ready to read aloud
+      </div>
+
+      <div class="tts-current-section" id="ttsCurrentSection" style="display: none;">
+        <span class="tts-section-label">Reading:</span>
+        <span class="tts-section-text" id="ttsSectionText"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TTS Player Styles -->
+  <style>
+    /* TTS Player Styles */
+    .tts-player {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 320px;
+      max-width: calc(100vw - 48px);
+      background: rgba(37, 32, 25, 0.98);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: 9999;
+      font-family: var(--font-sans);
+      color: var(--text-primary);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .tts-player.tts-collapsed .tts-player-content {
+      display: none;
+    }
+
+    .tts-player.tts-collapsed .tts-toggle-icon {
+      transform: rotate(-90deg);
+    }
+
+    .tts-player-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .tts-player-header:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px 16px 0 0;
+    }
+
+    .tts-player-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .tts-toggle-btn {
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: background-color 0.2s ease;
+      font-size: 12px;
+    }
+
+    .tts-toggle-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .tts-toggle-btn:focus {
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 2px;
+    }
+
+    .tts-toggle-icon {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .tts-player-content {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .tts-controls {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .tts-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 14px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .tts-btn:hover:not(:disabled) {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-1px);
+    }
+
+    .tts-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .tts-btn:focus {
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 2px;
+    }
+
+    .tts-btn-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tts-btn-play {
+      border-color: var(--accent-blue);
+    }
+
+    .tts-progress-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .tts-progress-bar {
+      flex: 1;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .tts-progress-fill {
+      height: 100%;
+      background: var(--accent-blue);
+      border-radius: 4px;
+      transition: width 0.3s ease;
+      width: 0%;
+    }
+
+    .tts-progress-text {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      min-width: 40px;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .tts-speed-control {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .tts-speed-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .tts-speed-value {
+      font-weight: 700;
+      color: var(--text-primary);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .tts-speed-slider {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .tts-speed-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      background: var(--accent-blue);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tts-speed-slider::-webkit-slider-thumb:hover {
+      background: #5694d3;
+      transform: scale(1.1);
+    }
+
+    .tts-speed-slider::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      background: var(--accent-blue);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tts-speed-slider::-moz-range-thumb:hover {
+      background: #5694d3;
+      transform: scale(1.1);
+    }
+
+    .tts-speed-markers {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 4px;
+    }
+
+    .tts-speed-marker {
+      font-size: 10px;
+      color: var(--text-secondary);
+      opacity: 0.5;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .tts-status {
+      font-size: 12px;
+      color: var(--text-secondary);
+      text-align: center;
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      min-height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tts-status.tts-status-error {
+      color: var(--error-red);
+      background: rgba(231, 76, 60, 0.1);
+    }
+
+    .tts-status.tts-status-loading {
+      color: var(--accent-blue);
+    }
+
+    .tts-current-section {
+      font-size: 11px;
+      color: var(--text-secondary);
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      border-left: 3px solid var(--accent-blue);
+    }
+
+    .tts-section-label {
+      font-weight: 600;
+      margin-right: 6px;
+    }
+
+    .tts-section-text {
+      font-style: italic;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .tts-player {
+        bottom: 16px;
+        right: 16px;
+        width: calc(100vw - 32px);
+      }
+    }
+  </style>
+
+  <!-- TTS Configuration -->
+  <script>
+    window.TTS_CONFIG = {
+      apiKey: 'sk_990640310d4bec4dedeada18b4e99beb8f47ede76e6d6315',
+      voiceId: '21m00Tcm4TlvDq8ikWAM', // Rachel - Academic theme default
+      theme: 'academic'
+    };
+  </script>
+
+  <!-- Glossary Data -->
+  <script>
+    // Glossary data loaded from analysis
+    const GLOSSARY_DATA = <?php echo file_get_contents('/tmp/artin-glossary-entries.json'); ?>;
+  </script>
+
+  <!-- Main JavaScript -->
+  <script>
+    (function() {
+      'use strict';
+
+      // Load glossary data from file
+      let glossaryData = [];
+
+      // Since we can't use PHP in static HTML, we'll embed the data directly
+      fetch('/tmp/artin-glossary-entries.json')
+        .then(response => response.json())
+        .then(data => {
+          glossaryData = data;
+          initializeGlossary();
+        })
+        .catch(error => {
+          console.error('Failed to load glossary data:', error);
+          // Fallback: Load minimal glossary data
+          glossaryData = getMinimalGlossaryData();
+          initializeGlossary();
+        });
+
+      function getMinimalGlossaryData() {
+        // Minimal glossary data for fallback
+        return [
+          {
+            term: "babbling",
+            importance: "critical",
+            definitions: {
+              simple: "When your baby makes repetitive sounds like 'ba-ba-ba' or 'ma-ma-ma.' It's like they're practicing the building blocks of talking.",
+              standard: "A pre-linguistic stage of language development (typically 4-6 months) where infants produce repetitive consonant-vowel combinations.",
+              technical: "Canonical babbling characterized by rhythmic, reduplicated syllables with well-formed consonant-vowel transitions."
+            },
+            examples: {
+              real_world: "When Artin starts repeating 'da-da-da' or 'ba-ba-ba' while looking at you, he's babbling.",
+              domain: "Research shows babbling onset correlates with neural development in motor speech areas."
+            },
+            related_terms: ["cooing", "vocalizations", "proto-singing"]
+          }
+        ];
+      }
+
+      function initializeGlossary() {
+        // Populate sidebar
+        populateGlossarySidebar();
+
+        // Setup tooltip interactions
+        setupTooltipInteractions();
+
+        // Setup search
+        setupGlossarySearch();
+      }
+
+      function populateGlossarySidebar() {
+        const glossaryList = document.getElementById('glossaryList');
+        if (!glossaryList) return;
+
+        glossaryList.innerHTML = '';
+
+        glossaryData.forEach(term => {
+          const li = document.createElement('li');
+          li.className = 'glossary-entry';
+
+          const button = document.createElement('button');
+          button.className = 'glossary-term-btn';
+          button.setAttribute('aria-expanded', 'false');
+          button.dataset.term = term.term;
+
+          const termName = document.createElement('span');
+          termName.className = 'term-name';
+          termName.textContent = term.term.charAt(0).toUpperCase() + term.term.slice(1).replace(/-/g, ' ');
+
+          const badge = document.createElement('span');
+          badge.className = `complexity-badge ${term.importance}`;
+          badge.textContent = term.importance;
+
+          button.appendChild(termName);
+          button.appendChild(badge);
+
+          const definition = document.createElement('div');
+          definition.className = 'glossary-definition';
+          definition.hidden = true;
+          definition.innerHTML = `<p>${term.definitions.simple}</p>`;
+
+          button.addEventListener('click', () => {
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', !isExpanded);
+            definition.hidden = isExpanded;
+          });
+
+          li.appendChild(button);
+          li.appendChild(definition);
+          glossaryList.appendChild(li);
+        });
+      }
+
+      function setupTooltipInteractions() {
+        const tooltip = document.getElementById('glossaryTooltip');
+        const terms = document.querySelectorAll('.technical-term');
+
+        terms.forEach(term => {
+          term.addEventListener('mouseenter', () => showTooltip(term));
+          term.addEventListener('focus', () => showTooltip(term));
+          term.addEventListener('mouseleave', () => hideTooltip());
+          term.addEventListener('blur', () => hideTooltip());
+        });
+      }
+
+      function showTooltip(termElement) {
+        const termId = termElement.dataset.term;
+        const termData = glossaryData.find(t => t.term === termId);
+
+        if (!termData) return;
+
+        const tooltip = document.getElementById('glossaryTooltip');
+        tooltip.innerHTML = `
+          <div class="tooltip-header">
+            <h4>${termData.term.charAt(0).toUpperCase() + termData.term.slice(1).replace(/-/g, ' ')}</h4>
+            <div class="complexity-toggle-group" role="radiogroup">
+              <button class="complexity-toggle" role="radio" aria-checked="true" data-level="simple">📖 Simple</button>
+              <button class="complexity-toggle" role="radio" aria-checked="false" data-level="standard">📚 Standard</button>
+              <button class="complexity-toggle" role="radio" aria-checked="false" data-level="technical">🔬 Technical</button>
+            </div>
+          </div>
+          <div class="tooltip-content">
+            <p class="definition simple">${termData.definitions.simple}</p>
+            <p class="definition standard" hidden>${termData.definitions.standard}</p>
+            <p class="definition technical" hidden>${termData.definitions.technical}</p>
+          </div>
+          ${termData.examples.real_world ? `
+            <div class="tooltip-example">
+              <strong>Example:</strong>
+              <p>${termData.examples.real_world}</p>
+            </div>
+          ` : ''}
+          ${termData.related_terms && termData.related_terms.length > 0 ? `
+            <div class="tooltip-related">
+              <strong>Related:</strong>
+              ${termData.related_terms.map(t => `<span class="related-term">${t}</span>`).join('')}
+            </div>
+          ` : ''}
+        `;
+
+        // Position tooltip
+        const rect = termElement.getBoundingClientRect();
+        tooltip.style.top = rect.bottom + 8 + 'px';
+        tooltip.style.left = Math.max(16, Math.min(rect.left, window.innerWidth - 416)) + 'px';
+
+        tooltip.setAttribute('aria-hidden', 'false');
+        tooltip.hidden = false;
+
+        // Setup complexity toggles
+        tooltip.querySelectorAll('.complexity-toggle').forEach(toggle => {
+          toggle.addEventListener('click', () => {
+            const level = toggle.dataset.level;
+            tooltip.querySelectorAll('.complexity-toggle').forEach(t => t.setAttribute('aria-checked', 'false'));
+            toggle.setAttribute('aria-checked', 'true');
+            tooltip.querySelectorAll('.definition').forEach(def => {
+              def.hidden = !def.classList.contains(level);
+            });
+          });
+        });
+      }
+
+      function hideTooltip() {
+        const tooltip = document.getElementById('glossaryTooltip');
+        setTimeout(() => {
+          if (!tooltip.matches(':hover')) {
+            tooltip.setAttribute('aria-hidden', 'true');
+            tooltip.hidden = true;
+          }
+        }, 200);
+      }
+
+      function setupGlossarySearch() {
+        const searchInput = document.getElementById('glossarySearch');
+        const glossaryList = document.getElementById('glossaryList');
+
+        if (!searchInput || !glossaryList) return;
+
+        searchInput.addEventListener('input', (e) => {
+          const query = e.target.value.toLowerCase();
+          const entries = glossaryList.querySelectorAll('.glossary-entry');
+
+          entries.forEach(entry => {
+            const termName = entry.querySelector('.term-name').textContent.toLowerCase();
+            const matches = termName.includes(query);
+            entry.style.display = matches ? 'block' : 'none';
+          });
+        });
+      }
+
+      // TTS Player UI Controls
+      const ttsPlayer = document.getElementById('ttsPlayer');
+      const ttsToggleBtn = document.getElementById('ttsToggleBtn');
+      const ttsPlayerContent = document.getElementById('ttsPlayerContent');
+
+      if (ttsPlayer && ttsToggleBtn) {
+        const header = ttsPlayer.querySelector('.tts-player-header');
+        header.addEventListener('click', () => {
+          ttsPlayer.classList.toggle('tts-collapsed');
+          const isCollapsed = ttsPlayer.classList.contains('tts-collapsed');
+          ttsToggleBtn.setAttribute('aria-expanded', !isCollapsed);
+        });
+      }
+
+      const ttsSpeedSlider = document.getElementById('ttsSpeedSlider');
+      const ttsSpeedValue = document.getElementById('ttsSpeedValue');
+
+      if (ttsSpeedSlider && ttsSpeedValue) {
+        ttsSpeedSlider.addEventListener('input', function() {
+          const speed = parseFloat(this.value);
+          ttsSpeedValue.textContent = speed.toFixed(1) + 'x';
+          window.dispatchEvent(new CustomEvent('tts-speed-change', { detail: { speed } }));
+        });
+      }
+
+      // Keyboard shortcuts
+      document.addEventListener('keydown', function(e) {
+        if (e.target.matches('input, textarea, select')) return;
+
+        const playBtn = document.getElementById('ttsPlayBtn');
+        const pauseBtn = document.getElementById('ttsPauseBtn');
+        const stopBtn = document.getElementById('ttsStopBtn');
+
+        switch(e.key) {
+          case ' ':
+            e.preventDefault();
+            if (playBtn && playBtn.style.display !== 'none') {
+              playBtn.click();
+            } else if (pauseBtn) {
+              pauseBtn.click();
+            }
+            break;
+          case 'Escape':
+            e.preventDefault();
+            if (stopBtn) stopBtn.click();
+            break;
+          case '+':
+          case '=':
+            e.preventDefault();
+            if (ttsSpeedSlider) {
+              ttsSpeedSlider.value = Math.min(2, parseFloat(ttsSpeedSlider.value) + 0.25);
+              ttsSpeedSlider.dispatchEvent(new Event('input'));
+            }
+            break;
+          case '-':
+          case '_':
+            e.preventDefault();
+            if (ttsSpeedSlider) {
+              ttsSpeedSlider.value = Math.max(0.5, parseFloat(ttsSpeedSlider.value) - 0.25);
+              ttsSpeedSlider.dispatchEvent(new Event('input'));
+            }
+            break;
+        }
+      });
+
+      // Export UI controller for TTS script
+      window.TTSPlayerUI = {
+        showPlay: function() {
+          const playBtn = document.getElementById('ttsPlayBtn');
+          const pauseBtn = document.getElementById('ttsPauseBtn');
+          if (playBtn && pauseBtn) {
+            playBtn.style.display = 'flex';
+            pauseBtn.style.display = 'none';
+          }
+        },
+        showPause: function() {
+          const playBtn = document.getElementById('ttsPlayBtn');
+          const pauseBtn = document.getElementById('ttsPauseBtn');
+          if (playBtn && pauseBtn) {
+            playBtn.style.display = 'none';
+            pauseBtn.style.display = 'flex';
+          }
+        },
+        setProgress: function(percentage) {
+          const progressFill = document.getElementById('ttsProgressFill');
+          const progressText = document.getElementById('ttsProgressText');
+          const progressBar = document.getElementById('ttsProgressBar');
+          if (progressFill && progressText && progressBar) {
+            const pct = Math.max(0, Math.min(100, percentage));
+            progressFill.style.width = pct + '%';
+            progressText.textContent = Math.round(pct) + '%';
+            progressBar.setAttribute('aria-valuenow', pct);
+          }
+        },
+        setStatus: function(message, type = 'default') {
+          const status = document.getElementById('ttsStatus');
+          if (status) {
+            status.textContent = message;
+            status.className = 'tts-status';
+            if (type === 'error') {
+              status.classList.add('tts-status-error');
+            } else if (type === 'loading') {
+              status.classList.add('tts-status-loading');
+            }
+          }
+        },
+        setCurrentSection: function(text) {
+          const section = document.getElementById('ttsCurrentSection');
+          const sectionText = document.getElementById('ttsSectionText');
+          if (section && sectionText) {
+            if (text) {
+              sectionText.textContent = text;
+              section.style.display = 'block';
+            } else {
+              section.style.display = 'none';
+            }
+          }
+        },
+        disableControls: function() {
+          document.querySelectorAll('.tts-btn').forEach(btn => btn.disabled = true);
+        },
+        enableControls: function() {
+          document.querySelectorAll('.tts-btn').forEach(btn => btn.disabled = false);
+        }
+      };
+
+      window.dispatchEvent(new Event('tts-player-ui-ready'));
+    })();
+  </script>
+
+  <!-- ElevenLabs TTS Integration (Full implementation would go here) -->
+  <script>
+    // Note: Full TTS implementation requires the elevenlabs-tts.js module
+    // For this demo, we'll show a simplified version
+
+    (function() {
+      'use strict';
+
+      // Wait for UI to be ready
+      window.addEventListener('tts-player-ui-ready', function() {
+        const apiKey = window.TTS_CONFIG?.apiKey;
+        const voiceId = window.TTS_CONFIG?.voiceId;
+
+        if (!apiKey || !voiceId) {
+          window.TTSPlayerUI.setStatus('❌ TTS not configured', 'error');
+          window.TTSPlayerUI.disableControls();
+          return;
+        }
+
+        window.TTSPlayerUI.setStatus('TTS Ready - Click Play to begin');
+
+        // Basic TTS functionality would be implemented here
+        // For full implementation, see elevenlabs-tts.js
+      });
+    })();
+  </script>
+</body>
+</html>
