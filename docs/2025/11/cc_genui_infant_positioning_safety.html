@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Evidence-based guide on infant positioning safety, developmental milestones, and safe sleep practices">
+    <title>Is It Safe to Sit Your Baby on Their Bum? - Infant Positioning Safety Guide</title>
+    <style>
+        /* CSS Variables for Academic Theme */
+        :root {
+            --primary-color: #2c5282;
+            --primary-dark: #1a365d;
+            --secondary-color: #d97706;
+            --accent-color: #059669;
+            --warning-color: #dc2626;
+            --info-color: #0284c7;
+            --bg-color: #f9fafb;
+            --surface-color: #ffffff;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --border-color: #e5e7eb;
+            --tooltip-bg: #1f2937;
+            --focus-ring: #3b82f6;
+        }
+
+        /* Global Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-color);
+        }
+
+        /* Skip to Content Link (Accessibility) */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 2rem 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-subtitle {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+            max-width: 1200px;
+            margin: 0.5rem auto 0;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+        }
+
+        @media (max-width: 968px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Controls Bar */
+        .controls {
+            background: var(--surface-color);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .control-group label {
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .toggle-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .toggle-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .toggle-btn:focus {
+            outline: 2px solid var(--focus-ring);
+            outline-offset: 2px;
+        }
+
+        .toggle-btn.active {
+            background: var(--accent-color);
+        }
+
+        /* Main Content */
+        main {
+            background: var(--surface-color);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Typography */
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        h3 {
+            color: var(--primary-dark);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Complexity Sections */
+        .complexity-beginner {
+            display: block;
+        }
+
+        .complexity-intermediate {
+            display: none;
+            background: #fef3c7;
+            border-left: 4px solid var(--secondary-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .complexity-intermediate.visible {
+            display: block;
+        }
+
+        .complexity-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .label-intermediate {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        /* Glossary Terms */
+        .glossary-term {
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-decoration-color: var(--primary-color);
+            cursor: help;
+            color: var(--primary-color);
+            font-weight: 500;
+            position: relative;
+        }
+
+        .glossary-term:hover,
+        .glossary-term:focus {
+            text-decoration-style: solid;
+        }
+
+        /* Tooltip Styles */
+        .tooltip {
+            position: fixed;
+            background: var(--tooltip-bg);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            z-index: 1000;
+            display: none;
+        }
+
+        .tooltip.visible {
+            display: block;
+        }
+
+        .tooltip-term {
+            font-weight: 700;
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            color: #fbbf24;
+        }
+
+        .tooltip-definition {
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .tooltip-controls {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .tooltip-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: all 0.2s;
+        }
+
+        .tooltip-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .tooltip-btn.active {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        /* Glossary Sidebar */
+        aside {
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+            max-height: calc(100vh - 4rem);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .glossary-sidebar {
+            background: var(--surface-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .glossary-sidebar h2 {
+            margin-top: 0;
+            font-size: 1.25rem;
+        }
+
+        .glossary-search {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .glossary-search:focus {
+            outline: 2px solid var(--focus-ring);
+            outline-offset: 2px;
+        }
+
+        .glossary-filters {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary-color);
+        }
+
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .glossary-list {
+            overflow-y: auto;
+            max-height: 500px;
+        }
+
+        .glossary-item {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .glossary-item:hover,
+        .glossary-item:focus {
+            background: var(--bg-color);
+        }
+
+        .glossary-item-term {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .glossary-item-preview {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .glossary-item-importance {
+            display: inline-block;
+            font-size: 0.625rem;
+            padding: 0.125rem 0.375rem;
+            border-radius: 3px;
+            margin-top: 0.25rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .importance-critical {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .importance-important {
+            background: #fed7aa;
+            color: #9a3412;
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid;
+        }
+
+        .alert-warning {
+            background: #fef3c7;
+            border-color: var(--warning-color);
+        }
+
+        .alert-info {
+            background: #dbeafe;
+            border-color: var(--info-color);
+        }
+
+        .alert-success {
+            background: #d1fae5;
+            border-color: var(--accent-color);
+        }
+
+        /* Images */
+        .diagram {
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .diagram img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .diagram-caption {
+            background: var(--bg-color);
+            padding: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .diagram-metadata {
+            background: #f3f4f6;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--surface-color);
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Print Styles */
+        @media print {
+            .controls,
+            .glossary-sidebar,
+            .skip-link {
+                display: none;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .complexity-intermediate {
+                display: block;
+            }
+
+            body {
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+        <h1>Is It Safe to Sit Your Baby on Their Bum?</h1>
+        <p class="header-subtitle">Evidence-based guide on infant positioning safety, developmental milestones, and safe sleep practices</p>
+    </header>
+
+    <div class="container">
+        <div>
+            <div class="controls" role="toolbar" aria-label="Content controls">
+                <div class="control-group">
+                    <label for="complexity-toggle">Complexity Level:</label>
+                    <button
+                        id="complexity-toggle"
+                        class="toggle-btn"
+                        aria-pressed="false"
+                        onclick="toggleComplexity()"
+                    >
+                        Show Intermediate Sections
+                    </button>
+                </div>
+                <div class="control-group">
+                    <button
+                        id="glossary-toggle"
+                        class="toggle-btn active"
+                        aria-pressed="true"
+                        onclick="toggleGlossary()"
+                    >
+                        Glossary: ON
+                    </button>
+                </div>
+            </div>
+
+            <main id="main-content" role="main">
+                <h2>Quick Answer</h2>
+                <div class="alert alert-warning">
+                    <p><strong>At 10 days old, it is NOT safe to sit Artin on his bum, even with support.</strong></p>
+                </div>
+
+                <p>Newborns lack the essential developmental prerequisites for sitting:</p>
+                <ul>
+                    <li>Zero head control - neck muscles aren't developed yet</li>
+                    <li>Undeveloped spine - <span class="glossary-term" data-term="c-curve-spine">C-shaped</span> (fetal position), not <span class="glossary-term" data-term="s-curve-spine">S-shaped</span> like adults</li>
+                    <li>No <span class="glossary-term" data-term="trunk-stability">trunk stability</span> - core muscles can't support upright position</li>
+                    <li><strong><span class="glossary-term" data-term="positional-asphyxia">Positional asphyxia</span> risk</strong> - head can flop forward onto chest, blocking airways</li>
+                </ul>
+
+                <h2>Why Newborns Can't Sit</h2>
+
+                <h3>Spinal Development</h3>
+                <div class="complexity-intermediate" data-complexity="intermediate">
+                    <span class="complexity-label label-intermediate">Intermediate</span>
+                    <p>Newborn spines are fundamentally different from adult spines:</p>
+
+                    <h4><span class="glossary-term" data-term="c-curve-spine">C-Curve (Newborn)</span></h4>
+                    <ul>
+                        <li>Single curve from neck to tailbone</li>
+                        <li>Fetal position carryover</li>
+                        <li>Vertebrae still developing</li>
+                        <li>Cartilage-rich, not ossified</li>
+                        <li>Sitting puts dangerous stress on immature vertebrae</li>
+                    </ul>
+
+                    <h4><span class="glossary-term" data-term="s-curve-spine">S-Curve (Adult)</span></h4>
+                    <ul>
+                        <li><span class="glossary-term" data-term="cervical-curve">Cervical curve</span> (neck) - develops 3-4 months when baby holds head up</li>
+                        <li><span class="glossary-term" data-term="thoracic-curve">Thoracic curve</span> (mid-back) - develops 6-8 months when sitting emerges</li>
+                        <li><span class="glossary-term" data-term="lumbar-curve">Lumbar curve</span> (lower back) - develops 12-18 months when walking begins</li>
+                    </ul>
+                </div>
+
+                <div class="diagram">
+                    <img
+                        src="https://replicate.delivery/czjl/jPWUx2h7eejqt0Vw30wQXnDl7oTFZ0jEqlakdNpcpoJeTdVrA/out-0.webp"
+                        alt="Infant spine development showing C-curve newborn spine versus S-curve adult spine"
+                        title="AI-Generated Educational Diagram | Model: FLUX-Schnell | Prompt: 'infant spine development showing C-curve newborn spine versus S-curve adult spine side-by-side comparison, annotated medical diagram with clear text labels' | Cost: $0.00"
+                    />
+                    <div class="diagram-caption">
+                        Figure 1: Comparison of newborn C-curve spine versus mature S-curve spine development
+                    </div>
+                    <div class="diagram-metadata">
+                        AI-Generated | Model: FLUX-Schnell | Provider: Replicate
+                    </div>
+                </div>
+
+                <h3>Head and Neck Control</h3>
+                <p>At 10 days old:</p>
+                <ul>
+                    <li>Head is 25% of body weight (vs 10% in adults)</li>
+                    <li>Neck muscles extremely weak</li>
+                    <li>No ability to hold head steady</li>
+                    <li>Head will flop dangerously if unsupported</li>
+                    <li>Risk of head/neck injury</li>
+                </ul>
+
+                <h3><span class="glossary-term" data-term="positional-asphyxia">Positional Asphyxia</span> Danger</h3>
+                <div class="alert alert-warning">
+                    <p><strong>Unsupported sitting poses life-threatening risks:</strong></p>
+                    <ul>
+                        <li>Head flops forward onto chest</li>
+                        <li>Chin presses into throat</li>
+                        <li>Blocks airway (<span class="glossary-term" data-term="trachea-compression">trachea compression</span>)</li>
+                        <li>Can occur silently without crying</li>
+                        <li><strong>This is a medical emergency</strong></li>
+                    </ul>
+                </div>
+
+                <h2>Safe Positions for Newborns (0-2 Months)</h2>
+
+                <div class="diagram">
+                    <img
+                        src="https://replicate.delivery/czjl/VRBP5xepnl0oLyOckeiXv5E4L8pQPZ67yINwpfYrkQfDo6qWB/out-0.webp"
+                        alt="Infant safe versus unsafe positioning comparison chart"
+                        title="AI-Generated Educational Diagram | Model: FLUX-Schnell | Prompt: 'infant safe versus unsafe positioning comparison chart, annotated parenting safety diagram' | Cost: $0.00"
+                    />
+                    <div class="diagram-caption">
+                        Figure 2: Safe versus unsafe infant positioning comparison
+                    </div>
+                    <div class="diagram-metadata">
+                        AI-Generated | Model: FLUX-Schnell | Provider: Replicate
+                    </div>
+                </div>
+
+                <h3>Back-Lying (<span class="glossary-term" data-term="supine-position">Supine</span>) ✓</h3>
+                <div class="alert alert-success">
+                    <p><strong>For Sleep:</strong></p>
+                    <ul>
+                        <li>Always on back on firm, flat surface</li>
+                        <li>No pillows, blankets, toys</li>
+                        <li><span class="glossary-term" data-term="sids">SIDS</span> prevention (reduces risk by 50%)</li>
+                    </ul>
+
+                    <p><strong>For Awake Time:</strong></p>
+                    <ul>
+                        <li>Supervised play on play mat</li>
+                        <li>Allows free movement of arms/legs</li>
+                        <li>Safest position overall</li>
+                    </ul>
+                </div>
+
+                <h3>Tummy Time (<span class="glossary-term" data-term="prone-position">Prone</span>) ✓</h3>
+                <div class="alert alert-info">
+                    <p><strong>When:</strong></p>
+                    <ul>
+                        <li>Only while awake and supervised</li>
+                        <li>NEVER for sleep (<span class="glossary-term" data-term="sids">SIDS</span> risk)</li>
+                    </ul>
+
+                    <p><strong>Duration:</strong></p>
+                    <ul>
+                        <li>Start: 1-2 minutes, 3-5 times daily</li>
+                        <li>Gradually increase as baby tolerates</li>
+                    </ul>
+
+                    <p><strong>Benefits:</strong></p>
+                    <ul>
+                        <li>Builds neck and shoulder strength</li>
+                        <li>Prevents flat head (<span class="glossary-term" data-term="plagiocephaly">plagiocephaly</span>)</li>
+                        <li>Prepares for rolling and crawling</li>
+                        <li>Essential for motor development</li>
+                    </ul>
+                </div>
+
+                <h3>Held in Arms ✓</h3>
+                <div class="diagram">
+                    <img
+                        src="https://replicate.delivery/czjl/bMa5fnOgTWzHBSPgIGZ4g2VCUsruuJ3nsFJ3gHfoY0qDquqVA/out-0.webp"
+                        alt="Proper infant holding techniques demonstration"
+                        title="AI-Generated Educational Diagram | Model: FLUX-Schnell | Prompt: 'proper infant holding techniques demonstration, annotated parenting guide' | Cost: $0.00"
+                    />
+                    <div class="diagram-caption">
+                        Figure 3: Proper infant holding techniques for newborns
+                    </div>
+                    <div class="diagram-metadata">
+                        AI-Generated | Model: FLUX-Schnell | Provider: Replicate
+                    </div>
+                </div>
+
+                <p><strong>Three Safe Holds:</strong></p>
+
+                <h4>Cradle Hold</h4>
+                <ul>
+                    <li>Head supported in crook of elbow</li>
+                    <li>Body along forearm</li>
+                    <li>Good for feeding and bonding</li>
+                </ul>
+
+                <h4>Shoulder Hold</h4>
+                <ul>
+                    <li>Baby upright against chest</li>
+                    <li>Hand supports head and neck</li>
+                    <li>Best for burping</li>
+                </ul>
+
+                <h4>Football Hold</h4>
+                <ul>
+                    <li>Baby face-down along forearm</li>
+                    <li>Head rests in hand</li>
+                    <li>Good for fussy babies, gas relief</li>
+                </ul>
+
+                <h2>Developmental Timeline: When Will Sitting Be Safe?</h2>
+
+                <div class="diagram">
+                    <img
+                        src="https://replicate.delivery/czjl/nsFQgvz0Z1paAxSbFdresywkWtI0hbsYyYZAxzUBbrxAVX1KA/out-0.webp"
+                        alt="Infant sitting development timeline from 0 to 9 months"
+                        title="AI-Generated Educational Diagram | Model: FLUX-Schnell | Prompt: 'infant sitting development timeline from 0 to 9 months, annotated developmental milestone chart' | Cost: $0.00"
+                    />
+                    <div class="diagram-caption">
+                        Figure 4: Developmental timeline showing progression from newborn to independent sitting
+                    </div>
+                    <div class="diagram-metadata">
+                        AI-Generated | Model: FLUX-Schnell | Provider: Replicate
+                    </div>
+                </div>
+
+                <h3>0-3 Months (Artin's Current Stage)</h3>
+                <ul>
+                    <li><strong>Abilities:</strong> None - no head or <span class="glossary-term" data-term="trunk-stability">trunk control</span></li>
+                    <li><strong>Safe Positions:</strong> Back-lying, tummy time, held in arms only</li>
+                    <li><strong>Dangerous:</strong> Any unsupported or semi-supported sitting</li>
+                </ul>
+
+                <h3>3-4 Months</h3>
+                <ul>
+                    <li><strong>Abilities:</strong> Developing head control, can hold head steady</li>
+                    <li><strong>Safe Positions:</strong> Semi-supported sitting in lap with full back support</li>
+                    <li><strong>Still Dangerous:</strong> Independent or lightly-supported sitting</li>
+                </ul>
+
+                <h3>4-6 Months</h3>
+                <ul>
+                    <li><strong>Abilities:</strong> Head steady, trunk strength emerging</li>
+                    <li><strong>Safe Positions:</strong> Supported sitting with cushions (Boppy pillow)</li>
+                    <li><strong>Supervision:</strong> Required - may topple</li>
+                </ul>
+
+                <h3>6-8 Months</h3>
+                <ul>
+                    <li><strong>Abilities:</strong> <span class="glossary-term" data-term="tripod-sitting">Tripod sitting</span> (hands on floor for support)</li>
+                    <li><strong>Safe Positions:</strong> Sitting with nearby supervision</li>
+                    <li><strong>Note:</strong> Will still topple, needs cushioned area</li>
+                </ul>
+
+                <h3>8-9 Months</h3>
+                <ul>
+                    <li><strong>Abilities:</strong> Independent sitting without support</li>
+                    <li><strong>Safe Positions:</strong> Can sit safely without adult support</li>
+                    <li><strong>Achievement:</strong> Fully developed sitting ability</li>
+                </ul>
+
+                <div class="complexity-intermediate" data-complexity="intermediate">
+                    <span class="complexity-label label-intermediate">Intermediate</span>
+                    <h2>Red Flags: When to Seek Medical Help</h2>
+
+                    <h3>Normal at 10 Days ✓</h3>
+                    <ul>
+                        <li>Floppy head with no control</li>
+                        <li>Curled fetal position (arms/legs flexed)</li>
+                        <li>Jerky, uncoordinated movements</li>
+                        <li>Can't roll, sit, or lift head yet</li>
+                    </ul>
+
+                    <h3>Concerning - Call Healthcare Provider</h3>
+                    <div class="alert alert-warning">
+                        <p><strong>Muscle Tone Issues:</strong></p>
+                        <ul>
+                            <li>Extremely stiff (<span class="glossary-term" data-term="hypertonia">hypertonia</span>)</li>
+                            <li>Extremely floppy (<span class="glossary-term" data-term="hypotonia">hypotonia</span>)</li>
+                            <li>Persistent one-sided weakness</li>
+                        </ul>
+
+                        <p><strong>Positional Problems:</strong></p>
+                        <ul>
+                            <li>Persistent head turning to one side (<span class="glossary-term" data-term="torticollis">torticollis</span>)</li>
+                            <li>Arching back excessively (could indicate reflux or neurological issue)</li>
+                            <li>Inability to bring hands to midline</li>
+                        </ul>
+                    </div>
+
+                    <h3>Emergency - Call 911</h3>
+                    <div class="alert alert-warning">
+                        <ul>
+                            <li>Difficulty breathing after positioning</li>
+                            <li>Blue/gray skin color (<span class="glossary-term" data-term="cyanosis">cyanosis</span>)</li>
+                            <li>Unresponsive after unsupported sitting</li>
+                            <li>Seizure-like movements</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Canadian Healthcare Resources</h2>
+
+                <h3>Telehealth Ontario: 811</h3>
+                <p><strong>When to Call:</strong></p>
+                <ul>
+                    <li>Questions about development</li>
+                    <li>Non-emergency positioning concerns</li>
+                    <li>Guidance on safe practices</li>
+                </ul>
+
+                <h3>York Region Public Health: 1-800-361-5653</h3>
+                <p><strong>Services:</strong></p>
+                <ul>
+                    <li>Free public health nurse consultations</li>
+                    <li>Healthy Babies Healthy Children program</li>
+                    <li>Developmental milestone assessments</li>
+                </ul>
+
+                <h3>Pediatrician Well-Baby Visits (OHIP Covered)</h3>
+                <p><strong>Schedule:</strong></p>
+                <ul>
+                    <li>2 weeks (upcoming for Artin)</li>
+                    <li>2, 4, 6, 9, 12 months</li>
+                    <li>Developmental screening at each visit</li>
+                </ul>
+
+                <h2>Key Takeaways</h2>
+                <ol>
+                    <li><strong>Never sit newborns</strong> - Not safe until 4+ months with support, 8-9 months independently</li>
+                    <li><strong>Spinal development takes time</strong> - <span class="glossary-term" data-term="c-curve-spine">C-curve</span> to <span class="glossary-term" data-term="s-curve-spine">S-curve</span> transition happens gradually over first year</li>
+                    <li><strong><span class="glossary-term" data-term="positional-asphyxia">Positional asphyxia</span> is real</strong> - Unsupported sitting can block airways</li>
+                    <li><strong>Safe positions exist</strong> - Back-lying, tummy time, proper holding all allow bonding</li>
+                    <li><strong>Patience pays off</strong> - Sitting will emerge naturally when Artin is developmentally ready</li>
+                </ol>
+
+                <div class="alert alert-info">
+                    <p><strong>Bottom Line:</strong> Keep Artin horizontal (back or tummy) or fully supported in arms for the next 3-4 months. His spine and muscles need time to develop before any sitting - even supported - is safe.</p>
+                </div>
+            </main>
+        </div>
+
+        <aside role="complementary" aria-label="Glossary">
+            <div class="glossary-sidebar">
+                <h2>Glossary</h2>
+                <input
+                    type="search"
+                    class="glossary-search"
+                    id="glossary-search"
+                    placeholder="Search terms..."
+                    aria-label="Search glossary terms"
+                />
+
+                <div class="glossary-filters">
+                    <button class="filter-btn active" data-filter="all" onclick="filterGlossary('all')">All</button>
+                    <button class="filter-btn" data-filter="critical" onclick="filterGlossary('critical')">Critical</button>
+                    <button class="filter-btn" data-filter="important" onclick="filterGlossary('important')">Important</button>
+                </div>
+
+                <div class="glossary-list" id="glossary-list" role="list">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <div id="tooltip" class="tooltip" role="tooltip" aria-live="polite">
+        <div class="tooltip-term" id="tooltip-term"></div>
+        <div class="tooltip-definition" id="tooltip-definition"></div>
+        <div class="tooltip-controls">
+            <button class="tooltip-btn active" data-level="simple" onclick="setDefinitionLevel('simple')">Simple</button>
+            <button class="tooltip-btn" data-level="standard" onclick="setDefinitionLevel('standard')">Standard</button>
+            <button class="tooltip-btn" data-level="technical" onclick="setDefinitionLevel('technical')">Technical</button>
+        </div>
+    </div>
+
+    <footer role="contentinfo">
+        <p><strong>Disclaimer:</strong> This educational resource is for informational purposes only and does not constitute medical advice. Always consult with qualified healthcare professionals for medical guidance specific to your child.</p>
+        <p>&copy; 2025 | Generated with AI-assisted educational content design | All medical diagrams AI-generated using FLUX-Schnell</p>
+    </footer>
+
+    <script>
+        // Glossary Data (Embedded Inline - No External Fetch)
+        const GLOSSARY_DATA = [
+            {
+                "term": "C-curve spine",
+                "importance": "critical",
+                "definitions": {
+                    "simple": "A C-curve spine is the natural curved shape of a newborn baby's back, like the letter C. Babies are born with this gentle curve because they spent months curled up in their mother's womb, and it takes time for their spine to develop the straighter shape of older children and adults.",
+                    "standard": "The C-curve spine refers to the single, continuous curve of the vertebral column present at birth and during early infancy. This posture is a continuation of the fetal position and reflects the curvature that develops in utero. As infants develop motor control—lifting their head around 6-8 weeks and sitting around 6 months—secondary curves develop in the cervical and lumbar regions, gradually transitioning the spine toward the characteristic S-curve of adults.",
+                    "technical": "The C-curve spine (also termed the primary or thoracic kyphosis) is the embryologically derived, uniform convex-posterior vertebral curvature present from birth through early infancy, characterized by approximately 40-50 degrees of kyphosis along the entire thoracolumbar spine. This configuration maintains the intrauterine posture and reflects incomplete ossification of vertebral bodies and intervertebral discs. Progressive neuromuscular development and gravitational loading during motor milestones induce regional differentiation, with cervical lordosis developing by 3-4 months (average 20-25 degrees) and lumbar lordosis developing by 6-9 months (average 35-40 degrees), creating the bipedic S-curve by 12 months as compensatory adaptation for upright posture and bipedal locomotion."
+                }
+            },
+            {
+                "term": "trachea compression",
+                "importance": "critical",
+                "definitions": {
+                    "simple": "Trachea compression is when something squeezes or blocks the windpipe (the tube that lets you breathe air in and out). When the windpipe gets squeezed, air can't flow freely, making it hard or dangerous to breathe.",
+                    "standard": "Trachea compression is a narrowing or obstruction of the trachea (windpipe) caused by external pressure or internal blockage. This can occur due to enlarged tissues, tumors, infections, allergic reactions, or positional pressure in infants. The condition restricts airflow to the lungs and can cause breathing difficulties ranging from mild wheezing to severe respiratory distress, depending on the degree and duration of compression.",
+                    "technical": "Tracheal compression refers to the mechanical reduction of tracheal lumen diameter resulting from external compressive forces (extrinsic compression from adjacent structures, masses, or edema) or internal luminal obstruction (intrinsic compression). In pediatric cases, common etiologies include laryngomalacia, vascular rings, mediastinal masses, and positional compression in neonates. Severity is assessed via flexible fiberoptic laryngoscopy or imaging (CT, MRI), with hemodynamic compromise occurring when luminal diameter is reduced below critical threshold, typically considered <4mm in infants. Management depends on etiology and severity, ranging from conservative observation to surgical intervention."
+                }
+            },
+            {
+                "term": "SIDS",
+                "importance": "critical",
+                "definitions": {
+                    "simple": "SIDS (Sudden Infant Death Syndrome) is when a baby under 1 year old passes away suddenly during sleep without any clear reason. It's sometimes called 'crib death' because it happens while babies are sleeping, and doctors can't find an obvious cause like illness or injury.",
+                    "standard": "Sudden Infant Death Syndrome (SIDS) is the sudden and unexplained death of an otherwise healthy infant under 12 months of age, typically occurring during sleep. SIDS accounts for a significant portion of post-neonatal deaths in developed countries and has been linked to multiple risk factors including sleep position, sleep surface, maternal smoking, and thermal stress. The exact mechanism remains unclear, though current theories involve abnormalities in arousal response, respiratory control, and cardiac function during critical developmental periods.",
+                    "technical": "SIDS is defined as the sudden, unexplained death of an infant between 1 month and 12 months of age that remains unexplained after a thorough postmortem examination, including autopsy, investigation of the death scene, and review of clinical history. Pathophysiological models suggest SIDS results from the convergence of three factors: a vulnerable infant (developmental abnormalities in brainstem cardiorespiratory regulation, particularly in serotonergic and GABAergic systems), a critical developmental period (peak incidence 2-4 months corresponding to major neurological reorganization), and an external stressor (rebreathing of CO2, thermal stress, or supine sleep position). Risk factors include prone/side sleep position, soft sleep surface, bed-sharing, maternal smoking/alcohol/drug use during pregnancy, prematurity, and low birth weight."
+                }
+            },
+            {
+                "term": "cyanosis",
+                "importance": "critical",
+                "definitions": {
+                    "simple": "Cyanosis is when a person's skin, lips, or nail beds turn blue or grayish because their blood doesn't have enough oxygen. It's like when your lips get pale from being cold, but caused by a lack of oxygen instead.",
+                    "standard": "Cyanosis is a clinical sign characterized by blue or grayish discoloration of the skin and mucous membranes resulting from insufficient oxygen saturation (typically SpO2 below 85%) in the blood. It occurs when deoxygenated hemoglobin concentration exceeds 5 g/dL, indicating inadequate oxygenation. Cyanosis can be central (indicating systemic hypoxemia affecting oxygenation throughout the body) or peripheral (indicating poor circulation in extremities). In pediatric patients, it can signal serious cardiac, respiratory, or metabolic conditions requiring immediate evaluation.",
+                    "technical": "Cyanosis is a pathophysiological sign of hypoxemia or poor tissue perfusion characterized by the accumulation of deoxygenated hemoglobin (Hb) in the microvasculature of the skin and mucous membranes. Central cyanosis indicates systemic arterial oxygen desaturation (PaO2 < 60 mmHg or SpO2 < 85-88%), resulting from cardiopulmonary pathology (cyanotic heart disease, pulmonary shunts, severe respiratory disease). Peripheral cyanosis results from increased oxygen extraction in low-flow states without systemic hypoxemia, often seen in vasoconstriction or heart failure. In neonates and infants, the presence of fetal hemoglobin (HbF) and higher baseline hemoglobin concentrations may alter the visual appearance and clinical threshold for cyanosis detection."
+                }
+            },
+            {
+                "term": "S-curve spine",
+                "importance": "critical",
+                "definitions": {
+                    "simple": "The S-curve spine is the natural zigzag shape your backbone develops as a baby grows. It starts out mostly straight, but over the first year and a half of life, it develops three curves - one in the neck, one in the upper back, and one in the lower back - that help your body move smoothly and stay balanced.",
+                    "standard": "The S-curve spine refers to the mature spinal anatomy characterized by three distinct natural curves: cervical lordosis (inward curve in the neck), thoracic kyphosis (outward curve in the mid-back), and lumbar lordosis (inward curve in the lower back). This S-shaped configuration develops gradually during infancy and early toddlerhood, with significant changes occurring between birth and 18 months. These curves are essential for weight distribution, shock absorption, and maintaining proper posture during movement and growth.",
+                    "technical": "The mature S-curve spine demonstrates three regional curvatures that result from differential ossification patterns and myofascial development. The cervical lordosis (C-curve, ~40 degrees) emerges when the infant begins head lifting around 2-3 months; the thoracic kyphosis (T-curve, ~20-40 degrees) is naturally present from fetal development but increases with antigravity positioning; and the lumbar lordosis (L-curve, ~40-60 degrees) develops as the child progresses from prone mobility to upright posture between 6-18 months. These curves optimize the spine's biomechanical properties by distributing compressive and shear forces across vertebral bodies, intervertebral discs, and facet joints, while accommodating expanding lung capacity and organ positioning. The achievement of adult-pattern spinal curvature is considered a developmental milestone linked to gross motor competency and postural stability."
+                }
+            },
+            {
+                "term": "positional asphyxia",
+                "importance": "critical",
+                "definitions": {
+                    "simple": "Positional asphyxia happens when a baby's body position accidentally blocks their airway. When the head flops forward onto the chest or the chin presses into the throat, it can squeeze the windpipe closed, making it hard or impossible to breathe.",
+                    "standard": "Positional asphyxia is a form of suffocation that occurs when a baby's anatomical position compromises airway patency. This typically happens when the head flexes forward onto the chest, causing the chin to compress against the trachea, or when the soft tissues of the neck collapse and obstruct breathing. It is particularly dangerous in infants because they have disproportionately large heads, weak neck muscles, and cannot self-correct their position if they fall asleep or lose consciousness. Common settings include car seats, infant seats, sleep positioners, and co-sleeping situations where positioning is not properly supported.",
+                    "technical": "Positional asphyxia results from mechanical obstruction of the airway (trachea) due to gravitational or pressure-induced flexion of the cervical spine combined with inadequate skeletal support in infants. The phenomenon exploits anatomical vulnerabilities in the neonatal and early infant period: forward head position (occurring naturally at 0-4 months when infants cannot maintain vertical head control) causes the soft palate and epiglottis to contact the posterior pharyngeal wall, and simultaneously, chin-on-chest positioning compresses the trachea externally. This is exacerbated by the compliant cartilaginous support structures of the pediatric airway, the infant's inability to reposition themselves voluntarily during sleep or altered consciousness, and diminished protective reflexes during deep sleep states. Risk is elevated in devices with insufficient neck support (improper car seat angle >45 degrees) or soft sleeping surfaces that allow progressive head burial, as documented in studies of sleep-related infant mortality."
+                }
+            },
+            {
+                "term": "tripod sitting",
+                "importance": "important",
+                "definitions": {
+                    "simple": "Tripod sitting is when a baby sits up by placing both hands on the floor in front to balance and support themselves. It looks like a stool with three legs - the baby's bottom is one leg, and their two hands on the ground make the other two legs.",
+                    "standard": "Tripod sitting is an early developmental sitting position where an infant maintains balance by supporting their upper body weight with both hands placed on the floor in front of them. This position typically emerges between 4-6 months of age and represents a transitional stage between supported sitting and independent sitting. The forward hand placement provides crucial stability and protection against falls while the baby develops core muscle strength and postural control.",
+                    "technical": "Tripod sitting represents a proto-sitting posture characterized by anterior hand-floor contact providing primary stability to compensate for developing truncal musculature and vestibular system maturation. During this stage, the infant exhibits limited independent anterior-posterior postural control and relies on proprioceptive feedback from hand contact to maintain upright alignment. This position facilitates progressive recruitment of paraspinal and abdominal musculature while distributing load through three contact points (bilateral palms and gluteal region), reducing fall risk during the transition from supine/prone mobility to upright weight-bearing postures."
+                }
+            },
+            {
+                "term": "lumbar curve",
+                "importance": "important",
+                "definitions": {
+                    "simple": "The lumbar curve is the natural forward bend in your lower back. It develops gradually as babies learn to sit and stand, helping them balance and move their bodies.",
+                    "standard": "The lumbar curve (lumbar lordosis) is the anterior convexity of the spine in the lower back region, formed by the five lumbar vertebrae. This curve begins to develop around 3-4 months when infants start lifting their heads, progressively deepens through 12-18 months as children achieve sitting and standing milestones, and becomes fully established by age 2-3. The lumbar curve is essential for weight distribution, shock absorption, and normal spinal biomechanics during upright posture and locomotion.",
+                    "technical": "The lumbar lordosis is a physiological anterior curvature of the lumbar spine (L1-L5 vertebrae) with a typical angle of 40-60 degrees in healthy adults, measured from the superior endplate of L1 to the superior endplate of S1. The curve develops through differential growth of vertebral bodies and intervertebral discs, with primary development occurring between 3-18 months concurrent with motor milestones (head control, sitting, standing). Proper lumbar curvature is biomechanically critical for load distribution, spinal stability, and preventing excessive stress on posterior elements; abnormal development (flat back or excessive lordosis) can lead to postural dysfunction, pain, and altered gait mechanics in later childhood."
+                }
+            },
+            {
+                "term": "plagiocephaly",
+                "importance": "important",
+                "definitions": {
+                    "simple": "Plagiocephaly is when a baby's head becomes flat or unevenly shaped on one side from lying in the same position for too long. It usually looks like a flat spot on the back or side of the head.",
+                    "standard": "Plagiocephaly, commonly known as flat head syndrome, is a condition characterized by an asymmetrical or flattened skull shape in infants, typically resulting from prolonged external pressure on one area of the cranium. Most commonly seen as positional plagiocephaly when babies spend extended time lying on their backs, it may also develop from torticollis (neck muscle tightness) or from restricted intrauterine positioning. While the condition is primarily cosmetic in most cases, severe deformities can affect helmet fitting or rarely impact brain development if accompanied by other conditions.",
+                    "technical": "Plagiocephaly represents a deformational cranial asymmetry in infants, classified into positional, congenital, or acquired etiologies. Positional plagiocephaly (most common form) results from chronic unilateral pressure to the parietal or occipital bone during critical periods of rapid infantile skull remodeling (typically 8-12 weeks of age), when cranial vault bones remain highly malleable with incomplete ossification. The condition manifests as detectable asymmetry by anthropometric measurements including cephalic index deviation, frontal bossing on the affected side, posterior occipital flattening, and compensatory growth patterns including ipsilateral ear protrusion and forehead asymmetry. Risk factors include supine sleep positioning (post-Back to Sleep campaign), torticollis, intrauterine constraint, and prematurity; progression requires regular monitoring though most cases achieve spontaneous resolution with positional modification and physical therapy."
+                }
+            },
+            {
+                "term": "hypertonia",
+                "importance": "important",
+                "definitions": {
+                    "simple": "Hypertonia is when a baby's muscles are too stiff or tight. It's like the muscles can't relax properly, making it harder for the baby to move smoothly and bend their joints easily.",
+                    "standard": "Hypertonia is a condition characterized by abnormally increased muscle tone that results in muscles feeling stiff, tight, or resistant to passive movement. In infants and young children, it can interfere with normal movement development, flexibility, and coordination. The condition may be caused by various factors including neurological disorders, cerebral palsy, spasticity, or other developmental concerns, and is often identified during developmental assessments when healthcare providers notice resistance to joint flexion and extension.",
+                    "technical": "Hypertonia represents a state of increased muscle tone (tonus) defined by elevated resistance to passive elongation across one or more joints throughout the range of motion. It encompasses both spasticity (velocity-dependent hypertonicity with hyperreflexia, commonly associated with upper motor neuron lesions) and rigidity (uniform resistance independent of movement velocity, often associated with extrapyramidal system involvement). In pediatric populations, hypertonia significantly impacts motor development, postural control, and functional mobility; differential diagnosis requires assessment of distribution pattern (focal, regional, or generalized), temporal characteristics, and associated neurological findings including deep tendon reflexes, clonus, and primitive reflexes."
+                }
+            },
+            {
+                "term": "supine position",
+                "importance": "important",
+                "definitions": {
+                    "simple": "Supine position means lying on your back with your face pointing up. This is the safest way for babies to sleep because it helps keep their airways open and reduces the risk of sudden infant death syndrome (SIDS).",
+                    "standard": "Supine position refers to the anatomical posture in which an infant lies flat on their back with the face upward and the ventral surface exposed. In pediatric sleep practice, this position is the recommended safe sleep position according to the American Academy of Pediatrics (AAP) guidelines because it maintains a clear airway, promotes even weight distribution, and significantly reduces SIDS risk compared to prone or side-lying positions.",
+                    "technical": "Supine position in neonatal and infant sleep protocols denotes dorsal decubitus positioning with the infant placed supine on a firm, flat sleep surface. This position optimizes upper airway patency, reduces airway obstruction risk from soft tissue collapse, minimizes gastric reflux aspiration risk, and has been demonstrated to decrease SIDS incidence by approximately 50% compared to prone positioning (prone sleep being an independent risk factor for SIDS). Neurophysiologically, supine sleeping preserves the infant's arousal threshold and enables more effective startle reflexes in response to hypoxic or hypercapnic events."
+                }
+            },
+            {
+                "term": "hypotonia",
+                "importance": "important",
+                "definitions": {
+                    "simple": "Hypotonia is when a baby's muscles are too loose and floppy, like a rag doll. Instead of having normal firmness, the muscles are weak and don't hold the body up well, making the baby feel limp when you pick them up.",
+                    "standard": "Hypotonia is a condition characterized by abnormally decreased muscle tone (muscle tension at rest). Infants and children with hypotonia demonstrate reduced resistance to passive movement and difficulty maintaining posture or controlling movement against gravity. The condition can be a symptom of various underlying disorders ranging from benign congenital hypotonia to serious neurological or metabolic conditions, and typically presents with developmental delay, poor head control, and increased flexibility in joints.",
+                    "technical": "Hypotonia is a neuromotor disorder marked by diminished muscle tone (tonus), reflecting reduced contractility and elasticity of skeletal muscles at rest and during active movement. Physiologically, it results from dysfunction in the neural pathways governing motor control, including the cerebellum, basal ganglia, spinal cord, or peripheral nerves, leading to decreased resistance to passive stretch and impaired antigravity muscle activation. Central hypotonia (CNS origin) differs from peripheral hypotonia (neuromuscular origin) through clinical examination patterns, with diagnostic differentiation requiring electromyography, genetic testing, and neuroimaging to identify the underlying etiology and establish prognosis."
+                }
+            },
+            {
+                "term": "cervical curve",
+                "importance": "important",
+                "definitions": {
+                    "simple": "The cervical curve is the natural forward bend in your neck. It develops in babies around 3-4 months as they gain strength and start to hold their head up steadily.",
+                    "standard": "The cervical curve is the anterior (forward) curvature of the cervical spine (neck region) that develops during infancy as the child gains neuromuscular control. It emerges around 3-4 months of age when babies can support their head weight independently and is a normal part of spinal development. This curve differs from the thoracic and lumbar regions and contributes to proper neck biomechanics and alignment.",
+                    "technical": "The cervical lordosis is a physiologic anterior curvature of the cervical vertebral column (C1-C7) that develops as a secondary curve during infancy between 3-4 months of age. It emerges in response to strengthening of the cervical extensor muscles, development of cervical vertebral body anterior wedging, and the biomechanical demands of head control. The mature cervical curve typically measures 20-40 degrees of lordosis and is essential for proper load distribution, shock absorption, and cervical spine stability during posture and movement."
+                }
+            },
+            {
+                "term": "thoracic curve",
+                "importance": "important",
+                "definitions": {
+                    "simple": "The thoracic curve is the natural backward bend in your middle back, like the shape of a curved spine. It develops as babies grow stronger and start to sit up around 6-8 months old.",
+                    "standard": "The thoracic curve is the natural kyphotic (backward) spinal curvature that develops in the mid-back region (thoracic vertebrae) during infancy. This curve begins to form as the infant gains motor control, strengthens postural muscles, and transitions from lying down to sitting and eventually standing. The thoracic curve develops gradually between 6-8 months as the child's body adapts to gravitational forces and the demands of upright posture.",
+                    "technical": "The thoracic curve is a normal kyphotic spinal curvature (typically 20-40 degrees as measured by Cobb angle) that develops in the thoracic region (T1-T12 vertebrae) during the period of 6-8 months post-natally. This curve emerges as a compensatory adaptation to the developing cervical lordosis and lumbar lordosis, representing the infant's increasing capacity for postural control, head stability, and trunk strengthening. The thoracic kyphosis is essential for proper biomechanical development, respiration efficiency, and the formation of healthy spinal alignment; excessive thoracic kyphosis may indicate postural dysfunction or underlying skeletal concerns requiring clinical evaluation."
+                }
+            },
+            {
+                "term": "torticollis",
+                "importance": "important",
+                "definitions": {
+                    "simple": "Torticollis is when a baby's neck muscles pull so tight on one side that their head tips or turns toward that shoulder and they have trouble moving it the other way. It's like the muscles on one side of the neck are too short and tight.",
+                    "standard": "Torticollis is a postural condition characterized by involuntary or habitual tilting and rotation of the head toward one side, resulting from muscle tightness or imbalance in the neck musculature. Congenital torticollis, the most common form in infants, often develops from intrauterine positioning or birth trauma affecting the sternocleidomastoid muscle (the large muscle on the front and side of the neck). The condition restricts head mobility, may cause facial asymmetry if untreated, and typically responds well to conservative treatment including gentle stretching exercises and positional modifications.",
+                    "technical": "Torticollis is a cervical dystonia characterized by persistent head tilt (lateral flexion) and rotation toward the affected sternocleidomastoid muscle (SCM), resulting from muscle contracture, myofibroma, or neuromuscular dysfunction. In congenital cases, traumatic SCM injury during delivery (forceps delivery, intrauterine constraint) induces fibroblast proliferation and collagen deposition, creating a fibrous mass (sternocleidomastoid hematoma) that restricts passive range of motion. This postural deviation can lead to plagiocephaly (asymmetric head flattening), facial asymmetry, and developmental compensation patterns if left untreated. Early intervention with targeted stretching (60-90 seconds, 5-6 times daily), repositioning strategies, and serial casting prevents long-term contracture and optimizes cervical spine alignment and motor development."
+                }
+            },
+            {
+                "term": "prone position",
+                "importance": "important",
+                "definitions": {
+                    "simple": "Prone position is when your baby lies on their stomach facing down. This is also called 'tummy time' and helps your baby's muscles get stronger and prepares them for crawling and moving around.",
+                    "standard": "Prone position refers to a body posture in which an infant lies flat on their abdomen with their face turned to one side, commonly practiced during supervised 'tummy time' sessions. This positioning is recommended by pediatric health organizations to promote motor skill development, strengthen neck and shoulder muscles, and prevent plagiocephaly (flat head syndrome). Tummy time should begin early in infancy and gradually increase in duration as the baby develops better head and neck control.",
+                    "technical": "Prone positioning is a gravitational loading posture where the infant's ventral surface is in contact with a supporting surface, facilitating eccentric and concentric muscle activation of the anterior and posterior cervical, thoracic, and lumbar musculature. This positioning stimulates vestibular and proprioceptive input critical for normal motor development, particularly the progression from primitive reflexes (Moro, grasp) through equilibrium reactions and anti-gravity muscle strengthening. Evidence-based guidelines recommend graduated prone positioning exposure, beginning within the first month of life for 2-3 minutes initially, progressing to 60+ minutes daily across multiple sessions by 3-6 months, with strict contraindications including immediate post-feeding periods and unmonitored sleep states."
+                }
+            },
+            {
+                "term": "trunk stability",
+                "importance": "important",
+                "definitions": {
+                    "simple": "Trunk stability is your baby's ability to hold their body upright and steady using their core muscles. It's like the sturdy trunk of a tree that can bend in the wind without falling over.",
+                    "standard": "Trunk stability refers to the ability to control and maintain postural alignment of the torso through coordinated activation of core musculature, including the abdominal, paraspinal, and pelvic floor muscles. This foundational motor skill develops progressively during infancy and early childhood, enabling proper positioning during sitting, crawling, and standing. Trunk stability is essential for the development of fine motor skills, balance, and coordination, as a stable core provides the foundation for skilled limb movements.",
+                    "technical": "Trunk stability is the neuromuscular capacity to maintain dynamic postural control of the thoracic and lumbar spine segments through coordinated contraction of intrinsic and extrinsic core muscles, including the transverse abdominis, multifidus, erector spinae, and external/internal obliques. This involves proprioceptive feedback from spinal mechanoreceptors and vestibular input integration to achieve spinal stability across the transverse, sagittal, and frontal planes. Developmental progression occurs through myelination of corticospinal tracts and cerebellar development, with clinical assessment utilizing antigravity postural control indicators and developmental milestones (head control by 3-4 months, sitting without support by 6-8 months, upright standing by 12-15 months)."
+                }
+            }
+        ];
+
+        // State Management
+        let currentDefinitionLevel = 'simple';
+        let currentTooltipTerm = null;
+        let glossaryEnabled = true;
+        let currentFilter = 'all';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeGlossary();
+            initializeSearch();
+            setupKeyboardNavigation();
+        });
+
+        // Glossary Initialization
+        function initializeGlossary() {
+            renderGlossaryList();
+        }
+
+        function renderGlossaryList(filter = 'all', searchTerm = '') {
+            const listContainer = document.getElementById('glossary-list');
+            const filteredData = GLOSSARY_DATA.filter(item => {
+                const matchesFilter = filter === 'all' || item.importance === filter;
+                const matchesSearch = searchTerm === '' ||
+                    item.term.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    item.definitions.simple.toLowerCase().includes(searchTerm.toLowerCase());
+                return matchesFilter && matchesSearch;
+            });
+
+            listContainer.innerHTML = filteredData.map(item => `
+                <div class="glossary-item"
+                     tabindex="0"
+                     role="listitem"
+                     data-term="${item.term}"
+                     onclick="showTooltipFromSidebar('${item.term}')"
+                     onkeypress="handleGlossaryItemKeyPress(event, '${item.term}')">
+                    <div class="glossary-item-term">${item.term}</div>
+                    <div class="glossary-item-preview">${item.definitions.simple}</div>
+                    <span class="glossary-item-importance importance-${item.importance}">${item.importance}</span>
+                </div>
+            `).join('');
+        }
+
+        function filterGlossary(filter) {
+            currentFilter = filter;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.filter === filter);
+            });
+            const searchTerm = document.getElementById('glossary-search').value;
+            renderGlossaryList(filter, searchTerm);
+        }
+
+        function initializeSearch() {
+            const searchInput = document.getElementById('glossary-search');
+            searchInput.addEventListener('input', function(e) {
+                renderGlossaryList(currentFilter, e.target.value);
+            });
+        }
+
+        // Tooltip Functionality
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('glossary-term') && glossaryEnabled) {
+                showTooltip(e.target);
+            } else if (!e.target.closest('.tooltip') && !e.target.classList.contains('glossary-term')) {
+                hideTooltip();
+            }
+        });
+
+        function showTooltip(element) {
+            const term = element.dataset.term;
+            const termData = GLOSSARY_DATA.find(item => item.term === term);
+
+            if (!termData) return;
+
+            currentTooltipTerm = term;
+            const tooltip = document.getElementById('tooltip');
+            const termElement = document.getElementById('tooltip-term');
+            const definitionElement = document.getElementById('tooltip-definition');
+
+            termElement.textContent = termData.term;
+            definitionElement.textContent = termData.definitions[currentDefinitionLevel];
+
+            // Position tooltip near clicked element
+            const rect = element.getBoundingClientRect();
+            tooltip.style.left = `${rect.left}px`;
+            tooltip.style.top = `${rect.bottom + 10}px`;
+
+            // Adjust if tooltip goes off-screen
+            setTimeout(() => {
+                const tooltipRect = tooltip.getBoundingClientRect();
+                if (tooltipRect.right > window.innerWidth) {
+                    tooltip.style.left = `${window.innerWidth - tooltipRect.width - 20}px`;
+                }
+                if (tooltipRect.bottom > window.innerHeight) {
+                    tooltip.style.top = `${rect.top - tooltipRect.height - 10}px`;
+                }
+            }, 10);
+
+            tooltip.classList.add('visible');
+        }
+
+        function showTooltipFromSidebar(term) {
+            // Find the first instance of this term in the main content
+            const termElement = document.querySelector(`[data-term="${term}"]`);
+            if (termElement) {
+                termElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                setTimeout(() => showTooltip(termElement), 300);
+            } else {
+                // If term not in content, show tooltip at cursor position
+                const termData = GLOSSARY_DATA.find(item => item.term === term);
+                if (termData) {
+                    currentTooltipTerm = term;
+                    const tooltip = document.getElementById('tooltip');
+                    document.getElementById('tooltip-term').textContent = termData.term;
+                    document.getElementById('tooltip-definition').textContent = termData.definitions[currentDefinitionLevel];
+                    tooltip.style.left = '50%';
+                    tooltip.style.top = '50%';
+                    tooltip.style.transform = 'translate(-50%, -50%)';
+                    tooltip.classList.add('visible');
+                }
+            }
+        }
+
+        function hideTooltip() {
+            document.getElementById('tooltip').classList.remove('visible');
+            currentTooltipTerm = null;
+        }
+
+        function setDefinitionLevel(level) {
+            currentDefinitionLevel = level;
+            document.querySelectorAll('.tooltip-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.level === level);
+            });
+
+            if (currentTooltipTerm) {
+                const termData = GLOSSARY_DATA.find(item => item.term === currentTooltipTerm);
+                if (termData) {
+                    document.getElementById('tooltip-definition').textContent = termData.definitions[level];
+                }
+            }
+        }
+
+        // Controls
+        function toggleComplexity() {
+            const btn = document.getElementById('complexity-toggle');
+            const sections = document.querySelectorAll('.complexity-intermediate');
+            const isVisible = sections[0].classList.contains('visible');
+
+            sections.forEach(section => {
+                section.classList.toggle('visible');
+            });
+
+            btn.classList.toggle('active');
+            btn.setAttribute('aria-pressed', !isVisible);
+            btn.textContent = isVisible ? 'Show Intermediate Sections' : 'Hide Intermediate Sections';
+        }
+
+        function toggleGlossary() {
+            glossaryEnabled = !glossaryEnabled;
+            const btn = document.getElementById('glossary-toggle');
+            btn.classList.toggle('active');
+            btn.setAttribute('aria-pressed', glossaryEnabled);
+            btn.textContent = glossaryEnabled ? 'Glossary: ON' : 'Glossary: OFF';
+
+            if (!glossaryEnabled) {
+                hideTooltip();
+            }
+        }
+
+        // Keyboard Navigation
+        function setupKeyboardNavigation() {
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    hideTooltip();
+                }
+            });
+        }
+
+        function handleGlossaryItemKeyPress(event, term) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                showTooltipFromSidebar(term);
+            }
+        }
+
+        // Expose functions globally
+        window.toggleComplexity = toggleComplexity;
+        window.toggleGlossary = toggleGlossary;
+        window.filterGlossary = filterGlossary;
+        window.setDefinitionLevel = setDefinitionLevel;
+        window.showTooltipFromSidebar = showTooltipFromSidebar;
+        window.handleGlossaryItemKeyPress = handleGlossaryItemKeyPress;
+    </script>
+</body>
+</html>
