@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cold Weather and Illness: Myth vs. Truth - Educational Guide</title>
+    <meta name="description" content="Evidence-based guide debunking the myth that cold weather causes illness in babies. Learn what really causes winter colds and how to keep your newborn safe.">
+
+    <style>
+        /* ========== THEME: ACADEMIC DARK ========== */
+        :root {
+            --primary: #c084fc;
+            --secondary: #94a3b8;
+            --accent: #a855f7;
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --border: #334155;
+            --font-primary: 'Crimson Pro', Georgia, serif;
+            --font-secondary: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* ========== LAYOUT ========== */
+        .container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 0;
+            min-height: 100vh;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== SIDEBAR ========== */
+        .sidebar {
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border);
+            padding: 24px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                z-index: 1000;
+            }
+
+            .sidebar.active {
+                display: block;
+            }
+        }
+
+        .sidebar h2 {
+            font-family: var(--font-primary);
+            color: var(--primary);
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 10px 12px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .search-box:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 6px 12px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-secondary);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .glossary-list {
+            list-style: none;
+        }
+
+        .glossary-item {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .glossary-item:hover {
+            color: var(--primary);
+        }
+
+        .glossary-item-term {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .glossary-item-importance {
+            font-size: 11px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ========== MAIN CONTENT ========== */
+        .main-content {
+            padding: 48px 64px;
+            max-width: 900px;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 24px;
+            }
+        }
+
+        article h1 {
+            font-family: var(--font-primary);
+            font-size: 48px;
+            color: var(--primary);
+            margin-bottom: 32px;
+            line-height: 1.2;
+        }
+
+        article h2 {
+            font-family: var(--font-primary);
+            font-size: 32px;
+            color: var(--primary);
+            margin: 48px 0 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        article h3 {
+            font-size: 24px;
+            color: var(--secondary);
+            margin: 32px 0 16px;
+        }
+
+        article p {
+            margin-bottom: 16px;
+        }
+
+        article ul, article ol {
+            margin-left: 24px;
+            margin-bottom: 16px;
+        }
+
+        article li {
+            margin-bottom: 8px;
+        }
+
+        article strong {
+            color: var(--primary);
+        }
+
+        article em {
+            color: var(--accent);
+        }
+
+        article hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 32px 0;
+        }
+
+        /* ========== GLOSSARY TOOLTIPS ========== */
+        .glossary-term {
+            color: var(--accent);
+            text-decoration: underline dotted 1px;
+            text-underline-offset: 3px;
+            cursor: help;
+            position: relative;
+        }
+
+        .glossary-term:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-secondary);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            padding: 16px;
+            width: 320px;
+            max-width: 90vw;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            display: none;
+            margin-bottom: 8px;
+        }
+
+        .tooltip.show {
+            display: block;
+        }
+
+        .tooltip-header {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .tooltip-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tooltip-tab {
+            padding: 6px 12px;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 12px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .tooltip-tab:hover, .tooltip-tab.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        .tooltip-content {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .tooltip-def {
+            display: none;
+        }
+
+        .tooltip-def.active {
+            display: block;
+        }
+
+        /* ========== COMPLEXITY CONTROLS ========== */
+        .controls {
+            background: var(--bg-secondary);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 32px;
+            border: 1px solid var(--border);
+        }
+
+        .controls h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .complexity-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .complexity-btn {
+            padding: 8px 16px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+
+        .complexity-btn:hover, .complexity-btn.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .section {
+            margin-bottom: 32px;
+        }
+
+        .section.hidden {
+            display: none;
+        }
+
+        /* ========== TTS PLAYER ========== */
+        .tts-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 16px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 768px) {
+            .tts-player {
+                bottom: 80px;
+                right: 10px;
+                left: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        .tts-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 16px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: opacity 0.2s;
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tts-btn:hover {
+            opacity: 0.9;
+        }
+
+        .tts-btn:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        #tts-status {
+            color: var(--text-secondary);
+            font-size: 12px;
+            min-width: 80px;
+        }
+
+        .speed-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        #tts-speed {
+            width: 80px;
+        }
+
+        /* ========== MOBILE MENU ========== */
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        /* ========== EMERGENCY ALERTS ========== */
+        .emergency {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #ef4444;
+            padding: 16px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+
+        .emergency::before {
+            content: "🚨 ";
+            font-size: 20px;
+        }
+
+        /* ========== CHECKMARKS ========== */
+        .checkmark {
+            color: #10b981;
+        }
+
+        .checkmark::before {
+            content: "✅ ";
+        }
+    </style>
+</head>
+<body>
+    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle glossary sidebar">
+        📚
+    </button>
+
+    <div class="container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar" role="complementary" aria-label="Glossary navigation">
+            <h2>Glossary</h2>
+
+            <input
+                type="text"
+                class="search-box"
+                id="search-box"
+                placeholder="Search terms..."
+                aria-label="Search glossary terms"
+            />
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="critical">Critical</button>
+                <button class="filter-btn" data-filter="important">Important</button>
+            </div>
+
+            <ul class="glossary-list" id="glossary-list" role="list">
+                <!-- Populated by JavaScript -->
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <div class="controls">
+                <h3>Complexity Level</h3>
+                <div class="complexity-buttons">
+                    <button class="complexity-btn active" data-level="all">Show All</button>
+                    <button class="complexity-btn" data-level="beginner">Beginner</button>
+                    <button class="complexity-btn" data-level="intermediate">Intermediate</button>
+                    <button class="complexity-btn" data-level="advanced">Advanced</button>
+                </div>
+            </div>
+
+            <article role="article">
+                <h1>Cold Weather and Illness: Myth vs. Truth</h1>
+
+                <section class="section" data-complexity="beginner">
+                    <h2>The Big Question</h2>
+                    <p><strong>Will my baby catch a cold if exposed to cold weather?</strong></p>
+                    <p>This is one of the most common parenting myths. Let's break down the science.</p>
+                </section>
+
+                <hr>
+
+                <section class="section" data-complexity="beginner">
+                    <h2>The Short Answer: It's a MYTH ❄️</h2>
+                    <p><strong>Cold weather does NOT cause colds or infections.</strong> Colds are caused by viruses (like <span class="glossary-term" data-term="rhinovirus" tabindex="0" role="button" aria-describedby="tooltip-rhinovirus">rhinovirus</span>, <span class="glossary-term" data-term="respiratory syncytial virus" tabindex="0" role="button" aria-describedby="tooltip-respiratory-syncytial-virus">respiratory syncytial virus</span>, <span class="glossary-term" data-term="coronavirus" tabindex="0" role="button" aria-describedby="tooltip-coronavirus">coronavirus</span>), not temperature. You cannot "catch a cold" from being cold.</p>
+                </section>
+
+                <hr>
+
+                <section class="section" data-complexity="intermediate">
+                    <h2>Why This Myth Persists</h2>
+                    <p>Colds ARE more common in winter, but not because of the cold itself. The real reasons include:</p>
+                    <ol>
+                        <li><strong>Indoor Crowding</strong> - People spend more time indoors in close contact where viruses spread easily through <span class="glossary-term" data-term="respiratory droplets" tabindex="0" role="button" aria-describedby="tooltip-respiratory-droplets">respiratory droplets</span> and surface contact</li>
+                        <li><strong>Lower Indoor Humidity</strong> - Indoor heating reduces humidity, which dries nasal passages and makes <span class="glossary-term" data-term="viral infection" tabindex="0" role="button" aria-describedby="tooltip-viral-infection">viral infection</span> easier by compromising the protective <span class="glossary-term" data-term="mucus layer" tabindex="0" role="button" aria-describedby="tooltip-mucus-layer">mucus layer</span></li>
+                        <li><strong>Viral Survival</strong> - Some viruses survive better in cold, dry air outdoors, increasing environmental <span class="glossary-term" data-term="viral load" tabindex="0" role="button" aria-describedby="tooltip-viral-load">viral load</span></li>
+                        <li><strong>Reduced Ventilation</strong> - Closed windows trap viral particles indoors, increasing exposure concentration</li>
+                    </ol>
+                </section>
+
+                <hr>
+
+                <section class="section" data-complexity="intermediate">
+                    <h2>What the Research Shows</h2>
+                    <h3>Evidence-Based Facts</h3>
+                    <p><strong>Cold Exposure and Infection Risk:</strong></p>
+                    <ul>
+                        <li>Multiple peer-reviewed studies show no direct link between being cold and getting sick</li>
+                        <li>The Canadian Paediatric Society (CPS) and American Academy of Pediatrics (AAP) confirm viruses require entry through nose, mouth, or eyes</li>
+                        <li>Temperature alone does not create viruses or compromise <span class="glossary-term" data-term="immune function" tabindex="0" role="button" aria-describedby="tooltip-immune-function">immune function</span> in healthy individuals</li>
+                    </ul>
+                    <p><strong>Winter Illness Mechanisms:</strong></p>
+                    <ul>
+                        <li><strong>Primary cause:</strong> Increased person-to-person transmission in enclosed spaces</li>
+                        <li><strong>Contributing factor:</strong> Dry mucous membranes from low humidity (both indoor heating and cold outdoor air)</li>
+                        <li><strong>Environmental factor:</strong> Better viral stability in cold, dry conditions</li>
+                        <li><strong>Behavioral factor:</strong> Reduced outdoor activity and increased indoor gathering</li>
+                    </ul>
+                </section>
+
+                <hr>
+
+                <section class="section" data-complexity="intermediate">
+                    <h2>For Newborns (0-3 Months)</h2>
+                    <h3>Cold Weather is NOT a Disease Risk</h3>
+                    <p>For babies like Artin (16 days old), cold exposure does not increase infection susceptibility. However, <strong>temperature regulation is a separate concern</strong>.</p>
+                    <h3>Why Newborns Need Temperature Management</h3>
+                    <p>Newborns have immature <span class="glossary-term" data-term="thermoregulation" tabindex="0" role="button" aria-describedby="tooltip-thermoregulation">thermoregulation</span> systems:</p>
+                    <ul>
+                        <li><strong>Large <span class="glossary-term" data-term="surface-to-volume ratio" tabindex="0" role="button" aria-describedby="tooltip-surface-to-volume-ratio">surface-to-volume ratio</span></strong> - Lose heat quickly relative to body mass</li>
+                        <li><strong>Limited <span class="glossary-term" data-term="brown fat" tabindex="0" role="button" aria-describedby="tooltip-brown-fat">brown fat</span></strong> - Less ability to generate body heat</li>
+                        <li><strong>Ineffective <span class="glossary-term" data-term="shivering thermogenesis" tabindex="0" role="button" aria-describedby="tooltip-shivering-thermogenesis">shivering thermogenesis</span></strong> - Shivering doesn't develop until ~3 months</li>
+                        <li><strong>Immature <span class="glossary-term" data-term="hypothalamus" tabindex="0" role="button" aria-describedby="tooltip-hypothalamus">hypothalamus</span></strong> - Temperature control center still developing</li>
+                    </ul>
+                </section>
+
+                <hr>
+
+                <section class="section" data-complexity="beginner">
+                    <h2>Safe Cold Weather Practices</h2>
+                    <h3>Dressing Guidelines</h3>
+                    <p><strong>"One More Layer Than You" Rule:</strong></p>
+                    <ul>
+                        <li>If you're wearing a sweater, baby needs sweater + light blanket</li>
+                        <li>Always cover head (newborns lose significant heat from scalp)</li>
+                        <li>Protect hands, feet, and face from direct cold exposure</li>
+                        <li>Remove extra layers indoors immediately to prevent overheating</li>
+                    </ul>
+                    <h3>Exposure Duration</h3>
+                    <p><strong>Short outings are healthy:</strong></p>
+                    <ul>
+                        <li>15-30 minutes: Safe for well-dressed newborns</li>
+                        <li>Fresh air supports respiratory health</li>
+                        <li>Vitamin D synthesis (if skin exposed to sunlight)</li>
+                    </ul>
+                    <p><strong>Avoid extended exposure:</strong></p>
+                    <ul>
+                        <li>Limit to &lt;1 hour in temperatures below 0°C (32°F)</li>
+                        <li>Watch for signs of discomfort: fussiness, cool extremities, pale skin</li>
+                    </ul>
+                    <h3>Temperature Checks</h3>
+                    <p><strong>How to assess if baby is too cold:</strong></p>
+                    <ul>
+                        <li>Feel chest or back (should be warm, not hot or cold)</li>
+                        <li>Cool hands and feet are NORMAL (poor circulation to extremities)</li>
+                        <li>Cool torso is CONCERNING (sign of <span class="glossary-term" data-term="hypothermia" tabindex="0" role="button" aria-describedby="tooltip-hypothermia">hypothermia</span> risk)</li>
+                    </ul>
+                </section>
+
+                <hr>
+
+                <section class="section" data-complexity="intermediate">
+                    <h2>When Cold Weather IS Dangerous</h2>
+                    <h3>Hypothermia Risk (Not Infection Risk)</h3>
+                    <div class="emergency">
+                        <strong>Emergency signs:</strong>
+                        <ul>
+                            <li>Body temperature below 36.5°C (97.7°F) measured rectally</li>
+                            <li><span class="glossary-term" data-term="lethargic" tabindex="0" role="button" aria-describedby="tooltip-lethargic">Lethargic</span>, weak cry, difficulty feeding</li>
+                            <li>Cold chest/torso when touched</li>
+                            <li>Pale or bluish skin color</li>
+                        </ul>
+                        <p><strong>Action:</strong> Warm baby immediately (skin-to-skin contact, warm blankets), call Telehealth Ontario (811) or 911 if severe</p>
+                    </div>
+                    <h3>Fever in Newborns (&lt;3 Months) - Regardless of Weather</h3>
+                    <div class="emergency">
+                        <strong>Any fever is a medical emergency:</strong>
+                        <ul>
+                            <li>Temperature ≥38°C (100.4°F) measured rectally</li>
+                            <li>Risk of serious <span class="glossary-term" data-term="bacterial infection" tabindex="0" role="button" aria-describedby="tooltip-bacterial-infection">bacterial infection</span> (<span class="glossary-term" data-term="sepsis" tabindex="0" role="button" aria-describedby="tooltip-sepsis">sepsis</span>, <span class="glossary-term" data-term="meningitis" tabindex="0" role="button" aria-describedby="tooltip-meningitis">meningitis</span>, <span class="glossary-term" data-term="urinary tract infection" tabindex="0" role="button" aria-describedby="tooltip-urinary-tract-infection">urinary tract infection</span>)</li>
+                        </ul>
+                        <p><strong>Action:</strong> Go directly to emergency room (Southlake Regional Health Centre or nearest hospital) - do NOT call Telehealth first</p>
+                    </div>
+                </section>
+
+                <hr>
+
+                <section class="section" data-complexity="intermediate">
+                    <h2>The REAL Infection Risks for Newborns</h2>
+                    <h3>What Actually Causes Illness</h3>
+                    <p><strong>Priority prevention strategies:</strong></p>
+                    <ol>
+                        <li><strong><span class="glossary-term" data-term="hand hygiene" tabindex="0" role="button" aria-describedby="tooltip-hand-hygiene">Hand Hygiene</span></strong> - Most important factor
+                            <ul>
+                                <li>Wash hands before touching baby</li>
+                                <li>Alcohol-based sanitizer when soap unavailable</li>
+                                <li>Clean hands after diaper changes, before feeding</li>
+                            </ul>
+                        </li>
+                        <li><strong>Sick Visitor Exclusion</strong>
+                            <ul>
+                                <li>Keep people with cold symptoms, fever, or active infections away</li>
+                                <li>Politely ask visitors to reschedule if unwell</li>
+                                <li>No kissing baby's face or hands</li>
+                            </ul>
+                        </li>
+                        <li><strong>Avoid Crowded Indoor Spaces</strong>
+                            <ul>
+                                <li>Limit time in shopping malls, public transit during respiratory illness season</li>
+                                <li>Especially important during RSV season (November-March in Canada)</li>
+                                <li>Consider timing of outings (off-peak hours)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Respiratory Syncytial Virus (RSV) Prevention</strong>
+                            <ul>
+                                <li>Peak season: November to March in Ontario</li>
+                                <li>Most dangerous for babies &lt;6 months</li>
+                                <li>Causes <span class="glossary-term" data-term="bronchiolitis" tabindex="0" role="button" aria-describedby="tooltip-bronchiolitis">bronchiolitis</span> (lung infection) requiring hospitalization</li>
+                                <li>Prevention: Hand hygiene, avoid sick contacts, limit crowded places</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </section>
+
+                <hr>
+
+                <section class="section" data-complexity="beginner">
+                    <h2>Bottom Line for Parents</h2>
+                    <h3>Evidence-Based Guidance</h3>
+                    <p class="checkmark"><strong>Fresh air is healthy</strong> - Short walks in cold weather are beneficial if baby is dressed appropriately</p>
+                    <p class="checkmark"><strong>Cold doesn't cause colds</strong> - Viruses cause illness, not temperature</p>
+                    <p class="checkmark"><strong>Avoid sick people</strong> - This matters infinitely more than outdoor temperature</p>
+                    <p class="checkmark"><strong>Watch for overheating</strong> - More dangerous than being slightly cool (<span class="glossary-term" data-term="SIDS" tabindex="0" role="button" aria-describedby="tooltip-SIDS">SIDS</span> risk factor)</p>
+                    <p class="checkmark"><strong>Trust your instincts</strong> - If baby seems uncomfortable, head indoors</p>
+                    <h3>Focus on What Matters</h3>
+                    <p><strong>Don't worry about:</strong> Cold air, wind, brief exposure</p>
+                    <p><strong>Do worry about:</strong> Hand hygiene, sick visitors, crowded indoor spaces, overheating</p>
+                </section>
+
+                <hr>
+
+                <section class="section" data-complexity="beginner">
+                    <h2>Ontario-Specific Resources</h2>
+                    <h3>Emergency and Health Services</h3>
+                    <p><strong>Emergency (911):</strong></p>
+                    <ul>
+                        <li>Difficulty breathing (rapid breathing, <span class="glossary-term" data-term="chest retractions" tabindex="0" role="button" aria-describedby="tooltip-chest-retractions">chest retractions</span>, <span class="glossary-term" data-term="grunting" tabindex="0" role="button" aria-describedby="tooltip-grunting">grunting</span>)</li>
+                        <li>Unresponsive or extremely lethargic</li>
+                        <li>Fever in baby &lt;3 months (any fever ≥38°C/100.4°F)</li>
+                        <li>Seizure activity</li>
+                        <li>Turning blue around lips or face</li>
+                    </ul>
+                    <p><strong>Telehealth Ontario (811):</strong></p>
+                    <ul>
+                        <li>24/7 registered nurse <span class="glossary-term" data-term="triage" tabindex="0" role="button" aria-describedby="tooltip-triage">triage</span></li>
+                        <li>Non-emergency health questions</li>
+                        <li>Guidance on whether to seek urgent care</li>
+                        <li>Free service for Ontario residents with valid health card</li>
+                    </ul>
+                    <p><strong>York Region Health Connection (1-800-361-5653):</strong></p>
+                    <ul>
+                        <li>Public health nurse consultation</li>
+                        <li>Newborn support programs</li>
+                        <li>Breastfeeding support</li>
+                        <li>Healthy Babies Healthy Children (HBHC) home visits</li>
+                    </ul>
+                    <h3>Healthcare Coverage</h3>
+                    <p><strong>OHIP Coverage for Well-Baby Visits:</strong></p>
+                    <ul>
+                        <li>2 weeks, 2 months, 4 months, 6 months, 9 months, 12 months</li>
+                        <li>All visits are free with valid Ontario health card</li>
+                        <li>Include growth monitoring, developmental assessment, <span class="glossary-term" data-term="immunizations" tabindex="0" role="button" aria-describedby="tooltip-immunizations">immunizations</span></li>
+                    </ul>
+                    <h3>Mental Health and Family Support</h3>
+                    <p><strong>ConnexOntario (1-866-531-2600):</strong></p>
+                    <ul>
+                        <li>Mental health and addiction services navigation</li>
+                        <li>Available 24/7</li>
+                        <li>Free and confidential</li>
+                    </ul>
+                    <p><strong>Ontario Crisis Line (988):</strong></p>
+                    <ul>
+                        <li>Suicide prevention and crisis support</li>
+                        <li>Available 24/7 for anyone in Ontario</li>
+                    </ul>
+                    <p><strong>Canadian Mental Health Association (CMHA) Ontario:</strong></p>
+                    <ul>
+                        <li>Local branches across Ontario</li>
+                        <li>Programs for <span class="glossary-term" data-term="perinatal mental health" tabindex="0" role="button" aria-describedby="tooltip-perinatal-mental-health">perinatal mental health</span> (<span class="glossary-term" data-term="postpartum depression" tabindex="0" role="button" aria-describedby="tooltip-postpartum-depression">postpartum depression</span>, anxiety)</li>
+                    </ul>
+                </section>
+
+                <hr>
+
+                <section class="section" data-complexity="beginner">
+                    <h2>Key Takeaways</h2>
+                    <ol>
+                        <li><strong>Cold weather does not cause infections</strong> - This is scientifically established</li>
+                        <li><strong>Viruses cause illness</strong> - Spread through respiratory droplets and contaminated surfaces</li>
+                        <li><strong>Winter illness is about behavior</strong> - More time indoors, closer contact with sick people</li>
+                        <li><strong>Newborns need temperature regulation</strong> - But this is separate from disease risk</li>
+                        <li><strong>Focus on evidence-based prevention</strong> - Hand hygiene, sick visitor exclusion, avoid crowded places</li>
+                        <li><strong>Trust the science, not the myth</strong> - Cold air exposure (when appropriately dressed) is not harmful</li>
+                    </ol>
+                </section>
+
+                <hr>
+
+                <section class="section" data-complexity="advanced">
+                    <h2>Additional Reading</h2>
+                    <p><strong>Canadian Paediatric Society (CPS):</strong></p>
+                    <ul>
+                        <li>Caring for Kids: Common Cold</li>
+                        <li>Safe Sleep for Babies</li>
+                    </ul>
+                    <p><strong>Health Canada:</strong></p>
+                    <ul>
+                        <li>Healthy Pregnancy Guide</li>
+                        <li>Is Your Child Safe? Product Safety</li>
+                    </ul>
+                    <p><strong>York Region Public Health:</strong></p>
+                    <ul>
+                        <li>Newborn Care Resources</li>
+                        <li>EarlyON Child and Family Centres (free programs)</li>
+                    </ul>
+                    <p><strong>American Academy of Pediatrics (AAP):</strong></p>
+                    <ul>
+                        <li>HealthyChildren.org - Cold Weather Safety</li>
+                    </ul>
+                    <hr>
+                    <p><strong>Evidence Sources:</strong> Canadian Paediatric Society (CPS), Health Canada, American Academy of Pediatrics (AAP), World Health Organization (WHO), peer-reviewed research on respiratory virus transmission and infant thermoregulation</p>
+                    <p><strong>Last Updated:</strong> November 2025<br>
+                    <strong>Age Range:</strong> 0-12 months (newborn-focused)<br>
+                    <strong>Geographic Context:</strong> Ontario, Canada</p>
+                </section>
+            </article>
+        </main>
+    </div>
+
+    <!-- TTS PLAYER -->
+    <div class="tts-player" id="tts-player">
+        <button id="tts-play-pause" class="tts-btn" aria-label="Play or pause text-to-speech">
+            <span class="play-icon">▶</span>
+            <span class="pause-icon" style="display:none;">⏸</span>
+        </button>
+        <button id="tts-stop" class="tts-btn" aria-label="Stop text-to-speech">⏹</button>
+        <div class="speed-control">
+            <label for="tts-speed">Speed:</label>
+            <input type="range" id="tts-speed" min="0.5" max="2" step="0.1" value="1" aria-label="Adjust speech speed">
+            <span id="tts-speed-value">1.0x</span>
+        </div>
+        <span id="tts-status">Ready</span>
+    </div>
+
+    <script>
+        // ========== GLOSSARY DATA (EMBEDDED) ==========
+        const GLOSSARY_DATA = [
+            {"term":"rhinovirus","importance":"critical","definitions":{"simple":"A tiny germ that causes the common cold. It's like an unwanted visitor that gets into your baby's nose and throat, making them stuffy and sneezy.","standard":"A highly contagious RNA virus belonging to the Picornaviridae family, representing the most common cause of upper respiratory tract infections (common colds) in infants and children. It spreads through respiratory droplets and direct contact.","technical":"A non-enveloped, positive-sense single-stranded RNA virus of the genus Enterovirus that primarily infects the upper respiratory tract epithelium. Over 160 serotypes exist, making repeated infections common. Transmission occurs via large respiratory droplets and fomites, with peak incidence in fall and spring."}},
+            {"term":"respiratory syncytial virus","importance":"critical","definitions":{"simple":"A breathing virus (called RSV for short) that can make babies very sick with a chest infection. It's most common in winter and is the main reason babies under 1 year old go to the hospital for breathing problems.","standard":"A common respiratory virus that infects the lungs and breathing passages, causing bronchiolitis and pneumonia, particularly in infants under 12 months. RSV season typically runs from November through March in Canada, with peak hospitalizations occurring in babies 2-6 months old.","technical":"A negative-sense, single-stranded RNA virus of the family Pneumoviridae that causes acute lower respiratory tract infection with inflammation of the bronchioles. Nearly all children contract RSV by age 2, but severe disease requiring hospitalization occurs primarily in infants under 6 months, premature infants, and those with chronic lung disease or congenital heart disease."}},
+            {"term":"coronavirus","importance":"important","definitions":{"simple":"A family of germs that usually causes colds, though some types (like COVID-19) can be more serious. The name comes from their crown-like shape under a microscope.","standard":"A group of RNA viruses that cause respiratory illnesses ranging from common colds to more severe diseases. In infants, human coronaviruses (HCoV-NL63, HCoV-229E, HCoV-OC43, HCoV-HKU1) typically cause mild upper respiratory infections, while SARS-CoV-2 (COVID-19) can occasionally cause more significant illness.","technical":"A family of enveloped, positive-sense single-stranded RNA viruses (Coronaviridae) characterized by club-shaped spike proteins that create a crown-like appearance on electron microscopy. Endemic human coronaviruses account for 10-15% of common colds, while zoonotic strains (SARS-CoV-1, MERS-CoV, SARS-CoV-2) have caused epidemic and pandemic disease with higher morbidity and mortality."}},
+            {"term":"respiratory droplets","importance":"critical","definitions":{"simple":"Tiny spray particles that come out when people cough, sneeze, or talk. These invisible droplets carry germs and are how colds spread from person to person.","standard":"Liquid particles ranging from 5-10 micrometers in diameter that are expelled during breathing, speaking, coughing, or sneezing. They contain viral or bacterial pathogens and can travel 1-2 meters before falling to surfaces or evaporating into smaller aerosol particles. This is the primary transmission route for respiratory infections.","technical":"Ballistic particles of respiratory tract fluid (mucus, saliva) measuring >5μm in diameter that are generated during exhalation, phonation, and expulsive respiratory events. Due to gravitational forces, these droplets typically settle within 1-2 meters of the source, though smaller droplets (<5μm) may remain suspended as aerosols. Droplets serve as vectors for viral pathogens (influenza, RSV, rhinovirus, SARS-CoV-2) and bacteria (Streptococcus, Bordetella)."}},
+            {"term":"mucus layer","importance":"critical","definitions":{"simple":"A slimy protective coating inside the nose and throat that works like a security guard, trapping germs before they can make you sick. It's your baby's first defense against colds.","standard":"A viscous gel layer composed of water, mucins (glycoproteins), antibodies, and antimicrobial proteins that lines the respiratory tract epithelium. This mucosal barrier traps pathogens, particulates, and irritants, which are then cleared by ciliary action and swallowing. Adequate hydration and humidity maintain its protective function.","technical":"A dynamic hydrogel consisting of secreted gel-forming mucin polymers (primarily MUC5AC and MUC5B), antimicrobial peptides (lysozyme, lactoferrin, defensins), secretory IgA antibodies, and electrolytes suspended in an aqueous matrix. The mucus layer provides both a physical barrier and innate immune functions through pathogen neutralization, aggregation, and mucociliary clearance at 10-20 mm/minute."}},
+            {"term":"viral load","importance":"important","definitions":{"simple":"The amount of virus in the air or on surfaces around your baby. More virus particles mean a higher chance of getting sick, like how more rain means you're more likely to get wet.","standard":"The quantity of viral particles present in the environment or within an infected person. Environmental viral load refers to the concentration of infectious virions in air, on surfaces, or in respiratory droplets. Higher viral loads correlate with increased transmission risk and, in some infections, with disease severity.","technical":"The quantitative measure of viral particles (virions) expressed as copies per milliliter (in biological samples) or per cubic meter (in environmental samples). Viral shedding dynamics vary by pathogen, with peak infectiousness often preceding symptom onset. Some viruses (e.g., influenza) demonstrate enhanced stability and survival at low temperatures and humidity, leading to higher environmental viral loads during winter months."}},
+            {"term":"immune function","importance":"important","definitions":{"simple":"Your body's defense system that fights off germs to keep you healthy. In babies, this system is still learning and developing, which is why they get sick more easily than older kids and adults.","standard":"The coordinated activity of immune system components (innate and adaptive immunity) that recognize, respond to, and eliminate pathogens while maintaining tolerance to self-antigens. Newborns have functional but immature immune responses, with limited antibody diversity, reduced phagocytic activity, and heavy reliance on maternal antibodies transferred during pregnancy.","technical":"The integrative processes of innate immunity (physical barriers, complement, phagocytes, natural killer cells, pattern recognition receptors) and adaptive immunity (T-cell and B-cell mediated responses) that provide pathogen defense. Neonatal immune function is characterized by Th2 bias, reduced neutrophil function, impaired antigen presentation, naive T-cell populations, and transplacental IgG providing passive immunity for 3-6 months. This developmental immunodeficiency increases susceptibility to encapsulated bacteria and respiratory viruses."}},
+            {"term":"thermoregulation","importance":"critical","definitions":{"simple":"Your body's ability to keep its temperature just right - not too hot, not too cold. Newborn babies aren't very good at this yet, which is why they need extra help staying warm through clothing and blankets.","standard":"The physiological processes that maintain core body temperature within the narrow range necessary for optimal metabolic function (36.5-37.5°C). Newborns have immature thermoregulatory mechanisms including limited brown fat deposits, high surface-area-to-volume ratio, inability to shiver effectively, and developing hypothalamic temperature control, making them vulnerable to both hypothermia and hyperthermia.","technical":"The integration of thermosensory input, central hypothalamic processing, and effector responses (vasomotor control, metabolic heat production, behavioral adaptations) that maintain core temperature homeostasis. Neonatal thermoregulation is compromised by: (1) increased heat loss via radiation and convection due to high surface-area-to-volume ratio; (2) limited non-shivering thermogenesis capacity as brown adipose tissue deposits are underdeveloped; (3) absent shivering thermogenesis until ~3 months; (4) immature hypothalamic set-point regulation; and (5) limited behavioral responses."}},
+            {"term":"surface-to-volume ratio","importance":"supplementary","definitions":{"simple":"A math way of explaining why babies lose heat faster than adults. Babies have lots of skin (surface) compared to their small body size (volume), like how ice cubes melt faster than a big block of ice.","standard":"The mathematical relationship between an object's external surface area and its internal volume, expressed as a ratio. Newborns have a proportionally larger surface area relative to their body mass compared to adults (approximately 3 times higher), resulting in faster heat loss through radiation, conduction, and convection, and increased risk of hypothermia.","technical":"The geometric ratio (surface area/volume) that determines heat exchange efficiency, calculated as approximately 900 cm²/kg in neonates versus 300 cm²/kg in adults. This threefold increase in relative surface area accelerates heat flux, requiring 3-4 times higher basal metabolic rate per kilogram to maintain normothermia. The physiological consequence is rapid thermal destabilization in adverse ambient conditions, with term neonates losing heat at rates of 0.3°C per minute in unwarmed environments immediately after birth."}},
+            {"term":"brown fat","importance":"supplementary","definitions":{"simple":"Special fat in babies that works like a tiny furnace to keep them warm. Babies have brown fat in their neck, back, and around organs, and it burns energy to make heat without shivering.","standard":"Brown adipose tissue (BAT), a specialized thermogenic tissue containing high concentrations of mitochondria that generate heat through non-shivering thermogenesis. Unlike white fat (energy storage), brown fat oxidizes fatty acids to produce heat via uncoupling protein 1 (UCP1). Newborns have limited brown fat deposits (3-5% of body weight) located primarily in interscapular, perirenal, and mediastinal regions.","technical":"A metabolically active adipose tissue characterized by multilocular lipid droplets and dense mitochondrial populations expressing uncoupling protein 1 (thermogenin) in the inner mitochondrial membrane. UCP1 uncouples oxidative phosphorylation from ATP synthesis, dissipating the proton gradient as heat. Neonatal brown adipose tissue, representing approximately 3-5% of body mass and located in cervical, axillary, interscapular, perirenal, and periadrenal depots, provides the primary mechanism for non-shivering thermogenesis with maximal activation at environmental temperatures <24°C."}},
+            {"term":"shivering thermogenesis","importance":"supplementary","definitions":{"simple":"The body's way of creating heat by shaking muscles really fast (shivering). Newborns can't do this yet - it doesn't develop until about 3 months old - which is why babies need extra help staying warm.","standard":"The involuntary, rapid contraction of skeletal muscles that generates metabolic heat through increased ATP hydrolysis and muscular work. This thermoregulatory mechanism, absent in newborns and ineffective until approximately 3 months of age, can increase heat production by 2-5 fold in older children and adults when activated by cold stress.","technical":"Asynchronous, high-frequency (10-20 Hz) contraction of antagonistic skeletal muscle groups mediated by posterior hypothalamic activation in response to decreased core temperature. The rhythmic motor unit recruitment increases metabolic rate 2-5 fold through ATP consumption and inefficient muscular work, with heat generation primarily from ATPase activity. This mechanism is absent in neonates due to neuromotor immaturity, with non-shivering thermogenesis via brown adipose tissue serving as the primary cold-response mechanism until approximately 3-6 months postpartum."}},
+            {"term":"hypothalamus","importance":"supplementary","definitions":{"simple":"A small but important part of the brain that acts like the body's thermostat, controlling temperature, hunger, sleep, and other automatic body functions. In babies, this brain area is still developing and learning how to work properly.","standard":"A small region of the diencephalon located below the thalamus that serves as the primary regulatory center for homeostatic functions including thermoregulation, circadian rhythms, hunger, thirst, and hormone secretion. In newborns, hypothalamic maturation is incomplete, resulting in imprecise temperature set-point control and limited autonomic responses to thermal stress.","technical":"A bilateral nuclear complex in the ventral diencephalon, comprising anterior (preoptic area, temperature regulation), middle (tuberal nuclei, endocrine control), and posterior (mammillary bodies, autonomic control) regions. The preoptic area contains thermosensitive neurons that integrate peripheral and central thermal inputs to coordinate thermoeffector responses. Neonatal hypothalamic immaturity manifests as imprecise temperature set-point regulation, prolonged response latencies to thermal challenges, and limited capacity to maintain normothermia in neutral thermal environments above 32-34°C."}},
+            {"term":"hypothermia","importance":"critical","definitions":{"simple":"When a baby's body temperature drops too low (below 36.5°C/97.7°F), which is dangerous and requires immediate medical attention. Signs include cold torso, pale or bluish skin, weak crying, and unusual sleepiness.","standard":"A medical emergency occurring when core body temperature falls below 36.5°C (97.7°F) in neonates, classified as mild (36-36.4°C), moderate (32-35.9°C), or severe (<32°C). Hypothermia causes metabolic stress, respiratory depression, poor feeding, hypoglycemia, and increased risk of infection. In newborns under 3 months, hypothermia can rapidly progress due to immature thermoregulation.","technical":"A pathological state of decreased core temperature below the thermoneutral range, resulting in compensatory metabolic responses that increase oxygen consumption, deplete glucose and glycogen stores, and cause metabolic acidosis. Neonatal hypothermia classification: mild (36-36.4°C), moderate (32-35.9°C), severe (<32°C). Clinical manifestations include peripheral vasoconstriction with acrocyanosis, respiratory depression, bradycardia, hypoglycemia, coagulopathy, and in severe cases, cardiopulmonary arrest. Newborns under 3 months are at highest risk due to high surface-area-to-volume ratio, limited brown adipose tissue, absent shivering capacity, and hypothalamic immaturity."}},
+            {"term":"rectal temperature","importance":"important","definitions":{"simple":"Body temperature measured by placing a thermometer gently into the baby's bottom. This is the most accurate way to check a newborn's temperature and is required when a baby under 3 months might have a fever.","standard":"Core body temperature measurement obtained via insertion of a thermometer 1.5-2.5 cm into the rectum, considered the gold standard for infants under 3 months. Normal range is 36.5-37.5°C (97.7-99.5°F). Any rectal temperature ≥38.0°C (100.4°F) in infants under 3 months constitutes a medical emergency requiring immediate evaluation for serious bacterial infection.","technical":"The most accurate non-invasive method for assessing core temperature in neonates and young infants, obtained via rectal probe insertion to 1.5-2.5 cm depth. Rectal temperature correlates closely with esophageal and pulmonary artery temperatures (within ±0.3°C) and is superior to axillary (underestimates by 0.5-1.0°C), oral (unreliable in infants), and temporal artery measurements. Temperature ≥38.0°C in infants <3 months indicates serious bacterial infection in 7-12% of cases, necessitating full sepsis workup including blood culture, urine culture, and often lumbar puncture."}},
+            {"term":"lethargic","importance":"important","definitions":{"simple":"When a baby is unusually sleepy, floppy, hard to wake up, and not responding normally to parents or feeding. This is a warning sign that something is seriously wrong and requires immediate medical attention.","standard":"A state of decreased consciousness, responsiveness, and motor activity beyond normal sleep. In infants, lethargy manifests as poor feeding, weak cry, minimal interaction with caregivers, difficulty arousing from sleep, reduced muscle tone (floppiness), and lack of interest in surroundings. It's a red flag symptom for serious conditions including sepsis, meningitis, hypothermia, hypoglycemia, or dehydration.","technical":"An altered mental status characterized by depressed consciousness, hyporesponsiveness to stimuli, diminished spontaneous activity, and prolonged sleep-wake cycles. Neonatal lethargy represents CNS depression secondary to metabolic derangements (hypoglycemia, hyperbilirubinemia, inborn errors of metabolism), infectious etiologies (sepsis, meningitis, encephalitis), hypothermia, or neurological injury. Assessment includes Glasgow Coma Scale modification for infants and evaluation of response to voice, touch, and painful stimuli. Lethargy with fever in neonates <3 months has 10-15% probability of serious bacterial infection."}},
+            {"term":"sepsis","importance":"critical","definitions":{"simple":"A life-threatening condition where bacteria get into the baby's bloodstream and spread throughout the body, causing organs to shut down. This is a medical emergency requiring immediate hospital treatment with IV antibiotics. Any fever in a baby under 3 months could be sepsis.","standard":"A systemic inflammatory response to bacterial infection in the bloodstream, representing a medical emergency with high mortality if untreated. In newborns, sepsis can be early-onset (first 72 hours of life, from maternal transmission) or late-onset (after 72 hours, from environmental sources). Signs include fever or hypothermia, lethargy, poor feeding, respiratory distress, and altered perfusion. Immediate evaluation includes blood cultures, antibiotics, and hospitalization.","technical":"Systemic inflammatory response syndrome (SIRS) secondary to confirmed or suspected bloodstream infection, defined by ≥2 of: (1) temperature instability (<36°C or >38°C), (2) tachycardia or bradycardia, (3) tachypnea or respiratory distress, (4) leukocytosis, leukopenia, or bandemia. Neonatal sepsis categorization: early-onset sepsis (EOS, 0-72 hours, vertical transmission, predominantly Group B Streptococcus, E. coli) versus late-onset sepsis (LOS, >72 hours, horizontal transmission, broader pathogen spectrum including coagulase-negative Staphylococcus, S. aureus, Gram-negatives). Mortality rates: EOS 5-10%, LOS 2-6%. Management includes empiric broad-spectrum antibiotics (ampicillin plus gentamicin) pending blood, urine, and CSF culture results."}},
+            {"term":"meningitis","importance":"critical","definitions":{"simple":"A serious infection of the protective covering around the brain and spinal cord. In babies, meningitis is life-threatening and can cause permanent brain damage if not treated immediately with IV antibiotics in the hospital.","standard":"Inflammation of the meninges (protective membranes covering the brain and spinal cord), caused by bacterial or viral pathogens. Bacterial meningitis is a medical emergency with mortality rates of 5-10% and neurological sequelae in 20-30% of survivors. In neonates, signs are often non-specific: fever or hypothermia, lethargy, poor feeding, irritability, and sometimes bulging fontanelle or seizures. Diagnosis requires lumbar puncture (spinal tap), and treatment involves IV antibiotics.","technical":"Acute inflammation of the leptomeninges (pia and arachnoid mater) and cerebrospinal fluid, classified as bacterial (purulent) or viral (aseptic). Neonatal bacterial meningitis pathogens include Group B Streptococcus (40-50%), E. coli (20-30%), and Listeria monocytogenes (5-10%). Clinical presentation is often subtle: temperature instability, lethargy, poor feeding, hypotonia or hypertonia, seizures (20-30%), bulging fontanelle (late sign). Diagnosis via CSF analysis from lumbar puncture showing pleocytosis (WBC >20-30/μL in neonates), elevated protein, decreased glucose, positive Gram stain/culture. Empiric treatment: ampicillin plus cefotaxime or ampicillin plus gentamicin. Mortality 5-10%; morbidity (hearing loss, developmental delay, cerebral palsy) 20-30%."}},
+            {"term":"urinary tract infection","importance":"important","definitions":{"simple":"An infection in the bladder or kidneys (called a UTI) that is one of the most common serious bacterial infections in young babies. UTIs can cause fever and may have no other symptoms in newborns, which is why doctors always test urine when a baby under 3 months has a fever.","standard":"Bacterial infection of the urinary system (bladder, ureters, kidneys), representing the most common serious bacterial infection in febrile infants under 3 months, occurring in 5-7% of febrile episodes. UTIs may present with only fever and non-specific symptoms (irritability, poor feeding, vomiting). Diagnosis requires urine culture from catheterized or suprapubic specimen. Untreated UTIs can progress to kidney infection (pyelonephritis) and sepsis.","technical":"Bacterial infection of the urinary tract, most commonly caused by E. coli (80-90%), followed by Klebsiella, Proteus, and Enterococcus species. Prevalence in febrile infants <3 months: 7-8% overall, with higher rates in uncircumcised males <3 months (8-10%) versus circumcised males (2-4%) and females (5-8%). Clinical presentation is non-specific: fever (most common), irritability, poor feeding, vomiting, malodorous urine (unreliable). Diagnosis requires urine culture from catheterized or suprapubic aspiration specimen (bag specimens have unacceptably high false-positive rates). Treatment involves 7-14 days of antibiotics, with initial IV therapy in ill-appearing infants or those <1 month. Renal ultrasound recommended post-treatment to evaluate for structural abnormalities predisposing to recurrent UTI."}},
+            {"term":"hand hygiene","importance":"critical","definitions":{"simple":"Washing hands with soap and water or using hand sanitizer to remove germs. This is the single most important thing you can do to prevent your baby from getting sick - more important than vitamins, supplements, or air purifiers.","standard":"The most effective infection prevention measure, involving washing hands with soap and water for 20 seconds or using alcohol-based hand sanitizer (>60% alcohol content) when hands are not visibly soiled. Critical moments include: before handling baby, before feeding, after diaper changes, after touching potentially contaminated surfaces, and after contact with sick individuals. Proper hand hygiene reduces respiratory infections by 20-30% and gastrointestinal infections by 30-50%.","technical":"The gold standard infection prevention intervention involving mechanical removal and/or chemical inactivation of transient microorganisms from hands. WHO guidelines recommend: (1) handwashing with soap and water for 40-60 seconds when hands are visibly soiled or after handling C. difficile (spores resistant to alcohol); (2) alcohol-based hand rub (ABHR, 60-95% ethanol or isopropanol) for 20-30 seconds for routine decontamination. Proper technique includes all hand surfaces: palms, backs, fingers, thumbs, fingernails, wrists. Hand hygiene compliance reduces healthcare-associated infection rates by 30-50%, respiratory illness transmission by 20-30%, and gastrointestinal pathogen spread by 30-50%."}},
+            {"term":"bronchiolitis","importance":"critical","definitions":{"simple":"A lung infection (usually caused by RSV) that affects the smallest breathing tubes in babies' lungs, making them swollen and filled with mucus. This makes it hard for babies to breathe and is the most common reason babies under 1 year old are hospitalized during winter months.","standard":"Acute inflammation and obstruction of the small airways (bronchioles) in infants, most commonly caused by respiratory syncytial virus (RSV, 50-80% of cases), also rhinovirus, parainfluenza, and human metapneumovirus. Peak incidence occurs at 2-6 months of age during November-March. Symptoms progress from upper respiratory infection (runny nose, cough) to lower respiratory involvement with rapid breathing, wheezing, chest retractions, difficulty feeding, and in severe cases, respiratory failure requiring hospitalization.","technical":"An acute inflammatory injury of the bronchiolar epithelium, characterized by edema, mucus plugging, and sloughing of necrotic epithelial cells, resulting in airway obstruction with air trapping, atelectasis, and ventilation-perfusion mismatch. RSV accounts for 50-80% of cases, with other viral etiologies including rhinovirus (15-20%), human metapneumovirus (5-10%), and parainfluenza (5%). Clinical presentation: 2-3 days of upper respiratory prodrome followed by lower respiratory signs including tachypnea (>60 breaths/min), expiratory wheezing, chest wall retractions (subcostal, intercostal, supraclavicular), nasal flaring, grunting, and hypoxemia (SpO2 <90%). Hospitalization rate: 2-3% of all infants annually; risk factors include age <6 months, prematurity, chronic lung disease, congenital heart disease, immunodeficiency. Treatment is supportive (hydration, oxygen, suctioning); bronchodilators show minimal benefit."}},
+            {"term":"SIDS","importance":"critical","definitions":{"simple":"Sudden Infant Death Syndrome - the unexpected death of a seemingly healthy baby under 1 year old, usually during sleep, with no clear cause found even after investigation. While rare (occurs in about 1 in 2,000 babies in Canada), it's devastating, and parents can reduce risk by following safe sleep practices.","standard":"The sudden and unexplained death of an infant under 12 months of age that remains unexplained after thorough investigation including autopsy, death scene examination, and medical history review. SIDS is most common at 2-4 months of age and during sleep. Major risk factors include prone (stomach) sleeping, soft bedding, bed-sharing, overheating, and secondhand smoke exposure. Protective factors include back sleeping, room-sharing (not bed-sharing), pacifier use, and breastfeeding.","technical":"The sudden death of an infant <1 year that remains unexplained after complete investigation including scene evaluation, autopsy, and review of clinical history. Also termed sudden unexpected infant death (SUID) when including explained deaths. Peak incidence: 2-4 months; 90% occur before 6 months. Current Canadian incidence: ~0.5 per 1,000 live births. Proposed mechanism: triple risk hypothesis combining vulnerable developmental period (brainstem immaturity affecting arousal and cardiorespiratory control) + external stressors (prone position, overheating, hypoxia) + genetic predisposition (autonomic dysfunction, serotonergic pathway polymorphisms). Evidence-based risk reduction: supine sleep position (reduces risk 50-70%), firm sleep surface without soft bedding, room-sharing without bed-sharing, avoiding overheating and smoke exposure, offering pacifier, exclusive breastfeeding 6 months."}},
+            {"term":"chest retractions","importance":"important","definitions":{"simple":"When you can see the skin between or below the baby's ribs pulling inward with each breath, like a vacuum pulling the chest wall in. This means the baby is working very hard to breathe and is a sign of respiratory distress requiring immediate medical attention.","standard":"Visible inward movement of chest wall structures during inspiration, indicating increased work of breathing and respiratory distress. Types include intercostal (between ribs), subcostal (below rib cage), and supraclavicular (above collarbones) retractions. In infants, retractions occur because the chest wall is compliant (flexible) and pulls inward when negative intrathoracic pressure increases due to airway obstruction or lung disease. Retractions indicate moderate to severe respiratory distress requiring urgent evaluation.","technical":"Paradoxical inward displacement of compliant chest wall structures during inspiration secondary to increased negative intrathoracic pressure generated to overcome elevated airway resistance or decreased lung compliance. Classification: intercostal (visible between ribs), subcostal (below costal margin), suprasternal/supraclavicular (above clavicles). Mechanism: neonatal and infant chest walls have increased compliance (cartilaginous ribs, underdeveloped musculature) relative to lung stiffness, resulting in chest wall collapse when high negative pressure is generated during labored breathing. Etiology includes bronchiolitis, pneumonia, asthma, upper airway obstruction. Retractions indicate respiratory distress severity; presence with tachypnea, nasal flaring, grunting, or hypoxia constitutes respiratory failure requiring supplemental oxygen, continuous positive airway pressure (CPAP), or mechanical ventilation."}},
+            {"term":"grunting","importance":"important","definitions":{"simple":"A short, repetitive 'ugh' sound babies make with each breath out when they're having serious trouble breathing. Grunting happens because babies are trying to keep their lungs open, and it's always a medical emergency requiring immediate hospital evaluation.","standard":"An expiratory sound produced by partial glottic closure during breathing, representing a compensatory mechanism to maintain functional residual capacity and prevent alveolar collapse in respiratory distress. Grunting indicates significant respiratory compromise and is a red flag symptom in infants. Common causes include bronchiolitis, pneumonia, and in newborns, respiratory distress syndrome. Any grunting requires emergency medical evaluation.","technical":"A short, audible, expiratory vocalization produced by forced expiration against a partially closed glottis, resulting in positive end-expiratory pressure (PEEP) that maintains functional residual capacity and prevents end-expiratory alveolar collapse and atelectasis. Physiological mechanism: when alveolar stability is compromised (surfactant deficiency, inflammation, edema), grunting generates intrinsic PEEP (typically 3-5 cmH2O) to prevent terminal airway collapse and improve ventilation-perfusion matching. Etiology in neonates: respiratory distress syndrome, transient tachypnea of the newborn, pneumonia, sepsis. In older infants: bronchiolitis, pneumonia, cardiac disease. Grunting indicates severe respiratory distress (Silverman-Andersen score ≥7) with impending respiratory failure if untreated. Management includes supplemental oxygen, CPAP, or mechanical ventilation."}},
+            {"term":"triage","importance":"supplementary","definitions":{"simple":"The system emergency rooms and phone nurses use to quickly decide how sick someone is and how urgently they need medical care. When you call Telehealth Ontario or arrive at the ER, triage nurses ask questions to determine if your baby needs to be seen immediately or can safely wait.","standard":"A systematic assessment process used to prioritize patient care based on urgency of medical need rather than order of arrival. In healthcare settings, trained nurses use standardized criteria to assign priority levels (emergent, urgent, semi-urgent, non-urgent). For newborns and infants, factors increasing triage priority include: age <3 months with fever, respiratory distress, lethargy, poor feeding, dehydration signs, or altered consciousness.","technical":"A clinical decision-making methodology that rapidly categorizes patients by acuity using standardized assessment tools (Canadian Triage and Acuity Scale [CTAS], Emergency Severity Index [ESI]). CTAS levels: 1-Resuscitation (immediate), 2-Emergent (≤15 min), 3-Urgent (≤30 min), 4-Less urgent (≤60 min), 5-Non-urgent (≤120 min). Pediatric triage incorporates age-specific vital sign ranges, developmental considerations, and high-risk presentations. Infants <3 months with fever, respiratory rate >60 or <30, severe dehydration, altered mental status, or poor perfusion receive CTAS 2 (emergent) classification. Telephone triage (e.g., Telehealth Ontario) uses nurse-assessed algorithms to determine disposition: emergency department, urgent care, primary care, or home management with safety-netting advice."}},
+            {"term":"immunizations","importance":"important","definitions":{"simple":"Vaccines given to babies to protect them from serious diseases like measles, whooping cough, and meningitis. Immunizations train the baby's immune system to recognize and fight these diseases without the baby having to get sick first. They're one of the most important ways to keep babies healthy.","standard":"Vaccines administered according to age-appropriate schedules to provide active immunity against specific infectious diseases. In Ontario, the routine infant immunization schedule begins at 2 months and includes protection against diphtheria, tetanus, pertussis (whooping cough), polio, Haemophilus influenzae type b, pneumococcal disease, rotavirus, and meningococcal disease. Vaccines contain antigens that stimulate immune memory without causing disease, providing protection when exposed to actual pathogens.","technical":"Biological preparations containing antigenic components (inactivated organisms, attenuated live organisms, purified proteins, or conjugated polysaccharides) that induce adaptive immune responses, establishing immunological memory without disease morbidity. Ontario's publicly funded routine infant schedule includes: 2 months (DTaP-IPV-Hib, Pneu-C-13, Rot-1); 4 months (DTaP-IPV-Hib, Pneu-C-13, Rot-1); 6 months (DTaP-IPV-Hib, Pneu-C-13); 12 months (MMR, Men-C-C, Pneu-C-13). Additional vaccines for high-risk infants: hepatitis B, BCG (tuberculosis). Mechanism: antigen presentation to naive B and T lymphocytes generates plasma cells (antibody production) and memory cells (rapid anamnestic response upon subsequent exposure). Vaccine efficacy typically 85-95% for routine childhood immunizations. Serious adverse events rare (<1:100,000 doses); minor reactions (injection site soreness, low-grade fever) common and self-limited."}},
+            {"term":"postpartum depression","importance":"supplementary","definitions":{"simple":"A serious type of depression that affects some mothers after having a baby, causing persistent sadness, anxiety, exhaustion, and difficulty bonding with the baby. It's not 'baby blues' (which is mild and brief) - postpartum depression is a medical condition requiring treatment with therapy, support, and sometimes medication.","standard":"A major depressive episode occurring within the first year after childbirth, affecting 10-15% of new mothers. Symptoms include persistent low mood, anhedonia, anxiety, excessive guilt, sleep disturbances beyond infant care demands, difficulty bonding with baby, thoughts of harming self or baby, and impaired functioning. Unlike 'baby blues' (50-80% of mothers, resolves within 2 weeks), postpartum depression requires professional intervention including psychotherapy, social support, and often medication (SSRIs compatible with breastfeeding).","technical":"A major depressive disorder meeting DSM-5 criteria with peripartum onset specifier (during pregnancy or within 4 weeks postpartum), though clinically recognized throughout the first postpartum year. Prevalence: 10-15% of postpartum women. Etiology is multifactorial: rapid hormonal fluctuation (estrogen, progesterone, cortisol, thyroid), genetic vulnerability (5-HTT gene polymorphisms), psychosocial stressors, sleep deprivation, inflammatory cytokine changes, and history of depression (20-30% recurrence risk). Diagnostic criteria (≥5 symptoms for ≥2 weeks): depressed mood, anhedonia, weight/appetite changes, insomnia or hypersomnia, psychomotor changes, fatigue, worthlessness/guilt, concentration difficulties, suicidal ideation. Screening: Edinburgh Postnatal Depression Scale (EPDS) score ≥13 indicates probable depression. Treatment: evidence-based psychotherapy (CBT, IPT), SSRIs (sertraline, escitalopram compatible with breastfeeding), social support, sleep optimization. Untreated PPD affects maternal-infant bonding, child cognitive/emotional development, and increases risk of postpartum psychosis (0.1-0.2%) or suicide."}},
+            {"term":"viral infection","importance":"critical","definitions":{"simple":"Sickness caused by viruses (tiny germs) like colds, flu, or RSV. Most viral infections cause mild symptoms (runny nose, fever, cough) and get better on their own without medicine. Antibiotics don't work on viruses. While usually not serious in older kids, some viral infections can be dangerous for newborns under 3 months.","standard":"Illness caused by viral pathogens invading and replicating within host cells. Common pediatric viral infections include respiratory viruses (rhinovirus, RSV, influenza, coronavirus), gastrointestinal viruses (rotavirus, norovirus), and exanthems (chickenpox, measles). Most viral infections are self-limited, resolving within 7-10 days with supportive care. However, infants under 3 months are at higher risk for serious complications and disseminated infection, requiring medical evaluation even for seemingly mild illnesses.","technical":"Disease state resulting from viral pathogen invasion, cellular tropism, replication, and host immune response. Viral entry mechanisms include receptor-mediated endocytosis (influenza via sialic acid receptors, RSV via CX3CR1), fusion (paramyxoviruses), or direct penetration. Intracellular replication strategies vary: DNA viruses (adenovirus, herpesvirus) replicate in nucleus; RNA viruses (rhinovirus, RSV, influenza) replicate in cytoplasm. Host response involves innate immunity (interferon production, NK cells, phagocytes) and adaptive immunity (virus-specific T cells, neutralizing antibodies). Neonatal viral infections carry elevated risk due to: (1) immunological immaturity (Th2-skewed responses, reduced IFN-γ, limited antibody diversity), (2) reduced passive immunity from maternal IgG transfer (predominantly occurs third trimester), (3) higher risk of disseminated infection (HSV, enterovirus causing meningoencephalitis, hepatitis, myocarditis). Most viral infections are self-limited; exceptions requiring antiviral therapy include HSV (acyclovir), influenza in high-risk patients (oseltamivir), RSV in severely ill infants (ribavirin, investigational)."}},
+            {"term":"bacterial infection","importance":"important","definitions":{"simple":"Sickness caused by bacteria (a different type of germ from viruses). Unlike viral infections, bacterial infections respond to antibiotics and can be more dangerous, especially in newborns. Examples include ear infections, strep throat, and serious infections like meningitis or sepsis that require immediate treatment.","standard":"Illness caused by pathogenic bacteria invading tissues, multiplying, and producing toxins or triggering inflammatory responses. In infants under 3 months, bacterial infections are particularly concerning due to immature immune systems and risk of serious invasive disease (sepsis, meningitis, urinary tract infection). Common bacterial pathogens in neonates include Group B Streptococcus, E. coli, Listeria monocytogenes, and Staphylococcus species. Bacterial infections require antibiotic therapy, unlike viral infections.","technical":"Infectious disease caused by pathogenic bacteria colonizing normally sterile sites or producing toxins. Bacterial virulence factors include adhesins (pili, fimbriae), invasins (IpaB/C in Shigella), toxins (exotoxins like tetanus toxin, endotoxin/LPS), and immune evasion mechanisms (capsular polysaccharides in pneumococcus, protein A in S. aureus). Neonatal bacterial pathogens: early-onset sepsis (Group B Streptococcus 40%, E. coli 30%, Listeria 5%) versus late-onset sepsis (coagulase-negative Staphylococcus, S. aureus, E. coli, Klebsiella). Clinical presentations: early-onset sepsis (maternal risk factors, respiratory distress, temperature instability within 72 hours); late-onset sepsis (>72 hours, fever, lethargy, poor feeding); meningitis (fever, lethargy, bulging fontanelle); UTI (fever, irritability, malodorous urine). Diagnosis: blood culture, urine culture (catheterized specimen), CSF culture (if meningitis suspected). Treatment: empiric broad-spectrum antibiotics (ampicillin + gentamicin or ampicillin + cefotaxime) pending culture/sensitivity, then narrowing to targeted therapy. Delayed treatment increases mortality (sepsis: 5-10%, meningitis: 5-10%) and morbidity (meningitis sequelae: 20-30%)."}},
+            {"term":"perinatal mental health","importance":"supplementary","definitions":{"simple":"The emotional and mental wellbeing of parents during pregnancy and the first year after birth. This includes conditions like postpartum depression, anxiety, and OCD that affect 15-20% of new parents. Getting help for perinatal mental health problems is important for both parents and babies.","standard":"The mental and emotional wellbeing of individuals during pregnancy and the postpartum period (first year after birth), encompassing a spectrum of conditions including postpartum depression (10-15%), postpartum anxiety (10-15%), postpartum OCD (2-3%), postpartum PTSD (3-4%), and rarely postpartum psychosis (0.1-0.2%). These conditions affect bonding, parenting capacity, and child development. Risk factors include previous mental health history, lack of social support, birth complications, and sleep deprivation. Evidence-based treatments include psychotherapy, medication, and peer support.","technical":"The continuum of maternal and paternal psychological wellbeing spanning conception through 12 months postpartum, characterized by adaptation to pregnancy, birth, and parenthood. Perinatal mood and anxiety disorders (PMADs) affect 15-20% of birthing persons and 10% of partners. Conditions include: postpartum depression (10-15%, DSM-5 peripartum onset specifier), postpartum anxiety (10-15%, often comorbid with depression), postpartum OCD (2-3%, intrusive thoughts + compulsions), postpartum PTSD (3-4%, following traumatic birth), postpartum psychosis (0.1-0.2%, psychiatric emergency with hallucinations, delusions, risk of infanticide/suicide). Etiology: hormonal fluctuation (estrogen, progesterone, cortisol, oxytocin, thyroid), neurotransmitter dysregulation (serotonin, dopamine, GABA), inflammatory processes (elevated IL-6, TNF-α), psychosocial stressors, sleep deprivation, genetic vulnerability (5-HTTLPR polymorphisms). Screening: EPDS (Edinburgh Postnatal Depression Scale) ≥13, GAD-7 for anxiety. Treatment: evidence-based psychotherapy (CBT, IPT), pharmacotherapy (SSRIs: sertraline, escitalopram compatible with lactation), peer support, sleep optimization. Untreated PMADs impair maternal-infant attachment (reduced sensitivity, dyadic synchrony), affect infant socioemotional development (increased internalizing/externalizing behaviors, cognitive delays), and elevate maternal suicide risk (leading cause of maternal mortality in first postpartum year in developed countries)."}}
+        ];
+
+        // ========== TTS IMPLEMENTATION ==========
+        const TTS_CONFIG = {
+            enabled: true,
+            provider: 'browser',
+            voiceName: 'Samantha'
+        };
+
+        let synth, utterance, isPlaying = false;
+
+        function initializeTTS() {
+            if (!('speechSynthesis' in window)) {
+                document.getElementById('tts-player').style.display = 'none';
+                console.warn('TTS not supported in this browser');
+                return;
+            }
+
+            synth = window.speechSynthesis;
+
+            // Wait for voices to load
+            let voicesLoaded = false;
+            synth.addEventListener('voiceschanged', () => {
+                voicesLoaded = true;
+            });
+
+            const playPauseBtn = document.getElementById('tts-play-pause');
+            const stopBtn = document.getElementById('tts-stop');
+            const speedControl = document.getElementById('tts-speed');
+            const speedValue = document.getElementById('tts-speed-value');
+            const status = document.getElementById('tts-status');
+
+            function getReadableText() {
+                const article = document.querySelector('article');
+                const sections = Array.from(article.querySelectorAll('.section:not(.hidden)'));
+                return sections.map(s => s.innerText).join(' ');
+            }
+
+            playPauseBtn.addEventListener('click', () => {
+                if (isPlaying) {
+                    synth.pause();
+                    isPlaying = false;
+                    document.querySelector('.play-icon').style.display = 'inline';
+                    document.querySelector('.pause-icon').style.display = 'none';
+                    status.textContent = 'Paused';
+                } else {
+                    if (synth.paused && utterance) {
+                        synth.resume();
+                        status.textContent = 'Reading...';
+                    } else {
+                        const text = getReadableText();
+                        utterance = new SpeechSynthesisUtterance(text);
+
+                        // Select voice
+                        const voices = synth.getVoices();
+                        const preferredVoice = voices.find(v =>
+                            v.name.includes('Samantha') ||
+                            v.name.includes('Google UK English Female') ||
+                            v.name.includes('Karen') ||
+                            (v.lang.startsWith('en') && v.name.includes('Female'))
+                        );
+                        if (preferredVoice) utterance.voice = preferredVoice;
+
+                        utterance.rate = parseFloat(speedControl.value);
+
+                        utterance.onstart = () => {
+                            status.textContent = 'Reading...';
+                        };
+
+                        utterance.onend = () => {
+                            isPlaying = false;
+                            document.querySelector('.play-icon').style.display = 'inline';
+                            document.querySelector('.pause-icon').style.display = 'none';
+                            status.textContent = 'Finished';
+                        };
+
+                        utterance.onerror = (e) => {
+                            console.error('TTS error:', e);
+                            status.textContent = 'Error';
+                            isPlaying = false;
+                        };
+
+                        synth.speak(utterance);
+                    }
+                    isPlaying = true;
+                    document.querySelector('.play-icon').style.display = 'none';
+                    document.querySelector('.pause-icon').style.display = 'inline';
+                }
+            });
+
+            stopBtn.addEventListener('click', () => {
+                synth.cancel();
+                isPlaying = false;
+                document.querySelector('.play-icon').style.display = 'inline';
+                document.querySelector('.pause-icon').style.display = 'none';
+                status.textContent = 'Stopped';
+            });
+
+            speedControl.addEventListener('input', (e) => {
+                const speed = parseFloat(e.target.value);
+                speedValue.textContent = speed.toFixed(1) + 'x';
+                if (utterance) utterance.rate = speed;
+            });
+        }
+
+        // ========== GLOSSARY SIDEBAR ==========
+        function populateGlossary() {
+            const list = document.getElementById('glossary-list');
+            const sortedTerms = [...GLOSSARY_DATA].sort((a, b) => a.term.localeCompare(b.term));
+
+            sortedTerms.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'glossary-item';
+                li.dataset.importance = item.importance;
+                li.dataset.term = item.term;
+
+                li.innerHTML = `
+                    <div class="glossary-item-term">${item.term}</div>
+                    <div class="glossary-item-importance">${item.importance}</div>
+                `;
+
+                li.addEventListener('click', () => {
+                    const termInContent = document.querySelector(`[data-term="${item.term}"]`);
+                    if (termInContent) {
+                        termInContent.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        termInContent.focus();
+                    }
+                });
+
+                list.appendChild(li);
+            });
+        }
+
+        // ========== SEARCH AND FILTER ==========
+        function setupSearchAndFilter() {
+            const searchBox = document.getElementById('search-box');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const glossaryItems = document.querySelectorAll('.glossary-item');
+
+            let currentFilter = 'all';
+
+            searchBox.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                glossaryItems.forEach(item => {
+                    const term = item.dataset.term.toLowerCase();
+                    const importance = item.dataset.importance;
+                    const matchesSearch = term.includes(query);
+                    const matchesFilter = currentFilter === 'all' || importance === currentFilter;
+                    item.style.display = (matchesSearch && matchesFilter) ? 'block' : 'none';
+                });
+            });
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilter = btn.dataset.filter;
+                    searchBox.dispatchEvent(new Event('input'));
+                });
+            });
+        }
+
+        // ========== GLOSSARY TOOLTIPS ==========
+        function setupTooltips() {
+            const terms = document.querySelectorAll('.glossary-term');
+            let activeTooltip = null;
+            let hideTimeout = null;
+
+            terms.forEach(term => {
+                const termName = term.dataset.term;
+                const glossaryEntry = GLOSSARY_DATA.find(g => g.term === termName);
+
+                if (!glossaryEntry) return;
+
+                const tooltip = document.createElement('div');
+                tooltip.className = 'tooltip';
+                tooltip.innerHTML = `
+                    <div class="tooltip-header">${glossaryEntry.term}</div>
+                    <div class="tooltip-tabs">
+                        <button class="tooltip-tab active" data-level="simple">Simple</button>
+                        <button class="tooltip-tab" data-level="standard">Standard</button>
+                        <button class="tooltip-tab" data-level="technical">Technical</button>
+                    </div>
+                    <div class="tooltip-content">
+                        <div class="tooltip-def active" data-level="simple">${glossaryEntry.definitions.simple}</div>
+                        <div class="tooltip-def" data-level="standard">${glossaryEntry.definitions.standard}</div>
+                        <div class="tooltip-def" data-level="technical">${glossaryEntry.definitions.technical}</div>
+                    </div>
+                `;
+
+                term.appendChild(tooltip);
+
+                // Tab switching
+                const tabs = tooltip.querySelectorAll('.tooltip-tab');
+                const defs = tooltip.querySelectorAll('.tooltip-def');
+
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const level = tab.dataset.level;
+                        tabs.forEach(t => t.classList.remove('active'));
+                        defs.forEach(d => d.classList.remove('active'));
+                        tab.classList.add('active');
+                        tooltip.querySelector(`[data-level="${level}"].tooltip-def`).classList.add('active');
+                    });
+                });
+
+                // Show/hide with delay
+                term.addEventListener('mouseenter', () => {
+                    clearTimeout(hideTimeout);
+                    if (activeTooltip && activeTooltip !== tooltip) {
+                        activeTooltip.classList.remove('show');
+                    }
+                    tooltip.classList.add('show');
+                    activeTooltip = tooltip;
+                });
+
+                term.addEventListener('mouseleave', () => {
+                    hideTimeout = setTimeout(() => {
+                        tooltip.classList.remove('show');
+                        if (activeTooltip === tooltip) activeTooltip = null;
+                    }, 300);
+                });
+
+                tooltip.addEventListener('mouseenter', () => {
+                    clearTimeout(hideTimeout);
+                });
+
+                tooltip.addEventListener('mouseleave', () => {
+                    hideTimeout = setTimeout(() => {
+                        tooltip.classList.remove('show');
+                        if (activeTooltip === tooltip) activeTooltip = null;
+                    }, 300);
+                });
+
+                // Keyboard support
+                term.addEventListener('focus', () => {
+                    if (activeTooltip && activeTooltip !== tooltip) {
+                        activeTooltip.classList.remove('show');
+                    }
+                    tooltip.classList.add('show');
+                    activeTooltip = tooltip;
+                });
+
+                term.addEventListener('blur', () => {
+                    setTimeout(() => {
+                        if (!tooltip.contains(document.activeElement)) {
+                            tooltip.classList.remove('show');
+                            if (activeTooltip === tooltip) activeTooltip = null;
+                        }
+                    }, 100);
+                });
+
+                term.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        tooltip.classList.remove('show');
+                        if (activeTooltip === tooltip) activeTooltip = null;
+                        term.blur();
+                    }
+                });
+            });
+        }
+
+        // ========== COMPLEXITY CONTROLS ==========
+        function setupComplexityControls() {
+            const buttons = document.querySelectorAll('.complexity-btn');
+            const sections = document.querySelectorAll('.section');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    buttons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const level = btn.dataset.level;
+
+                    sections.forEach(section => {
+                        const complexity = section.dataset.complexity;
+                        if (level === 'all' || complexity === level) {
+                            section.classList.remove('hidden');
+                        } else {
+                            section.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        }
+
+        // ========== MOBILE MENU ==========
+        function setupMobileMenu() {
+            const btn = document.getElementById('mobile-menu-btn');
+            const sidebar = document.getElementById('sidebar');
+
+            btn.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+            });
+
+            // Close sidebar when clicking outside on mobile
+            document.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(e.target) && !btn.contains(e.target)) {
+                        sidebar.classList.remove('active');
+                    }
+                }
+            });
+        }
+
+        // ========== INITIALIZATION ==========
+        document.addEventListener('DOMContentLoaded', () => {
+            populateGlossary();
+            setupSearchAndFilter();
+            setupTooltips();
+            setupComplexityControls();
+            setupMobileMenu();
+            initializeTTS();
+        });
+    </script>
+</body>
+</html>
