@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A comprehensive visual history of Newmarket, Ontario from Indigenous heritage to modern urban development">
+  <title>The History of Newmarket, Ontario</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The History of Newmarket, Ontario">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="From Quaker settlement to modern urban centre - explore 200+ years of Newmarket's rich history">
+
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* Academic Theme - Dark Mode Colors */
+    :root {
+      --bg: #1a1611;
+      --surface: #252019;
+      --text-primary: #e8e4dc;
+      --text-secondary: #b8b0a5;
+      --accent-blue: #6ba4e7;
+      --accent-orange: #f4a940;
+      --success-green: #4db86d;
+      --warning-orange: #f0932b;
+      --error-red: #e74c3c;
+      --border: #3a3228;
+      --timeline-line: #4a4238;
+    }
+
+    body {
+      font-family: 'Crimson Pro', 'Crimson Text', Georgia, serif;
+      font-size: clamp(1rem, 1.5vw, 1.125rem);
+      font-weight: 400;
+      line-height: 1.8;
+      color: var(--text-primary);
+      background: var(--bg);
+      animation: page-turn 0.6s ease-out;
+    }
+
+    @keyframes page-turn {
+      from { opacity: 0; filter: blur(3px); transform: scale(0.98); }
+      to { opacity: 1; filter: blur(0); transform: scale(1); }
+    }
+
+    @keyframes fade-in-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    /* Typography */
+    h1 {
+      font-family: 'Inter Display', -apple-system, system-ui, sans-serif;
+      font-size: clamp(2.25rem, 4vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      color: var(--accent-blue);
+      text-align: center;
+    }
+
+    h2 {
+      font-family: 'Inter Display', -apple-system, system-ui, sans-serif;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 700;
+      margin: 3rem 0 1.5rem;
+      color: var(--accent-orange);
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 70%;
+      background: var(--accent-orange);
+    }
+
+    h3 {
+      font-family: 'Inter Display', -apple-system, system-ui, sans-serif;
+      font-size: clamp(1.35rem, 2vw, 1.85rem);
+      font-weight: 700;
+      margin: 2rem 0 1rem;
+      color: var(--accent-blue);
+    }
+
+    h4 {
+      font-family: 'Inter Display', -apple-system, system-ui, sans-serif;
+      font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+      color: var(--text-primary);
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 4rem;
+      padding: 2rem 0;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      color: var(--text-secondary);
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    .date-range {
+      font-size: 1rem;
+      color: var(--accent-orange);
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+
+    /* Timeline Section */
+    .timeline-section {
+      margin: 4rem 0;
+      opacity: 0;
+      animation: fade-in-up 0.6s ease-out forwards;
+    }
+
+    .timeline-section:nth-child(2) { animation-delay: 0.1s; }
+    .timeline-section:nth-child(3) { animation-delay: 0.2s; }
+    .timeline-section:nth-child(4) { animation-delay: 0.3s; }
+    .timeline-section:nth-child(5) { animation-delay: 0.4s; }
+    .timeline-section:nth-child(6) { animation-delay: 0.5s; }
+    .timeline-section:nth-child(7) { animation-delay: 0.6s; }
+
+    .era-card {
+      background: var(--surface);
+      border-left: 4px solid var(--accent-blue);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 4px;
+      transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    }
+
+    .era-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Key Facts Box */
+    .key-facts {
+      background: rgba(107, 164, 231, 0.1);
+      border: 1px solid var(--accent-blue);
+      border-radius: 4px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .key-facts h4 {
+      color: var(--accent-blue);
+      margin-top: 0;
+    }
+
+    .key-facts ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .key-facts li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: var(--text-secondary);
+    }
+
+    .key-facts li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent-blue);
+      font-weight: bold;
+    }
+
+    /* Highlight Box */
+    .highlight-box {
+      background: rgba(244, 169, 64, 0.15);
+      border-left: 4px solid var(--accent-orange);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 4px;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease-out;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-blue);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--accent-blue);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* Timeline Connector */
+    .timeline-connector {
+      width: 2px;
+      height: 60px;
+      background: linear-gradient(to bottom, var(--timeline-line), transparent);
+      margin: 0 auto;
+    }
+
+    /* Notable People Grid */
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .person-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.5rem;
+      transition: transform 0.3s ease-out, border-color 0.3s ease-out;
+    }
+
+    .person-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-orange);
+    }
+
+    .person-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin-bottom: 0.5rem;
+    }
+
+    .person-role {
+      font-size: 0.9rem;
+      color: var(--accent-orange);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .person-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Lists */
+    ul, ol {
+      margin: 1rem 0;
+      padding-left: 2rem;
+      color: var(--text-secondary);
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Year Badge */
+    .year-badge {
+      display: inline-block;
+      background: var(--accent-blue);
+      color: var(--bg);
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-right: 0.5rem;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .sources {
+      margin-top: 3rem;
+      padding: 2rem;
+      background: var(--surface);
+      border-radius: 4px;
+    }
+
+    .sources h3 {
+      margin-top: 0;
+    }
+
+    .sources a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--accent-blue);
+      transition: color 0.2s ease-out;
+    }
+
+    .sources a:hover {
+      color: var(--accent-orange);
+      border-bottom-color: var(--accent-orange);
+    }
+
+    .sources a:focus {
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 2px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 40px 15px;
+      }
+
+      h2 {
+        padding-left: 1rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .people-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Accessibility */
+    :focus {
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 2px;
+    }
+
+    /* Scroll Progress Indicator */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-orange));
+      z-index: 1000;
+      transition: width 0.1s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+
+  <div class="container">
+    <header class="header">
+      <h1>The History of Newmarket, Ontario</h1>
+      <p class="subtitle">From Indigenous Heritage to Modern Urban Centre</p>
+      <p class="date-range">Time Immemorial - 2025</p>
+    </header>
+
+    <main>
+      <!-- Indigenous Heritage -->
+      <section class="timeline-section">
+        <h2>Indigenous Heritage: Time Immemorial - 1787</h2>
+
+        <div class="era-card">
+          <h3>The Original Inhabitants</h3>
+          <p>For over <strong>10,000 years</strong>, Indigenous peoples have inhabited what is now Ontario. The lands that would become Newmarket were home to the <strong>Wendat (Huron)</strong> and <strong>Anishinaabe (Ojibwe)</strong> peoples, who thrived with advanced social and economic systems, structures of law and democracy, and deeply rooted traditional knowledge.</p>
+
+          <div class="key-facts">
+            <h4>Key Aspects of Indigenous Life</h4>
+            <ul>
+              <li>Hunting, fishing, and farming in rich forests and waterways</li>
+              <li>Key trade routes connecting Indigenous groups across Southern Ontario</li>
+              <li>Advanced social structures and governance systems</li>
+              <li>Millennia of sustainable land stewardship</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="era-card">
+          <h3>Land Treaties and Displacement</h3>
+
+          <div class="highlight-box">
+            <p><span class="year-badge">1787</span> <strong>September 23</strong>: Negotiations began with the Mississaugas to purchase land along the north shore of Lake Ontario and the route from Lake Tarento (Toronto) to Lake Huron. The deal was obscured by a missing deed, creating uncertainty about legal tenure.</p>
+          </div>
+
+          <div class="highlight-box">
+            <p><span class="year-badge">1818</span> <strong>October 17</strong>: The Treaty of 1818 completed the total surrender of territory from Lake Ontario to Georgian Bay, with four Chiefs of the Ojibway (Chippewa) nation participating. This was the most extensive treaty of all.</p>
+          </div>
+
+          <p>Starting in the 1820s, colonial administrators undertook many initiatives aimed at "civilizing" First Nations, including an early assimilation experiment at Coldwater-Narrows near Lake Simcoe.</p>
+        </div>
+      </section>
+
+      <div class="timeline-connector"></div>
+
+      <!-- Founding Era -->
+      <section class="timeline-section">
+        <h2>The Founding Era: 1801-1820</h2>
+
+        <div class="era-card">
+          <h3>1801: The Birth of Newmarket</h3>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-number">1801</span>
+              <span class="stat-label">Settlement Founded</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">40</span>
+              <span class="stat-label">Farms Granted (200 acres each)</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">7</span>
+              <span class="stat-label">Sleighs Arrived (Rogers Family)</span>
+            </div>
+          </div>
+
+          <p>In the <strong>summer of 1801</strong>, <strong>Joseph Hill</strong>, a Quaker and perhaps Newmarket's first white citizen, dammed the East Holland River near Water and Main streets, creating the Millpond (known today as <strong>Fairy Lake</strong>). By the week before Christmas 1801, Hill had ground the first bushel of wheat produced locally at his grist-mill.</p>
+
+          <p><strong>Timothy Rogers</strong>, a Loyalist from Vermont, arrived with his family in <strong>seven sleighs</strong> during winter 1801. He had received a grant for land totaling <strong>40 farms, each of 200 acres</strong>.</p>
+
+          <div class="highlight-box">
+            <p><strong>Origin of the Name:</strong> The settlement was named "New Market" - in contrast to York (Toronto) as the "Old Market."</p>
+          </div>
+        </div>
+
+        <div class="era-card">
+          <h3>1802-1812: Quaker Community Growth</h3>
+
+          <p><strong>1802-1803:</strong> More Quakers arrived in the northern section of Yonge Street, along with tradesmen and entrepreneurs who filtered into the small settlement forming around Joseph Hill's mill on Water Street.</p>
+
+          <p><strong>1803-1804:</strong> The settlement of <strong>Elisha Beman</strong>, a major local landowner and entrepreneur, provided a strong stimulus for community growth.</p>
+
+          <div class="key-facts">
+            <h4>Religious Heritage</h4>
+            <ul>
+              <li><strong>1807:</strong> First Quaker meeting house built on Yonge Street</li>
+              <li><strong>1810-1812:</strong> Second Quaker meeting house constructed - <strong>the oldest religious building erected north of Toronto</strong></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="timeline-connector"></div>
+
+      <!-- Age of Rebellion -->
+      <section class="timeline-section">
+        <h2>The Age of Rebellion and Growth: 1820-1860</h2>
+
+        <div class="era-card">
+          <h3>1837: The Mackenzie Rebellion</h3>
+
+          <div class="highlight-box">
+            <p><span class="year-badge">1837</span> <strong>August 3</strong>: Rebel leader <strong>William Lyon Mackenzie</strong> delivered a speech from the veranda of the <strong>North American Hotel</strong> in Newmarket. About <strong>600 farmers and others</strong> sympathetic to Mackenzie's cause heard this speech, which contributed to the rebellion. Later that year, they armed themselves and marched down Yonge Street to take the capital.</p>
+          </div>
+
+          <p>This pivotal moment placed Newmarket at the heart of one of Canada's most significant historical events - the Upper Canada Rebellion of 1837.</p>
+        </div>
+
+        <div class="era-card">
+          <h3>1846: A Growing Village</h3>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-number">600</span>
+              <span class="stat-label">Population</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">6</span>
+              <span class="stat-label">Churches/Chapels</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">5</span>
+              <span class="stat-label">Stores</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">3</span>
+              <span class="stat-label">Taverns</span>
+            </div>
+          </div>
+
+          <div class="key-facts">
+            <h4>Industries (1846)</h4>
+            <ul>
+              <li>Two grist-mills</li>
+              <li>Two breweries</li>
+              <li>A distillery</li>
+              <li>One tannery</li>
+              <li>A foundry</li>
+              <li>A carding machine</li>
+              <li>A cloth factory</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="era-card">
+          <h3>1853: The Railway Arrives</h3>
+
+          <div class="highlight-box">
+            <p><span class="year-badge">1853</span> <strong>June</strong>: The first train pulled into Newmarket on the <strong>Toronto, Simcoe & Lake Huron Union Railroad</strong> - the <strong>first railway in Upper Canada</strong>. This transformative event opened new economic opportunities and connected Newmarket to Toronto's growing economy.</p>
+          </div>
+        </div>
+
+        <div class="era-card">
+          <h3>1857: Village Incorporation</h3>
+
+          <p>Newmarket was incorporated as a <strong>village</strong> in 1857 with a population of <strong>700</strong>.</p>
+        </div>
+      </section>
+
+      <div class="timeline-connector"></div>
+
+      <!-- Industrial Expansion -->
+      <section class="timeline-section">
+        <h2>Industrial Expansion: 1860-1920</h2>
+
+        <div class="era-card">
+          <h3>1880: Town Status Achieved</h3>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-number">2,000</span>
+              <span class="stat-label">Population</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">1880</span>
+              <span class="stat-label">Town Status</span>
+            </div>
+          </div>
+
+          <p>With a population of <strong>2,000</strong>, Newmarket became a <strong>Town</strong> in 1880. <strong>William Cane</strong> was elected as its first mayor.</p>
+
+          <p>The list of reeves who served the Village of Newmarket pre-1881 included Donald Sutherland, Dr. James Hunter, Dr. Thomas Pyne, Alfred Boultbee, Samuel Roadhouse, Nelson Gorham, Erastus Jackson, and W.H. Ashworth.</p>
+        </div>
+
+        <div class="era-card">
+          <h3>Late 19th Century: Industrial Diversification</h3>
+
+          <p>Newmarket transitioned from an agricultural hub to a diversified economy.</p>
+
+          <div class="key-facts">
+            <h4>Major Industries</h4>
+            <ul>
+              <li><strong>Davis Tannery:</strong> Major leather processing facility</li>
+              <li><strong>Office Specialty Manufacturing:</strong> Business equipment production</li>
+              <li><strong>Cane Furniture Factory:</strong> High-quality furniture manufacturing</li>
+              <li><strong>Dixon Pencil Factory:</strong> Writing instrument production</li>
+              <li>Carriage-making</li>
+              <li>Brick manufacturing</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="era-card">
+          <h3>Architectural Heritage</h3>
+
+          <div class="highlight-box">
+            <p><span class="year-badge">1883</span> The <strong>Old Town Hall</strong>, an Italianate building complete with a crested central bell-tower, was constructed. It remains a landmark today.</p>
+          </div>
+        </div>
+
+        <div class="era-card">
+          <h3>1902-1906: Electric Railway Era</h3>
+
+          <p>The arrival of the <strong>electric railway in 1902</strong> (later extended north to Jackson's Point and Sutton in 1906) facilitated growth and strengthened Newmarket's connection to Toronto's economy.</p>
+        </div>
+      </section>
+
+      <div class="timeline-connector"></div>
+
+      <!-- Modern Era Begins -->
+      <section class="timeline-section">
+        <h2>The Modern Era Begins: 1920-1980</h2>
+
+        <div class="era-card">
+          <h3>Post-War Development Boom: 1950s</h3>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-number">5,000</span>
+              <span class="stat-label">Population (1950)</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">11,000</span>
+              <span class="stat-label">Population (1970)</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">120%</span>
+              <span class="stat-label">Growth Rate</span>
+            </div>
+          </div>
+
+          <p>By the 1950s, the post-war development boom was well underway. New subdivisions were established and Newmarket experienced tremendous growth, with the town transforming from industrial center to primarily residential area.</p>
+        </div>
+
+        <div class="era-card">
+          <h3>Highway Era: 1980s Onwards</h3>
+
+          <p>The expansion of <strong>Ontario Highway 400</strong> to the west and the construction of <strong>Ontario Highway 404</strong> to the east increasingly turned Newmarket into a bedroom community for Toronto.</p>
+        </div>
+      </section>
+
+      <div class="timeline-connector"></div>
+
+      <!-- Contemporary Newmarket -->
+      <section class="timeline-section">
+        <h2>Contemporary Newmarket: 1980-Present</h2>
+
+        <div class="era-card">
+          <h3>Economic Transformation</h3>
+
+          <p>Newmarket evolved into a diverse and growing economy based on:</p>
+
+          <div class="key-facts">
+            <h4>Key Economic Sectors</h4>
+            <ul>
+              <li><strong>Business services</strong></li>
+              <li><strong>Healthcare</strong> (Southlake Regional Health Centre)</li>
+              <li><strong>Knowledge sectors</strong></li>
+              <li><strong>Advanced manufacturing</strong></li>
+              <li><strong>Retail industries</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="era-card">
+          <h3>Strategic Economic Development</h3>
+
+          <div class="highlight-box">
+            <p><span class="year-badge">2010</span> Newmarket adopted its first economic development strategy, focused on healthcare, knowledge, and advanced manufacturing sectors.</p>
+          </div>
+
+          <div class="highlight-box">
+            <p><span class="year-badge">2021</span> Strategy updated with focus on <strong>Innovation, Collaboration, and Urbanization</strong></p>
+          </div>
+        </div>
+
+        <div class="era-card">
+          <h3>Heritage Preservation</h3>
+
+          <div class="highlight-box">
+            <p><span class="year-badge">2013</span> <strong>October</strong>: Newmarket's downtown area, centered around <strong>Main Street</strong>, was recognized as a <strong>Provincial Heritage Conservation District</strong>. This status protects and officially recognizes the heritage sites and buildings along this historic thoroughfare.</p>
+          </div>
+
+          <h4>Hollywood North</h4>
+          <p>Main Street's historic charm caught Hollywood's attention, portraying small-town USA in films including:</p>
+          <ul>
+            <li><strong>Repo Men</strong> (2010)</li>
+            <li><strong>Dream House</strong> (2011)</li>
+            <li><strong>The Vow</strong> (2012)</li>
+            <li><strong>Carrie</strong> (2012)</li>
+            <li><strong>Regression</strong> (2013)</li>
+          </ul>
+        </div>
+
+        <div class="era-card">
+          <h3>Population Growth and Urban Planning</h3>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-number">84,224</span>
+              <span class="stat-label">2016 Census</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">87,942</span>
+              <span class="stat-label">2021 Census</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">100,000</span>
+              <span class="stat-label">2025 Target</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">200</span>
+              <span class="stat-label">Jobs/People per Hectare (2031 Goal)</span>
+            </div>
+          </div>
+
+          <p><strong>Urban Growth Centre Designation:</strong> Newmarket is one of the Golden Horseshoe's 25 Urban Growth Centres in Ontario's Places to Grow Growth Plan.</p>
+
+          <div class="key-facts">
+            <h4>Key Growth Areas</h4>
+            <ul>
+              <li>Yonge-Davis intersection</li>
+              <li>Yonge Street south of Green Lane</li>
+              <li>Regional Healthcare Centre area</li>
+              <li>Historic Downtown Centre</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="era-card">
+          <h3>2025: Housing and Development Challenges</h3>
+
+          <p>Newmarket is building more homes than before, but faces challenges:</p>
+
+          <ul>
+            <li><strong>Affordability gap:</strong> Prices remain out of reach for many first-time buyers</li>
+            <li><strong>Supply gap:</strong> Construction isn't keeping pace with population growth</li>
+            <li><strong>Intensification strategy:</strong> Official Plan calls for redevelopment and intensification rather than outward expansion</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="timeline-connector"></div>
+
+      <!-- Cultural Landmarks -->
+      <section class="timeline-section">
+        <h2>Cultural Landmarks and Heritage</h2>
+
+        <div class="era-card">
+          <h3>Fairy Lake</h3>
+
+          <p>The heart of historic downtown Newmarket, <strong>Fairy Lake</strong> was created in 1801 when Joseph Hill built his mill and dammed the East Holland River.</p>
+
+          <div class="key-facts">
+            <h4>Fairy Lake Features</h4>
+            <ul>
+              <li><strong>13.4 hectares</strong> of parkland, waterways, and marshland</li>
+              <li>Also known as <strong>Wesley Brooks Conservation Area</strong></li>
+              <li>Picturesque waterfall at the foot of Main Street</li>
+              <li>Dam at Water Street bridge for flood control</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="era-card">
+          <h3>Tom Taylor Trail</h3>
+
+          <p>A recreation path following Fairy Lake and the East Holland River, featuring bridges, playgrounds, art installations, and gazebos. It's part of the larger <strong>Nokiidaa Trail</strong> stretching from Aurora to East Gwillimbury.</p>
+        </div>
+
+        <div class="era-card">
+          <h3>Museums and Cultural Centers</h3>
+
+          <ul>
+            <li><strong>Elman W. Campbell Museum:</strong> Housed in the North York Registry Office, a Classical Revival-inspired building on Main Street</li>
+            <li><strong>Old Town Hall</strong> (460 Botsford Street): Restored and renovated, offering community-based arts programs</li>
+            <li><strong>Old Fire Hall</strong> (140 Main Street): Hosts arts-based programs and events</li>
+            <li><strong>Riverwalk Commons:</strong> Features a plaque and mural noting the Roe & Borland Trading Post (1813)</li>
+          </ul>
+        </div>
+
+        <div class="era-card">
+          <h3>Architectural Heritage</h3>
+
+          <p>The historic downtown core features heritage homes in various styles:</p>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-label">Victorian</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Queen Anne</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Regency</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Italianate</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Edwardian</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Arts and Crafts</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="timeline-connector"></div>
+
+      <!-- Notable People -->
+      <section class="timeline-section">
+        <h2>Notable People from Newmarket</h2>
+
+        <div class="people-grid">
+          <div class="person-card">
+            <div class="person-name">Jim Carrey</div>
+            <div class="person-role">Actor & Comedian</div>
+            <div class="person-desc">Born January 17, 1962. Two-time Golden Globe-winner who rose to fame on In Living Color and starred in Ace Ventura: Pet Detective, Dumb and Dumber, and The Mask.</div>
+          </div>
+
+          <div class="person-card">
+            <div class="person-name">John Candy</div>
+            <div class="person-role">Actor & Comedian</div>
+            <div class="person-desc">Important Canadian comedian and actor. Honored by Canada Post with a postage stamp in 2006. Co-owner of the Toronto Argonauts football team that won the 1991 Grey Cup.</div>
+          </div>
+
+          <div class="person-card">
+            <div class="person-name">Elvis Stojko</div>
+            <div class="person-role">Figure Skater</div>
+            <div class="person-desc">Two-time Olympic silver medalist, three-time World Champion, and seven-time Canadian National Champion. Named after Elvis Presley, he began skating at age 4.</div>
+          </div>
+
+          <div class="person-card">
+            <div class="person-name">Gabrielle Daleman</div>
+            <div class="person-role">Figure Skater</div>
+            <div class="person-desc">2018 Olympic gold medallist in the team event, 2017 World bronze medallist, and 2017 Four Continents silver medallist.</div>
+          </div>
+
+          <div class="person-card">
+            <div class="person-name">Sir William Mulock</div>
+            <div class="person-role">Jurist & Politician</div>
+            <div class="person-desc">Chief Justice of the Exchequer Division, elected to Parliament multiple times (1882-1904), first Postmaster General. Spearheaded Penny Postage throughout the Empire, receiving a knighthood.</div>
+          </div>
+
+          <div class="person-card">
+            <div class="person-name">Elman W. Campbell</div>
+            <div class="person-role">Historian</div>
+            <div class="person-desc">Local historian credited with obtaining a permanent site for the museum bearing his name. His book "Newmarket: Some Early Memories" captured the town's history.</div>
+          </div>
+
+          <div class="person-card">
+            <div class="person-name">Mazo de la Roche</div>
+            <div class="person-role">Author</div>
+            <div class="person-desc">Canadian author best known for her 16-book Jalna series of novels, becoming one of the most-loved family saga novelists of her time.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Today -->
+      <section class="timeline-section">
+        <h2>Newmarket Today: Regional Seat of York</h2>
+
+        <div class="era-card">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-number">~91,000</span>
+              <span class="stat-label">Residents</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">41,000+</span>
+              <span class="stat-label">Local Jobs</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">1857</span>
+              <span class="stat-label">Incorporated</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">224</span>
+              <span class="stat-label">Years of History</span>
+            </div>
+          </div>
+
+          <p>As the <strong>regional seat of York Region</strong>, Newmarket serves as a bedroom community to Toronto while maintaining its own distinct identity. The town continues to honor its Indigenous heritage through museum exhibits presenting the three Indigenous groups in Canada - First Nations, Inuit, and Metis - through Creation Stories, Grandfather Teachings, Medicine Wheel, and other traditions.</p>
+
+          <p>From its origins as a Quaker settlement on the banks of the Holland River to its status as a thriving urban growth centre in the Greater Toronto Area, Newmarket's journey reflects the broader story of Canadian growth, transformation, and the ongoing work of reconciliation with Indigenous peoples whose land this has been since time immemorial.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sources -->
+    <section class="sources">
+      <h3>Sources</h3>
+      <p>This infographic was compiled from the following sources:</p>
+      <ul>
+        <li><a href="https://www.heritagetrust.on.ca/plaques/founding-of-newmarket" target="_blank" rel="noopener">Ontario Heritage Trust | Founding of Newmarket</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Newmarket,_Ontario" target="_blank" rel="noopener">Newmarket, Ontario - Wikipedia</a></li>
+        <li><a href="https://www.newmarkettoday.ca/remember-this/remember-this-fur-trade-quaker-settlers-rebellion-part-of-newmarkets-early-history-5218192" target="_blank" rel="noopener">Newmarket News - Early History</a></li>
+        <li><a href="https://www.newmarket.ca/ThingsToDo/Pages/Recreation%20and%20Culture/Events/Indigenous-History.aspx" target="_blank" rel="noopener">Town of Newmarket - Indigenous History</a></li>
+        <li><a href="https://www.newmarkettoday.ca/remember-this/area-indigenous-peoples-ceded-their-territory-in-later-disputed-toronto-purchase-2207843" target="_blank" rel="noopener">Newmarket News - Toronto Purchase</a></li>
+        <li><a href="https://www.thefamouspeople.com/newmarket-2161.php" target="_blank" rel="noopener">Famous People From Newmarket</a></li>
+        <li><a href="https://www.newmarkettoday.ca/remember-this/some-name-dropping-highlights-newmarkets-early-movers-and-shakers-2858238" target="_blank" rel="noopener">Newmarket News - Movers and Shakers</a></li>
+        <li><a href="https://greatplacesincanada.ca/historic-main-street/" target="_blank" rel="noopener">Great Places in Canada - Historic Main Street</a></li>
+        <li><a href="https://www.newmarket.ca/LivingHere/Pages/Parks, Trails and Sport Fields/Fairy-Lake.aspx" target="_blank" rel="noopener">Town of Newmarket - Fairy Lake</a></li>
+        <li><a href="https://worldpopulationreview.com/canadian-cities/newmarket" target="_blank" rel="noopener">Newmarket Population 2025</a></li>
+        <li><a href="https://www.intelligentcommunity.org/newmarket_ontario" target="_blank" rel="noopener">Newmarket - Intelligent Community Forum</a></li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <p>Generated on December 5, 2025</p>
+      <p>A comprehensive visual history celebrating over 200 years of Newmarket, Ontario</p>
+    </footer>
+  </div>
+
+  <script>
+    // Scroll progress bar
+    window.addEventListener('scroll', function() {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progressBar').style.width = scrolled + '%';
+    });
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all timeline sections
+    document.querySelectorAll('.timeline-section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Smooth scroll for internal links (accessibility)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
